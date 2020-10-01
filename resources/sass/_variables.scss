@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@200;300;400&family=Cinzel+Decorative&family=Roboto+Slab:wght@300;400&display=swap');
+
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Cinzel Decorative', serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+$redgif-purple: #8c18f1;
+
+$black-bg: #1c1f2b;
+$white-font: #bcc9da;
+
+$post-bg: #383c42;
+$sidebar-bg: #42464e;
+
+$border-color: #595d63;
+
+// Dark slate grays
+$darkgray: #383c42; //
+$darkgrayrgb: rgb(56,60,66);
+$darkgray2: #2d3238;
+$darkgrayrgb2: rgb(45,50,56);
+// #2d3238 rgb(45,50,56)
+// #42464e rgb(66,70,78)
+$linen: #f8f2ed; // rgb(248,242,237)
+$linenrgb: rgb(248,242,237);
+$silver: #b5b9c1; // rgb(181,185,193)
+$silverrgb: rgb(181,185,193);
+
+
+$width-mobile: 320px;
+$width-mobile-hi-res: 415px;
+$width-mobile-wide: 645px;
+$width-tablet: 768px;
+$width-monitor: 1080px;
+$width-monitor-wide: 1440px;
+$width-highres: 2560px;

@@ -1,0 +1,91 @@
+.post-container {
+    line-height: 1.4rem;
+    font-stretch: 100%;
+}
+
+.editor {
+    margin: .5rem;
+}
+
+.post-editorContainer {
+
+}
+
+.post-form textarea {
+    display: none;
+    background-color: $post-bg;
+    color: $white-font;
+    padding: 10px 5px;
+}
+
+input-container {
+    width: 100%;
+}
+
+.btn {
+    float: right;
+    min-width: 100px;
+}
+
+
+.text-input-display {
+    background-color: $post-bg;
+    color: $white-font;
+    min-width: inherit;
+    min-height: 100px;
+    padding: 10px 5px;
+    border-color: $white-font;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.progress-display {
+    height: 50px;
+}
+
+.fr-wrapper {
+    position:relative;
+    z-index:1
+}
+
+.fr-wrapper::after {
+    clear:both;
+    display:block;
+    content:"";
+    height:0
+}
+
+.fr-wrapper .fr-placeholder {
+    position:absolute;
+    font-size:12px;
+    color:#aaa;
+    z-index:1;
+    display:none;
+    top:0;
+    left:0;
+    right:0;
+    overflow:hidden
+}
+
+.input-container .fr-placeholder {
+    position:absolute;
+    font-size:12px;
+    color:#aaa;
+    z-index:1;
+    display:none;
+    top: 60px;
+    left: 50px;
+    overflow:hidden
+}
+
+.fr-wrapper.show-placeholder .fr-placeholder {
+    display: block;
+}
+
+.input-container.show-placeholder .fr-placeholder {
+    display: block;
+}
+
+.fr-box .fr-wrapper.show-placeholder .fr-placeholder {
+    position:absolute
+}

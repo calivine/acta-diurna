@@ -37,9 +37,11 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->first();
 
-        $files = File::with(['thumbnail', 'gif'])
+        $files = File::with(['thumbnail', 'gif', 'tags'])
             ->orderBy('created_at', 'desc')
             ->get();
+
+        Log::channel('info')->info($files);
 
         $post_date = $posts->created_at ?? "";
         $post_body = $posts->body ?? "Your post will go here.";

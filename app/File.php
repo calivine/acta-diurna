@@ -31,6 +31,6 @@ class File extends Model
     {
         # File has many tags
         # Define a many-to-many relationship
-        return $this->belongsToMany('App\Tag')->withTimestamps();
+        return $this->belongsToMany('App\Tag');
     }
 }

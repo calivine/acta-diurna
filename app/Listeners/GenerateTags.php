@@ -2,11 +2,13 @@
 
 namespace App\Listeners;
 
+use App\File;
 use App\Tag;
 use App\Events\FileUploadSuccess;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class GenerateTags
 {
@@ -31,7 +33,7 @@ class GenerateTags
         $lower_case = array_map('strtolower', $words);
 
         $lower_case = array_filter($lower_case, function ($word) {
-            $common = ['with', 'to', 'the', 'from', 'a', 'out', '', ' ', 'w', 'be'];
+            $common = ['and', 'his', 'gets', 'with', 'to', 'the', 'from', 'a', 'out', '', ' ', 'w', 'be', 'i', 'my', 'likes', 'at', 'in', 'your', 'for', 'the', 'night', 'by'];
             return !in_array($word, $common);
         });
 
@@ -39,8 +41,25 @@ class GenerateTags
 
         // Load tags into database, checking if they exist first and updating the number of times
         // each tag occcurs.
+        $tag_to_insert = array();
+        foreach($lower_case as $tag) {
+            $tag_to_insert[] = ['name' => $tag];
+        }
+
+        DB::table('tags')
+            ->insertOrIgnore($tag_to_insert);
+
+        $file = File::where('hash', $hash)
+                ->first();
+
+
+        foreach($lower_case as $tag) {
+            $file_tag = Tag::where('name', $tag)
+                ->first();
+            $file->tags()->save($file_tag);
+        }
 
         // Associate file and tags in the tag_file table
-        
+
     }
 }

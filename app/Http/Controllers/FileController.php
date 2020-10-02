@@ -107,12 +107,11 @@ class FileController extends Controller
             $ffmpeg = $ffmpeg_cmd . $ffmpeg_ts . $path_to_file . $ffmpeg_frames . $path_to_thumb . $ffmpeg_pipe;
 
             $cmd = $ffmpeg_cmd
-                . " " . "-ss 07"
-                . " " . "-i"
-                . " " . $path_to_file
-                . " " . "-vframes 1"
+                . " " . "-ss 07"                 // starting timestamp
+                . " " . "-i {$path_to_file}"     // input file
+                . " " . "-vframes 1"             // number of frames to grab
                 . " " . "-q:v 2"
-                . " " . $path_to_thumb . $ffmpeg_pipe;
+                . " " . "{$path_to_thumb} 2>&1"; // pipe for output
 
             Log::channel('ffmpeg')->info($cmd);
 
@@ -133,13 +132,26 @@ class FileController extends Controller
 
             $fps = $fpsmatch[1] ?? 24;
 
-            $ffmpeg_gif_ts = " -ss 07 -t 3 -i ";
-            $ffmpeg_gif_opts = ' -vf "fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse"';
-            $ffmpeg_loops = " -loop 0 ";
             $ffmpeg_gif_output = storage_path('app/public/gifs/') . $file_id . ".gif";
-            $ffmpeg_gif = $ffmpeg_cmd . $ffmpeg_gif_ts . $path_to_file . $ffmpeg_gif_opts . $ffmpeg_loops . $ffmpeg_gif_output . $ffmpeg_pipe;
-            Log::channel('ffmpeg')->info($ffmpeg_gif);
-            exec($ffmpeg_gif, $thumb, $ret_status);
+
+            $ffmpeg_gif_opts = '"fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse"';
+
+            $cmd = $ffmpeg_cmd
+                . " " . "-ss 07"
+                . " " . "-t 3"
+                . " " . "-i {$path_to_file}"
+                . " " . "-vf " . $ffmpeg_gif_opts
+                . " " . "-loop 0"
+                . " " . "{$ffmpeg_gif_output} 2>&1";
+
+            Log::channel('ffmpeg')->info($cmd);
+
+            // $ffmpeg_gif_ts = " -ss 07 -t 3 -i ";
+            // $ffmpeg_loops = " -loop 0 ";
+            // $ffmpeg_gif = $ffmpeg_cmd . $ffmpeg_gif_ts . $path_to_file . $ffmpeg_gif_opts . $ffmpeg_loops . $ffmpeg_gif_output . $ffmpeg_pipe;
+            // Log::channel('ffmpeg')->info($ffmpeg_gif);
+            exec($cmd, $thumb, $ret_status);
+            Log::channel('ffmpeg')->info($ret_status);
             Log::channel('ffmpeg')->info($thumb);
             // $file_location, $thumb_location
             $path_to_thumb = $file_id . ".jpg";

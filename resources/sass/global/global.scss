@@ -1,8 +1,13 @@
 .card {
-    background-color: $post-bg;
-    color: $white-font;
+    background-color: transparent;
+    color: $black-bg;
 }
 
 .card-header {
     border-color: $border-color;
+}
+
+.banner p {
+    display: inline;
+    margin: 0 12px;
 }

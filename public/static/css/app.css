@@ -10895,7 +10895,9 @@ a.text-dark:focus {
 }
 
 body {
-  background-color: #1c1f2b;
+  background-image: url(/images/goldleaf.jpg?0de8376dc4450c3d73e3d0f6aa429c34);
+  background-position: 50% 20%;
+  /* background-color: $black-bg; */
   color: #bcc9da;
 }
 
@@ -10909,13 +10911,26 @@ body {
   padding-bottom: 12.5px;
 }
 
-.card {
-  background-color: #383c42;
+.contrast__dark {
+  color: black;
+}
+
+.contrast__light {
   color: #bcc9da;
+}
+
+.card {
+  background-color: transparent;
+  color: #1c1f2b;
 }
 
 .card-header {
   border-color: #595d63;
+}
+
+.banner p {
+  display: inline;
+  margin: 0 12px;
 }
 
 #drop_zone {

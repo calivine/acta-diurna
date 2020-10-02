@@ -100,10 +100,11 @@ return [
             'path' => storage_path('logs/laravel.log'),
         ],
 
-        'info' => [
-            'driver' => 'single',
+        'system' => [
+            'driver' => 'daily',
             'path' => storage_path('logs/sys.log'),
             'level' => 'debug',
+            'days' => 7,
         ],
 
         'upload' => [
@@ -114,9 +115,16 @@ return [
         ],
 
         'ffmpeg' => [
-            'driver' => 'single',
+            'driver' => 'daily',
             'path' => storage_path('logs/ffmpeg.log'),
-            'level' => 'debug'
+            'level' => 'debug',
+            'days' => 7,
+        ],
+        'tags' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/tag.log'),
+            'level' => 'debug',
+            'days' => 7,
         ]
     ],
 

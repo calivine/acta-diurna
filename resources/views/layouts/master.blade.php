@@ -5,7 +5,7 @@
 <head>
     @include('layouts.partials.head')
 </head>
-<body class="@yield('body-layout')">
+<body class="@yield('body-layout') contrast__dark">
     <!-- Navbar -->
     @include('nav.navbar')
 

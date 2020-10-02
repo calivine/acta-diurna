@@ -41,7 +41,7 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        Log::channel('info')->info($files);
+        Log::channel('system')->info($files);
 
         $post_date = $posts->created_at ?? "";
         $post_body = $posts->body ?? "Your post will go here.";

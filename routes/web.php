@@ -48,6 +48,9 @@ Route::get('/watch/{hash}', 'MediaController@watch')->name('watch');
 # POST update view count
 Route::post('/watch/view', 'MediaController@addView');
 
+# GET all videos associated with a tag
+Route::get('/tags/{tag}', 'TagController@videosByTag')->name('videosByTag');
+
 # Authentication Routes
 Auth::routes();
 

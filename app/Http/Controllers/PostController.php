@@ -41,7 +41,7 @@ class PostController extends Controller
         $new_post = $request->input('post');
         $user = $request->user();
 
-        Log::channel('info')->info($new_post);
+        Log::channel('system')->info($new_post);
 
         $post = new Post();
         $post->body = $new_post;

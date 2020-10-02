@@ -9,7 +9,12 @@
                     <source src="{{ asset('storage/videos/' . $file->path) }}" type="video/mp4">
                 </video>
             </div>
-            <p>Views: {{ $file->views }}</p>
+            <div class="row">
+                <p>Views: {{ $file->views }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <span class="banner">@foreach($file->tags as $tag)<p><a href="{{ route('videosByTag', ['tag' => $tag->name]) }}">{{ $tag->name }}</a></p>@endforeach</span>
         </div>
     </div>
     <script src="{{ asset('/static/js/viewer.js') }}"></script>

@@ -1,5 +1,7 @@
 body {
-  background-color: $black-bg;
+  background-image: url('./static/assets/goldleaf.jpg');
+  background-position: 50% 20%;
+  /* background-color: $black-bg; */
   color: $white-font;
 }
 
@@ -11,4 +13,12 @@ body {
   margin-left: auto;
   padding-top: 25px;
   padding-bottom: 12.5px;
+}
+
+.contrast__dark {
+    color: black;
+}
+
+.contrast__light {
+    color: $white-font;
 }

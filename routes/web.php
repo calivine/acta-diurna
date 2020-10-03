@@ -49,7 +49,10 @@ Route::get('/watch/{hash}', 'MediaController@watch')->name('watch');
 Route::post('/watch/view', 'MediaController@addView');
 
 # GET all videos associated with a tag
-Route::get('/tags/{tag}', 'TagController@videosByTag')->name('videosByTag');
+Route::get('/tag/{tag}', 'TagController@videosByTag')->name('videosByTag');
+
+# GET tag weights
+Route::get('/tags/weight', 'TagController@weight');
 
 # Authentication Routes
 Auth::routes();

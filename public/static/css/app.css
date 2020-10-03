@@ -10895,9 +10895,9 @@ a.text-dark:focus {
 }
 
 body {
-  background-image: url(/images/goldleaf.jpg?0de8376dc4450c3d73e3d0f6aa429c34);
-  background-position: 50% 20%;
-  /* background-color: $black-bg; */
+  /*background-image: url('./static/assets/goldleaf.jpg');
+  background-position: 50% 20%;*/
+  background-color: #1c1f2b;
   color: #bcc9da;
 }
 
@@ -11012,6 +11012,7 @@ body {
   display: none;
 }
 
+.upload-results-container,
 .box__uploading,
 .box__success,
 .box__error {
@@ -11087,6 +11088,10 @@ body {
   right: 10;
   left: 0;*/
   transform: translateY(-50%);
+}
+
+.upload-results-container.working {
+  display: block;
 }
 
 .js .box__file {
@@ -11267,5 +11272,23 @@ video {
 
 #media__header:hover {
   cursor: pointer;
+}
+
+.upload-results-container {
+  overflow-x: auto;
+  min-height: calc(50vh - 106px - 60px);
+}
+
+.list-feed-item {
+  line-height: 1.5;
+}
+
+.list-feed-item > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.uploads-list-feed-item {
+  padding: 30px;
 }
 

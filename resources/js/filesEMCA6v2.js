@@ -40,7 +40,6 @@ class ChunkedUploader {
 
     _sendNext () {
         if (!this.chunksQueue.length) {
-            console.log('All parts uploaded.');
             this.form.removeClass('is-uploading');
             $('#upload-display').removeClass('working');
             return;
@@ -105,6 +104,7 @@ class ChunkedUploader {
 
     _progress_handler (response) {
         let editor = $('.editor');
+        let uploadsContainer = $('.upload-results-container');
         let id = '#'+response.data;
         if (document.getElementById(response.data)) {
             let progBar = document.getElementById(response.data);
@@ -118,7 +118,7 @@ class ChunkedUploader {
             $progBar.attr('class', 'progress-display');
             $progBar.innerText = `${response.data}: ${response.progress}%`;
             console.log($progBar);
-            editor.append($progBar);
+            uploadsContainer.append($progBar);
         }
     }
 

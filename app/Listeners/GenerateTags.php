@@ -28,7 +28,7 @@ class GenerateTags
         $hash = $event->hash;
 
         // Remove numbers and symbols from file name to process tags.
-        $formatted = preg_replace('/[-,+()0-9\']/', '', $event->filename);
+        $formatted = preg_replace('/[-,+!()0-9\']/', '', $event->filename);
         Log::debug($formatted);
         $words = explode("_", $formatted);
         Log::debug($words);

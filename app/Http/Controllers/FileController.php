@@ -70,7 +70,7 @@ class FileController extends Controller
         // If we're on the last chunk of data, put them all together.
         if ($end == $total_size)
         {
-            $file_location = preg_replace('/[-+()0-9][^4]/', '', $file_name);
+            $file_location = preg_replace('/[\'-+()0-9][^4]/', '', $file_name);
             $file_location = rand_alphanum(10) . $file_location;
             Log::channel('upload')->info("Attempting to write {$file_location} to disk.");
 
@@ -113,12 +113,10 @@ class FileController extends Controller
                 . " " . "-q:v 2"
                 . " " . "{$path_to_thumb} 2>&1"; // pipe for output
 
-            Log::channel('ffmpeg')->info($cmd);
-
             exec($cmd, $thumb, $ret_status);
             // exec("/usr/local/bin/ffmpeg -ss 00:00:07 -i " . $path_to_file .  " -vframes 1 -q:v 2 " . $path_to_thumb . " 2>&1", $thumb, $ret_status);
 
-            Log::channel('ffmpeg')->info($ret_status);
+            Log::channel('upload')->info($ret_status);
             Log::channel('ffmpeg')->info($thumb);
             $match = null;
             $fpsmatch = null;
@@ -144,41 +142,50 @@ class FileController extends Controller
                 . " " . "-loop 0"
                 . " " . "{$ffmpeg_gif_output} 2>&1";
 
-            Log::channel('ffmpeg')->info($cmd);
-
             // $ffmpeg_gif_ts = " -ss 07 -t 3 -i ";
             // $ffmpeg_loops = " -loop 0 ";
             // $ffmpeg_gif = $ffmpeg_cmd . $ffmpeg_gif_ts . $path_to_file . $ffmpeg_gif_opts . $ffmpeg_loops . $ffmpeg_gif_output . $ffmpeg_pipe;
             // Log::channel('ffmpeg')->info($ffmpeg_gif);
             exec($cmd, $thumb, $ret_status);
-            Log::channel('ffmpeg')->info($ret_status);
+
+            Log::channel('upload')->info($ret_status);
             Log::channel('ffmpeg')->info($thumb);
             // $file_location, $thumb_location
-            $path_to_thumb = $file_id . ".jpg";
-            $path_to_file = $file_location . ".mp4";
-            $path_to_gif = $file_id . ".gif";
+            if ($ret_status == 0)
+            {
+                $path_to_thumb = $file_id . ".jpg";
+                $path_to_file = $file_location . ".mp4";
+                $path_to_gif = $file_id . ".gif";
 
-            $file_paths = [
-                'file' => $path_to_file,
-                'thumbnail' => $path_to_thumb,
-                'gif' => $path_to_gif
-            ];
+                $file_paths = [
+                    'file' => $path_to_file,
+                    'thumbnail' => $path_to_thumb,
+                    'gif' => $path_to_gif
+                ];
 
-            $file_attributes = [
-                'size' => $total_size,
-                'width' => $width,
-                'height' => $height,
-                'fps' => $fps
-            ];
+                $file_attributes = [
+                    'size' => $total_size,
+                    'width' => $width,
+                    'height' => $height,
+                    'fps' => $fps
+                ];
 
-            event(new FinishedUploadingChunks($file_paths, $file_name, $file_id, $file_attributes));
+                event(new FinishedUploadingChunks($file_paths, $file_name, $file_id, $file_attributes));
 
-            //Storage::disk('local')->put('output.jpg', $thumb);
+                //Storage::disk('local')->put('output.jpg', $thumb);
+                $status = 'complete';
+            }
+            else
+            {
+                $status = 'error';
+
+            }
             return response()->json([
-                'status' => 'complete',
+                'status' => $status,
                 'progress' => $progress,
                 'data' => $file_name
             ]);
+
         }
         else
         {

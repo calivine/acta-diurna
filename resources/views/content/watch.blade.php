@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row">
-            <span class="banner">@foreach($file->tags as $tag)<p><a href="{{ route('videosByTag', ['tag' => $tag->name]) }}">{{ $tag->name }}</a></p>@endforeach</span>
+            <span class="banner">@foreach($file->tags as $tag)@if($tag->weight > 1)<p><a href="{{ route('videosByTag', ['tag' => $tag->name]) }}">{{ $tag->name }}</a></p>@endif @endforeach</span>
         </div>
     </div>
     <script src="{{ asset('/static/js/viewer.js') }}"></script>

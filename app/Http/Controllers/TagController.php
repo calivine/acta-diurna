@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tag;
+use App\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -10,13 +11,17 @@ class TagController extends Controller
 {
     public function videosByTag($tag)
     {
+
         $files = Tag::with('files')
             ->where('name', $tag)
             ->first();
 
+        $files = $files->files()->paginate(20);
         Log::channel('system')->info($files);
 
-        return view('content.gallery')->with(['files' => $files->files]);
+
+
+        return view('content.gallery')->with(['files' => $files]);
     }
 
     /**

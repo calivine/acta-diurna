@@ -66,7 +66,7 @@ class ChunkedUploader {
                 this._sendNext();
             })
             .catch(() => {
-                this.chunksQueue.pop();
+                this.chunksQueue.push();
             });
     }
 

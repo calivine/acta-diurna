@@ -39,7 +39,7 @@ class HomeController extends Controller
 
         $files = File::with(['thumbnail', 'gif', 'tags'])
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(15);
 
         Log::channel('system')->info($files);
 

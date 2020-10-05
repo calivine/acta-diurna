@@ -16,7 +16,7 @@ const mix = require('laravel-mix');
 
 mix.scripts([
     'resources/js/filesEMCA6v2.js',
-    'resources/js/upload.js',
+    /*'resources/js/upload.js',*/
     'resources/js/dragndrop.js'
 ], 'public/static/js/main.js');
 

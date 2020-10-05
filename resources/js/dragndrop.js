@@ -31,64 +31,8 @@ if (isAdvancedUpload) {
     })
     .on('dragleave dragend drop', function() {
         $form.removeClass('is-dragover');
-    })
-    .on('drop', function(e) { // When drag n drop is supported.
-        droppedFiles = e.originalEvent.dataTransfer.files;
-        // Trigger submit form.
-        $form.trigger('submit');
-        /*
-        if (droppedFiles) {
-            for (var i = 0; i < droppedFiles.length; i++) {
-
-                var size = droppedFiles[i].size.formatBytes();
-                //uploaders.push(new ChunkedUploader(droppedFiles[i]));
-            }
-        }*/
     });
 }
-
-$form.on('submit', function(e) {
-    if ($form.hasClass('is-uploading')) return false;
-
-    $form.addClass('is-uploading').removeClass('is-error');
-
-    if (isAdvancedUpload) {
-        // ajax
-        // var ajaxData = new FormData($form.get(0));
-
-        if (droppedFiles) {
-            $.each(droppedFiles, function(i, file) {
-                console.log(file);
-                //uploaders.push(new ChunkedUploader(file=file, form=$form));
-                let uploader = new ChunkedUploader(file=file, form=$form);
-                uploader.start();
-                e.preventDefault();
-            });
-
-        }
-        e.preventDefault();
-
-    } else {
-        // ajax for legacy
-        var iframeName  = 'uploadiframe' + new Date().getTime();
-        $iframe   = $('<iframe name="' + iframeName + '" style="display: none;"></iframe>');
-
-        $('body').append($iframe);
-        $form.attr('target', iframeName);
-
-        $iframe.one('load', function() {
-            var data = JSON.parse($iframe.contents().find('body' ).text());
-            $form
-              .removeClass('is-uploading')
-              .addClass(data.success == true ? 'is-success' : 'is-error')
-              .removeAttr('target');
-            if (!data.success) $errorMsg.text(data.error);
-            $form.removeAttr('target');
-            $iframe.remove();
-        });
-    }
-});
-
 var processAjax = function($form, ajaxData) {
     $.ajax({
         url: $form.attr('action'),

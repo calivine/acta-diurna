@@ -58,7 +58,8 @@ class FileController extends Controller
         $temp_loc = "tmp/{$file_id}/";
 
         // Calculate progress uploading total file.
-        $progress = round(($end / $total_size) * 100);
+        $progress = $total_size > 0 ? round(($end / $total_size) * 100) : 100;
+        // $progress = round(($end / $total_size) * 100);
         Log::channel('upload')->info("Chunk {$chunk_id}: Bytes {$start} to {$end} of {$total_size}");
 
         // If there is a file, save to 'app/public/tmp/{file_id}/'

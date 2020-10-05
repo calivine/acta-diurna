@@ -4,8 +4,10 @@ var isAdvancedUpload = function() {
 }();
 
 let textInput = document.querySelector('.text-input');
+let uploadsResultsContainer = $('.upload-results-container');
 let textView = document.querySelector('.text-input-display');
 let form = document.querySelector('.post-form');
+
 
 let uploadingDisplay = $('#upload-display');
 let textUpload = $('.text-input-display');
@@ -114,12 +116,16 @@ textUpload.on('drag dragstart dragend dragover dragenter dragleave drop', functi
 
 hiddenForm.on('submit', function(e) {
     uploadingDisplay.addClass('working');
+    uploadsResultsContainer.addClass('working');
+    console.log('submitting hidden file upload.');
     if (drFiles) {
         $.each(drFiles, function(i, file) {
             let uploader = new ChunkedUploader(file=file, form=hiddenForm);
             uploader.start();
+            e.preventDefault();
         });
     }
+    e.preventDefault();
 });
 /*
 function handleFiles(event) {

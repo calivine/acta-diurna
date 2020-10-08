@@ -23,12 +23,6 @@ class PostHandler {
 const media = document.querySelector('video');
 let realView = false;
 
-media.addEventListener('ended', function(event) {
-    console.log(event);
-    let video = $('video');
-
-    video.attr('src', 'http://thrillgifs.loc/storage/videos/0PYxwTTzVxmontage5Rachel_Roxxx-9.mp4');
-});
 media.addEventListener('timeupdate', checkTime);
 
 function checkTime() {
@@ -41,3 +35,20 @@ function checkTime() {
         post.start();
     }
 }
+
+
+
+media.addEventListener('ended', function(event) {
+    console.log(event);
+
+
+    const gallery = document.getElementsByClassName('video__link');
+    if (gallery.length > 0) {
+        const next = gallery[0].getAttribute('href');
+        console.log(next);
+        window.open(next, "_self");
+    }
+    else {
+        media.play();
+    }
+});

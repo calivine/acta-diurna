@@ -6,8 +6,17 @@
     flex-wrap: wrap;
 }
 
+.gallery__container {
+    display: flex;
+}
+
 video {
     margin: 0 auto;
+}
+
+.video-player__large {
+    height: 720px;
+    width: 1280px;
 }
 
 #media__header {
@@ -17,3 +26,4 @@ video {
 #media__header:hover {
     cursor: pointer;
 }
+

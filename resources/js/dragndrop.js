@@ -5,9 +5,9 @@ var isAdvancedUpload = function() {
 
 // Upload form element
 var $form = $('.box');
-// File input element
+// Video input element
 var $input = $form.find('input[type="file"]');
-// File input (vanilla)
+// Video input (vanilla)
 var $file_input = document.getElementById('file');
 
 console.log($input);

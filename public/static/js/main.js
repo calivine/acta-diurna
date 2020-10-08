@@ -9,9 +9,6 @@ class ChunkedUploader {
         console.log(Date.now().toString());
         console.log(dt);
 
-        this.threadsQuantity = 2;
-        this.activeConnections = {};
-
         this.file = file;
         this.fileID = dt;
         this.url = form.attr('action');
@@ -42,12 +39,6 @@ class ChunkedUploader {
     }
 
     _sendNext () {
-        const activeConnections = Object.keys(this.activeConnections).length;
-
-        if (activeConnections >= this.threadsQuantity) {
-            return;
-        }
-
         if (!this.chunksQueue.length) {
             this.form.removeClass('is-uploading');
             $('#upload-display').removeClass('working');
@@ -75,52 +66,46 @@ class ChunkedUploader {
                 this._sendNext();
             })
             .catch(() => {
-                this.chunksQueue.pop();
+                this.chunksQueue.push();
             });
-
-        this._sendNext();
     }
 
     _upload (formData, chunkId) {
         return new Promise((resolve, reject) => {
             /* AJAX Request Object */
-            const xhr = this.activeConnections[chunkId] = new XMLHttpRequest();
+            this.upload_request = new XMLHttpRequest();
 
-            xhr.open(this.type, this.url, true);
+            this.upload_request.open(this.type, this.url, true);
 
-            xhr.overrideMimeType('application/octet-stream');
+            this.upload_request.overrideMimeType('application/octet-stream');
 
             if (this.rangeStart !== 0) {
-                xhr.setRequestHeader('Content-Range', 'bytes ' + this.rangeStart + '-' + this.rangeEnd + '/' + this.fileSize);
+                this.upload_request.setRequestHeader('Content-Range', 'bytes ' + this.rangeStart + '-' + this.rangeEnd + '/' + this.fileSize);
             }
-            xhr.setRequestHeader('X-Chunk-Id', chunkId);
-            xhr.setRequestHeader('X-Content-Length', this.fileSize);
-            xhr.setRequestHeader('X-Content-Name', this.file.name);
-            xhr.setRequestHeader('X-Content-Id', this.fileID);
+            this.upload_request.setRequestHeader('X-Chunk-Id', chunkId);
+            this.upload_request.setRequestHeader('X-Content-Length', this.fileSize);
+            this.upload_request.setRequestHeader('X-Content-Name', this.file.name);
+            this.upload_request.setRequestHeader('X-Content-Id', this.fileID);
 
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
+            this.upload_request.onreadystatechange = () => {
+                if (this.upload_request.readyState === 4 && this.upload_request.status === 200) {
+                    const response = JSON.parse(this.upload_request.responseText);
                     console.log(response.progress, response.data);
                     this._progress_handler(response);
                     resolve();
-                    delete this.activeConnections[chunkId];
                 }
             };
-            xhr.onerror = (error) => {
-                reject(error);
-                delete this.activeConnections[chunkId];
-            };
-            xhr.send(formData);
+            this.upload_request.onerror = reject;
+            this.upload_request.send(formData);
         });
 
 
     }
 
     _progress_handler (response) {
-
+        let editor = $('.editor');
         let uploadsContainer = $('.upload-results-container');
-
+        let id = '#'+response.data;
         if (document.getElementById(response.data)) {
             let progBar = document.getElementById(response.data);
             progBar.innerText = `${response.data}: ${response.progress}%`;
@@ -162,9 +147,9 @@ var isAdvancedUpload = function() {
 
 // Upload form element
 var $form = $('.box');
-// File input element
+// Video input element
 var $input = $form.find('input[type="file"]');
-// File input (vanilla)
+// Video input (vanilla)
 var $file_input = document.getElementById('file');
 
 console.log($input);

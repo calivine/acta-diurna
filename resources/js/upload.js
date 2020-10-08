@@ -1,5 +1,5 @@
 function dropHandler(ev) {
-  console.log('File(s) dropped');
+  console.log('Video(s) dropped');
 
   // Prevent default behavior (Prevent file from being opened)
   ev.preventDefault();
@@ -25,7 +25,7 @@ function dropHandler(ev) {
 };
 
 function dragOverHandler(ev) {
-  console.log('File(s) in drop zone');
+  console.log('Video(s) in drop zone');
 
   // Prevent default behavior (Prevent file from being opened)
   ev.preventDefault();

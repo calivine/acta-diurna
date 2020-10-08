@@ -52,7 +52,7 @@ class ChunkedUploader {
         let self = this,
             chunk;
 
-        // Slight timeout needed here (File read / AJAX readystate conflict?)
+        // Slight timeout needed here (Video read / AJAX readystate conflict?)
         setTimeout(function() {
             // Prevent range overflow
             if (self.rangeEnd > self.fileSize) {

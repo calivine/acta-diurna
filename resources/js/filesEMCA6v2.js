@@ -110,12 +110,19 @@ class ChunkedUploader {
             let progBar = document.getElementById(response.data);
             progBar.innerText = `${response.data}: ${response.progress}%`;
             console.log(progBar);
+            if (response.thumbnail !== 'none') {
+                let source = "http://thrillgifs.loc/storage/thumbnails/" + response.thumbnail;
+                let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
+                $thumbnail.attr('src', source);
+                console.log($thumbnail);
+                progBar.prepend($thumbnail[0]);
+            }
 
         }
         else {
-            let $progBar = $('<div></div>');
+            let $progBar = $('<div class="media"><div class="media-body"></div></div>');
             $progBar.attr('id', response.data);
-            $progBar.attr('class', 'progress-display');
+
             $progBar.innerText = `${response.data}: ${response.progress}%`;
             console.log($progBar);
             uploadsContainer.append($progBar);

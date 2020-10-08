@@ -1,13 +1,18 @@
 .card {
-    background-color: transparent;
-    color: $redgif-purple;
+  background-color: transparent;
+  color: $redgif-purple;
 }
 
 .card-header {
-    border-color: $border-color;
+  border-color: $border-color;
 }
 
 .banner p {
-    display: inline;
-    margin: 0 12px;
+  display: inline;
+  margin: 0 12px;
+}
+
+.page-navigation__container {
+  display: block;
+  float: left;
 }

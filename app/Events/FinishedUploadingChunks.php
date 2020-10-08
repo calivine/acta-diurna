@@ -14,12 +14,12 @@ class FinishedUploadingChunks
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $path_to_file;
+    public $path;
     public $path_to_thumb;
     public $path_to_gif;
-    public $total_size;
-    public $file_name;
-    public $file_id;
+    public $size;
+    public $filename;
+    public $hash;
     public $width;
     public $height;
     public $fps;
@@ -31,12 +31,12 @@ class FinishedUploadingChunks
      */
     public function __construct(Array $file_paths, String $file_name, String $file_id, Array $file_attributes)
     {
-        $this->path_to_file = $file_paths['file'];
+        $this->path = $file_paths['file'];
         $this->path_to_thumb = $file_paths['thumbnail'];
         $this->path_to_gif = $file_paths['gif'];
-        $this->total_size = $file_attributes['size'];
-        $this->file_name = $file_name;
-        $this->file_id = $file_id;
+        $this->size = $file_attributes['size'];
+        $this->filename = $file_name;
+        $this->hash = $file_id;
         $this->width = $file_attributes['width'];
         $this->height = $file_attributes['height'];
         $this->fps = $file_attributes['fps'];

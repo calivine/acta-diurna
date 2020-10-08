@@ -51,6 +51,20 @@ class TagController extends Controller
 
         }
 
-        return redirect('home');
+        return;
+    }
+
+    /** Returns the top tags
+     *
+     */
+    public function getTopTags()
+    {
+        // Re-weight tags before getting top ones.
+        $this->weight();
+
+
+
+
+
     }
 }

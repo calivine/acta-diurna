@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Facades\App\Repository\Posts;
+use Facades\App\Repository\Videos;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
-use App\Post;
 use App\File;
-use App\Thumbnail;
+
 
 class HomeController extends Controller
 {
@@ -30,16 +31,12 @@ class HomeController extends Controller
     {
         Log::info(log_client());
 
-        $id = Auth::user()->id;
+        $user = Auth::user()->id;
 
         // Get the most recent post
-        $posts = Post::where('user_id', $id)
-            ->orderBy('created_at', 'desc')
-            ->first();
+        $posts = Posts::getMostRecent($user);
 
-        $files = File::with(['thumbnail', 'gif', 'tags'])
-            ->orderBy('created_at', 'desc')
-            ->paginate(15);
+        $files = Videos::all();
 
         Log::channel('system')->info($files);
 

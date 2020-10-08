@@ -8,7 +8,7 @@ use App\Events\FinishedUploadingChunks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-
+use Exception;
 
 
 class FileController extends Controller
@@ -36,7 +36,7 @@ class FileController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -59,7 +59,7 @@ class FileController extends Controller
 
         // Calculate progress uploading total file.
         $progress = $total_size > 0 ? round(($end / $total_size) * 100) : 100;
-        // $progress = round(($end / $total_size) * 100);
+
         Log::channel('upload')->info("Chunk {$chunk_id}: Bytes {$start} to {$end} of {$total_size}");
 
         // If there is a file, save to 'app/public/tmp/{file_id}/'
@@ -71,14 +71,17 @@ class FileController extends Controller
         // If we're on the last chunk of data, put them all together.
         if ($end == $total_size)
         {
-            $file_location = preg_replace('/[\'-+()0-9][^4]/', '', $file_name);
-            $file_location = rand_alphanum(10) . $file_location;
+            $file_location = preg_replace('/[^a-zA-Z_]/', '', $file_name);
+            $file_location = "{$file_id}_{$file_location}";
             Log::channel('upload')->info("Attempting to write {$file_location} to disk.");
 
-            $path_to_file = storage_path('app/public/videos/'.$file_location . ".mp4");
-            for ($i = 0; $i <= $chunk_id; $i++) {
-                $path_to_chunk = storage_path('app/' . $temp_loc . $i);
-                try {
+            $path_to_file = storage_path("app/public/videos/" . $file_location . ".mp4");
+            for ($i = 0; $i <= $chunk_id; $i++)
+            {
+                $path_to_chunk = storage_path("app/" . $temp_loc . $i);
+
+                try
+                {
                     $file = fopen($path_to_chunk, 'rb');
                     $buff = fread($file, $BUFFER_SIZE);
                     fclose($file);
@@ -88,15 +91,16 @@ class FileController extends Controller
                     fclose($final);
                     unlink($path_to_chunk);
 
-                } catch (ErrorException $e) {
+                } catch (Exception $e)
+                {
                     Log::debug($e->getMessage());
                 }
             }
             // Delete temp directory
             rmdir(storage_path('app/' . $temp_loc));
 
-            $thumb = [];
-            $ret_status;
+            $output = [];
+            $ret_status = null;
             $path_to_thumb = storage_path('app/public/thumbnails/') . $file_id . ".jpg ";
 
             $ffmpeg_cmd = env('LIB_FFMPEG');
@@ -114,17 +118,20 @@ class FileController extends Controller
                 . " " . "-q:v 2"
                 . " " . "{$path_to_thumb} 2>&1"; // pipe for output
 
-            exec($cmd, $thumb, $ret_status);
+            exec($cmd, $output, $ret_status);
             // exec("/usr/local/bin/ffmpeg -ss 00:00:07 -i " . $path_to_file .  " -vframes 1 -q:v 2 " . $path_to_thumb . " 2>&1", $thumb, $ret_status);
-
             Log::channel('upload')->info($ret_status);
-            Log::channel('ffmpeg')->info($thumb);
+
             $match = null;
             $fpsmatch = null;
             if ($ret_status == 0)
             {
-                preg_match('/(\d{3,4})x(\d{3,4})/', $thumb[18], $match);
-                preg_match('/(\d{2}\.?\d{0,3}) fps/', $thumb[18], $fpsmatch);
+                preg_match('/(\d{3,4})x(\d{3,4})/', $output[18], $match);
+                preg_match('/(\d{2}\.?\d{0,3}) fps/', $output[18], $fpsmatch);
+            }
+            else
+            {
+                Log::channel('ffmpeg')->info(implode($output));
             }
             $width = $match[1] ?? 1280;
             $height = $match[2] ?? 720;
@@ -147,13 +154,14 @@ class FileController extends Controller
             // $ffmpeg_loops = " -loop 0 ";
             // $ffmpeg_gif = $ffmpeg_cmd . $ffmpeg_gif_ts . $path_to_file . $ffmpeg_gif_opts . $ffmpeg_loops . $ffmpeg_gif_output . $ffmpeg_pipe;
             // Log::channel('ffmpeg')->info($ffmpeg_gif);
-            exec($cmd, $thumb, $ret_status);
+            exec($cmd, $output, $ret_status);
 
             Log::channel('upload')->info($ret_status);
-            Log::channel('ffmpeg')->info($thumb);
+
             // $file_location, $thumb_location
             if ($ret_status == 0)
             {
+
                 $path_to_thumb = $file_id . ".jpg";
                 $path_to_file = $file_location . ".mp4";
                 $path_to_gif = $file_id . ".gif";
@@ -175,16 +183,20 @@ class FileController extends Controller
 
                 //Storage::disk('local')->put('output.jpg', $thumb);
                 $status = 'complete';
+                $thumbnail = $path_to_thumb;
             }
             else
             {
+                Log::channel('ffmpeg')->info(implode($output));
                 $status = 'error';
+                $thumbnail = 'none';
 
             }
             return response()->json([
                 'status' => $status,
                 'progress' => $progress,
-                'data' => $file_name
+                'data' => $file_name,
+                'thumbnail' => $thumbnail
             ]);
 
         }
@@ -193,7 +205,8 @@ class FileController extends Controller
             return response()->json([
                 'status' => 'in_progress',
                 'progress' => $progress,
-                'data' => $file_name
+                'data' => $file_name,
+                'thumbnail' => 'none'
             ]);
         }
     }
@@ -201,7 +214,7 @@ class FileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\File  $file
+     * @param \App\File $file
      * @return \Illuminate\Http\Response
      */
     public function show(File $file)
@@ -212,7 +225,7 @@ class FileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\File  $file
+     * @param \App\File $file
      * @return \Illuminate\Http\Response
      */
     public function edit(File $file)
@@ -223,8 +236,8 @@ class FileController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\File  $file
+     * @param \Illuminate\Http\Request $request
+     * @param \App\File $file
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, File $file)
@@ -235,7 +248,7 @@ class FileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\File  $file
+     * @param \App\File $file
      * @return \Illuminate\Http\Response
      */
     public function destroy(File $file)

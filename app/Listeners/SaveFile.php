@@ -25,10 +25,11 @@ class SaveFile
     {
         $user = Auth::user();
         $file = new File();
-        $file->hash = $event->file_id;
-        $file->size = $event->total_size;
-        $file->filename = $event->file_name;
-        $file->path = $event->path_to_file;
+
+        $file->hash = $event->hash;
+        $file->size = $event->size;
+        $file->filename = $event->filename;
+        $file->path = $event->path;
         $file->width = $event->width;
         $file->height = $event->height;
         $file->fps = $event->fps;
@@ -36,17 +37,19 @@ class SaveFile
         $file->save();
 
         $thumb = new Thumbnail();
-        $thumb->hash = $event->file_id;
+        $thumb->hash = $event->hash;
         $thumb->path = $event->path_to_thumb;
         $thumb->file()->associate($file);
         $thumb->save();
 
         $gif = new Gif();
-        $gif->hash = $event->file_id;
+        $gif->hash = $event->hash;
         $gif->path = $event->path_to_gif;
         $gif->file()->associate($file);
         $gif->save();
 
         event(new FileUploadSuccess($file->filename, $file->hash));
+
+        // Update: generate tags here.
     }
 }

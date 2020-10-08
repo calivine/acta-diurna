@@ -12,19 +12,23 @@ use Illuminate\Support\Facades\Log;
 
 class MediaController extends Controller
 {
+    CONST VIEW_WATCH = 'content.watch';
     /**
      * GET
      * Watch media file.
      */
     public function watch($hash)
     {
-        $file = File::with('thumbnail')
+        $file = File::with(['thumbnail', 'tags'])
             ->where('hash', $hash)
             ->first();
 
         Log::channel('system')->info($file);
+
+        $related = $file->tags;
+        Log::channel('system')->info($related);
         
-        return view('content.watch')->with([
+        return view(static::VIEW_WATCH)->with([
             'file' => $file
         ]);
     }
@@ -32,6 +36,8 @@ class MediaController extends Controller
     /**
      * POST
      * Update view count
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function addView(Request $request)
     {

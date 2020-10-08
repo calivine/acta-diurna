@@ -6,6 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class File extends Model
 {
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'hash',
+        'size',
+        'filename',
+        'path',
+        'width',
+        'height',
+        'fps'
+    ];
+
     public function thumbnail()
     {
         # File Has Thumbnail

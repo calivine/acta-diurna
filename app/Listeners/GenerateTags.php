@@ -21,17 +21,12 @@ class GenerateTags
      */
     public function handle(FileUploadSuccess $event)
     {
-        // Create new Tag model to check possible new tags against.
-        $tag_check = new Tag();
-
-        $name = $event->filename;
-        $hash = $event->hash;
 
         // Remove numbers and symbols from file name to process tags.
-        $formatted = preg_replace('/[-,+!()0-9\']/', '', $event->filename);
+        $formatted = preg_replace('/[^a-zA-Z_]/', '', $event->filename);
         Log::debug($formatted);
         $words = explode("_", $formatted);
-        Log::debug($words);
+        Log::debug(implode($words));
 
         // Convert to lower case for all words.
         // remove any common words from the list.
@@ -41,7 +36,7 @@ class GenerateTags
             return RejectTags::check($word);
         });
 
-        Log::debug($lower_case);
+        Log::debug(implode($lower_case));
 
         // Load tags into database, checking if they exist first and updating the number of times
         // each tag occcurs.
@@ -53,7 +48,7 @@ class GenerateTags
         DB::table('tags')
             ->insertOrIgnore($tag_to_insert);
 
-        $file = File::where('hash', $hash)
+        $file = File::where('hash', $event->hash)
                 ->first();
 
         // Associate file and tags in the tag_file table

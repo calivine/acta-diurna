@@ -12,16 +12,16 @@
 
 namespace App{
 /**
- * App\File
+ * App\Video
  *
  * @property-read \App\Gif|null $gif
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Tag[] $tags
  * @property-read int|null $tags_count
  * @property-read \App\Thumbnail|null $thumbnail
  * @property-read \App\User $user
- * @method static \Illuminate\Database\Eloquent\Builder|File newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|File newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|File query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Video newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Video newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Video query()
  */
 	class File extends \Eloquent {}
 }
@@ -30,7 +30,7 @@ namespace App{
 /**
  * App\Gif
  *
- * @property-read \App\File $file
+ * @property-read \App\Video $file
  * @method static \Illuminate\Database\Eloquent\Builder|Gif newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Gif newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Gif query()
@@ -54,7 +54,7 @@ namespace App{
 /**
  * App\Tag
  *
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\File[] $files
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Video[] $files
  * @property-read int|null $files_count
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
@@ -67,7 +67,7 @@ namespace App{
 /**
  * App\Thumbnail
  *
- * @property-read \App\File $file
+ * @property-read \App\Video $file
  * @method static \Illuminate\Database\Eloquent\Builder|Thumbnail newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Thumbnail newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Thumbnail query()
@@ -87,7 +87,7 @@ namespace App{
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\File[] $files
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Video[] $files
  * @property-read int|null $files_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count

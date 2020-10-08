@@ -86,7 +86,18 @@ class RejectTags
             'care',
             'first',
             'gives',
-            'stepkid'
+            'stepkid',
+            'phccefcd',
+            'xwy',
+            'hotelphedeee',
+            'nightyjxvd',
+            'phaab',
+            'sessionphfedd',
+            'phcdcfaa',
+            'phbdcadef',
+            'montage'
+
+
         ];
         return !in_array($tag, $common);
     }

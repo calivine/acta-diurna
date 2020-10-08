@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    public function files()
+    public function videos()
     {
-        return $this->belongsToMany('App\File');
+        return $this->belongsToMany('App\Video');
     }
     
 }

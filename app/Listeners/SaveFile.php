@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\File;
+use App\Video;
 use App\Thumbnail;
 use App\Gif;
 use App\User;
@@ -24,31 +24,31 @@ class SaveFile
     public function handle(FinishedUploadingChunks $event)
     {
         $user = Auth::user();
-        $file = new File();
+        $video = new Video();
 
-        $file->hash = $event->hash;
-        $file->size = $event->size;
-        $file->filename = $event->filename;
-        $file->path = $event->path;
-        $file->width = $event->width;
-        $file->height = $event->height;
-        $file->fps = $event->fps;
-        $file->user()->associate($user);
-        $file->save();
+        $video->hash = $event->hash;
+        $video->size = $event->size;
+        $video->filename = $event->filename;
+        $video->path = $event->path;
+        $video->width = $event->width;
+        $video->height = $event->height;
+        $video->fps = $event->fps;
+        $video->user()->associate($user);
+        $video->save();
 
         $thumb = new Thumbnail();
         $thumb->hash = $event->hash;
         $thumb->path = $event->path_to_thumb;
-        $thumb->file()->associate($file);
+        $thumb->video()->associate($video);
         $thumb->save();
 
         $gif = new Gif();
         $gif->hash = $event->hash;
         $gif->path = $event->path_to_gif;
-        $gif->file()->associate($file);
+        $gif->video()->associate($video);
         $gif->save();
 
-        event(new FileUploadSuccess($file->filename, $file->hash));
+        event(new FileUploadSuccess($video->filename, $video->hash));
 
         // Update: generate tags here.
     }

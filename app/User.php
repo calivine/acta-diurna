@@ -44,11 +44,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Post');
     }
 
-    public function files()
+    public function videos()
     {
         # User Has Many Files
         # Defines a One-to-Many Relationship
-        return $this->hasMany('App\File');
+        return $this->hasMany('App\Video');
     }
 
 }

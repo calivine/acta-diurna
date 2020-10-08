@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThumbnailsTable extends Migration
+class CreateTagVideoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateThumbnailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('thumbnails', function (Blueprint $table) {
+        Schema::create('tag_video', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->string('hash');
-            $table->string('path');
+
+            $table->integer('tag_id')->unsigned();
             $table->integer('video_id')->unsigned();
+
+            # Make foreign keys
+            $table->foreign('tag_id')->references('id')->on('tags');
             $table->foreign('video_id')->references('id')->on('videos');
         });
     }
@@ -30,6 +32,6 @@ class CreateThumbnailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thumbnails');
+        Schema::dropIfExists('tag_video');
     }
 }

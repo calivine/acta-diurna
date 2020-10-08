@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\File;
+use App\Video;
 use App\Tag;
 use App\Events\FileUploadSuccess;
 use App\Exceptions\RejectTags;
@@ -24,9 +24,8 @@ class GenerateTags
 
         // Remove numbers and symbols from file name to process tags.
         $formatted = preg_replace('/[^a-zA-Z_]/', '', $event->filename);
-        Log::debug($formatted);
+
         $words = explode("_", $formatted);
-        Log::debug(implode($words));
 
         // Convert to lower case for all words.
         // remove any common words from the list.
@@ -35,8 +34,6 @@ class GenerateTags
         $lower_case = array_filter($lower_case, function ($word) {
             return RejectTags::check($word);
         });
-
-        Log::debug(implode($lower_case));
 
         // Load tags into database, checking if they exist first and updating the number of times
         // each tag occcurs.
@@ -48,15 +45,15 @@ class GenerateTags
         DB::table('tags')
             ->insertOrIgnore($tag_to_insert);
 
-        $file = File::where('hash', $event->hash)
+        $video = Video::where('hash', $event->hash)
                 ->first();
 
         // Associate file and tags in the tag_file table
         foreach($lower_case as $tag) {
-            $file_tag = Tag::where('name', $tag)
+            $video_tag = Tag::where('name', $tag)
                 ->first();
 
-            $file->tags()->save($file_tag);
+            $video->tags()->save($video_tag);
         }
     }
 }

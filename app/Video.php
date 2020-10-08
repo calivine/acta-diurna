@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class File extends Model
+class Video extends Model
 {
     protected $fillable = [
         'created_at',
@@ -20,7 +20,7 @@ class File extends Model
 
     public function thumbnail()
     {
-        # File Has Thumbnail
+        # Video Has Thumbnail
         # Defines A One-To-One Relationship
         return $this->hasOne('App\Thumbnail');
     }
@@ -34,14 +34,14 @@ class File extends Model
 
     public function gif()
     {
-        # File Has Thumbnail
+        # Video Has Thumbnail
         # Defines A One-To-One Relationship
         return $this->hasOne('App\Gif');
     }
 
     public function tags()
     {
-        # File has many tags
+        # Video has many tags
         # Define a many-to-many relationship
         return $this->belongsToMany('App\Tag');
     }

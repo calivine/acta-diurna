@@ -7,7 +7,6 @@ use Facades\App\Repository\Posts;
 use Facades\App\Repository\Videos;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
-use App\File;
 
 
 class HomeController extends Controller
@@ -37,8 +36,6 @@ class HomeController extends Controller
         $posts = Posts::getMostRecent($user);
 
         $files = Videos::all();
-
-        Log::channel('system')->info($files);
 
         $post_date = $posts->created_at ?? "";
         $post_body = $posts->body ?? "Your post will go here.";

@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Thumbnail extends Model
 {
-    public function file()
+    public function video()
     {
-        # Thumbnail Belongs To File
+        # Thumbnail Belongs To Video
         # Defines An Inverse One-To-One Relationship
-        return $this->belongsTo('App\File');
+        return $this->belongsTo('App\Video');
     }
 }

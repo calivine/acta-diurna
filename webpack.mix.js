@@ -15,6 +15,7 @@ const mix = require('laravel-mix');
      .sass('resources/sass/app.scss', 'public/static/css');
 
 mix.scripts([
+    /*'resources/js/filesEMCA6v2.js',*/
     'resources/js/multiThreadedUploader.js',
     /*'resources/js/upload.js',*/
     'resources/js/dragndrop.js'
@@ -26,5 +27,6 @@ mix.scripts([
 
 mix.scripts([
     'resources/js/postHandler.js',
-    'resources/js/viewCounter.js'
+    'resources/js/viewCounter.js',
+    'resources/js/autoplay.js'
 ], 'public/static/js/viewer.js');

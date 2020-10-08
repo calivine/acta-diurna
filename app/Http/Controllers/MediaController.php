@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\File;
-use App\Post;
-use App\Thumbnail;
+use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Facades\App\Repository\Videos;
 
 
 class MediaController extends Controller
@@ -19,17 +18,14 @@ class MediaController extends Controller
      */
     public function watch($hash)
     {
-        $file = File::with(['thumbnail', 'tags'])
-            ->where('hash', $hash)
-            ->first();
+        $file = Videos::findVideo($hash);
 
-        Log::channel('system')->info($file);
 
-        $related = $file->tags;
-        Log::channel('system')->info($related);
-        
+        $related_videos = Videos::findRelatedVideos($hash);
+
         return view(static::VIEW_WATCH)->with([
-            'file' => $file
+            'file' => $file,
+            'related' => $related_videos
         ]);
     }
 
@@ -44,10 +40,8 @@ class MediaController extends Controller
         $hash = $request->header('X-Content-Id');
         if (isset($hash))
         {
-            $file = File::where('hash', $request->header('X-Content-Id'))
-                ->first();
-            $file->views += 1;
-            $file->save();
+            Video::where('hash', $hash)
+                ->increment('views');
 
             return response()->json([
                 'status' => 200

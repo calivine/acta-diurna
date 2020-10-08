@@ -18,8 +18,8 @@ class CreateGifsTable extends Migration
             $table->timestamps();
             $table->string('hash');
             $table->string('path');
-            $table->integer('file_id')->unsigned();
-            $table->foreign('file_id')->references('id')->on('files');
+            $table->integer('video_id')->unsigned();
+            $table->foreign('video_id')->references('id')->on('videos');
         });
     }
 

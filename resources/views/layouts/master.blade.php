@@ -6,6 +6,12 @@
     @include('layouts.partials.head')
 </head>
 <body class="@yield('body-layout') contrast__light">
+    <!-- Alerts -->
+    @if(session('alert'))
+        <div class="alert-success">
+            <span class="alert-text">{{ session('alert') }}</span>
+        </div>
+    @endif
     <!-- Navbar -->
     @include('nav.navbar')
 

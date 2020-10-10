@@ -39,9 +39,6 @@ function checkTime() {
 
 
 media.addEventListener('ended', function(event) {
-    console.log(event);
-
-
     const gallery = document.getElementsByClassName('video__link');
     if (gallery.length > 0) {
         const next = gallery[0].getAttribute('href');

@@ -49,7 +49,7 @@ class Videos
 
             // Grab each tag's associated videos
             foreach($related_tags as $tag) {
-                if ($tag->weight >= 3)
+                if ($tag->weight >= 1.02)
                 {
                     // Merge them into one collection
                     $related_videos = $related_videos->merge($tag->videos);

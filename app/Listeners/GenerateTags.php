@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Video;
+use Facades\App\Repository\Videos;
 use App\Tag;
 use App\Events\FileUploadSuccess;
 use App\Exceptions\RejectTags;
@@ -21,6 +21,7 @@ class GenerateTags
      */
     public function handle(FileUploadSuccess $event)
     {
+        $video = Videos::findVideo($event->hash);
 
         // Remove numbers and symbols from file name to process tags.
         $formatted = preg_replace('/[^a-zA-Z_]/', '', $event->filename);
@@ -37,21 +38,10 @@ class GenerateTags
 
         // Load tags into database, checking if they exist first and updating the number of times
         // each tag occcurs.
-        $tag_to_insert = array();
-        foreach($lower_case as $tag) {
-            $tag_to_insert[] = ['name' => $tag];
-        }
-
-        DB::table('tags')
-            ->insertOrIgnore($tag_to_insert);
-
-        $video = Video::where('hash', $event->hash)
-                ->first();
 
         // Associate file and tags in the tag_file table
         foreach($lower_case as $tag) {
-            $video_tag = Tag::where('name', $tag)
-                ->first();
+            $video_tag = Tag::firstOrCreate(['name' => $tag]);
 
             $video->tags()->save($video_tag);
         }

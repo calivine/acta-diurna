@@ -22,3 +22,10 @@ body {
 .contrast__light {
     color: $white-font;
 }
+
+.sidebar {
+  grid-row-start:1;
+  grid-row-end:5;
+  position: relative;
+  min-height: calc(95vh - 20px);
+}

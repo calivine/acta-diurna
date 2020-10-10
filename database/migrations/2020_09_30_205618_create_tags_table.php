@@ -16,7 +16,8 @@ class CreateTagsTable extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
-            $table->integer('weight')->default(1);
+            $table->float('weight', 8, 2)->default(1.00);
+            $table->integer('importance')->default(1);
         });
     }
 

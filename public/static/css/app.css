@@ -10919,6 +10919,13 @@ body {
   color: #bcc9da;
 }
 
+.sidebar {
+  grid-row-start: 1;
+  grid-row-end: 5;
+  position: relative;
+  min-height: calc(95vh - 20px);
+}
+
 .card {
   background-color: transparent;
   color: #8c18f1;
@@ -11271,8 +11278,13 @@ input-container {
   flex-wrap: wrap;
 }
 
-.gallery__container {
+.gallery__container,
+.tags__container {
   display: flex;
+}
+
+.tags__container p {
+  float: left;
 }
 
 video {
@@ -11282,6 +11294,11 @@ video {
 .video-player__large {
   height: 720px;
   width: 1280px;
+}
+
+.video-player__regular {
+  height: 540px;
+  width: 960px;
 }
 
 #media__header:hover {

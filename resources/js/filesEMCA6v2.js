@@ -5,7 +5,7 @@ class ChunkedUploader {
             return new ChunkedUploader(file, form);
         }
 
-        let dt = Date.now().toString().substring(9);
+        let dt = Date.now().toString().substring(6);
         console.log(Date.now().toString());
         console.log(dt);
 
@@ -103,6 +103,7 @@ class ChunkedUploader {
     }
 
     _progress_handler (response) {
+        console.log(response);
         let editor = $('.editor');
         let uploadsContainer = $('.upload-results-container');
         let id = '#'+response.data;
@@ -111,6 +112,7 @@ class ChunkedUploader {
             progBar.innerText = `${response.data}: ${response.progress}%`;
             console.log(progBar);
             if (response.thumbnail !== 'none') {
+                console.log(response.thumbnail);
                 let source = "http://thrillgifs.loc/storage/thumbnails/" + response.thumbnail;
                 let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
                 $thumbnail.attr('src', source);
@@ -126,7 +128,16 @@ class ChunkedUploader {
             $progBar.innerText = `${response.data}: ${response.progress}%`;
             console.log($progBar);
             uploadsContainer.append($progBar);
+            if (response.thumbnail !== 'none') {
+                console.log(response.thumbnail);
+                let source = "http://thrillgifs.loc/storage/thumbnails/" + response.thumbnail;
+                let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
+                $thumbnail.attr('src', source);
+                console.log($thumbnail);
+                $progBar.prepend($thumbnail[0]);
+            }
         }
+
     }
 
     /* Public Functions */

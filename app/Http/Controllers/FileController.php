@@ -75,7 +75,10 @@ class FileController extends Controller
             // Video name clean-up, first pass
             $file_name = preg_replace('/-[a-zA-Z0-9]+$/', '', $file_name);
             // Second pass
-            $clean_filename = preg_replace('/[^a-zA-Z_][a-z]/', '', $file_name);
+            $file_name = preg_replace('/^montage[0-9a-zA-Z]*_[0-9a-z]*_?-?/', '', $file_name);
+            // Third pass
+            $clean_filename = preg_replace('/[^a-zA-Z_]/', '', $file_name);
+
 
             $unique_filename = "{$file_id}_{$clean_filename}";
             Log::channel('upload')->info("Attempting to write {$unique_filename} to disk.");
@@ -159,7 +162,6 @@ class FileController extends Controller
             // $file_location, $thumb_location
             if ($ret_status == 0)
             {
-
                 $path_to_thumb = "{$file_id}.jpg";
                 $path_to_file = "{$unique_filename}.mp4";
                 $path_to_gif = "{$file_id}.gif";
@@ -192,7 +194,7 @@ class FileController extends Controller
             return response()->json([
                 'status' => $status,
                 'progress' => $progress,
-                'data' => $file_name,
+                'data' => $file_id,
                 'thumbnail' => $thumbnail
             ]);
 
@@ -202,7 +204,7 @@ class FileController extends Controller
             return response()->json([
                 'status' => 'in_progress',
                 'progress' => $progress,
-                'data' => $file_name,
+                'data' => $file_id,
                 'thumbnail' => 'none'
             ]);
         }

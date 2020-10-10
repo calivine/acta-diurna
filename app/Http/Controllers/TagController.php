@@ -14,7 +14,7 @@ class TagController extends Controller
             ->where('name', $tag)
             ->first();
 
-        $videos = $videos->videos()->paginate(20);
+        $videos = $videos->videos;
 
         return view('content.gallery')->with(['videos' => $videos]);
     }
@@ -28,25 +28,18 @@ class TagController extends Controller
 
         // Update the tags' weight value.
 
-        $tags = Tag::withCount('videos')
-            ->get();
+        $tags = Tag::all();
 
         foreach($tags as $tag) {
-            $count = $tag->videos_count;
-            $weight = $count * .01 + 1;
-            Log::channel('system')->info("{$tag->name}: {$count} ({$weight})");
-            $t = Tag::where('name', $tag->name)
-                ->first();
 
 
-            $t->weight = $count;
-            $t->timestamps = false;
-            $t->save();
-
-
+            Log::channel('system')->info("{$tag->name}: {$tag->importance()} ({$tag->weight()})");
+            $tag->importance = $tag->importance();
+            $tag->weight = $tag->weight();
+            $tag->save();
         }
 
-        return;
+        return response()->json(['status' => 200]);
     }
 
     /** Returns the top tags
@@ -56,10 +49,6 @@ class TagController extends Controller
     {
         // Re-weight tags before getting top ones.
         $this->weight();
-
-
-
-
-
     }
+
 }

@@ -10945,6 +10945,10 @@ body {
   float: left;
 }
 
+.btn-purple {
+  background-color: #8c18f1;
+}
+
 #drop_zone {
   border: 5px solid blue;
   width: 200px;
@@ -11278,6 +11282,11 @@ input-container {
   flex-wrap: wrap;
 }
 
+.media-details__container {
+  margin-top: calc(100vh/20);
+  margin-bottom: calc(100vh/20);
+}
+
 .gallery__container,
 .tags__container {
   display: flex;
@@ -11302,12 +11311,17 @@ video {
   width: 960px;
 }
 
-#media__header:hover {
+.media__header {
+  overflow-wrap: break-word;
+  padding: 10px;
+}
+
+.media__header:hover {
   cursor: pointer;
 }
 
 #up-next {
-  border: 5px solid #8c18f1;
+  border: 5px solid #38c172;
 }
 
 /* Gallery Viewer Styles */

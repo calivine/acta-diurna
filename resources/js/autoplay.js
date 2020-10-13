@@ -13,3 +13,9 @@ media.addEventListener('ended', function(event) {
         media.play();
     }
 });
+
+
+window.addEventListener('resize', function (e) {
+    console.log(e);
+    console.log(window.innerWidth);
+});

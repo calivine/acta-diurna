@@ -1,23 +1,58 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let allVideos = document.getElementsByClassName('media');
+    const allVideos = Array.from(document.getElementsByClassName('media'));
     const totalVideos = allVideos.length;
 
-
-    console.log(allVideos);
-    const numberVisible = 5;
+    let numberVisible = 5;
     const forwardButton = document.getElementById('forward');
     const backButton = document.getElementById('back');
-    let visibleStart = 0;
-    let visibleStop = numberVisible;
 
+    const visible = [];
+
+    if (totalVideos < numberVisible) {
+        numberVisible = totalVideos;
+    }
+
+    // Hide all videos
     for (let i = 0; i < totalVideos; i++) {
-        allVideos[i].className = 'media';
+        allVideos[i].className = "media hidden_item";
     }
-
-    for (let i = visibleStop; i < totalVideos; i++) {
-        allVideos[i].setAttribute('class', 'media hidden_item');
+    // Initialize
+    for (let i = 0; i < numberVisible; i++) {
+        visible.push(allVideos.shift());
     }
+    visible.forEach(function (v) {
+        v.className = "media";
+    });
 
+    forwardButton.addEventListener('click', function () {
+
+        visible.push(allVideos.shift());
+        allVideos.push(visible.shift());
+        visible.forEach(function (v) {
+            if (v){
+                v.className = "media";
+            }
+
+        });
+        allVideos.forEach(function (v) {
+            if (v){
+                v.className = "media hidden_item";
+            }
+        });
+    });
+
+    backButton.addEventListener('click', function () {
+        visible.unshift(allVideos.pop());
+        allVideos.unshift(visible.pop());
+        visible.forEach(function (v) {
+            v.className = "media";
+        });
+        allVideos.forEach(function (v) {
+            v.className = "media hidden_item";
+        });
+    })
+
+/*
     forwardButton.addEventListener('click', function () {
         console.log(visibleStart);
         console.log(visibleStop);
@@ -43,6 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
     });
-
+*/
 });
 

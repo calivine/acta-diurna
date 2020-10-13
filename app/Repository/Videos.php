@@ -31,7 +31,7 @@ class Videos
         $cacheKey = $this->getCacheKey($key);
 
         return cache()->remember($cacheKey, Carbon::now()->addMinutes(5), function () use ($hash) {
-            return Video::with(['thumbnail', 'tags'])
+            return Video::with(['thumbnail', 'tags', 'gif'])
                 ->where('hash', $hash)
                 ->first();
         });

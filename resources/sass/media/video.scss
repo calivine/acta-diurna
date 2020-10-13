@@ -13,6 +13,7 @@
 
 .tags__container p {
     float: left;
+    margin: 0 10px;
 }
 
 video {
@@ -36,4 +37,16 @@ video {
 #media__header:hover {
     cursor: pointer;
 }
+
+#up-next {
+    border: 5px solid $redgif-purple;
+}
+
+/* Gallery Viewer Styles */
+
+.hidden_item {
+    display: none;
+}
+
+
 

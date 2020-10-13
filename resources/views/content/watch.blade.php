@@ -14,9 +14,13 @@
                 <span class="tags__container">@foreach($file->tags as $tag)@if($tag->weight >= 1.02)<p><a href="{{ route('videosByTag', ['tag' => $tag->name]) }}">{{ $tag->name }}</a></p>@endif @endforeach</span>
 
             </div>
-            <section class="gallery__container">
-                @include('modules.gallery', ['files' => $related])
-            </section>
+            @isset($related)
+                <section class="gallery__container">
+                    <button id="back" class="btn btn-success">Back</button>
+                    @include('modules.gallery', ['files' => $related])
+                    <button id="forward" class="btn btn-success">Forward</button>
+                </section>
+            @endisset
 
     </div>
 

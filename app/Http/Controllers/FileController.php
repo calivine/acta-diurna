@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\Video;
 use App\Events\FinishedUploadingChunks;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Log;
 use Illuminate\Support\Facades\Storage;
 use Exception;
 

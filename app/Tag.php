@@ -23,6 +23,8 @@ class Tag extends Model
 
     public function videos()
     {
+        # Tag has many videos
+        # Define a many-to-many relationship
         return $this->belongsToMany('App\Video');
     }
 

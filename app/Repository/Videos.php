@@ -4,6 +4,7 @@
 namespace App\Repository;
 
 use App\Video;
+use App\Tag;
 use Exception;
 use Carbon\Carbon;
 
@@ -63,6 +64,21 @@ class Videos
             // Return shuffled list of unique values.
             return $related_videos->unique('id')->shuffle();
         });
+    }
+
+    public function findVideosByTag($tag)
+    {
+        $key = "findVideosByTag.{$tag}";
+        $cacheKey = $this->getCacheKey($key);
+
+        return cache()->remember($cacheKey, Carbon::now()->addMinutes(5), function () use ($tag) {
+            $videos = Tag::with('videos')
+                ->where('name', $tag)
+                ->first();
+            return $videos->videos;
+        });
+
+
     }
 
     public function getCacheKey($key)

@@ -3,20 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Tag;
+use Facades\App\Repository\Videos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class TagController extends Controller
 {
-    public function videosByTag($tag)
+    /**
+     * Get all videos associated with tag
+     * @param String $tag
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function videosByTag(String $tag)
     {
-        $videos = Tag::with('videos')
-            ->where('name', $tag)
-            ->first();
+        $videos = Videos::findVideosByTag($tag);
 
-        $videos = $videos->videos;
-
-        return view('content.gallery')->with(['videos' => $videos]);
+        return view('content.gallery')->with(['files' => $videos]);
     }
 
     /**
@@ -31,8 +33,6 @@ class TagController extends Controller
         $tags = Tag::all();
 
         foreach($tags as $tag) {
-
-
             Log::channel('system')->info("{$tag->name}: {$tag->importance()} ({$tag->weight()})");
             $tag->importance = $tag->importance();
             $tag->weight = $tag->weight();

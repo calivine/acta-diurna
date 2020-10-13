@@ -22,11 +22,12 @@ mix.scripts([
 ], 'public/static/js/main.js');
 
 mix.scripts([
-    'resources/js/text-editor-display.js'
+    'resources/js/textEditorDisplay.js'
 ], 'public/static/js/text-editor.js');
 
 mix.scripts([
     'resources/js/postHandler.js',
     'resources/js/viewCounter.js',
-    'resources/js/autoplay.js'
+    'resources/js/autoplay.js',
+    'resources/js/galleryDisplay.js'
 ], 'public/static/js/viewer.js');

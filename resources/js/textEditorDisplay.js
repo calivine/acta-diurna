@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     let textInput = document.querySelector('.text-input');
     let uploadsResultsContainer = $('.upload-results-container');
-    let textView = document.querySelector('.text-input-display');
-    let form = document.querySelector('.post-form');
+    let textView = document.querySelector('.text-input__display');
+    let form = document.querySelector('.write-post__form');
     let uploadingDisplay = $('#upload-display');
     let textUpload = $('.text-input__display');
-    let editableContentBox = document.querySelector('.text-input-display');
+    let editableContentBox = document.querySelector('.text-input__display');
     const hiddenForm = $('.box.hidden');
     const uploadLabel = $('.upload-label');
     const inputContainer = $('.text-input__container.show-placeholder');

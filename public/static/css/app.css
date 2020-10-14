@@ -10928,7 +10928,7 @@ body {
 
 .card {
   background-color: transparent;
-  color: #8c18f1;
+  color: #FFFF;
 }
 
 .card-header {
@@ -11216,7 +11216,7 @@ body {
   margin: 0.5rem;
 }
 
-.post-form textarea {
+.write-post__form textarea {
   display: none;
   background-color: #383c42;
   color: #DDEAFC;

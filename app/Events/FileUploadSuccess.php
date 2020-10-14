@@ -17,16 +17,18 @@ class FileUploadSuccess
 
     public $filename;
     public $hash;
+    public $tags;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(String $filename, String $hash)
+    public function __construct(String $filename, String $hash, Array $tags)
     {
         $this->filename = $filename;
         $this->hash = $hash;
+        $this->tags = $tags;
     }
 
     /**

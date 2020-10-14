@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Tag;
+use App\Exceptions\RejectTags;
+use DB;
 use Facades\App\Repository\Videos;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+
 
 class TagController extends Controller
 {
@@ -18,7 +20,7 @@ class TagController extends Controller
     {
         $videos = Videos::findVideosByTag($tag);
 
-        return view('content.gallery')->with(['files' => $videos]);
+        return view('media.gallery')->with(['files' => $videos]);
     }
 
     /**
@@ -39,7 +41,7 @@ class TagController extends Controller
             $tag->save();
         }
 
-        return response()->json(['status' => 200]);
+        return redirect()->route('home');
     }
 
     /** Returns the top tags
@@ -49,6 +51,24 @@ class TagController extends Controller
     {
         // Re-weight tags before getting top ones.
         $this->weight();
+    }
+
+    /**
+     *  Remove blacklisted tags
+     */
+    public function cleanUpTags()
+    {
+        $tags = Tag::all();
+        $tags = $tags->filter(function($tag) {
+            return !RejectTags::check($tag->name);
+        });
+        foreach($tags as $tag) {
+            DB::table('tag_video')->where('tag_id', $tag->id)
+                ->delete();
+            DB::table('tags')->where('name', $tag->name)
+                ->delete();
+        }
+        return redirect()->route('weight');
     }
 
 }

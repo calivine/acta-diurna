@@ -7,6 +7,7 @@ use App\Video;
 use App\Tag;
 use Exception;
 use Carbon\Carbon;
+use Request;
 
 
 class Videos
@@ -15,12 +16,13 @@ class Videos
 
     public function all($perPage = 15)
     {
-        $key = "all";
+        $page = Request::input('page', 1);
+        $key = "all.{$perPage}perPage.page{$page}";
         $cacheKey = $this->getCacheKey($key);
         return cache()->remember($cacheKey, Carbon::now()->addMinutes(5), function () use ($perPage) {
             return Video::with(['thumbnail', 'gif', 'tags'])
                 ->orderBy('created_at', 'desc')
-                ->get();
+                ->paginate($perPage);
         });
 
     }

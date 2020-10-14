@@ -12,6 +12,16 @@
             <span class="alert-text">{{ session('alert') }}</span>
         </div>
     @endif
+    <!-- Errors -->
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <!-- Navbar -->
     @include('nav.navbar')
 

@@ -23,13 +23,14 @@ class FinishedUploadingChunks
     public $width;
     public $height;
     public $fps;
+    public $tags;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(Array $file_paths, String $file_name, String $file_id, Array $file_attributes)
+    public function __construct(Array $file_paths, String $file_name, String $file_id, Array $file_attributes, Array $tags)
     {
         $this->path = $file_paths['file'];
         $this->path_to_thumb = $file_paths['thumbnail'];
@@ -40,6 +41,7 @@ class FinishedUploadingChunks
         $this->width = $file_attributes['width'];
         $this->height = $file_attributes['height'];
         $this->fps = $file_attributes['fps'];
+        $this->tags = $tags;
     }
 
     /**

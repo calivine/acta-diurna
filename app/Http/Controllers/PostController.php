@@ -38,6 +38,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'post' => 'required|regex:/[A-Za-z\s0-9]/'
+        ]);
         $new_post = $request->input('post');
         $user = $request->user();
 

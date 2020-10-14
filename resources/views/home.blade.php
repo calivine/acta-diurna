@@ -19,7 +19,12 @@
     </div>
     <div class="row justify-content-center mt-4">
         @include('modules.gallery')
+        <div class="page-navigation__container">
+            {{ $files->links() }}
+        </div>
     </div>
+
 </div>
 <script src="{{ asset('/static/js/text-editor.js') }}"></script>
+
 @endsection

@@ -95,9 +95,33 @@ class RejectTags
             'sessionphfedd',
             'phcdcfaa',
             'phbdcadef',
-            'montage'
-
-
+            'montage',
+            'while',
+            'wants',
+            'what',
+            'twice',
+            'times',
+            'tiktok',
+            'taken',
+            'sunday',
+            'stuff',
+            'shows',
+            'show',
+            'room',
+            'makes',
+            'mall',
+            'give',
+            'got',
+            'has',
+            'does',
+            'dont',
+            'aaane',
+            'can',
+            'rid',
+            'some',
+            'nf',
+            'off',
+            'p'
         ];
         return !in_array($tag, $common);
     }

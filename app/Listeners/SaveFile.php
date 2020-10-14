@@ -7,11 +7,12 @@ use App\Thumbnail;
 use App\Gif;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
+
 use App\Events\FinishedUploadingChunks;
 use App\Events\FileUploadSuccess;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Log;
 
 class SaveFile
 {
@@ -28,6 +29,8 @@ class SaveFile
 
         $video->hash = $event->hash;
         $video->size = $event->size;
+
+
         $video->filename = $event->filename;
         $video->path = $event->path;
         $video->width = $event->width;
@@ -48,7 +51,7 @@ class SaveFile
         $gif->video()->associate($video);
         $gif->save();
 
-        event(new FileUploadSuccess($video->filename, $video->hash));
+        event(new FileUploadSuccess($video->filename, $video->hash, $event->tags));
 
         // Update: generate tags here.
     }

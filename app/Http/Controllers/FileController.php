@@ -1,15 +1,14 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
-use App\Video;
 use App\Events\FinishedUploadingChunks;
+use App\Services\FFMpeg;
+use App\Services\Formatter;
+use App\Video;
+use Exception;
 use Illuminate\Http\Request;
 use Log;
-use Illuminate\Support\Facades\Storage;
-use Exception;
-
 
 class FileController extends Controller
 {
@@ -72,14 +71,7 @@ class FileController extends Controller
         // If we're on the last chunk of data, put them all together.
         if ($end == $total_size)
         {
-            // Video name clean-up, first pass
-            $file_name = preg_replace('/-[a-zA-Z0-9]+$/', '', $file_name);
-            // Second pass
-            $file_name = preg_replace('/^montage[0-9a-zA-Z]*_[0-9a-z]*_?-?/', '', $file_name);
-            // Third pass
-            $clean_filename = preg_replace('/[^a-zA-Z_]/', '', $file_name);
-
-
+            $clean_filename = Formatter::clean($file_name);
             $unique_filename = "{$file_id}_{$clean_filename}";
             Log::channel('upload')->info("Attempting to write {$unique_filename} to disk.");
 
@@ -145,17 +137,7 @@ class FileController extends Controller
 
             $ffmpeg_gif_output = "{$GIF_PATH}{$file_id}.gif";
 
-            $ffmpeg_gif_opts = '"fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse"';
-
-            $cmd = $ffmpeg_src
-                . " " . "-ss 07"
-                . " " . "-t 3"
-                . " " . "-i {$path_to_file}"
-                . " " . "-vf " . $ffmpeg_gif_opts
-                . " " . "-loop 0"
-                . " " . "{$ffmpeg_gif_output} 2>&1";
-
-            exec($cmd, $output, $ret_status);
+            $ret_status = FFMpeg::gif($path_to_file, $ffmpeg_gif_output);
 
             Log::channel('upload')->info($ret_status);
 
@@ -179,7 +161,11 @@ class FileController extends Controller
                     'fps' => $fps
                 ];
 
-                event(new FinishedUploadingChunks($file_paths, $clean_filename, $file_id, $file_attributes));
+                $filename = Formatter::title($clean_filename);
+
+                $tags = Formatter::serialize($filename);
+
+                event(new FinishedUploadingChunks($file_paths, $filename, $file_id, $file_attributes, $tags));
 
                 $status = 'complete';
                 $thumbnail = $path_to_thumb;

@@ -19,6 +19,56 @@
 
 .btn-purple {
   background-color: $redgif-purple;
+  border-color: $redgif-purple;
+  color: #FFFF;
 }
+
+.btn-purple:hover {
+  background-color: #7318F1;
+  border-color: #7318F1;
+  color: #FFFF;
+}
+
+.btn-red-gradient {
+  background: rgb(159,11,65);
+  background: linear-gradient(90deg, rgba(159,11,65,1) 30%, rgba(179,5,42,1) 60%, rgba(255,0,213,1) 100%);
+  color: #FFFF;
+}
+
+/* Pagination */
+.page-item.active {
+  .page-link {
+    background: rgb(159,11,65);
+    background: linear-gradient(90deg, rgba(159,11,65,1) 30%, rgba(179,5,42,1) 60%, rgba(255,0,213,1) 100%);
+    border-color: #9f0b41;
+    color: #FFFF;
+  }
+}
+
+.page-item {
+  .page-link {
+    background-color: #000000;
+    color: #FFFF;
+    border-color: #9f0b41;
+  }
+}
+
+.page-item:hover {
+  .page-link {
+    background: rgb(159,11,65);
+    background: linear-gradient(90deg, rgba(159,11,65,1) 30%, rgba(179,5,42,1) 60%, rgba(255,0,213,1) 100%);
+  }
+}
+
+.page-item.disabled {
+  .page-link {
+    background-color: #000000;
+    color: #494f54;
+    border-color: #9f0b41;
+  }
+}
+
+
+
 
 

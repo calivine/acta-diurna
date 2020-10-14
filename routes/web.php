@@ -10,55 +10,41 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/debug', function () {
 
-    $debug = [
-        'Environment' => App::environment(),
-    ];
+Route::group(['middleware' => 'auth'], function () {
+    # POST: upload new file
+    Route::post('/upload', 'FileController@store')->name('upload');
 
-    /*
-    The following commented out line will print your MySQL credentials.
-    Uncomment this line only if you're facing difficulties connecting to the
-    database and you need to confirm your credentials. When you're done
-    debugging, comment it back out so you don't accidentally leave it
-    running on your production server, making your credentials public.
-    */
-    #$debug['MySQL connection config'] = config('database.connections.mysql');
+    # POST save new post
+    Route::post('/post', 'PostController@store')->name('post.store');
 
-    try {
-        $databases = DB::select('SHOW DATABASES;');
-        $debug['Database connection test'] = 'PASSED';
-        $debug['Databases'] = array_column($databases, 'Database');
-    } catch (Exception $e) {
-        $debug['Database connection test'] = 'FAILED: '.$e->getMessage();
-    }
+    # Tags admin actions
+    Route::prefix('tags')->group(function () {
+        Route::get('weight', 'TagController@weight')->name('weight');
+        Route::get('prune', 'TagController@cleanUpTags')->name('prune');
+    });
 
-    dump($debug);
+    # Admin Panel
+    Route::get('/panel', function () {
+        return view('panel.index');
+    });
+
+    # GET homepage
+    Route::get('/home', 'HomeController@index')->name('home');
 });
 
-# POST: upload new file
-Route::post('/upload', 'FileController@store')->name('upload');
-
-# POST save new post
-Route::post('/post', 'PostController@store')->name('post.store');
-
-# GET watch video file
-Route::get('/watch/{hash}', 'MediaController@watch')->name('watch');
-
-# POST update view count
-Route::post('/watch/view', 'MediaController@addView');
+Route::prefix('watch')->group(function () {
+    # GET watch video file
+    Route::get('{hash}', 'MediaController@watch')->name('watch');
+    # POST update view count
+    Route::post('view', 'MediaController@addView');
+});
 
 # GET all videos associated with a tag
 Route::get('/tag/{tag}', 'TagController@videosByTag')->name('videosByTag');
 
-# GET tag weights
-Route::get('/tags/weight', 'TagController@weight');
-
 # Authentication Routes
 Auth::routes();
-
-# GET homepage
-Route::get('/home', 'HomeController@index')->name('home');
 
 # GET landing page
 Route::get('/', function () {

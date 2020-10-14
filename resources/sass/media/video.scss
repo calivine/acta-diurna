@@ -11,6 +11,10 @@
     margin-bottom: calc(100vh/20);
 }
 
+.media-details__views {
+
+}
+
 .gallery__container,
 .tags__container {
     display: flex;
@@ -35,12 +39,12 @@ video {
     width: 960px;
 }
 
-.media__header {
+.media-details__header {
     overflow-wrap: break-word;
     padding: 10px;
 }
 
-.media__header:hover {
+.media-details__header:hover {
     cursor: pointer;
 }
 

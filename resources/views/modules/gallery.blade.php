@@ -9,8 +9,6 @@
 @endisset
 
 
-<div class="page-navigation__container">
-    {{-- {{ $files->links() }} --}}
-</div>
+
 
 

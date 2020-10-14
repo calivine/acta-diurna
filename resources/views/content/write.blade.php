@@ -11,7 +11,7 @@
                     <textarea class="text-input" name="post" placeholder="Write post here..."></textarea>
                 </div>
                 <div class="input-container">
-                    <button class="btn btn-success" type="submit" name="save">Post</button>
+                    <button class="btn btn-red-gradient" type="submit" name="save">Post</button>
                 </div>
             </form>
             @include('modules.upload')

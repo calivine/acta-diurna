@@ -1,14 +1,14 @@
-var isAdvancedUpload = function() {
-  var div = document.createElement('div');
+const isAdvancedUpload = function() {
+  const div = document.createElement('div');
   return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
 }();
 
 // Upload form element
-var $form = $('.box');
+let $form = $('.box');
 // Video input element
-var $input = $form.find('input[type="file"]');
+let $input = $form.find('input[type="file"]');
 // Video input (vanilla)
-var $file_input = document.getElementById('file');
+let $file_input = document.getElementById('file');
 
 console.log($input);
 console.log($form.get(0));
@@ -20,8 +20,8 @@ if (isAdvancedUpload) {
 }
 
 if (isAdvancedUpload) {
-    var droppedFiles = false;
-    var uploaders = [];
+    let droppedFiles = false;
+    let uploaders = [];
     $form.on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -33,7 +33,7 @@ if (isAdvancedUpload) {
         $form.removeClass('is-dragover');
     });
 }
-var processAjax = function($form, ajaxData) {
+const processAjax = function($form, ajaxData) {
     $.ajax({
         url: $form.attr('action'),
         type: $form.attr('method'),
@@ -45,7 +45,7 @@ var processAjax = function($form, ajaxData) {
             $form.removeClass('is-uploading');
         },
         success: function (data) {
-            $form.addClass( data.success == true ? 'is-success' : 'is-error' );
+            $form.addClass( data.success === true ? 'is-success' : 'is-error' );
             // if (!data.success) $errorMsg.text(data.error);
             console.log(data);
         },
@@ -56,8 +56,8 @@ var processAjax = function($form, ajaxData) {
     });
 };
 
-var sendRequest = function($form, ajaxData) {
-    var xhr = new XMLHttpRequest();
+const sendRequest = function($form, ajaxData) {
+    let xhr = new XMLHttpRequest();
     xhr.open($form.attr('method'), $form.attr('action'), true);
 
     xhr.onload = function() {
@@ -69,7 +69,7 @@ var sendRequest = function($form, ajaxData) {
         	//if(!data.success) errorMsg.textContent = data.error;
         }
         else alert('Error. Please, contact the webmaster!');
-    }
+    };
 
     xhr.send(ajaxData);
 };

@@ -14,8 +14,10 @@
 <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
 
 <!-- Scripts -->
+<script src="{{ asset('/static/js/manifest.js') }}"></script>
+<script src="{{ asset('/static/js/vendor.js') }}"></script>
 <script src="{{ asset('/static/js/app.js') }}"></script>
-
+<script src="{{ asset('/static/js/main.js') }}"></script>
 
 <script>
     $.ajaxSetup({

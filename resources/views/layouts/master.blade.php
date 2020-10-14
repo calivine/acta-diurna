@@ -28,5 +28,4 @@
     <!-- Content -->
     @yield('content')
 </body>
-<script src="{{ asset('/static/js/main.js') }}"></script>
 </html>

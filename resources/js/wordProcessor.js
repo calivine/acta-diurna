@@ -1,8 +1,8 @@
 let textInput = document.querySelector('.text-input');
 let textView = document.querySelector('.text-input-display');
 let form = document.querySelector('.post-form');
-const inputContainer = $('.input-container.show-placeholder');
-let textUpload = $('.text-input-display');
+const inputContainer = $('.text-input__container.show-placeholder');
+let textUpload = $('.text-input__display');
 
 let ppCount = 1;
 let postText = "";

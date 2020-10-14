@@ -1,8 +1,8 @@
 body {
   /*background-image: url('./static/assets/goldleaf.jpg');
   background-position: 50% 20%;*/
-  background-color: $black-bg;
-  color: $white-font;
+  background-color: $black;
+  color: $white;
 }
 
 .page-container {
@@ -20,7 +20,7 @@ body {
 }
 
 .contrast__light {
-    color: $white-font;
+    color: $white;
 }
 
 .sidebar {

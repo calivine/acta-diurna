@@ -12,13 +12,11 @@ const mix = require('laravel-mix');
  */
 
  mix.js('resources/js/app.js', 'public/static/js')
+     .extract(['vue'])
      .sass('resources/sass/app.scss', 'public/static/css');
 
 mix.scripts([
     'resources/js/filesEMCA6v2.js',
-    /*'resources/js/multiThreadedUploader.js', */
-    /*'resources/js/upload.js',*/
-    'resources/js/dragndrop.js'
 ], 'public/static/js/main.js');
 
 mix.scripts([

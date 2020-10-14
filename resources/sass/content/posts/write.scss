@@ -1,4 +1,4 @@
-.post-container {
+.write-post__container {
     line-height: 1.4rem;
     font-stretch: 100%;
 }
@@ -7,18 +7,18 @@
     margin: .5rem;
 }
 
-.post-editorContainer {
+.write-post__inner-container {
 
 }
 
 .post-form textarea {
     display: none;
     background-color: $post-bg;
-    color: $white-font;
+    color: $white;
     padding: 10px 5px;
 }
 
-input-container {
+.text-input__container {
     width: 100%;
 }
 
@@ -28,13 +28,13 @@ input-container {
 }
 
 
-.text-input-display {
+.text-input__display {
     background-color: $post-bg;
-    color: $white-font;
+    color: $white;
     min-width: inherit;
     min-height: 100px;
     padding: 10px 5px;
-    border-color: $white-font;
+    border-color: $white;
     border-width: 3px;
     border-style: solid;
 }
@@ -58,7 +58,7 @@ input-container {
 .fr-wrapper .fr-placeholder {
     position:absolute;
     font-size:12px;
-    color:#aaa;
+    color:$white;
     z-index:1;
     display:none;
     top:0;
@@ -67,22 +67,31 @@ input-container {
     overflow:hidden
 }
 
-.input-container .fr-placeholder {
+.text-input__container .fr-placeholder {
     position:absolute;
     font-size:12px;
-    color:#aaa;
+    color:$white;
     z-index:1;
     display:none;
-    top: 60px;
+    top: 25px;
     left: 50px;
     overflow:hidden
+}
+
+.upload-label {
+    position:absolute;
+    font-size: 12px;
+    z-index: 1;
+    top: 55px;
+    left: 50px;
+    overflow: hidden;
 }
 
 .fr-wrapper.show-placeholder .fr-placeholder {
     display: block;
 }
 
-.input-container.show-placeholder .fr-placeholder {
+.text-input__container.show-placeholder .fr-placeholder {
     display: block;
 }
 

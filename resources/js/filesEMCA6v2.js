@@ -1,3 +1,7 @@
+const isAdvancedUpload = function() {
+    const div = document.createElement('div');
+    return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
+}();
 
 class ChunkedUploader {
     constructor (file, form) {
@@ -124,7 +128,6 @@ class ChunkedUploader {
         else {
             let $progBar = $('<div class="media"><div class="media-body"></div></div>');
             $progBar.attr('id', response.data);
-
             $progBar.innerText = `${response.data}: ${response.progress}%`;
             console.log($progBar);
             uploadsContainer.append($progBar);

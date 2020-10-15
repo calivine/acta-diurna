@@ -10919,11 +10919,70 @@ body {
   color: #DDEAFC;
 }
 
-.sidebar {
-  grid-row-start: 1;
-  grid-row-end: 5;
+.scroll__container {
   position: relative;
-  min-height: calc(95vh - 20px);
+  overflow: hidden;
+}
+
+.scroll {
+  position: inherit;
+  left: 150%;
+}
+
+.scroll.animate {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  left: 0;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    left: 150%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slidein {
+  from {
+    left: 150%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+.scroll.animate__reverse {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: slideout;
+          animation-name: slideout;
+  left: 150%;
+}
+
+@-webkit-keyframes slideout {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 150%;
+  }
+}
+
+@keyframes slideout {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 150%;
+  }
 }
 
 .card {
@@ -11382,6 +11441,17 @@ video {
 .img-thumbnail {
   background-color: inherit;
   border-color: transparent;
+  height: 200px;
+  width: 348px;
+}
+
+.gallery__container {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.gallery__outer-container {
+  flex-wrap: wrap;
 }
 
 .upload-results-container {

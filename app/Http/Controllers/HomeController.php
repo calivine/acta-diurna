@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Facades\App\Repository\Posts;
 use Facades\App\Repository\Videos;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 
@@ -30,12 +28,10 @@ class HomeController extends Controller
     {
         Log::info(log_client());
 
-        $user = Auth::user()->id;
+        // Get the most recent post by user
+        $posts = Posts::getMostRecent();
 
-        // Get the most recent post
-        $posts = Posts::getMostRecent($user);
-
-        $files = Videos::all();
+        $files = Videos::allFromUser(25);
 
         $post_date = $posts->created_at ?? "";
         $post_body = $posts->body ?? "Your post will go here.";

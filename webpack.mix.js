@@ -16,7 +16,7 @@ const mix = require('laravel-mix');
      .sass('resources/sass/app.scss', 'public/static/css');
 
 mix.scripts([
-    'resources/js/filesEMCA6v2.js',
+    'resources/js/filesEMCA6v2.js'
 ], 'public/static/js/main.js');
 
 mix.scripts([

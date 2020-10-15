@@ -79,6 +79,3 @@ function stopDefaults(event) {
     event.stopPropagation();
 }
 */
-function handleEvent(event) {
-    console.log(event);
-}

@@ -23,7 +23,6 @@
             {{ $files->links() }}
         </div>
     </div>
-
 </div>
 <script src="{{ asset('/static/js/text-editor.js') }}"></script>
 

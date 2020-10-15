@@ -47,6 +47,4 @@ Route::get('/tag/{tag}', 'TagController@videosByTag')->name('videosByTag');
 Auth::routes();
 
 # GET landing page
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'GuestController@index');

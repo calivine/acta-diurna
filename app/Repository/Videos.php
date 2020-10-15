@@ -27,6 +27,20 @@ class Videos
 
     }
 
+    public function allFromUser($perPage=15)
+    {
+        $page = Request::input('page', 1);
+        $user = Request::user()->id;
+        $key = "user{$user}.all.{$perPage}perPage.page{$page}";
+        $cacheKey = $this->getCacheKey($key);
+        return cache()->remember($cacheKey, Carbon::now()->addMinutes(5), function () use ($perPage, $user) {
+            return Video::with(['thumbnail', 'gif', 'tags'])
+                ->where('user_id', $user)
+                ->orderBy('created_at', 'desc')
+                ->paginate($perPage);
+        });
+    }
+
     public function findVideo($hash)
     {
         $key = "findVideo.{$hash}";

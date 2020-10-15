@@ -4,6 +4,7 @@
 namespace App\Repository;
 use App\Post;
 use Carbon\Carbon;
+use Request;
 
 
 class Posts
@@ -24,12 +25,13 @@ class Posts
 
     }
 
-    public function getMostRecent($id)
+    public function getMostRecent()
     {
-        $key = "recent.{$id}";
+        $user = Request::user()->id;
+        $key = "recent.{$user}";
         $cacheKey = $this->getCacheKey($key);
-        return cache()->remember($cacheKey, Carbon::now()->addMinutes(5), function () use($id) {
-            return Post::mostRecent($id);
+        return cache()->remember($cacheKey, Carbon::now()->addMinutes(5), function () use($user) {
+            return Post::mostRecent($user);
         });
     }
 

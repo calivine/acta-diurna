@@ -50,34 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         allVideos.forEach(function (v) {
             v.className = "media hidden_item";
         });
-    })
-
-/*
-    forwardButton.addEventListener('click', function () {
-        console.log(visibleStart);
-        console.log(visibleStop);
-        if (visibleStop === totalVideos) {
-            visibleStop = 0;
-            allVideos[visibleStop].className = 'media';
-            allVideos[visibleStart].className = 'media hidden_item';
-            visibleStart++;
-            visibleStop++;
-        }
-        else if (visibleStart === totalVideos) {
-            visibleStart = 0;
-            allVideos[visibleStop].className = 'media';
-            allVideos[visibleStart].className = 'media hidden_item';
-            visibleStart++;
-            visibleStop++;
-        }
-        else {
-            allVideos[visibleStart].className = 'media hidden_item';
-            allVideos[visibleStop].className = 'media';
-            visibleStart++;
-            visibleStop++;
-        }
-
     });
-*/
 });
 

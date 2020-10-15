@@ -23,9 +23,46 @@ body {
     color: $white;
 }
 
-.sidebar {
-  grid-row-start:1;
-  grid-row-end:5;
+.scroll__container {
   position: relative;
-  min-height: calc(95vh - 20px);
+  overflow: hidden;
 }
+
+.scroll {
+  position: inherit;
+  left: 150%;
+}
+
+.scroll.animate {
+  animation-duration: 2s;
+  animation-name: slidein;
+  left: 0;
+}
+
+@keyframes slidein {
+  from {
+    left: 150%
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+.scroll.animate__reverse {
+  animation-duration: 2s;
+  animation-name: slideout;
+  left: 150%;
+}
+
+@keyframes slideout {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 150%;
+  }
+}
+
+

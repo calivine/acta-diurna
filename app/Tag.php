@@ -30,7 +30,11 @@ class Tag extends Model
 
     public function importance()
     {
-        return $this->videos->count();
+        $total_views = 0;
+        foreach($this->videos as $video) {
+            $total_views += $video->views;
+        }
+        return $this->videos->count() * $total_views;
     }
 
     public function weight()

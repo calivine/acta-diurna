@@ -3,8 +3,8 @@
 #
 # Customize the following for your project/server
 #
-docRoot="/var/www/html/ledgr"
-usernameServer="root@159.203.190.15"
+docRoot="/var/www/html/acta-diurna"
+usernameServer="root@161.35.56.198"
 
 
 # Helper output functions

@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-dark" id="nav">
     <!-- Left Side Of Navbar -->
-    <a class="navbar-brand" href="{{ url('/home') }}" >Home</a>
+    <a class="navbar-brand" href="{{ url('/home') }}" >
+        <img src="{{ asset('storage/assets/logo_transparent.png') }}" alt="ThrillGIFsLogo" width="150" height="100">
+    </a>
 
     <!-- Right Side Of Navbar -->
     @auth

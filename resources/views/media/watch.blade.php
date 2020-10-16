@@ -15,7 +15,7 @@
                 <div class="media-details__container">
                     <h1 class="media-details__header">{{ $file->filename }}</h1>
                     <p>Views: {{ $file->views }}</p>
-                    <span class="tags__container">@foreach($file->tags as $tag)@if($tag->weight >= 1.02)<p><a
+                    <span class="tags__container">@foreach($file->tags as $tag)@if($tag->weight >= 2.0)<p><a
                                     href="{{ route('videosByTag', ['tag' => $tag->name]) }}">{{ $tag->name }}</a></p>@endif @endforeach</span>
                 </div>
             </div>

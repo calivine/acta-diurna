@@ -1,18 +1,44 @@
 body {
-  /*background-image: url('./static/assets/goldleaf.jpg');
-  background-position: 50% 20%;*/
+  /*
+  background-image: url('./storage/assets/goldleaf.jpg');
+  background-position: 50% 20%;
+
+   */
   background-color: $black;
   color: $white;
+  /*
+  animation-name: slide;
+  animation-duration: 24s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+
+   */
 }
+/*
+@keyframes slide {
+  0% {
+    background-position: 50% 20%;
+  }
+  25% {
+    background-position: 60% 20%;
+  }
+  50% {
+    background-position: 80% 50%;
+  }
+  75% {
+    background-position: 60% 20%;
+  }
+  100% {
+    background-position: 50% 20%;
+  }
+}
+*/
 
 .page-container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 25px 15px 12.5px;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 25px;
-  padding-bottom: 12.5px;
 }
 
 .contrast__dark {

@@ -24,7 +24,7 @@ $cyan: #6cb2eb;
 $redgif-purple: #8c18f1;
 
 $black: #1c1f2b;
-$white: #DDEAFC;
+$white: #FCFCFC; //#DDEAFC;
 
 $post-bg: #383c42;
 $sidebar-bg: #42464e;
@@ -42,7 +42,8 @@ $linen: #f8f2ed; // rgb(248,242,237)
 $linenrgb: rgb(248,242,237);
 $silver: #b5b9c1; // rgb(181,185,193)
 $silverrgb: rgb(181,185,193);
-
+$gold: #b7a275;
+$gold-dark: #bdaa7f;
 
 $width-mobile: 320px;
 $width-mobile-hi-res: 415px;
@@ -51,3 +52,8 @@ $width-tablet: 768px;
 $width-monitor: 1080px;
 $width-monitor-wide: 1440px;
 $width-highres: 2560px;
+
+$pulse-start: linear-gradient(90deg, rgba(146,5,179,1) 0%, rgba(219,168,219,1) 47%, rgba(255,0,213,1) 100%);
+$pulse2: linear-gradient(90deg, rgba(219,168,219,1) 3%, rgba(146,5,179,1) 14%, rgba(255,0,213,1) 100%);
+$pulse3: linear-gradient(90deg, rgba(219,168,219,1) 29%, rgba(146,5,179,1) 48%, rgba(255,0,213,1) 100%);
+$pulse4: linear-gradient(90deg, rgba(219,168,219,1) 53%, rgba(146,5,179,1) 72%, rgba(255,0,213,1) 100%);

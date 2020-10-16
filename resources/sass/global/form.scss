@@ -1,0 +1,40 @@
+.email__label,
+.password-label {
+  color: $white;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.form-control {
+  padding-right: 100px;
+
+  a {
+    color: #0000F5;
+  }
+}
+
+.position__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.position__button {
+  position: absolute;
+  right: 1px;
+  top: 26.5px;
+  border: 0;
+  padding: 6px;
+  background-color: transparent;
+  box-sizing: border-box;
+  text-align: right;
+  outline: 0;
+  z-index: 1;
+}
+
+.form-check-input {
+  margin-left: 0;
+  margin-right: 7px;
+  position: relative;
+}
+

@@ -98,44 +98,19 @@ class FileController extends Controller
                 }
             }
             // Delete temp directory
-            rmdir(storage_path('app/' . $temp_loc));
+            try
+            {
+                rmdir(storage_path('app/' . $temp_loc));
+            }
+            catch (Exception $e)
+            {
+                Log::debug($e->getMessage());
+            }
 
-            $output = [];
-            $ret_status = null;
             $path_to_thumb = "{$THUMBNAIL_PATH}{$file_id}.jpg";
-
-            // FFMPEG location on server
-            $ffmpeg_src = config('app.ffmpeg');
-
-            $cmd = $ffmpeg_src
-                . " " . "-ss 07"                 // starting timestamp
-                . " " . "-i {$path_to_file}"     // input file
-                . " " . "-vframes 1"             // number of frames to grab
-                . " " . "-q:v 2"
-                . " " . "{$path_to_thumb} 2>&1"; // pipe for output
-            Log::channel('ffmpeg')->info($cmd);
-
-            exec($cmd, $output, $ret_status);
-
-            Log::channel('upload')->info($ret_status);
-
-            $match = null;
-            $fpsmatch = null;
-            if ($ret_status == 0)
-            {
-                preg_match('/(\d{3,4})x(\d{3,4})/', $output[18], $match);
-                preg_match('/(\d{2}\.?\d{0,3}) fps/', $output[18], $fpsmatch);
-            }
-            else
-            {
-                Log::channel('ffmpeg')->info($output);
-            }
-            $width = $match[1] ?? 1280;
-            $height = $match[2] ?? 720;
-
-            $fps = $fpsmatch[1] ?? 24;
-
             $ffmpeg_gif_output = "{$GIF_PATH}{$file_id}.gif";
+
+            $output = FFMpeg::thumbnail($path_to_file, $path_to_thumb);
 
             $ret_status = FFMpeg::gif($path_to_file, $ffmpeg_gif_output);
 
@@ -156,9 +131,9 @@ class FileController extends Controller
 
                 $file_attributes = [
                     'size' => $total_size,
-                    'width' => $width,
-                    'height' => $height,
-                    'fps' => $fps
+                    'width' => $output['width'],
+                    'height' => $output['height'],
+                    'fps' => $output['fps']
                 ];
 
                 $filename = Formatter::title($clean_filename);
@@ -172,7 +147,6 @@ class FileController extends Controller
             }
             else
             {
-                Log::channel('ffmpeg')->info($output);
                 $status = 'error';
                 $thumbnail = 'none';
 

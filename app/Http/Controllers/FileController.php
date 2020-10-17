@@ -138,7 +138,7 @@ class FileController extends Controller
 
                 $filename = Formatter::title($clean_filename);
 
-                $tags = Formatter::serialize($filename);
+                $tags = Formatter::tokenize($filename);
 
                 event(new FinishedUploadingChunks($file_paths, $filename, $file_id, $file_attributes, $tags));
 
@@ -154,7 +154,7 @@ class FileController extends Controller
             return response()->json([
                 'status' => $status,
                 'progress' => $progress,
-                'data' => $file_id,
+                'data' => $file_name,
                 'thumbnail' => $thumbnail
             ]);
 
@@ -164,7 +164,7 @@ class FileController extends Controller
             return response()->json([
                 'status' => 'in_progress',
                 'progress' => $progress,
-                'data' => $file_id,
+                'data' => $file_name,
                 'thumbnail' => 'none'
             ]);
         }

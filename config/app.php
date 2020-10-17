@@ -239,6 +239,6 @@ return [
      |
      |
      */
-    'ffmpeg' => env('LIB_FFMPEG'),
+    'ffmpeg' => env('LIB_FFMPEG', '/usr/bin/ffmpeg'),
 
 ];

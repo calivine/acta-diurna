@@ -7,6 +7,7 @@
 1. Generate an app key `php artisan key:generate`
 1. Run migrations to build tables
 1. Add storage file structure `cd /storage/app/public/` then `mkdir videos` `mkdir gifs` `mkdir thumbnails`
+1. Create link between storage and public: `php artisan storage:link`
 1. Set permissions: `chown -R www-data .` and `sudo chown -Rf www-data:www-data /var/www/html/*`
 #### Reminders
 1. Install `ffmpeg` for multimedia assets to work. Update `LIB_FFMPEG` in your `.env` file with the path to `ffmpeg` (usually `/usr/bin/ffmpeg` on Ubuntu)

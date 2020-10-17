@@ -8,12 +8,6 @@ use App\Exceptions\RejectTags;
 
 class Formatter
 {
-    public static function title($filename)
-    {
-        $output = preg_replace('/_/', ' ', $filename);
-        $output = preg_replace('/(?<=[a-z])[A-Z]|[A-Z](?=[a-z])/', ' $0', $output);
-        return preg_replace('/\s+/', ' ', $output);
-    }
 
     public static function clean($filename)
     {
@@ -25,7 +19,14 @@ class Formatter
         return preg_replace('/[^a-zA-Z_]/', '', $file_name);
     }
 
-    public static function serialize($filename)
+    public static function title($filename)
+    {
+        $output = preg_replace('/_/', ' ', $filename);
+        $output = preg_replace('/(?<=[a-z])[A-Z]|[A-Z](?=[a-z])/', ' $0', $output);
+        return preg_replace('/\s+/', ' ', $output);
+    }
+
+    public static function tokenize($filename)
     {
         $words = explode(" ", $filename);
 

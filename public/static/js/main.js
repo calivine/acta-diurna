@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', function () {
+    let inputs = document.querySelectorAll('input.form-control');
+    let submitButton = document.querySelector('button');
+
+    inputs.forEach(function (input) {
+        console.log(input);
+        if (input.value === "") {
+            console.log("Empty input!");
+        }
+    });
+});
+
 const isAdvancedUpload = function() {
     const div = document.createElement('div');
     return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
@@ -117,7 +129,7 @@ class ChunkedUploader {
             console.log(progBar);
             if (response.thumbnail !== 'none') {
                 console.log(response.thumbnail);
-                let source = "http://thrillgifs.loc/storage/thumbnails/" + response.thumbnail;
+                let source = `https://theloreleilee.com/storage/thumbnails/${response.thumbnail}`;
                 let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
                 $thumbnail.attr('src', source);
                 console.log($thumbnail);
@@ -133,7 +145,7 @@ class ChunkedUploader {
             uploadsContainer.append($progBar);
             if (response.thumbnail !== 'none') {
                 console.log(response.thumbnail);
-                let source = "http://thrillgifs.loc/storage/thumbnails/" + response.thumbnail;
+                let source = `https://theloreleilee.com/storage/thumbnails/${response.thumbnail}`;
                 let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
                 $thumbnail.attr('src', source);
                 console.log($thumbnail);

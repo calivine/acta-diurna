@@ -117,7 +117,7 @@ class ChunkedUploader {
             console.log(progBar);
             if (response.thumbnail !== 'none') {
                 console.log(response.thumbnail);
-                let source = "http://thrillgifs.loc/storage/thumbnails/" + response.thumbnail;
+                let source = `https://theloreleilee.com/storage/thumbnails/${response.thumbnail}`;
                 let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
                 $thumbnail.attr('src', source);
                 console.log($thumbnail);
@@ -133,7 +133,7 @@ class ChunkedUploader {
             uploadsContainer.append($progBar);
             if (response.thumbnail !== 'none') {
                 console.log(response.thumbnail);
-                let source = "http://thrillgifs.loc/storage/thumbnails/" + response.thumbnail;
+                let source = `https://theloreleilee.com/storage/thumbnails/${response.thumbnail}`;
                 let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
                 $thumbnail.attr('src', source);
                 console.log($thumbnail);

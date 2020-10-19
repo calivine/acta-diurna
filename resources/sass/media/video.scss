@@ -58,5 +58,17 @@ video {
     display: none;
 }
 
+@media (max-width: $width-mobile-wide) {
+    .video-player__large {
+        height: 540px;
+        width: 960px;
+    }
+
+    .video-player__regular {
+        height: 480px;
+        width: 854px;
+    }
+}
+
 
 

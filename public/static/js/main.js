@@ -1,15 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-    let inputs = document.querySelectorAll('input.form-control');
-    let submitButton = document.querySelector('button');
-
-    inputs.forEach(function (input) {
-        console.log(input);
-        if (input.value === "") {
-            console.log("Empty input!");
-        }
-    });
-});
-
 const isAdvancedUpload = function() {
     const div = document.createElement('div');
     return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
@@ -21,9 +9,7 @@ class ChunkedUploader {
             return new ChunkedUploader(file, form);
         }
 
-        let dt = Date.now().toString().substring(6);
-        console.log(Date.now().toString());
-        console.log(dt);
+        const dt = Date.now().toString().substring(6);
 
         this.file = file;
         this.fileID = dt;
@@ -107,7 +93,7 @@ class ChunkedUploader {
                 if (this.upload_request.readyState === 4 && this.upload_request.status === 200) {
                     const response = JSON.parse(this.upload_request.responseText);
                     console.log(response.progress, response.data);
-                    this._progress_handler(response);
+                    ChunkedUploader._progress_handler(response);
                     resolve();
                 }
             };
@@ -118,41 +104,52 @@ class ChunkedUploader {
 
     }
 
-    _progress_handler (response) {
+    static _progress_handler (response) {
         console.log(response);
-        let editor = $('.editor');
         let uploadsContainer = $('.upload-results-container');
-        let id = '#'+response.data;
         if (document.getElementById(response.data)) {
             let progBar = document.getElementById(response.data);
-            progBar.innerText = `${response.data}: ${response.progress}%`;
             console.log(progBar);
-            if (response.thumbnail !== 'none') {
-                console.log(response.thumbnail);
-                let source = `https://theloreleilee.com/storage/thumbnails/${response.thumbnail}`;
+            let $progressBar_body = progBar.children[1];
+            if ($progressBar_body) {
+                $progressBar_body.innerText = `${response.data}: ${response.progress}%`;
+            }
+            else {
+                $progressBar_body = progBar.children[0];
+                $progressBar_body.innerText = `${response.data}: ${response.progress}%`;
+            }
+            console.log($progressBar_body);
+            console.log(progBar);
+            if (response.thumbnail != 'none') {
+                progBar.children[0].remove();
+                // $('div.widget__uploading').remove();
                 let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
-                $thumbnail.attr('src', source);
+                $thumbnail.attr('src', response.thumbnail);
                 console.log($thumbnail);
                 progBar.prepend($thumbnail[0]);
             }
 
         }
         else {
-            let $progBar = $('<div class="media"><div class="media-body"></div></div>');
-            $progBar.attr('id', response.data);
-            $progBar.innerText = `${response.data}: ${response.progress}%`;
-            console.log($progBar);
-            uploadsContainer.append($progBar);
-            if (response.thumbnail !== 'none') {
-                console.log(response.thumbnail);
-                let source = `https://theloreleilee.com/storage/thumbnails/${response.thumbnail}`;
-                let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
-                $thumbnail.attr('src', source);
-                console.log($thumbnail);
-                $progBar.prepend($thumbnail[0]);
-            }
+            // Generate uploading progress bar
+            let $progressBar = ChunkedUploader._create_progress_bar(response);
+            console.log($progressBar);
+            // Add to upload results container
+            uploadsContainer.append($progressBar);
         }
+    }
 
+    static _create_progress_bar(response) {
+        let $progressBar = $('<div class="media"><div class="media-body"></div></div>');
+        $progressBar.attr('id', response.data);
+        let $progressBar_body = $progressBar.children()[0];
+        $progressBar_body.innerText = `${response.data}: ${response.progress}%`;
+        // $progressBar.innerText = `${response.data}: ${response.progress}%`;
+        let $thumbnail = response.progress !== 100 ? $('<div class="widget__uploading"></div>') : $('<img src=' + response.thumbnail + ' height="80px" width="80px" alt="prev-thumbnail">');
+
+        // $thumbnail.attr('src', response.thumbnail);
+        $progressBar.prepend($thumbnail[0]);
+        return $progressBar;
     }
 
     /* Public Functions */

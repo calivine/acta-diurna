@@ -38,7 +38,10 @@ function checkTime() {
 
 const gallery = document.getElementsByClassName('video__link');
 let nextContainer = gallery[0];
-nextContainer.setAttribute('id', 'up-next');
+
+if (nextContainer) {
+    nextContainer.setAttribute('id', 'up-next');
+}
 
 media.addEventListener('ended', function(event) {
 

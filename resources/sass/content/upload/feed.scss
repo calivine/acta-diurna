@@ -1,5 +1,5 @@
 .upload-results-container /*.list-feed-container*/ {
-    overflow-x: auto;
+    overflow-x: visible;
     min-height: calc(50vh - 106px - 60px);
 }
 
@@ -14,4 +14,8 @@
 
 .uploads-list-feed-item {
     padding: 30px;
+}
+
+.media-body {
+    margin-left: 10px;
 }

@@ -8,6 +8,4 @@
     <div class="box__success">Done!</div>
     <div class="box__error">Error! <span></span>.</div>
 </form>
-<div class="upload-results-container">
-    <div class="box__uploading" id="upload-display">Uploading...<span id="progress-bar"></span></div>
-</div>
+

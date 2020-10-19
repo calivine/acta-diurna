@@ -25,7 +25,7 @@
 
                             <div class="form-group row">
                                 <div class="position__wrapper">
-                                    <label for="password" class="password-label">{{ __('Password') }}</label>
+                                    <label for="password" class="password__label">{{ __('Password') }}</label>
                                     <input id="password" type="password"
                                            class="form-control @error('password') is-invalid @enderror" name="password"
                                            required autocomplete="current-password">

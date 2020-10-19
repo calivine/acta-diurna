@@ -1,8 +1,9 @@
 .email__label,
-.password-label {
+.password__label,
+.user__label {
   color: $white;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 0;
   font-size: 14px;
 }
 

@@ -4,17 +4,20 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h1>657 Boulevard, Westfield, NJ 07901</h1>
-                <h2><em>AKA “The Watcher” House: <br> The Truth Revealed?</em></h2>
-                <h3>Introduction</h3>
-                <h4>MMO</h4>
-                <p><strong>Means</strong> <em>are the tools or methods used to commit the crime</em></p>
-                <p><strong>Motive</strong> <em> is the reason for committing the crime</em></p>
-                <p><strong>Opportunity</strong> <em>is the occasion that presents itself to allow the crime to take place.</em></p>
+                <h1 class="my-3 text-center">657 Boulevard, Westfield, NJ 07901</h1>
+                <h2 class="text-center"><em>AKA “The Watcher” House: <br> The Truth Revealed?</em></h2>
+                <h3 class="text-center">Introduction</h3>
+                <blockquote class="justify-content-center">
+                    <h4 class="text-center">MMO</h4>
+                    <p class="text-center"><strong>Means</strong> <em>are the tools or methods used to commit the crime</em></p>
+                    <p class="text-center"><strong>Motive</strong> <em> is the reason for committing the crime</em></p>
+                    <p class="text-center"><strong>Opportunity</strong> <em>is the occasion that presents itself to allow the crime to take place.</em></p>
+                </blockquote>
+
                 <h4>NJ Stalking Charges – Stalking Charges in NJ – Stalking Penalties In NJ – Stalking N.J.S.A. 2C:12-10</h4>
                 <blockquote>"In New Jersey, a stalking charge is extremely serious and can result in jail time. These cases obviously need to be handled carefully in order to secure the best possible outcome.” <br>Stalking typically refers to unwanted contact or communications with another person.
                 </blockquote>
-                <article class="border-top border-dark">
+                <article class="border-top border-dark mt-3 pt-4">
                     <p>Sometime in 2015, it was reported that something creepy was happening in Westfield, NJ. Mysterious letters were being sent to a young family with eerie and deeply unsettling undertones. The family had just purchased the home in June 2014 and received several of these letters shortly after closing. The Watcher letters are incredibly unsettling and it appeared this family's new house came with a stalker. There was a civil lawsuit, but it was ultimately dismissed in 2019.
                     </p>
                     <p>At the end of it all, the house was sold at a loss in 2019.  For one family, it was a terrifying nightmare playing out in front of the world.
@@ -30,7 +33,7 @@
                     <p>The history of 657 Boulevard appears to be very important to the Watcher, so what made this house so alluring?</p>
                     <blockquote>Owners of 657 Boulevard:<br>1905-1914: Russell<br>1914-1951: Davies<br>1951-1955: Bird
                     <br>1955-1963: Schaffer<br>1963-1990: Bakes<br>1990-2014: Woods<br>2014-2019: Broaddus</blockquote>
-                    <h5>History of 657 Boulevard</h5>
+                    <h3>History of 657 Boulevard</h3>
                     <p>657 Boulevard is a part of Slope Park, a residential development established by the Westfield Realty Improvement Company in 1904. It was built in 1905 and is a classic Dutch Colonial Revival, a popular architectural style of the early 20th century. The most prominent features of the house are the gambrel facade and roof, asymmetry of the windows, and the front porch. The front-facing, center gambrel roof-line was a popular feature in American architecture roughly between 1895-1915, befitting for the era.
                     </p>
                     <p>From the outside, it is a beautiful example of early 20th century domestic architecture and a reminder of Gilded Age wealth in America.  Boulevard is a quiet, unassuming tree-lined street, with large and well kept houses and yards. It is seemingly a perfect street, in a perfect home, in a perfect neighborhood and in close proximity to New York City. It appears that in Westfield, NJ Boulevard was the street to live on. </p>
@@ -70,11 +73,11 @@
                     </p>
                     <p>We no longer live in a society where one can easily bully the way to power or play the nepotism game without leaving a trace. Hiding and moving evil deeds around only adds to the narrative and further implicates. Time always tells. I am good at picking up broken pieces of a puzzle and putting them back together the best I can. This has gone on far too long and I have more faith in humanity than what we’ve become. It’s time to face some hard truths.
                     </p>
-                    <h5>
+                    <h3>
                         *Motive, Means, and Opportunity - was the neighbor on Carleton Rd.?
                         <small>*Street number for Carleton Rd.  will not be provided for this article.</small>
                         <small>**Please note, the new residents of Carleton Rd. are not involved in this case.</small>
-                    </h5>
+                    </h3>
                     <p>Is this where the Westfield Watcher lived until 2017? A family lived here for nearly 50 years before selling it to an LLC in 2017. It was purchased by a couple in 2019. You can see 657 Boulevard from Carleton Rd.
                     </p>
                     <p>This is a stucco-clad, Colonial Revival style house built in 1920. While lovely, the homes on Carleton are not as grand as the homes on Boulevard. Between the house on Carleton and 657 Boulevard, there are approximately XX feet between them. Records indicate the owners of this house on Carleton had been there since September 1970 and sold the house in June 2017 to an LLC. That means this couple was living at this house on Carleton at the time the Watcher letters were sent. The couple living there were in their late 80s.</p>

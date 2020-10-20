@@ -36,8 +36,9 @@ class TagController extends Controller
 
         foreach($tags as $tag) {
             Log::channel('system')->info("{$tag->name}: {$tag->importance()} ({$tag->weight()})");
+            Log::channel('system')->info($tag->videoCount());
             $tag->importance = $tag->importance();
-            $tag->weight = $tag->weight();
+            $tag->weight = $tag->videoCount();
             $tag->save();
         }
 

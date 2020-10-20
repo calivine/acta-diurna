@@ -3,6 +3,7 @@
 
 namespace App\Services;
 
+use FFMpeg\FFProbe;
 use Log;
 
 
@@ -20,26 +21,16 @@ class FFMpeg
             . " " . "{$thumbnail} 2>&1";     // pipe for output
 
         exec($cmd, $output, $ret_status);
-        Log::channel('ffmpeg')->info($cmd);
-        Log::channel('upload')->info($ret_status);
 
-        if ($ret_status == 0)
-        {
-            preg_match('/(\d{3,4})x(\d{3,4})/', $output[18], $match);
-            preg_match('/(\d{2}\.?\d{0,3}) fps/', $output[18], $fpsmatch);
-        }
-        else
+        if ($ret_status != 0)
         {
             Log::channel('ffmpeg')->info($output);
         }
 
-        $width = $match[1] ?? 1280;
-        $height = $match[2] ?? 720;
+        // Get video attributes from ffmpeg output
+        $attributes = FFMpeg::strip_attributes($output);
 
-        $fps = $fpsmatch[1] ?? 24;
-        return ['width' => $width,
-                'height' => $height,
-                'fps' => $fps];
+        return FFMpeg::get($ret_status, $attributes);
     }
 
     public static function gif($file, $gif_output)
@@ -57,7 +48,37 @@ class FFMpeg
             . " " . "{$gif_output} 2>&1";
 
         exec($cmd, $output, $ret_status);
-        return $ret_status;
+
+        $attributes = FFMpeg::strip_attributes($output);
+        Log::channel('ffmpeg')->info($output);
+        Log::channel('ffmpeg')->info($attributes);
+
+        return FFMpeg::get($ret_status, $attributes);
     }
+
+    private static function strip_attributes($output)
+    {
+        // Match width X height
+        preg_match('/(\d{3,4})x(\d{3,4})/', $output[18], $match);
+        // Match FPS
+        preg_match('/(\d{2}\.?\d{0,3}) fps/', $output[18], $fpsmatch);
+
+        $attributes = [
+            'width' => $match[1] ?? 1280,
+            'height' => $match[2] ?? 720,
+            'fps' => $fpsmatch[1] ?? 24
+        ];
+        return $attributes;
+    }
+
+    private static function get($ret, $attr)
+    {
+        return [
+            'status' => $ret,
+            'data' => $attr
+        ];
+    }
+
+
 
 }

@@ -41,5 +41,10 @@ class Tag extends Model
     {
         return $this->importance() * .01 + 1;
     }
+
+    public function videoCount()
+    {
+        return $this->videos->count();
+    }
     
 }

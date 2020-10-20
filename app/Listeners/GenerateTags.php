@@ -31,6 +31,11 @@ class GenerateTags
         foreach($tags as $tag) {
             $video_tag = Tag::firstOrCreate(['name' => $tag]);
             $video->tags()->save($video_tag);
+
+            // Weigh the tag
+            $video_tag->importance = $video_tag->importance();
+            $video_tag->weight = $video_tag->weight();
+            $video_tag->save();
         }
     }
 }

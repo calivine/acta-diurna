@@ -9,6 +9,8 @@ use App\Video;
 use Exception;
 use Illuminate\Http\Request;
 use Log;
+use Storage;
+use URL;
 
 class FileController extends Controller
 {
@@ -44,13 +46,29 @@ class FileController extends Controller
         $THUMBNAIL_PATH = storage_path('app/public/thumbnails/');
         $BUFFER_SIZE = 1024 * 1024; //
 
-        $start = $request->input('start');
-        $end = $request->input('end');
-        $total_size = $request->header('X-Content-Length');
-        $chunk_id = $request->header('X-Chunk-Id');
-        $file_name = $request->header('X-Content-Name');
-        $file_id = $request->header('X-Content-Id');
-
+        Log::channel('upload')->info($request->header('Content-Disposition'));
+        Log::channel('upload')->info($request->header('Content-Range'));
+        $cd = $request->header('Content-Disposition');
+        $cr = $request->header('Content-Range');
+        preg_match('/(\d+)-(\d+)\/(\d+)/', $cr, $output);
+        Log::channel('upload')->info($output);
+        $start = $output[1];
+        $end = $output[2];
+        /**
+         * Matching groups:
+         * 0: Full Match
+         * 1: Chunk ID
+         * 2: File ID
+         * 3: Filename
+         * 4: File Type
+         * 5: File Size
+         */
+        preg_match('/^(\d+):(\d+)-([a-zA-Z0-9_ -.]+)-([A-Za-z0-9]+?\/[a-zA-Z0-9]{1,5})-([0-9]+)/', $cd, $output);
+        Log::channel('upload')->info($output);
+        $file_name = $output[3];
+        $total_size = $output[5];
+        $chunk_id = $output[1];
+        $file_id = $output[2];
         // Remove file suffix
         $file_name = substr($file_name, 0, -4);
 
@@ -71,16 +89,21 @@ class FileController extends Controller
         // If we're on the last chunk of data, put them all together.
         if ($end == $total_size)
         {
+            Log::channel('upload')->info($file_name);
             $clean_filename = Formatter::clean($file_name);
+
+            Log::channel('upload')->info($clean_filename);
             $unique_filename = "{$file_id}_{$clean_filename}";
+
             Log::channel('upload')->info("Attempting to write {$unique_filename} to disk.");
 
-
             $path_to_file = storage_path("app/public/videos/" . $unique_filename . ".mp4");
+            Log::channel('upload')->info($path_to_file);
             for ($i = 0; $i <= $chunk_id; $i++)
             {
                 $path_to_chunk = storage_path("app/" . $temp_loc . $i);
-
+                Log::channel('upload')->info(Storage::url("{$temp_loc}{$i}"));
+                // $path_to_chunk = Storage::url("{$temp_loc}{$i}");
                 try
                 {
                     $file = fopen($path_to_chunk, 'rb');
@@ -100,7 +123,8 @@ class FileController extends Controller
             // Delete temp directory
             try
             {
-                rmdir(storage_path('app/' . $temp_loc));
+                // rmdir(storage_path('app/' . $temp_loc));
+                Storage::deleteDirectory($temp_loc);
             }
             catch (Exception $e)
             {
@@ -110,14 +134,12 @@ class FileController extends Controller
             $path_to_thumb = "{$THUMBNAIL_PATH}{$file_id}.jpg";
             $ffmpeg_gif_output = "{$GIF_PATH}{$file_id}.gif";
 
-            $output = FFMpeg::thumbnail($path_to_file, $path_to_thumb);
+            $thumbnail_output = FFMpeg::thumbnail($path_to_file, $path_to_thumb);
 
-            $ret_status = FFMpeg::gif($path_to_file, $ffmpeg_gif_output);
-
-            Log::channel('upload')->info($ret_status);
+            $gif_output = FFMpeg::gif($path_to_file, $ffmpeg_gif_output);
 
             // $file_location, $thumb_location
-            if ($ret_status == 0)
+            if ($thumbnail_output['status'] == 0)
             {
                 $path_to_thumb = "{$file_id}.jpg";
                 $path_to_file = "{$unique_filename}.mp4";
@@ -131,9 +153,9 @@ class FileController extends Controller
 
                 $file_attributes = [
                     'size' => $total_size,
-                    'width' => $output['width'],
-                    'height' => $output['height'],
-                    'fps' => $output['fps']
+                    'width' => $thumbnail_output['data']['width'],
+                    'height' => $thumbnail_output['data']['height'],
+                    'fps' => $thumbnail_output['data']['fps']
                 ];
 
                 $filename = Formatter::title($clean_filename);
@@ -143,13 +165,15 @@ class FileController extends Controller
                 event(new FinishedUploadingChunks($file_paths, $filename, $file_id, $file_attributes, $tags));
 
                 $status = 'complete';
-                $thumbnail = $path_to_thumb;
+
+                $thumbnail = asset('storage/thumbnails/' . $path_to_thumb);
+
+                Log::channel('upload')->info(asset('storage/thumbnails/' . $path_to_thumb));
             }
             else
             {
                 $status = 'error';
                 $thumbnail = 'none';
-
             }
             return response()->json([
                 'status' => $status,

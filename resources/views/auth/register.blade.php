@@ -57,7 +57,7 @@
 
                             <div class="form-group row mb-0">
 
-                                <button type="submit" class="btn btn-purple-gradient btn-block" id="register__button">
+                                <button type="submit" class="btn btn-primary btn-block" id="register__button">
                                     {{ __('Register') }}
                                 </button>
 

@@ -10895,41 +10895,74 @@ a.text-dark:focus {
 }
 
 body {
-  /*
-  background-image: url('./storage/assets/goldleaf.jpg');
+  background-image: url(/images/goldleaf.jpg?0de8376dc4450c3d73e3d0f6aa429c34);
   background-position: 50% 20%;
-
-   */
-  background-color: #1c1f2b;
-  color: #FCFCFC;
+  color: #1c1f2b;
   /*
-  animation-name: slide;
-  animation-duration: 24s;
-  animation-iteration-count: infinite;
-  animation-delay: 1s;
-
-   */
+  background-color: $black;
+  color: $white; */
+  -webkit-animation-name: slide;
+          animation-name: slide;
+  -webkit-animation-duration: 400s;
+          animation-duration: 400s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
-/*
-@keyframes slide {
+@-webkit-keyframes slide {
   0% {
     background-position: 50% 20%;
   }
+
   25% {
     background-position: 60% 20%;
   }
+
   50% {
     background-position: 80% 50%;
   }
+
   75% {
     background-position: 60% 20%;
   }
+
   100% {
     background-position: 50% 20%;
   }
 }
-*/
+
+@keyframes slide {
+  0% {
+    background-position: 50% 20%;
+  }
+
+  25% {
+    background-position: 60% 20%;
+  }
+
+  50% {
+    background-position: 80% 50%;
+  }
+
+  75% {
+    background-position: 60% 20%;
+  }
+
+  100% {
+    background-position: 50% 20%;
+  }
+}
+
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  background-color: #FCFCFC;
+}
 
 .page-container {
   width: 100%;

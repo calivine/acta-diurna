@@ -17,17 +17,17 @@ class ChunkedUploader {
         this.type = form.attr('method');
         this.form = form;
         this.fileSize = this.file.size;
+        this.fileType = this.file.type;
         this.chunkSize = (1024 * 1024); //
         this.rangeStart = 0;
         this.rangeEnd = this.chunkSize;
-        this.chunkID = 0;
         this.chunksQuantity = Math.ceil(this.fileSize / this.chunkSize);
         this.chunksQueue = new Array(this.chunksQuantity).fill().map((_, index) => index).reverse();
 
-        this._get_slice_method(file);
+        this._get_slice_method();
     }
 
-    _get_slice_method (file) {
+    _get_slice_method () {
         if ('mozSlice' in this.file) {
             this.slice_method = 'mozSlice';
         }
@@ -60,8 +60,6 @@ class ChunkedUploader {
 
         // Package chunk and formData for upload method.
         let formData = new FormData(this.form.get(0));
-        formData.append('start', this.rangeStart);
-        formData.append('end', this.rangeEnd);
         formData.append('file', chunk);
         this._upload(formData, chunkId)
             .then(() => {
@@ -81,18 +79,13 @@ class ChunkedUploader {
 
             this.upload_request.overrideMimeType('application/octet-stream');
 
-            if (this.rangeStart !== 0) {
-                this.upload_request.setRequestHeader('Content-Range', 'bytes ' + this.rangeStart + '-' + this.rangeEnd + '/' + this.fileSize);
-            }
-            this.upload_request.setRequestHeader('X-Chunk-Id', chunkId);
-            this.upload_request.setRequestHeader('X-Content-Length', this.fileSize);
-            this.upload_request.setRequestHeader('X-Content-Name', this.file.name);
-            this.upload_request.setRequestHeader('X-Content-Id', this.fileID);
+
+            this.upload_request.setRequestHeader('Content-Range', 'bytes ' + this.rangeStart + '-' + this.rangeEnd + '/' + this.fileSize);
+            this.upload_request.setRequestHeader('Content-Disposition', `${chunkId}:${this.fileID}-${this.file.name}-${this.fileType}-${this.fileSize}`);
 
             this.upload_request.onreadystatechange = () => {
                 if (this.upload_request.readyState === 4 && this.upload_request.status === 200) {
                     const response = JSON.parse(this.upload_request.responseText);
-                    console.log(response.progress, response.data);
                     ChunkedUploader._progress_handler(response);
                     resolve();
                 }
@@ -105,11 +98,9 @@ class ChunkedUploader {
     }
 
     static _progress_handler (response) {
-        console.log(response);
         let uploadsContainer = $('.upload-results-container');
         if (document.getElementById(response.data)) {
             let progBar = document.getElementById(response.data);
-            console.log(progBar);
             let $progressBar_body = progBar.children[1];
             if ($progressBar_body) {
                 $progressBar_body.innerText = `${response.data}: ${response.progress}%`;
@@ -118,24 +109,21 @@ class ChunkedUploader {
                 $progressBar_body = progBar.children[0];
                 $progressBar_body.innerText = `${response.data}: ${response.progress}%`;
             }
-            console.log($progressBar_body);
-            console.log(progBar);
-            if (response.thumbnail != 'none') {
+            if (response.thumbnail !== 'none') {
                 progBar.children[0].remove();
                 // $('div.widget__uploading').remove();
                 let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
                 $thumbnail.attr('src', response.thumbnail);
-                console.log($thumbnail);
-                progBar.prepend($thumbnail[0]);
+                // console.log($thumbnail);
+                progBar.prepend($('<img src=' + response.thumbnail + ' height="80px" width="80px" alt="prev-thumbnail">')[0]);
             }
 
         }
         else {
             // Generate uploading progress bar
-            let $progressBar = ChunkedUploader._create_progress_bar(response);
-            console.log($progressBar);
+            // let $progressBar = ChunkedUploader._create_progress_bar(response);
             // Add to upload results container
-            uploadsContainer.append($progressBar);
+            uploadsContainer.append(ChunkedUploader._create_progress_bar(response));
         }
     }
 

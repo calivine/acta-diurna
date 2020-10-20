@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .on('drop', function(e) { // When drag n drop is supported.
             drFiles = e.originalEvent.dataTransfer.files;
-            console.log(drFiles);
             // Trigger submit form.
             hiddenForm.trigger('submit');
         });

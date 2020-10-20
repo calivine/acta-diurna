@@ -5,7 +5,7 @@
 <head>
     @include('layouts.partials.head')
 </head>
-<body class="@yield('body-layout') contrast__light">
+<body>
     <!-- Alerts -->
     @if(session('alert'))
         <div class="alert-success">

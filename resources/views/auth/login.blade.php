@@ -50,7 +50,7 @@
                             </div>
 
                             <div class="form-group row mb-0">
-                                <button type="submit" class="btn btn-purple-gradient btn-block">
+                                <button type="submit" class="btn btn-primary btn-block">
                                     {{ __('Login') }}
                                 </button>
                             </div>

@@ -11085,6 +11085,40 @@ body {
   }
 }
 
+/* Tabbed Display */
+
+.settings__container {
+  display: flex;
+}
+
+.display__container {
+  width: 35vw;
+  height: 35vh;
+}
+
+.form__wrapper {
+  display: none;
+  border: 0.5px solid black;
+  min-width: 30vw;
+  padding: 10px 20px;
+}
+
+.nav__item {
+  border: 1px solid black;
+  padding: 5px 15px 5px 2px;
+  margin-right: 1px;
+  min-width: 85px;
+}
+
+.active {
+  display: block;
+}
+
+.nav__active {
+  color: blue;
+  text-decoration: underline;
+}
+
 /* Responsive */
 
 @media (max-width: 645px) {
@@ -11573,8 +11607,8 @@ nav.navbar-dark {
   color: #FCFCFC;
   z-index: 1;
   display: none;
-  top: 25px;
-  left: 50px;
+  top: 58px;
+  left: 35px;
   overflow: hidden;
 }
 

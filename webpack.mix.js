@@ -17,7 +17,8 @@ const mix = require('laravel-mix');
 
 mix.scripts([
     'resources/js/dragndrop.js',
-    'resources/js/filesEMCA6v2.js'
+    'resources/js/filesEMCA6v2.js',
+    'resources/js/settingsDisplay.js'
 ], 'public/static/js/main.js');
 
 mix.scripts([

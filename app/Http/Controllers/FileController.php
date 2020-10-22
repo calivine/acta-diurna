@@ -31,7 +31,7 @@ class FileController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.media.upload');
     }
 
     /**
@@ -46,12 +46,8 @@ class FileController extends Controller
         $THUMBNAIL_PATH = storage_path('app/public/thumbnails/');
         $BUFFER_SIZE = 1024 * 1024; //
 
-        Log::channel('upload')->info($request->header('Content-Disposition'));
-        Log::channel('upload')->info($request->header('Content-Range'));
-        $cd = $request->header('Content-Disposition');
-        $cr = $request->header('Content-Range');
-        preg_match('/(\d+)-(\d+)\/(\d+)/', $cr, $output);
-        Log::channel('upload')->info($output);
+        preg_match('/(\d+)-(\d+)\/(\d+)/', $request->header('Content-Range'), $output);
+
         $start = $output[1];
         $end = $output[2];
         /**
@@ -63,8 +59,8 @@ class FileController extends Controller
          * 4: File Type
          * 5: File Size
          */
-        preg_match('/^(\d+):(\d+)-([a-zA-Z0-9_ -.]+)-([A-Za-z0-9]+?\/[a-zA-Z0-9]{1,5})-([0-9]+)/', $cd, $output);
-        Log::channel('upload')->info($output);
+        preg_match('/^(\d+):(\d+)-([a-zA-Z0-9_ -.]+)-([A-Za-z0-9]+?\/[a-zA-Z0-9]{1,5})-([0-9]+)/', $request->header('Content-Disposition'), $output);
+
         $file_name = $output[3];
         $total_size = $output[5];
         $chunk_id = $output[1];
@@ -78,8 +74,6 @@ class FileController extends Controller
         // Calculate progress uploading total file.
         $progress = $total_size > 0 ? round(($end / $total_size) * 100) : 100;
 
-        Log::channel('upload')->info("Chunk {$chunk_id}: Bytes {$start} to {$end} of {$total_size}");
-
         // If there is a file, save to 'app/public/tmp/{file_id}/'
         if ($request->hasFile('file'))
         {
@@ -90,19 +84,17 @@ class FileController extends Controller
         if ($end == $total_size)
         {
             Log::channel('upload')->info($file_name);
+            $file_nameT  = Formatter::format($file_name);
+            Log::channel('upload')->info($file_nameT);
             $clean_filename = Formatter::clean($file_name);
-
             Log::channel('upload')->info($clean_filename);
-            $unique_filename = "{$file_id}_{$clean_filename}";
 
-            Log::channel('upload')->info("Attempting to write {$unique_filename} to disk.");
+            $path_to_file = storage_path("app/public/videos/" . $file_id . ".mp4");
 
-            $path_to_file = storage_path("app/public/videos/" . $unique_filename . ".mp4");
-            Log::channel('upload')->info($path_to_file);
             for ($i = 0; $i <= $chunk_id; $i++)
             {
                 $path_to_chunk = storage_path("app/" . $temp_loc . $i);
-                Log::channel('upload')->info(Storage::url("{$temp_loc}{$i}"));
+
                 // $path_to_chunk = Storage::url("{$temp_loc}{$i}");
                 try
                 {
@@ -131,23 +123,22 @@ class FileController extends Controller
                 Log::debug($e->getMessage());
             }
 
-            $path_to_thumb = "{$THUMBNAIL_PATH}{$file_id}.jpg";
+            $path_to_thumbnail = "{$THUMBNAIL_PATH}{$file_id}.jpg";
             $ffmpeg_gif_output = "{$GIF_PATH}{$file_id}.gif";
 
-            $thumbnail_output = FFMpeg::thumbnail($path_to_file, $path_to_thumb);
-
+            $thumbnail_output = FFMpeg::thumbnail($path_to_file, $path_to_thumbnail);
             $gif_output = FFMpeg::gif($path_to_file, $ffmpeg_gif_output);
 
             // $file_location, $thumb_location
             if ($thumbnail_output['status'] == 0)
             {
-                $path_to_thumb = "{$file_id}.jpg";
-                $path_to_file = "{$unique_filename}.mp4";
+                $path_to_thumbnail = "{$file_id}.jpg";
+                $path_to_file = "{$file_id}.mp4";
                 $path_to_gif = "{$file_id}.gif";
 
                 $file_paths = [
                     'file' => $path_to_file,
-                    'thumbnail' => $path_to_thumb,
+                    'thumbnail' => $path_to_thumbnail,
                     'gif' => $path_to_gif
                 ];
 
@@ -159,6 +150,7 @@ class FileController extends Controller
                 ];
 
                 $filename = Formatter::title($clean_filename);
+                Log::channel('upload')->info($filename);
 
                 $tags = Formatter::tokenize($filename);
 
@@ -166,9 +158,8 @@ class FileController extends Controller
 
                 $status = 'complete';
 
-                $thumbnail = asset('storage/thumbnails/' . $path_to_thumb);
+                $thumbnail = asset('storage/thumbnails/' . $path_to_thumbnail);
 
-                Log::channel('upload')->info(asset('storage/thumbnails/' . $path_to_thumb));
             }
             else
             {

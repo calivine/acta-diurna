@@ -36,7 +36,7 @@ class HomeController extends Controller
         $post_date = $posts->created_at ?? "";
         $post_body = $posts->body ?? "Your post will go here.";
 
-        return view('home')->with([
+        return view('content.home')->with([
             'post_date' => $post_date,
             'post_body' => $post_body,
             'files' => $files

@@ -12,21 +12,28 @@
 */
 
 Route::group(['middleware' => 'auth'], function () {
+
+    # GET upload file(s) page
+    Route::get('/upload', 'FileController@create');
+
     # POST: upload new file
-    Route::post('/upload', 'FileController@store')->name('upload');
+    Route::post('/process', 'FileController@store')->name('upload');
 
     # POST save new post
     Route::post('/post', 'PostController@store')->name('post.store');
 
     # Tags admin actions
     Route::prefix('tags')->group(function () {
+        # GET Re-calculate tag weights
         Route::get('weight', 'TagController@weight')->name('weight');
+
+        # GET Remove blacklisted tags
         Route::get('prune', 'TagController@cleanUpTags')->name('prune');
     });
 
     # Admin Panel
     Route::get('/panel', function () {
-        return view('panel.index');
+        return view('content.panel.index');
     });
 
     # GET homepage
@@ -36,6 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::prefix('watch')->group(function () {
     # GET watch video file
     Route::get('{hash}', 'MediaController@watch')->name('watch');
+
     # POST update view count
     Route::post('view', 'MediaController@addView');
 });
@@ -46,6 +54,7 @@ Route::get('/tag/{tag}', 'TagController@videosByTag')->name('videosByTag');
 # Authentication Routes
 Auth::routes();
 
+# GET The Watchers page
 Route::get('/thewatchers', function () {
     return view('content.watchers');
 });

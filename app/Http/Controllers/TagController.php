@@ -20,7 +20,7 @@ class TagController extends Controller
     {
         $videos = Videos::findVideosByTag($tag);
 
-        return view('media.gallery')->with(['files' => $videos]);
+        return view('content.media.gallery')->with(['files' => $videos]);
     }
 
     /**

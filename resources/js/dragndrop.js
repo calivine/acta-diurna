@@ -3,36 +3,60 @@ const isAdvancedUpload = function() {
   return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
 }();
 
-// Upload form element
-let $form = $('.box');
+document.addEventListener('DOMContentLoaded', function () {
+    // Upload form element
+    let $form = $('.box');
 // Video input element
-let $input = $form.find('input[type="file"]');
+    let $input = $form.find('input[type="file"]');
 // Video input (vanilla)
-let $file_input = document.getElementById('file');
+    let $file_input = document.getElementById('file');
 
-console.log($input);
-console.log($form.get(0));
-console.log($file_input);
+    let uploadingDisplay = $('#upload-display');
+    let uploadsResultsContainer = $('.upload-results-container');
+    console.log($input);
+    console.log($form);
+    console.log($form.get(0));
+    console.log($file_input);
 
-if (isAdvancedUpload) {
-    $form.addClass('has-advanced-upload');
-    console.log('Drag n\' drop enabled.');
-}
+    if (isAdvancedUpload) {
+        $form.addClass('has-advanced-upload');
+        console.log('Drag n\' drop enabled.');
+    }
 
-if (isAdvancedUpload) {
-    let droppedFiles = false;
-    let uploaders = [];
-    $form.on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-    })
-    .on('dragover dragenter', function() {
-        $form.addClass('is-dragover');
-    })
-    .on('dragleave dragend drop', function() {
-        $form.removeClass('is-dragover');
-    });
-}
+    if (isAdvancedUpload) {
+        let droppedFiles = false;
+        let uploaders = [];
+        $form.on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        })
+            .on('dragover dragenter', function() {
+                $form.addClass('is-dragover');
+            })
+            .on('dragleave dragend drop', function() {
+                $form.removeClass('is-dragover');
+            })
+            .on('drop', function(e) { // When drag n drop is supported.
+                droppedFiles = e.originalEvent.dataTransfer.files;
+                // Trigger submit form.
+                $form.trigger('submit');
+            });
+
+        $form.on('submit', function(e) {
+            uploadingDisplay.addClass('working');
+            uploadsResultsContainer.addClass('working');
+            if (droppedFiles) {
+                $.each(droppedFiles, function(i, file) {
+                    let uploader = new ChunkedUploader(file, form=$form);
+                    uploader.start();
+                    e.preventDefault();
+                });
+            }
+            e.preventDefault();
+        });
+    }
+});
+
 const processAjax = function($form, ajaxData) {
     $.ajax({
         url: $form.attr('action'),

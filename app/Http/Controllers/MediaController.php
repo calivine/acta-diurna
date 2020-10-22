@@ -11,7 +11,7 @@ use Facades\App\Repository\Videos;
 
 class MediaController extends Controller
 {
-    CONST VIEW_WATCH = 'media.watch';
+    CONST VIEW_WATCH = 'content.media.watch';
     /**
      * GET
      * Watch media file.

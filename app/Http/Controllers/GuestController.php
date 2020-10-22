@@ -13,7 +13,7 @@ class GuestController extends Controller
         Log::info(log_client());
         $videos = Videos::all();
 
-        return view('welcome')->with(['files' => $videos]);
+        return view('content.welcome')->with(['files' => $videos]);
 
     }
 }

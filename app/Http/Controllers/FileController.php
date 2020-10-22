@@ -59,7 +59,7 @@ class FileController extends Controller
          * 4: File Type
          * 5: File Size
          */
-        preg_match('/^(\d+):(\d+)-([a-zA-Z0-9_ -.]+)-([A-Za-z0-9]+?\/[a-zA-Z0-9]{1,5})-([0-9]+)/', $request->header('Content-Disposition'), $output);
+        preg_match('/^(\d+):(\d+)-([a-zA-Z0-9_ -.&!@]+)-([A-Za-z0-9]+?\/[a-zA-Z0-9]{1,5})-([0-9]+)/', $request->header('Content-Disposition'), $output);
 
         $file_name = $output[3];
         $total_size = $output[5];
@@ -83,11 +83,7 @@ class FileController extends Controller
         // If we're on the last chunk of data, put them all together.
         if ($end == $total_size)
         {
-            Log::channel('upload')->info($file_name);
-            $file_nameT  = Formatter::format($file_name);
-            Log::channel('upload')->info($file_nameT);
-            $clean_filename = Formatter::clean($file_name);
-            Log::channel('upload')->info($clean_filename);
+            $file_name = Formatter::format($file_name);
 
             $path_to_file = storage_path("app/public/videos/" . $file_id . ".mp4");
 
@@ -149,7 +145,7 @@ class FileController extends Controller
                     'fps' => $thumbnail_output['data']['fps']
                 ];
 
-                $filename = Formatter::title($clean_filename);
+                $filename = Formatter::title($file_name);
                 Log::channel('upload')->info($filename);
 
                 $tags = Formatter::tokenize($filename);

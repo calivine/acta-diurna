@@ -1,7 +1,7 @@
 .email__label,
 .password__label,
 .user__label {
-  color: $white;
+  color: $black;
   display: block;
   margin-bottom: 0;
   font-size: 14px;
@@ -37,5 +37,13 @@
   margin-left: 0;
   margin-right: 7px;
   position: relative;
+}
+
+.form-group__bottom {
+  margin-bottom: 0;
+}
+
+.form__container {
+  margin: calc(25vh - 185px) auto;
 }
 

@@ -68,6 +68,8 @@ class FileController extends Controller
         // Remove file suffix
         $file_name = substr($file_name, 0, -4);
 
+        $filename_hash = md5($file_name);
+
         // Temporary location for file chunks.
         $temp_loc = "tmp/{$file_id}/";
 

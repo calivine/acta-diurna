@@ -37,21 +37,8 @@ body {
 .container,
 .container-fluid {
   background-color: $white;
-}
-
-.page-container {
-  width: 100%;
-  padding: 25px 15px 12.5px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.contrast__dark {
-    color: black;
-}
-
-.contrast__light {
-    color: $white;
+  margin: 2.5vh auto;
+  padding: 2.5vh 0 5vh 0;
 }
 
 .scroll__container {
@@ -93,6 +80,16 @@ body {
 
   to {
     left: 150%;
+  }
+}
+
+/* Responsive */
+
+@media(max-width: $width-mobile-wide) {
+  .row {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
   }
 }
 

@@ -20,9 +20,11 @@
 }
 
 .box.is-dragover {
-  /*outline-offset: -20px;*/
+  /*outline-offset: -20px;
   outline-color: #c8dadf;
-  background-color: #fff;
+  background-color: #fff;*/
+  outline-color: #838383;
+  background-color: $redgif-purple;
 }
 
 .editor.is-dragover {

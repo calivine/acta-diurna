@@ -1,6 +1,59 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@200;
 
 300;400&family=Cinzel+Decorative&family=Roboto+Slab:wght@300;400&display=swap);@charset "UTF-8";
+@font-face {
+  font-family: Base;
+  src: url(/fonts/Base4.ttf?a60da479455d08c279308b3a34c1d2fb);
+}
+
+@font-face {
+  font-family: GaramondPremrPro;
+  src: url(/fonts/GaramondPremrPro.otf?d684b0a6ae4443d01f6404209c715c75);
+}
+
+@font-face {
+  font-family: Bauhaus;
+  src: url(/fonts/Bauhaus-Normal.ttf?6bef31dad64afa6b1bb8e38d2c156cba);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Bauhaus;
+  src: url(/fonts/BauhausStd-Bold.otf?8f724779802837d7df52a0605b5f6e1f);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: BauhausHeavy;
+  src: url(/fonts/BauhausStd-Heavy.otf?cd6ecfbcdbe3eaf41fe3f318efbdcdd8);
+}
+
+@font-face {
+  font-family: BauhausLight;
+  src: url(/fonts/BauhausStd-Light.otf?7b4071bb14a623689a665a5058b6edd6);
+}
+
+@font-face {
+  font-family: BauhausThin;
+  src: url(/fonts/Bauhaus-Thin.ttf?b039bf70999198477b48a5a163cff3fe);
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url(/fonts/OpenSans-Regular.ttf?d7d5d4588a9f50c99264bc12e4892a7c);
+}
+
+@font-face {
+  font-family: OpenSansLight;
+  src: url(/fonts/OpenSans-Light.ttf?9ff12f694e5951a6f51a9d63b05062e7);
+}
+
+/*!
+ * Bootstrap v4.5.2 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 
 :root {
   --blue: #3490dc;
@@ -29,7 +82,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Cinzel Decorative", serif;
+  --font-family-sans-serif: "OpenSans", serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -61,7 +114,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Cinzel Decorative", serif;
+  font-family: "OpenSans", serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6365,7 +6418,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Cinzel Decorative", serif;
+  font-family: "OpenSans", serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6490,7 +6543,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Cinzel Decorative", serif;
+  font-family: "OpenSans", serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -11171,6 +11224,10 @@ nav.navbar-dark {
   color: #FCFCFC;
 }
 
+.bg-lite {
+  background-color: #FCFCFC;
+}
+
 .widget__uploading {
   min-width: 50px;
   min-height: 50px;
@@ -11243,9 +11300,11 @@ nav.navbar-dark {
 }
 
 .box.is-dragover {
-  /*outline-offset: -20px;*/
+  /*outline-offset: -20px;
   outline-color: #c8dadf;
-  background-color: #fff;
+  background-color: #fff;*/
+  outline-color: #838383;
+  background-color: #8c18f1;
 }
 
 .editor.is-dragover {

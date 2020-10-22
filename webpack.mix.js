@@ -16,6 +16,7 @@ const mix = require('laravel-mix');
      .sass('resources/sass/app.scss', 'public/static/css');
 
 mix.scripts([
+    'resources/js/dragndrop.js',
     'resources/js/filesEMCA6v2.js'
 ], 'public/static/js/main.js');
 
@@ -29,3 +30,4 @@ mix.scripts([
     'resources/js/autoplay.js',
     'resources/js/galleryDisplay.js'
 ], 'public/static/js/viewer.js');
+

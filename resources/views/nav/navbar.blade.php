@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light" id="nav">
+<nav class="navbar navbar-expand-md navbar-lite bg-white" id="nav">
     <!-- Left Side Of Navbar -->
     <a class="navbar-brand" href="{{ url('/home') }}" >
         Home

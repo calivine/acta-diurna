@@ -1,19 +1,20 @@
-body {
-
+.light {
   background-image: url('./storage/assets/goldleaf.jpg');
   background-position: 50% 20%;
   color: $black;
-
-  /*
-  background-color: $black;
-  color: $white; */
-
   animation-name: slide;
   animation-duration: 400s;
   animation-iteration-count: infinite;
   animation-delay: 1s;
 
+  .container {
+    background-color: $white;
+  }
+}
 
+.dark {
+  background-color: $black;
+  color: $white;
 }
 
 @keyframes slide {
@@ -36,10 +37,10 @@ body {
 
 .container,
 .container-fluid {
-  background-color: $white;
   margin: 2.5vh auto;
   padding: 2.5vh 0 5vh 0;
 }
+
 
 .scroll__container {
   position: relative;

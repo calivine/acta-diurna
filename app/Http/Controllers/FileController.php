@@ -8,6 +8,7 @@ use App\Services\Formatter;
 use App\Video;
 use Exception;
 use Illuminate\Http\Request;
+use DB;
 use Log;
 use Storage;
 use URL;
@@ -54,21 +55,19 @@ class FileController extends Controller
          * Matching groups:
          * 0: Full Match
          * 1: Chunk ID
-         * 2: File ID
-         * 3: Filename
-         * 4: File Type
-         * 5: File Size
+         * 2: Filename
+         * 3: File Type
+         * 4: File Size
          */
-        preg_match('/^(\d+):(\d+)-([a-zA-Z0-9_ -.&!@]+)-([A-Za-z0-9]+?\/[a-zA-Z0-9]{1,5})-([0-9]+)/', $request->header('Content-Disposition'), $output);
+        preg_match('/^(\d+):([a-zA-Z0-9_ -.&!@]+)-([A-Za-z0-9]+?\/[a-zA-Z0-9]{1,5})-([0-9]+)/', $request->header('Content-Disposition'), $output);
 
-        $file_name = $output[3];
-        $total_size = $output[5];
+        $file_name = $output[2];
+        $total_size = $output[4];
         $chunk_id = $output[1];
-        $file_id = $output[2];
+        $file_id = md5($file_name);
+
         // Remove file suffix
         $file_name = substr($file_name, 0, -4);
-
-        $filename_hash = md5($file_name);
 
         // Temporary location for file chunks.
         $temp_loc = "tmp/{$file_id}/";
@@ -85,9 +84,13 @@ class FileController extends Controller
         // If we're on the last chunk of data, put them all together.
         if ($end == $total_size)
         {
-            $file_name = Formatter::format($file_name);
+            // Remove prefix and/or suffix garbage and any special characters we don't want.
+            $clean_filename = Formatter::format($file_name);
 
-            $path_to_file = storage_path("app/public/videos/" . $file_id . ".mp4");
+            Log::channel('upload')->info($clean_filename);
+            $extension = Formatter::file_extension($output[3]);
+
+            $path_to_file = storage_path("app/public/videos/" . $file_id . ".{$extension}");
 
             for ($i = 0; $i <= $chunk_id; $i++)
             {
@@ -101,7 +104,8 @@ class FileController extends Controller
                     fclose($file);
 
                     $final = fopen($path_to_file, 'ab');
-                    $write = fwrite($final, $buff);
+                    fwrite($final, $buff);
+
                     fclose($final);
                     unlink($path_to_chunk);
 
@@ -115,16 +119,16 @@ class FileController extends Controller
             {
                 // rmdir(storage_path('app/' . $temp_loc));
                 Storage::deleteDirectory($temp_loc);
-            }
-            catch (Exception $e)
+            } catch (Exception $e)
             {
                 Log::debug($e->getMessage());
             }
 
             $path_to_thumbnail = "{$THUMBNAIL_PATH}{$file_id}.jpg";
             $ffmpeg_gif_output = "{$GIF_PATH}{$file_id}.gif";
-
             $thumbnail_output = FFMpeg::thumbnail($path_to_file, $path_to_thumbnail);
+
+
             $gif_output = FFMpeg::gif($path_to_file, $ffmpeg_gif_output);
 
             // $file_location, $thumb_location
@@ -147,40 +151,36 @@ class FileController extends Controller
                     'fps' => $thumbnail_output['data']['fps']
                 ];
 
-                $filename = Formatter::title($file_name);
-                Log::channel('upload')->info($filename);
+                $filename = Formatter::insert_spaces($clean_filename);
 
                 $tags = Formatter::tokenize($filename);
 
-                event(new FinishedUploadingChunks($file_paths, $filename, $file_id, $file_attributes, $tags));
+                // Trigger event to save file data to DB
+                event(new FinishedUploadingChunks($filename, $file_id, $file_paths, $file_attributes, $tags));
 
                 $status = 'complete';
 
                 $thumbnail = asset('storage/thumbnails/' . $path_to_thumbnail);
 
-            }
-            else
+            } else
             {
                 $status = 'error';
-                $thumbnail = 'none';
+                $thumbnail = asset('storage/assets/favicon.png');
             }
-            return response()->json([
-                'status' => $status,
-                'progress' => $progress,
-                'data' => $file_name,
-                'thumbnail' => $thumbnail
-            ]);
+
+        } else
+        {
+            $status = 'uploading';
+            $thumbnail = 'none';
 
         }
-        else
-        {
-            return response()->json([
-                'status' => 'in_progress',
-                'progress' => $progress,
-                'data' => $file_name,
-                'thumbnail' => 'none'
-            ]);
-        }
+
+        return response()->json([
+            'status' => $status,
+            'progress' => $progress,
+            'data' => $file_name,
+            'thumbnail' => $thumbnail
+        ]);
     }
 
     /**

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'ThrillGifs | Panel')
+@section('title', 'Panel')
 
 @section('content')
     <div class="container">

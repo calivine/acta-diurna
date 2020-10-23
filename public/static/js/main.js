@@ -105,10 +105,9 @@ class ChunkedUploader {
             return new ChunkedUploader(file, form);
         }
 
-        const dt = Date.now().toString().substring(6);
+        // const dt = Date.now().toString().substring(6);
 
         this.file = file;
-        this.fileID = dt;
         this.url = form.attr('action');
         this.type = form.attr('method');
         this.form = form;
@@ -177,7 +176,7 @@ class ChunkedUploader {
 
 
             this.upload_request.setRequestHeader('Content-Range', 'bytes ' + this.rangeStart + '-' + this.rangeEnd + '/' + this.fileSize);
-            this.upload_request.setRequestHeader('Content-Disposition', `${chunkId}:${this.fileID}-${this.file.name}-${this.fileType}-${this.fileSize}`);
+            this.upload_request.setRequestHeader('Content-Disposition', `${chunkId}:${this.file.name}-${this.fileType}-${this.fileSize}`);
 
             this.upload_request.onreadystatechange = () => {
                 if (this.upload_request.readyState === 4 && this.upload_request.status === 200) {

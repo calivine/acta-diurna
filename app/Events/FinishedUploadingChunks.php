@@ -30,7 +30,7 @@ class FinishedUploadingChunks
      *
      * @return void
      */
-    public function __construct(Array $file_paths, String $file_name, String $file_id, Array $file_attributes, Array $tags)
+    public function __construct(String $file_name, String $file_id, Array $file_paths, Array $file_attributes, Array $tags)
     {
         $this->path = $file_paths['file'];
         $this->path_to_thumb = $file_paths['thumbnail'];

@@ -4,20 +4,10 @@
 namespace App\Services;
 
 use App\Exceptions\RejectTags;
-
+use Log;
 
 class Formatter
 {
-
-    public static function clean($filename)
-    {
-        // Video name clean-up, first pass
-        $file_name = preg_replace('/-[a-zA-Z0-9]+$/', '', $filename);
-        // Second pass
-        return preg_replace('/^montage[0-9a-zA-Z]*_[0-9a-z]*_?-?/', '', $file_name);
-        // Third pass
-        // return preg_replace('/[^a-zA-Z_]/', '', $file_name);
-    }
 
     public static function title($filename)
     {
@@ -32,7 +22,9 @@ class Formatter
 
     public static function tokenize($filename)
     {
-        $words = explode(" ", $filename);
+
+        Log::channel('upload')->info($filename);
+        $words = explode(' ', $filename);
 
         // Convert to lower case for all words.
         // remove any common words from the list.
@@ -46,12 +38,18 @@ class Formatter
     public static function format($string)
     {
         if (Formatter::check_prefix($string) && Formatter::check_suffix($string) ) {
-            $string = preg_filter('/^(montage[0-9a-zA-Z]*_[0-9a-z]*_?-?)([\w\d\s&]+)(-[a-zA-Z0-9]+)$/', '$0', $string);
+            $string = preg_replace('/^(montage[0-9a-zA-Z]*_[0-9a-z]*_?-?)/', '', $string);
+
+            $string = preg_replace('/-([a-zA-Z0-9]+)$/', '', $string);
+
         }
         else {
-            $string = preg_filter('/^(montage[0-9a-zA-Z]*_[0-9a-z]*_?-?)([\w\d\s&]+)/', '$0', $string);
+            $string = preg_replace('/^(montage[0-9a-zA-Z]*_[0-9a-z]*_?-?)/', '', $string);
+
         }
-        return preg_filter('/[\.()&\d]+/', '$0', $string);
+        $string = Formatter::replace_hyphen(Formatter::replace_and($string));
+        $string = Formatter::serialize($string);
+        return preg_replace('/[\'\.()\d]+/', '', $string);
     }
 
     private static function check_prefix($string)
@@ -62,6 +60,44 @@ class Formatter
     private static function check_suffix($string)
     {
         return preg_match('/-[a-zA-Z0-9]+$/', $string);
+    }
+
+    public static function file_extension($string)
+    {
+        preg_match('/\.?mp4|wav|avi|webm$/', $string, $output);
+        return $output[0];
+    }
+
+    private static function replace_hyphen($string)
+    {
+        return preg_replace('/-/', ' ', $string);
+    }
+
+    private static function replace_and($string)
+    {
+        return preg_replace('/&/', 'and', $string);
+    }
+
+    /**
+     * serialize
+     * format filename into string with spaces replaced by underscores
+     * @param $string
+     * @return $string
+     */
+    private static function serialize($string)
+    {
+        return preg_replace('/\s\s?/', '_', $string);
+    }
+
+    /**
+     * insert_spaces
+     * replaces underscores with white space
+     * @param $string
+     * @return string|string[]|null
+     */
+    public static function insert_spaces($string)
+    {
+        return preg_replace('/_+/', ' ', $string);
     }
 
 }

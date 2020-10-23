@@ -7,7 +7,8 @@
 
     <!-- Right Side Of Navbar -->
     @auth
-        <a class="nav-link" href="{{ url('/panel') }}">Admin Panel</a>
+        <a class="nav-link" href="{{ url('/panel') }}">{{ __('Admin Panel') }}</a>
+        <a class="nav-link" href="{{ url('/upload') }}">{{ __('Upload') }}</a>
         <a class="nav-link" href="{{ route('logout') }}"
            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
             {{ __('Logout') }}

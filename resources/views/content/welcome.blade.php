@@ -4,6 +4,6 @@
 
 @section('content')
     <div class="container-fluid">
-
+        {{ Cookie::get('theme') }}
     </div>
 @endsection

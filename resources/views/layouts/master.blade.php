@@ -5,7 +5,8 @@
 <head>
     @include('layouts.partials.head')
 </head>
-<body>
+<!-- If it is a guest user, use cookies to set theme. -->
+<body {{ auth::check() ? '' : 'class=' . Cookie::get('theme') }}>
     <!-- Alerts -->
     @if(session('alert'))
         <div class="alert-success">

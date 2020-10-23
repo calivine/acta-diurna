@@ -10947,13 +10947,10 @@ a.text-dark:focus {
   }
 }
 
-body {
+.light {
   background-image: url(/images/goldleaf.jpg?0de8376dc4450c3d73e3d0f6aa429c34);
   background-position: 50% 20%;
   color: #1c1f2b;
-  /*
-  background-color: $black;
-  color: $white; */
   -webkit-animation-name: slide;
           animation-name: slide;
   -webkit-animation-duration: 400s;
@@ -10962,6 +10959,15 @@ body {
           animation-iteration-count: infinite;
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
+}
+
+.light .container {
+  background-color: #FCFCFC;
+}
+
+.dark {
+  background-color: #1c1f2b;
+  color: #FCFCFC;
 }
 
 @-webkit-keyframes slide {
@@ -11014,7 +11020,6 @@ body {
 .container-md,
 .container-lg,
 .container-xl {
-  background-color: #FCFCFC;
   margin: 2.5vh auto;
   padding: 2.5vh 0 5vh 0;
 }

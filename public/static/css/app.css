@@ -11693,6 +11693,36 @@ nav.navbar-dark {
   padding: 15px 15px;
 }
 
+.figure__image {
+  width: 54vw;
+  height: 40vh;
+}
+
+.aspect-ratio__square {
+  width: 50vw;
+  height: 50vh;
+}
+
+.aspect-ratio__sixteen-nine {
+  width: 89vw;
+  height: 50vh;
+}
+
+.aspect-ratio__four-three {
+  width: 67vw;
+  height: 50vh;
+}
+
+.aspect-ratio__point-eight {
+  width: 43vw;
+  height: 50vh;
+}
+
+.aspect-ratio__eight-five {
+  width: 80vw;
+  height: 50vh;
+}
+
 .toolbar-button {
   cursor: pointer;
   float: left;

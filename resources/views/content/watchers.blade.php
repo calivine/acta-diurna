@@ -17,7 +17,7 @@
                             Source:
                             https://www.nj.com/union/2017/10/judge_rules_on_njs_infamous_watcher_house_lawsuit.html
                         </figcaption>
-                        
+
                     </figure>
                     <article id="chainOfTitle">
                         <hgroup>
@@ -100,19 +100,10 @@
                             features are the gambrel facade and roof, asymmetry of the windows, and the front porch with
                             ionic columns. The front-facing, center gambrel roof-line was a popular feature in American
                             architecture roughly between 1895-1915, befitting for the era.</p>
-                        @include('modules.figure', ['imgSource' => '657 Boulevard_street view.png', 'imgAlt' => '657 Boulevard street view', 'caption' => 'Image courtesy Google Maps/Street View accessed 10/20/2020'])
-                        @include('modules.figure', ['imgSource' => 'sanbornMap2.png', 'imgAlt' => 'Sanborn Map', 'caption' => '1909 Sanborn Insurance Map of Boulevard and Carleton Rd., Westfield, NJ657 Boulevard is highlighted in red.'])
-                        @include('modules.figure', ['imgSource' => 'census.jpg', 'imgAlt' => 'Westfield, NJ census', 'caption' => 'Here, in the 1910 federal census for Westfield, NJ notes the family at 657 Boulevard:'])
-                        <figure>
-                            <img src="{{ asset('storage/assets/news_article.jpg') }}" alt="Courier-News article">
-
-                            <figcaption>
-                                The Courier-News(Bridgewater, New Jersey)<a
-                                        href="https://www.newspapers.com/browse/us/new-jersey/bridgewater/the-courier-news_3776/1947/11/10">10
-                                    Nov 1947, Mon</a>Page 20
-                            </figcaption>
-
-                        </figure>
+                        @include('modules.figure', ['imgSource' => '657 Boulevard_street view.png', 'caption' => 'Image courtesy Google Maps/Street View accessed 10/20/2020'])
+                        @include('modules.figure', ['imgSource' => 'sanbornMap2.png', 'caption' => '1909 Sanborn Insurance Map of Boulevard and Carleton Rd., Westfield, NJ657 Boulevard is highlighted in red.'])
+                        @include('modules.figure', ['imgSource' => 'census.jpg', 'caption' => 'Here, in the 1910 federal census for Westfield, NJ notes the family at 657 Boulevard:'])
+                        @include('modules.figure', ['imgSource' => 'news_article.jpg', 'caption' => 'The Courier-News(Bridgewater, New Jersey) Nov 1947, Mon Page 20', 'class' => 'aspect-ratio__point-eight'])
                     </article>
                     <article id="theSecondLetter">
                         <hgroup>
@@ -155,8 +146,6 @@
                     </article>
                     <article id="theFourthLetter">
                         <hgroup>
-                            <h1 class="post__section-title">Westfield Planning Board Denies 'Watcher House'
-                                Subdivision</h1>
                             <h2 class="post__section-title">The Fourth Letter</h2>
                             <h2 class="post__section-title">March 2017</h2>
                         </hgroup>
@@ -175,9 +164,18 @@
                                 day. Maybe the mysterious death of a pet. Loved ones suddenly die. Planes and cars and
                                 bicycles crash. Bones break.</p>
                         </blockquote>
+                        @include('modules.figure', ['imgSource' => 'googleMapsView.png', 'caption' => '657 Boulevard and the house on Carleton behind it. Image courtesy Google Maps, accessed October 2020.'])
+
                     </article>
-
-
+                    <article id="motiveMeansOpportunity">
+                        <hgroup>
+                            <h1 class="post__section-title">Motive, Means, and Opportunity - Was It The Neighbor On Carleton Road?</h1>
+                        </hgroup>
+                        @include('modules.figure', ['imgSource' => 'carltonRd.png', 'caption' => 'Street view from Carleton Rd. 657 Boulevard is in the background. Image via Google Maps'])
+                        @include('modules.figure', ['imgSource' => 'carltonRd2.png', 'caption' => 'Zoomed view from Carleton Rd. 657 Boulevard is in the background. Image via Google maps.'])
+                        @include('modules.figure', ['imgSource' => 'sanbornMap.png', 'caption' => 'Sanborn Insurance Map, 1921, Westfield, NJ. 657 Boulevard and the house on Carleton St. highlighted in red.'])
+                        @include('modules.figure', ['imgSource' => 'carletonRdRealtorView.png', 'caption' => 'Interior view of the Carleton Rd. house, with 657 Boulevard in the background. Via Realtor.com'])
+                    </article>
                 </section>
 
             </div>

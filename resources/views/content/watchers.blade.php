@@ -6,6 +6,16 @@
             <div class="col-md-8">
                 <h1 class="my-3 text-center">657 Boulevard, Westfield, NJ 07901</h1>
                 <h2 class="text-center"><em>AKA “The Watcher” House: <br> The Truth Revealed?</em></h2>
+                <figure>
+                    <img src="{{ asset('storage/assets/watcher1.JPG') }}" alt="">
+                    <p>
+                        <figcaption>
+                            Source: https://www.nj.com/union/2017/10/judge_rules_on_njs_infamous_watcher_house_lawsuit.html
+                        </figcaption>
+                    </p>
+                </figure>
+
+
                 <h3 class="text-center">Introduction</h3>
                 <blockquote class="justify-content-center">
                     <h4 class="text-center">MMO</h4>

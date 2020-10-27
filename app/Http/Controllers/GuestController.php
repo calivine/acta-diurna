@@ -16,7 +16,7 @@ class GuestController extends Controller
         Log::info(Cookie::get('theme'));
         if (is_null(Cookie::get('theme')))
         {
-            Cookie::queue(Cookie::make('theme', 'dark'), 300);
+            Cookie::queue(Cookie::make('theme', 'light'), 300);
         }
         else
         {

@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
-@section('title', 'ThrillGifs')
+@section('title', 'TheLoreleiLee')
 
 @section('content')
     <div class="container-fluid">
-        {{ Cookie::get('theme') }}
+
     </div>
 @endsection

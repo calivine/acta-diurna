@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Facades\App\Repository\Videos;
 use Log;
-use Request;
+use Illuminate\Http\Request;
 use Cookie;
 
 class GuestController extends Controller
@@ -16,14 +16,30 @@ class GuestController extends Controller
         Log::info(Cookie::get('theme'));
         if (is_null(Cookie::get('theme')))
         {
-            Cookie::queue(Cookie::make('theme', 'light'), 300);
+            Cookie::queue(Cookie::make('theme', 'dark', 300));
         }
         else
         {
-            Cookie::queue(Cookie::get('theme'), 300);
+            Cookie::queue('theme', Cookie::get('theme'), 300);
         }
 
         return view('content.welcome')->with(['files' => $videos]);
+
+    }
+
+    public function changeTheme(Request $request)
+    {
+        $theme = $request->input('theme');
+        if (is_null(Cookie::get('theme')))
+        {
+            Cookie::queue(Cookie::make('theme', $theme, 300));
+        }
+        else
+        {
+            Cookie::queue('theme', $theme, 300);
+        }
+
+        return back();
 
     }
 }

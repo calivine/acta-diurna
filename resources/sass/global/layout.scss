@@ -15,6 +15,10 @@
 .dark {
   background-color: $black;
   color: $white;
+
+  .modal {
+    color: $black;
+  }
 }
 
 @keyframes slide {

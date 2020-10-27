@@ -48,6 +48,21 @@
   src: url(/fonts/OpenSans-Light.ttf?9ff12f694e5951a6f51a9d63b05062e7);
 }
 
+@font-face {
+  font-family: ParkLane;
+  src: url(/fonts/ParkLane.ttf?7acb922e600176fdf67e1c1219f4c3e4);
+}
+
+@font-face {
+  font-family: ParkLaneNF;
+  src: url("/fonts/Park Lane NF.ttf?045f5a97539958c0499ddafa63e49151");
+}
+
+@font-face {
+  font-family: ParkinsonRoman;
+  src: url(/fonts/Parkinson-Roman.otf?58094decbfc9d1246bee8fba0aa1a0d4);
+}
+
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -10970,6 +10985,10 @@ a.text-dark:focus {
   color: #FCFCFC;
 }
 
+.dark .modal {
+  color: #1c1f2b;
+}
+
 @-webkit-keyframes slide {
   0% {
     background-position: 50% 20%;
@@ -11642,6 +11661,36 @@ nav.navbar-dark {
   font-size: 13px;
   line-height: 0.75rem;
   font-style: italic;
+}
+
+.post__title {
+  font-family: ParkLane;
+  font-size: 4rem;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+}
+
+.post__subtitle {
+  text-align: center !important;
+}
+
+.post__section-title {
+  text-align: center !important;
+}
+
+#chainOfTitle {
+  text-align: center !important;
+}
+
+#chainOfTitle ol {
+  list-style: none;
+}
+
+.quote__letter {
+  border: 1px solid black;
+  text-align: center !important;
+  font-style: italic;
+  padding: 15px 15px;
 }
 
 .toolbar-button {

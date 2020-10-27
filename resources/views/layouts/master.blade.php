@@ -26,7 +26,13 @@
     <!-- Navbar -->
     @include('nav.navbar')
 
+    <!-- Global Modals -->
+    @include('modules.change-theme')
+
     <!-- Content -->
     @yield('content')
+
+    <!-- Footer -->
+    @include('layouts.partials.footer')
 </body>
 </html>

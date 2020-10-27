@@ -3,3 +3,34 @@
     line-height: .75rem;
     font-style: italic;
 }
+
+.post__title {
+    font-family: ParkLane;
+    font-size: 4rem;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+}
+
+.post__subtitle {
+    text-align: center !important;
+}
+
+.post__section-title {
+    text-align: center !important;
+}
+
+#chainOfTitle {
+    text-align: center !important;
+    ol {
+        list-style: none;
+    }
+}
+
+.quote__letter {
+    border: 1px solid black;
+    text-align: center !important;
+    font-style: italic;
+    padding: 15px 15px;
+}
+
+

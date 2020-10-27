@@ -54,6 +54,9 @@ Route::get('/tag/{tag}', 'TagController@videosByTag')->name('videosByTag');
 # Authentication Routes
 Auth::routes();
 
+# POST update Page theme setting
+Route::post('/theme', 'GuestController@changeTheme')->name('theme');
+
 # GET The Watchers page
 Route::get('/thewatchers', function () {
     return view('content.watchers');

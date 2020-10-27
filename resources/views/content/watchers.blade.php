@@ -11,7 +11,7 @@
                     </hgroup>
 
                     <figure>
-                        <img src="{{ asset('storage/assets/watcher1.JPG') }}" alt="">
+                        <img class="aspect-ratio__four-three" src="{{ asset('storage/assets/watcher1.JPG') }}" alt="">
 
                         <figcaption>
                             Source:

@@ -62,5 +62,8 @@ Route::get('/thewatchers', function () {
     return view('content.watchers');
 });
 
+# GET Redirect landing page to The Watchers
+Route::redirect('/', '/thewatchers', 301);
+
 # GET landing page
-Route::get('/', 'GuestController@index');
+// Route::get('/', 'GuestController@index');

@@ -11686,6 +11686,26 @@ nav.navbar-dark {
   list-style: none;
 }
 
+aside {
+  text-align: center !important;
+}
+
+aside ul {
+  list-style: none;
+}
+
+figure {
+  margin: 3rem auto;
+}
+
+figure img {
+  margin: 0 auto !important;
+}
+
+figure figcaption {
+  text-align: center !important;
+}
+
 .quote__letter {
   border: 1px solid black;
   text-align: center !important;

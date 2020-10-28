@@ -26,6 +26,25 @@
     }
 }
 
+aside {
+    text-align: center !important;
+    ul {
+        list-style: none;
+    }
+}
+
+figure {
+    margin: 3rem auto;
+
+    img {
+        margin: 0 auto !important;
+    }
+
+    figcaption {
+        text-align: center !important;
+    }
+}
+
 .quote__letter {
     border: 1px solid black;
     text-align: center !important;

@@ -252,6 +252,7 @@
                             from Carleton Rd.</p>
 
                         @include('modules.figure', ['imgSource' => 'carltonRd.png', 'caption' => 'Street view from Carleton Rd. 657 Boulevard is in the background. Image via Google Maps'])
+                        @include('modules.figure', ['imgSource' => 'carltonRd2.png', 'caption' => 'Zoomed view from Carleton Rd. 657 Boulevard is in the background. Image via Google maps.'])
                         <p>The house is stucco-clad, in a Colonial Revival style built around 1920. While lovely, the
                             homes on Carleton are not as grand as the homes on Boulevard. Between the house on Carleton
                             and 657 Boulevard, there are approximately XX feet between them. Records indicate Carleton's
@@ -270,14 +271,12 @@
                             house's matriarch on Carleton Rd. had likely been a frequent guest of 657 Boulevard in the
                             past. She also grew up in Westfield; her family had been there possibly as early as the
                             1920s.</p>
-                        @include('modules.figure', ['imgSource' => 'carltonRd2.png', 'caption' => 'Zoomed view from Carleton Rd. 657 Boulevard is in the background. Image via Google maps.'])
                         <p>Online realtor photographs indicate a clear view of 657 Boulevard from the house's backyard
                             on Carleton Rd. You can easily see all of the back windows, the sunroom, the back entrance,
                             the driveway. The physical distance between the houses is only so many feet. You could
                             probably hear and see quite a lot. In some reports regarding the Watcher, contract workers
                             at 657 Boulevard claimed the backyard neighbors had lawn chairs facing 657 Boulevard as if
                             watching it. </p>
-
                         @include('modules.figure', ['imgSource' => 'sanbornMap.png', 'caption' => 'Sanborn Insurance Map, 1921, Westfield, NJ. 657 Boulevard and the house on Carleton St. highlighted in red.'])
                         @include('modules.figure', ['imgSource' => 'carletonRdRealtorView.png', 'caption' => 'Interior view of the Carleton Rd. house, with 657 Boulevard in the background. Via Realtor.com'])
                         <p>The fourth Watcher letter also clearly states, "Turn around, idiots," as if living behind

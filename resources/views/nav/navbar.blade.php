@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-lite bg-white" id="nav">
     <!-- Left Side Of Navbar -->
     <a class="navbar-brand" href="{{ url('/home') }}" >
-        Home
+        The Watcher
         <!-- <img src="{{ asset('storage/assets/logo_transparent.png') }}" alt="ThrillGIFsLogo" width="150" height="100"> -->
     </a>
 

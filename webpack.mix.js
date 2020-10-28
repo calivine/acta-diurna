@@ -18,6 +18,7 @@ const mix = require('laravel-mix');
 mix.scripts([
     'resources/js/dragndrop.js',
     'resources/js/filesEMCA6v2.js',
+    'resources/js/postHandler.js',
     'resources/js/settingsDisplay.js'
 ], 'public/static/js/main.js');
 
@@ -26,9 +27,9 @@ mix.scripts([
 ], 'public/static/js/text-editor.js');
 
 mix.scripts([
-    'resources/js/postHandler.js',
-    'resources/js/viewCounter.js',
-    'resources/js/autoplay.js',
-    'resources/js/galleryDisplay.js'
+
+    'resources/js/widgets/viewCounter.js',
+    'resources/js/widgets/autoPlay.js',
+    'resources/js/widgets/galleryDisplay.js'
 ], 'public/static/js/viewer.js');
 

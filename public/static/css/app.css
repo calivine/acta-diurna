@@ -11050,6 +11050,7 @@ a.text-dark:focus {
 .container-lg,
 .container-xl {
   margin: 2.5vh auto;
+  max-width: 960px;
   padding: 2.5vh 0 5vh 0;
 }
 
@@ -11712,10 +11713,12 @@ blockquote {
 }
 
 figure {
+  display: block;
   margin: 3rem auto;
 }
 
 figure img {
+  display: block;
   margin: 0 auto !important;
 }
 

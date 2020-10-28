@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <section>
                     <hgroup>
                         <h1 class="post__title">657 Boulevard, Westfield, NJ 07901</h1>

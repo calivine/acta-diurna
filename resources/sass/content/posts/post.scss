@@ -41,9 +41,11 @@ blockquote {
 }
 
 figure {
+    display: block;
     margin: 3rem auto;
 
     img {
+        display: block;
         margin: 0 auto !important;
     }
 

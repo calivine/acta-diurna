@@ -12,9 +12,9 @@
                     <article id="chainOfTitle">
                         @include('modules.figure', ['imgSource' => 'watcher1.JPG', 'caption' => 'source: https://www.nj.com/union/2017/10/ judge_rules_on_njs_infamous_watcher_house_lawsuit.html'])
                         <hgroup>
-                            <h5>Chain of Title</h5>
-                            <h5>657 Boulevard</h5>
-                            <h5>1905-2019:</h5>
+                            <h5 class="post__subtitle">Chain of Title</h5>
+                            <h5 class="post__subtitle">657 Boulevard</h5>
+                            <h5 class="post__subtitle">1905-2019:</h5>
                         </hgroup>
                         <ol>
                             <li>1905-1914: Harry L. Russell</li>

@@ -13,9 +13,11 @@
 
 .post__subtitle {
     text-align: center !important;
+    font-family: Copasetic;
 }
 
 .post__section-title {
+    font-family: Copasetic;
     text-align: center !important;
 }
 
@@ -31,6 +33,11 @@ aside {
     ul {
         list-style: none;
     }
+}
+
+blockquote {
+    font-family: Ironick;
+    font-size: 1.3rem;
 }
 
 figure {

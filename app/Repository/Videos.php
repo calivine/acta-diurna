@@ -12,19 +12,17 @@ use Request;
 
 class Videos
 {
-    CONST CACHE_KEY = 'FILES';
+    CONST CACHE_KEY = 'VIDEOS';
 
-    public function all($perPage = 15)
+    public function all()
     {
-        $page = Request::input('page', 1);
-        $key = "all.{$perPage}perPage.page{$page}";
+        $key = "all";
         $cacheKey = $this->getCacheKey($key);
-        return cache()->remember($cacheKey, Carbon::now()->addMinutes(5), function () use ($perPage) {
+        return cache()->remember($cacheKey, Carbon::now()->addMinutes(5), function () {
             return Video::with(['thumbnail', 'gif', 'tags'])
                 ->orderBy('created_at', 'desc')
-                ->paginate($perPage);
+                ->get();
         });
-
     }
 
     public function allFromUser($perPage=15)

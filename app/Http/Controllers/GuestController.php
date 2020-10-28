@@ -12,19 +12,18 @@ class GuestController extends Controller
     public function index()
     {
         Log::info(log_client());
-        $videos = Videos::all();
+
         Log::info(Cookie::get('theme'));
         if (is_null(Cookie::get('theme')))
         {
-            Cookie::queue(Cookie::make('theme', 'dark', 300));
+            Cookie::queue(Cookie::make('theme', 'light', 300));
         }
         else
         {
             Cookie::queue('theme', Cookie::get('theme'), 300);
         }
 
-        return view('content.welcome')->with(['files' => $videos]);
-
+        return view('content.welcome');
     }
 
     public function changeTheme(Request $request)

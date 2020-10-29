@@ -11684,11 +11684,19 @@ nav.navbar-dark {
 .post__subtitle {
   text-align: center !important;
   font-family: Copasetic;
+  line-height: 5rem;
 }
 
 .post__section-title {
   font-family: Copasetic;
   text-align: center !important;
+  font-size: 3rem;
+}
+
+.post__section-subtitle {
+  font-family: Copasetic;
+  text-align: center !important;
+  font-size: 2rem;
 }
 
 #chainOfTitle {
@@ -11697,6 +11705,10 @@ nav.navbar-dark {
 
 #chainOfTitle ol {
   list-style: none;
+}
+
+#disclaimer {
+  font-size: 0.75rem;
 }
 
 aside {
@@ -11720,6 +11732,7 @@ figure {
 figure img {
   display: block;
   margin: 0 auto !important;
+  max-width: 425px !important;
 }
 
 figure figcaption {
@@ -11739,8 +11752,8 @@ figure figcaption {
 }
 
 .aspect-ratio__square {
-  width: 50vw;
-  height: 50vh;
+  width: 30vw;
+  height: 30vh;
 }
 
 .aspect-ratio__sixteen-nine {
@@ -11754,13 +11767,27 @@ figure figcaption {
 }
 
 .aspect-ratio__point-eight {
-  width: 43vw;
-  height: 50vh;
+  width: 24vw;
+  height: 30vh;
 }
 
-.aspect-ratio__eight-five {
-  width: 80vw;
-  height: 50vh;
+.aspect-ratio__three-two {
+  width: 30vw;
+  height: 23vh;
+}
+
+.aspect-ratio__ten-eight {
+  width: 30vw;
+  height: 24vh;
+}
+
+article {
+  margin-top: 2rem;
+}
+
+article#introduction {
+  border-top: 1px solid black;
+  padding-top: 2rem;
 }
 
 .toolbar-button {

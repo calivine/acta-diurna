@@ -6,29 +6,29 @@
             <div class="col-md-9">
                 <section>
                     <hgroup>
-                        <h1 class="post__title">657 Boulevard, Westfield, NJ 07901</h1>
-                        <h2 class="post__subtitle"><em>AKA “The Watcher” House: <br> The Truth Revealed?</em></h2>
+                        <h1 class="post__title">657 Boulevard, Westfield, NJ</h1>
+                        <h1 class="post__subtitle"><em>AKA “The Watcher” House: <br> The Truth Revealed?</em></h1>
                     </hgroup>
                     <article id="chainOfTitle">
-                        @include('modules.figure', ['imgSource' => 'watcher1.JPG', 'caption' => 'source: https://www.nj.com/union/2017/10/ judge_rules_on_njs_infamous_watcher_house_lawsuit.html'])
+                        @include('modules.figure', ['imgSource' => 'watcher1_4-3.jpg', 'caption' => 'source: https://www.nj.com/union/2017/10/ judge_rules_on_njs_infamous_watcher_house_lawsuit.html'])
                         <hgroup>
-                            <h5 class="post__subtitle">Chain of Title</h5>
-                            <h5 class="post__subtitle">657 Boulevard</h5>
-                            <h5 class="post__subtitle">1905-2019:</h5>
+                            <h2 class="post__section-title">Chain of Title</h2>
+                            <h5 class="post__section-title">657 Boulevard</h5>
+                            <h5 class="post__section-title">1905-2019:</h5>
                         </hgroup>
                         <ol>
                             <li>1905-1914: Harry L. Russell</li>
-                            <li>1914-07/051951: William H. Davies</li>
-                            <li>07/05/1951- 8/26/1955: Dillard E. Bird</li>
-                            <li>08/26/1955-08/02/1963: Lawrence & Mary Shaffer</li>
-                            <li>07/23/1963-12/08/1990: Seth & Floy Lewis Bakes</li>
-                            <li>11/28/1990-06/07/2014: John and Andrea Woods</li>
-                            <li>05/29/2014-07/02/2019:Derek & Maria Broaddus</li>
+                            <li>07/1914 - 05/1951: William H. Davies</li>
+                            <li>07/05/1951 - 08/26/1955: Dillard E. Bird</li>
+                            <li>08/26/1955 - 08/02/1963: Lawrence & Mary Shaffer</li>
+                            <li>07/23/1963 - 12/08/1990: Seth & Floy Lewis Bakes</li>
+                            <li>11/28/1990 - 06/07/2014: John and Andrea Woods</li>
+                            <li>05/29/2014 - 07/02/2019: Derek & Maria Broaddus</li>
                         </ol>
-                    </article>
-                    <article class="border-top border-dark mt-3 pt-4" id="introduction">
                         <p id="disclaimer">*Disclaimer: this is a theory based on conjecture, publicly available
                             records, the location and the nature of the letters. </p>
+                    </article>
+                    <article id="introduction">
                         <p>If there is one thing in life that one must learn, it is that actions have consequences.
                             Perhaps not right away, nor are those consequences always apparent, but they exist. Once
                             something has been cast into the universe, it lingers and serves as a record or imprint in
@@ -72,7 +72,7 @@
                     <article id="theFirstLetter">
                         <hgroup>
                             <h2 class="post__section-title">The First Letter</h2>
-                            <h2 class="post__section-title">June 18, 2014</h2>
+                            <h2 class="post__section-subtitle">June 18, 2014</h2>
                         </hgroup>
                         <blockquote class="quote__letter">
                             <p>Dearest new neighbor at 657 Boulevard,</p>
@@ -92,7 +92,7 @@
                             features are the gambrel facade and roof, asymmetry of the windows, and the front porch with
                             ionic columns. The front-facing, center gambrel roof-line was a popular feature in American
                             architecture roughly between 1895-1915, befitting for the era.</p>
-                        @include('modules.figure', ['imgSource' => '657 Boulevard_street view.png', 'caption' => 'Image courtesy Google Maps/Street View accessed 10/20/2020'])
+                        @include('modules.figure', ['imgSource' => '657 Boulevard_street view4-3.jpg', 'caption' => 'Image courtesy Google Maps/Street View accessed 10/20/2020'])
                         <p>From the outside, it is a beautiful example of early 20th century domestic architecture and a
                             reminder of Gilded Age wealth in America. Boulevard is a quiet, unassuming tree-lined
                             street, with large and well-kept houses and yards. It is seemingly a perfect street, in an
@@ -100,37 +100,23 @@
                             appears that in Westfield, NJ, Boulevard was the street to live on; if you lived there, you
                             made it. </p>
 
-                        @include('modules.figure', ['imgSource' => 'sanbornMap2.png', 'caption' => '1909 Sanborn Insurance Map of Boulevard and Carleton Rd., Westfield, NJ657 Boulevard is highlighted in red.'])
+                        @include('modules.figure', ['imgSource' => 'sanbornMap_Square.jpg', 'caption' => '1909 Sanborn Insurance Map of Boulevard and Carleton Rd., Westfield, NJ657 Boulevard is highlighted in red.'])
                         <p>The original owner of 657 Boulevard was Harry Lincoln Russell, a real estate agent, and his
                             family. The family lived there between 1905-1914. Russell appears to have been an early
-                            property developer in Westfield.</p>
-                        @include('modules.figure', ['imgSource' => 'census.jpg', 'caption' => 'Here, in the 1910 federal census for Westfield, NJ notes the family at 657 Boulevard:'])
-                        <aside>
-                            <ul>
-                                <li>Harry L. Russell, Head, 42. Occupation, Agent, Real Estate</li>
-                                <li>Anna Russell, Wife, 39</li>
-                                <li>Gladys M Russell, daughter, 18</li>
-                                <li>Aubrey J Russell, son, 14</li>
-                                <li>Alice M. Sadler, Mother-in-law, 64</li>
-                                <li>Annie Gurney, Servant, 20</li>
-                            </ul>
-                        </aside>
-                        <p>The next owners of 657 Boulevard were the Davies family, who purchased the property in 1914.
-                            This family would be the most prominent and most prolonged owner of the property.</p>
-                        <p>William H. Davies became mayor of Westfield in 1933 while living on Boulevard. He also died
-                            there in 1947 (as did his mother-in-law in 1915 and his wife in 1943). </p>
-                        @include('modules.figure', ['imgSource' => 'news_article.jpg', 'caption' => 'The Courier-News(Bridgewater, New Jersey) Nov 1947, Mon Page 20', 'class' => 'aspect-ratio__point-eight'])
+                            property developer in Westfield. The next owners of 657 Boulevard were the Davies family, who purchased the property in 1914.
+                            This family would be the most prominent and most prolonged owner of the property. William H. Davies became mayor of Westfield in 1933 while living on Boulevard. He also died
+                            there in 1947 (as did his mother-in-law in 1915 and his wife in 1943).</p>
+                        @include('modules.figure', ['imgSource' => 'news_article.jpg', 'caption' => 'The Courier-News(Bridgewater, New Jersey) Nov 1947, Mon Page 20'])
                         <p>Davies then passed 657 Boulevard to his son, Ernest Davies, and his family. Ernest sold it to
                             Dillard E. Bird in 1951. A Westfield trend of property transferred for $1 and 657 Boulevard
                             was no exception to this tradition until 1990 when the Bakes family sold the property to the
-                            Woods. </p>
-                        <p>After the Bird family, the house sold three more times before being purchased by the
-                            Broaddus’ in 2014. </p>
+                            Woods.After the Bird family, the house sold three more times before being purchased by the
+                            Broaddus’ in 2014.</p>
                     </article>
                     <article id="theSecondLetter">
                         <hgroup>
                             <h2 class="post__section-title">The Second Letter</h2>
-                            <h2 class="post__section-title">July 18, 2014</h2>
+                            <h2 class="post__section-subtitle">July 18, 2014</h2>
                         </hgroup>
                         <blockquote class="quote__letter">
                             <p>657 Boulevard is anxious for you to move in. It has been years and years since the young
@@ -180,7 +166,7 @@
                     <article id="theThirdLetter">
                         <hgroup>
                             <h2 class="post__section-title">The Third Letter</h2>
-                            <h2 class="post__section-title">August 2014</h2>
+                            <h2 class="post__section-subtitle">August 2014</h2>
                         </hgroup>
                         <blockquote class="quote__letter">
                             <p>657 Boulevard is turning on me. It is coming after me. I don’t understand why. What spell
@@ -200,7 +186,7 @@
                     <article id="theFourthLetter">
                         <hgroup>
                             <h2 class="post__section-title">The Fourth Letter</h2>
-                            <h2 class="post__section-title">March 2017</h2>
+                            <h2 class="post__section-subtitle">March 2017</h2>
                         </hgroup>
                         <blockquote class="quote__letter">
                             <p>You wonder who The Watcher is? Turn around idiots. Maybe you even spoke to me, one of the
@@ -236,7 +222,7 @@
                                 from underlying mental illness.
                             </li>
                         </ul>
-                        @include('modules.figure', ['imgSource' => 'googleMapsView.png', 'caption' => '657 Boulevard and the house on Carleton behind it. Image courtesy Google Maps, accessed October 2020.'])
+                        @include('modules.figure', ['imgSource' => 'googleMapsView_4-3.jpg', 'caption' => '657 Boulevard and the house on Carleton behind it. Image courtesy Google Maps, accessed October 2020.'])
 
                     </article>
                     <article id="motiveMeansOpportunity">
@@ -251,8 +237,8 @@
                             before selling it to an LLC in 2017. It sold to a couple in 2019. You can see 657 Boulevard
                             from Carleton Rd.</p>
 
-                        @include('modules.figure', ['imgSource' => 'carltonRd.png', 'caption' => 'Street view from Carleton Rd. 657 Boulevard is in the background. Image via Google Maps'])
-                        @include('modules.figure', ['imgSource' => 'carltonRd2.png', 'caption' => 'Zoomed view from Carleton Rd. 657 Boulevard is in the background. Image via Google maps.'])
+                        @include('modules.figure', ['imgSource' => 'carltonRd4-3.jpg', 'caption' => 'Street view from Carleton Rd. 657 Boulevard is in the background. Image via Google Maps'])
+                        @include('modules.figure', ['imgSource' => 'carltonRd2_4-3.jpg', 'caption' => 'Zoomed view from Carleton Rd. 657 Boulevard is in the background. Image via Google maps.'])
                         <p>The house is stucco-clad, in a Colonial Revival style built around 1920. While lovely, the
                             homes on Carleton are not as grand as the homes on Boulevard. Between the house on Carleton
                             and 657 Boulevard, there are approximately XX feet between them. Records indicate Carleton's
@@ -277,11 +263,11 @@
                             probably hear and see quite a lot. In some reports regarding the Watcher, contract workers
                             at 657 Boulevard claimed the backyard neighbors had lawn chairs facing 657 Boulevard as if
                             watching it. </p>
-                        @include('modules.figure', ['imgSource' => 'sanbornMap.png', 'caption' => 'Sanborn Insurance Map, 1921, Westfield, NJ. 657 Boulevard and the house on Carleton St. highlighted in red.'])
-                        @include('modules.figure', ['imgSource' => 'carletonRdRealtorView.png', 'caption' => 'Interior view of the Carleton Rd. house, with 657 Boulevard in the background. Via Realtor.com'])
+                        @include('modules.figure', ['imgSource' => 'sanbornMap_Square.jpg', 'caption' => 'Sanborn Insurance Map, 1921, Westfield, NJ. 657 Boulevard and the house on Carleton St. highlighted in red.'])
+                        @include('modules.figure', ['imgSource' => 'carletonRdRealtorViewSquare.jpg', 'caption' => 'Interior view of the Carleton Rd. house, with 657 Boulevard in the background. Via Realtor.com'])
                         <p>The fourth Watcher letter also clearly states, "Turn around, idiots," as if living behind
                             Broaddus's entire time.</p>
-                        @include('modules.figure', ['imgSource' => '657BoulevardZillow.png', 'caption' => 'Back entrance to 657 Boulevard. Image courtesy Zillow. https://www.zillow.com/homedetails/657-Boulevard-Westfield-NJ-07090/40090611_zpid/?mmlb=g,5'])
+                        @include('modules.figure', ['imgSource' => '657BoulevardZillow4-3.jpg', 'caption' => 'Back entrance to 657 Boulevard. Image courtesy Zillow. https://www.zillow.com/homedetails/657-Boulevard-Westfield-NJ-07090/40090611_zpid/?mmlb=g,5'])
                         <p>The Watcher's MMO:</p>
                         <dl>
                             <dt>Means</dt>
@@ -329,6 +315,20 @@
                         <p>Let me know your thoughts? I encourage you to draw your conclusions. <br><br>Happy Halloween!
                         </p>
                     </article>
+                </section>
+
+                <section>
+                    @include('modules.figure', ['imgSource' => 'census3-2.jpg', 'caption' => 'Here, in the 1910 federal census for Westfield, NJ notes the family at 657 Boulevard:'])
+                    <aside>
+                        <ul>
+                            <li>Harry L. Russell, Head, 42. Occupation, Agent, Real Estate</li>
+                            <li>Anna Russell, Wife, 39</li>
+                            <li>Gladys M Russell, daughter, 18</li>
+                            <li>Aubrey J Russell, son, 14</li>
+                            <li>Alice M. Sadler, Mother-in-law, 64</li>
+                            <li>Annie Gurney, Servant, 20</li>
+                        </ul>
+                    </aside>
                 </section>
 
             </div>

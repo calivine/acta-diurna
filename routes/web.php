@@ -57,13 +57,15 @@ Auth::routes();
 # POST update Page theme setting
 Route::post('/theme', 'GuestController@changeTheme')->name('theme');
 
+Route::get('/article/{title}', 'GuestController@getArticle');
+
 # GET The Watchers page
-Route::get('/thewatcher', function () {
-    return view('content.watchers');
-});
+# Route::get('/thewatcher', 'GuestController@getArticle');
 
 # GET Redirect landing page to The Watchers
 Route::redirect('/', '/thewatcher', 301);
+
+Route::redirect('/thewatcher', '/article/thewatcher', 301);
 
 # GET landing page
 // Route::get('/', 'GuestController@index');

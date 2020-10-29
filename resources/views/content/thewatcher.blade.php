@@ -267,7 +267,7 @@
                     </article>
                 </section>
                 <section class="mt-4">
-                    @include('content.thewatcher_footnotes')
+                    @include('content.thewatcher.footnotes')
                 </section>
 
 

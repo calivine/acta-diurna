@@ -60,6 +60,11 @@ Route::post('/theme', 'GuestController@changeTheme')->name('theme');
 # GET article
 Route::get('/articles/{title}', 'GuestController@getArticle');
 
+# GET TheWatcher bibliography
+Route::view('/articles/thewatcher/bibliography', 'content.thewatcher.bibliography');
+Route::view('/articles/thewatcher/resources', 'content.thewatcher.references');
+
+
 # REDIRECT /thewatcher -> /articles/thewatcher
 Route::redirect('/thewatcher', '/articles/thewatcher', 301);
 

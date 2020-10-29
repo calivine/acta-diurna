@@ -11226,6 +11226,20 @@ a.text-dark:focus {
   color: inherit;
 }
 
+ul.bibliography {
+  list-style: none;
+}
+
+ul.bibliography li {
+  font-size: 0.8rem;
+  margin-bottom: 3vh;
+  word-break: break-all;
+}
+
+.bibliography__header {
+  margin-bottom: 10vh;
+}
+
 .email__label,
 .password__label,
 .user__label {
@@ -11722,6 +11736,7 @@ figure figcaption {
 
 .post__footnotes li {
   font-size: 0.75rem;
+  word-break: break-all;
 }
 
 .post__title {

@@ -14,10 +14,9 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
-
     @else
-        <a class="nav-link" href="{{ url('/') }}">{{ __('Sources/Links') }}</a>
         <a class="nav-link" href="{{ url('/') }}">{{ __('About') }}</a>
-        <a class="nav-link" href="{{ url('/') }}">{{ __('') }}</a>
+        <a class="nav-link" href="{{ url('/articles/thewatcher/bibliography') }}">{{ __('Bibliography') }}</a>
+        <a class="nav-link" href="{{ url('/articles/thewatcher/resources') }}">{{ __('Links/Sources') }}</a>
     @endauth
 </nav>

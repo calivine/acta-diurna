@@ -66,6 +66,21 @@
   a {
     color: inherit;
   }
+
+}
+
+ul.bibliography {
+  list-style: none;
+
+  li {
+    font-size: .8rem;
+    margin-bottom: 3vh;
+    word-break: break-all;
+  }
+}
+
+.bibliography__header {
+  margin-bottom: 10vh;
 }
 
 

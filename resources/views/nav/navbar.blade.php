@@ -14,5 +14,10 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
+
+    @else
+        <a class="nav-link" href="{{ url('/') }}">{{ __('Sources/Links') }}</a>
+        <a class="nav-link" href="{{ url('/') }}">{{ __('About') }}</a>
+        <a class="nav-link" href="{{ url('/') }}">{{ __('') }}</a>
     @endauth
 </nav>

@@ -11215,6 +11215,17 @@ a.text-dark:focus {
   margin: 0 auto;
 }
 
+.footnote {
+  font-size: 0.7rem;
+  position: relative;
+  bottom: 0.4rem;
+  color: black;
+}
+
+.footnote a {
+  color: inherit;
+}
+
 .email__label,
 .password__label,
 .user__label {
@@ -11707,6 +11718,10 @@ figure figcaption {
 
 .post__section-subtitle {
   font-size: 2rem;
+}
+
+.post__footnotes li {
+  font-size: 0.75rem;
 }
 
 .post__title {

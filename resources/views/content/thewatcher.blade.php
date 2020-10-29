@@ -10,7 +10,7 @@
                         <h1 class="post__subtitle"><em>AKA “The Watcher” House: <br> The Truth Revealed?</em></h1>
                     </hgroup>
                     <article id="chainOfTitle">
-                        @include('modules.figure', ['imgSource' => 'watcher1_4-3.jpg', 'caption' => 'source: https://www.nj.com/union/2017/10/ judge_rules_on_njs_infamous_watcher_house_lawsuit.html'])
+                        @include('modules.figure', ['imgSource' => 'watcher1_4-3.jpg', 'caption' => '6/25/15 Photo by John \'O Boyle for NJ Advance Media', 'link' => 'https://www.nj.com/union/2017/10/judge_rules_on_njs_infamous_watcher_house_lawsuit.html', 'linkText' => 'Original Source'])
                         <hgroup>
                             <h2 class="post__section-title">Chain of Title</h2>
                             <h5 class="post__section-title">657 Boulevard</h5>
@@ -37,12 +37,14 @@
                             evil.</p>
                         <p>In 2015, reports that something strange was happening to new homeowners in Westfield, NJ.
                             Someone sent mysterious letters to a young family with deeply unsettling messages about
-                            their new residence and children, referenced as "young blood." The family purchased the
+                            their new residence and children, referenced as "young
+                            blood."@include('modules.footnote', ['number' => '1']) The family purchased the
                             property in June 2014 and started receiving these letters shortly after that. The letters
                             appear to have ceased in 2017, and the family sold the house, having never lived in it.</p>
                         <p>The Watcher letters are disturbing. It appeared the house came with an apparent stalker or
                             someone obsessed with the property. There was a civil lawsuit, but the courts ultimately
-                            dismissed it in 2019. The family sold the home at an approximately 30% loss the same year.
+                            dismissed it in 2019.@include('modules.footnote', ['number' => '2']) The family sold the
+                            home at an approximately 30% loss the same year.
                             For one family, the experience they had in Westfield, NJ, was a terrifying nightmare playing
                             out in front of the world. And apparently, no one could solve it, or maybe no one wanted to.
                         </p>
@@ -77,20 +79,22 @@
                             house so alluring?</p>
                         <h2 class="post__section-title">History of 657 Boulevard</h2>
                         <p>657 Boulevard is a part of Park Slope, a residential development established by the Westfield
-                            Realty Improvement Company in 1904. It was built in 1905 and is a classic Dutch Colonial
+                            Realty Improvement Company in 1904.@include('modules.footnote', ['number' => '3']) It was
+                            built in 1905 and is a classic Dutch Colonial
                             Revival, a popular architectural style of the early 20th century. The house's most prominent
                             features are the gambrel facade and roof, asymmetry of the windows, and the front porch with
                             ionic columns. The front-facing, center gambrel roof-line was a popular feature in American
-                            architecture roughly between 1895-1915, befitting for the era.</p>
-                        @include('modules.figure', ['imgSource' => '657 Boulevard_street view4-3.jpg', 'caption' => 'Image courtesy Google Maps/Street View accessed 10/20/2020'])
+                            architecture roughly between 1895-1915, befitting for the
+                            era.@include('modules.footnote', ['number' => '4'])</p>
+                        @include('modules.figure', ['imgSource' => '657 Boulevard_street view4-3.jpg', 'caption' => 'Image via Google Maps/Street View accessed 10/20/2020'])
                         <p>From the outside, it is a beautiful example of early 20th century domestic architecture and a
                             reminder of Gilded Age wealth in America. Boulevard is a quiet, unassuming tree-lined
                             street, with large and well-kept houses and yards. It is seemingly a perfect street, in an
                             ideal home, in a perfect neighborhood, and is approximately 16 miles from New York City. It
                             appears that in Westfield, NJ, Boulevard was the street to live on; if you lived there, you
-                            made it. </p>
+                            made it.</p>
 
-                        @include('modules.figure', ['imgSource' => 'sanbornMap_Square.jpg', 'caption' => '1909 Sanborn Insurance Map of Boulevard and Carleton Rd., Westfield, NJ657 Boulevard is highlighted in red.'])
+                        @include('modules.figure', ['imgSource' => 'sanbornMap_Square.jpg', 'caption' => '1909 Sanborn Insurance Map of Boulevard and Carleton Rd., Westfield, NJ-657 Boulevard is highlighted in red.'])
                         <p>The original owner of 657 Boulevard was Harry Lincoln Russell, a real estate agent, and his
                             family. The family lived there between 1905-1914. Russell appears to have been an early
                             property developer in Westfield. The next owners of 657 Boulevard were the Davies family,
@@ -98,11 +102,12 @@
                             This family would be the most prominent and most prolonged owner of the property. William H.
                             Davies became mayor of Westfield in 1933 while living on Boulevard. He also died
                             there in 1947 (as did his mother-in-law in 1915 and his wife in 1943).</p>
-                        @include('modules.figure', ['imgSource' => 'news_article.jpg', 'caption' => 'The Courier-News(Bridgewater, New Jersey) Nov 1947, Mon Page 20'])
+                        @include('modules.figure', ['imgSource' => 'news_article.jpg', 'caption' => 'November 10, 1947 clipping from The Courier-News, Bridgewater New Jersey.'])
                         <p>Davies then passed 657 Boulevard to his son, Ernest Davies, and his family. Ernest sold it to
                             Dillard E. Bird in 1951. A Westfield trend of property transferred for $1 and 657 Boulevard
                             was no exception to this tradition until 1990 when the Bakes family sold the property to the
-                            Woods.After the Bird family, the house sold three more times before being purchased by the
+                            Woods. After the Bird family, the house sold three more times: Schaffer (1955-1963), Bakes
+                            (1963-1990) and Woods (1990-2014), before being purchased by the
                             Broaddus’ in 2014.</p>
                     </article>
                     <article id="theSecondLetter">
@@ -120,16 +125,17 @@
                             purchased 657 Boulevard had they known about the "Watcher."</p>
                         <p>The Broaddus family went to the police. Then Detective Lieutenant Leonard Lugo, later demoted
                             to Sergeant in 2018 and now retired, informed the Broaddus family to stay silent on the
-                            letters. Unfortunately, the police were unable to solve the case. The Broaddus family turned
-                            to alternative security measures for protection. Now, the family had an emotional burden due
-                            to the letters. Still, there was also a financial burden building for them. </p>
+                            letters.@include('modules.footnote', ['number' => '5']) Unfortunately, the police were unable to solve the case. The Broaddus family turned
+                            to alternative security measures for protection, installing expensive security equipment,
+                            and advertising for a personal security guard. The family was frightened due to the letters.
+                            Now expenses were accruing for the family as well.</p>
                         <p>There was some speculation on neighbors. It was explicitly focusing on another house on
-                            Boulevard, not behind the property. <br> Peggy Langford owned the house next to (right of)
+                            Boulevard, not behind the property. <br> Peggy Langford lived in the house next to
                             657 Boulevard. She had been there since the mid-1960s. According to neighbors, she was in
                             her 90s and shared the home with several of her children. They were in their 60s and
                             seemingly a bit eccentric. Her family was considered suspects but cleared when DNA taken
                             from one of the Watcher letters did not match anyone in the family. The DNA found was to be
-                            female.
+                            female.@include('modules.footnote', ['number' => '6']) Peggy Langford passed away in February 2020.@include('modules.footnote', ['number' => '7'])
                         </p>
 
 
@@ -146,7 +152,7 @@
                         @include('content.thewatcher.letter4')
                         <p>These letters became more unsettling and unhinged and possibly threatening. Who is this
                             person? Why are they doing this? Why are they explicitly referencing and calling out the
-                            children (personal details omitted from Watcher letters) specifically? Who would be obsessed
+                            children specifically? Who would be obsessed
                             enough with this house to do such an odd thing? <br> I started by looking for clues within
                             the Watcher letters themselves. Ultimately, I believe the Watcher self-identifies themselves
                             in the 4th letter: <em>“Turn around idiots.”</em></p>
@@ -175,40 +181,41 @@
                             Rd. on the lot directly behind 657 Boulevard. From there, access to 657 Boulevard's backyard
                             and driveway are in clear, full view from this spot.</p>
                         <p>Is this where the Westfield Watcher lived until 2017? A family lived here for nearly 50 years
-                            before selling it to an LLC in 2017. It sold to a couple in 2019. You can see 657 Boulevard
+                            before selling it to an LLC in 2017.@include('modules.footnote', ['number' => '8']) It sold to a couple in 2019.@include('modules.footnote', ['number' => '9']) You can see 657 Boulevard
                             from Carleton Rd.</p>
 
                         @include('modules.figure', ['imgSource' => 'carltonRd4-3.jpg', 'caption' => 'Street view from Carleton Rd. 657 Boulevard is in the background. Image via Google Maps'])
                         @include('modules.figure', ['imgSource' => 'carltonRd2_4-3.jpg', 'caption' => 'Zoomed view from Carleton Rd. 657 Boulevard is in the background. Image via Google maps.'])
                         <p>The house is stucco-clad, in a Colonial Revival style built around 1920. While lovely, the
                             homes on Carleton are not as grand as the homes on Boulevard. Between the house on Carleton
-                            and 657 Boulevard, there are approximately XX feet between them. Records indicate Carleton's
-                            owners had been there since September 1970 and sold the house in June 2017 to an LLC. That
+                            and 657 Boulevard, there are approximately 114 feet between them. Records indicate
+                            Carleton's
+                            owners had been there since September 1970 and sold the house in June 2017 to a newly formed LLC.@include('modules.footnote', ['number' => '10']) That
                             means this couple was living at this house on Carleton when the Watcher was sending the
                             letters. The couple living there were in their late 80s.
                         </p>
                         <p>That couple raised ten children at the house on Carleton Rd., the one behind 657 Boulevard.
                             Their children went to Westfield High School and today are grown with families of their own.
                             <br> One interesting fact that is never mentioned, nor is apparent, is that one of their
-                            daughters married one of Seth and Floy Bakes' sons in 1982. The Bakes family lived in 657
+                            daughters married one of Seth and Floy Bakes' sons in 1982.@include('modules.footnote', ['number' => '11']) The Bakes family lived in 657
                             Boulevard between 1963-1990. It was the Bakes who sold the house to the Woods. For a time,
                             the Bakes and the family on Carleton road overlapped.</p>
                         <p>That suggests the house owners on Carleton would have had access to 657 Boulevard for nearly
                             a decade, if not longer, and a personal connection if her son-in-law grew up there. The
-                            house's matriarch on Carleton Rd. had likely been a frequent guest of 657 Boulevard in the
+                            house's matriarch on Carleton road had likely been a frequent guest of 657 Boulevard in the
                             past. She also grew up in Westfield; her family had been there possibly as early as the
                             1920s.</p>
                         <p>Online realtor photographs indicate a clear view of 657 Boulevard from the house's backyard
-                            on Carleton Rd. You can easily see all of the back windows, the sunroom, the back entrance,
-                            the driveway. The physical distance between the houses is only so many feet. You could
+                            on Carleton road You can easily see all of the back windows, the sunroom, the back entrance,
+                            the driveway. The physical distance between the houses is 114 feet, or 38 yards. You could
                             probably hear and see quite a lot. In some reports regarding the Watcher, contract workers
                             at 657 Boulevard claimed the backyard neighbors had lawn chairs facing 657 Boulevard as if
-                            watching it. </p>
-                        @include('modules.figure', ['imgSource' => 'sanbornMap_Square.jpg', 'caption' => 'Sanborn Insurance Map, 1921, Westfield, NJ. 657 Boulevard and the house on Carleton St. highlighted in red.'])
-                        @include('modules.figure', ['imgSource' => 'carletonRdRealtorViewSquare.jpg', 'caption' => 'Interior view of the Carleton Rd. house, with 657 Boulevard in the background. Via Realtor.com'])
-                        <p>The fourth Watcher letter also clearly states, "Turn around, idiots," as if living behind
-                            Broaddus's entire time.</p>
-                        @include('modules.figure', ['imgSource' => '657BoulevardZillow4-3.jpg', 'caption' => 'Back entrance to 657 Boulevard. Image courtesy Zillow. https://www.zillow.com/homedetails/657-Boulevard-Westfield-NJ-07090/40090611_zpid/?mmlb=g,5'])
+                            watching it.@include('modules.footnote', ['number' => '12']) </p>
+                        @include('modules.figure', ['imgSource' => 'sanbornMap_Square.jpg', 'caption' => 'Sanborn Insurance Map, 1921, Westfield, NJ. 657 Boulevard and the house on Carleton Rd. highlighted in red.'])
+                        @include('modules.figure', ['imgSource' => 'carletonRdRealtorViewSquare.jpg', 'caption' => 'Interior view of the Carleton Rd. house, with 657 Boulevard in the background. Image courtesy Realtor.com ', 'link' => 'https://www.realtor.com/realestateandhomes-detail/644-Carleton-Rd_Westfield_NJ_07090_M67589-13330#photo8', 'linkText' => 'Original'])
+                        <p>The fourth Watcher letter also clearly states, "Turn around, idiots," as if living behind the
+                            Broaddus's the entire time.</p>
+                        @include('modules.figure', ['imgSource' => '657BoulevardZillow4-3.jpg', 'caption' => 'Back entrance to 657 Boulevard. Image courtesy Zillow.', 'link' => 'https://www.zillow.com/homedetails/657-Boulevard-Westfield-NJ-07090/40090611_zpid/?mmlb=g,5', 'linkText' => 'Original Source'])
                         <p>The Watcher's MMO:</p>
                         <dl>
                             <dt>Means</dt>
@@ -218,7 +225,7 @@
                                 decline?
                             </dd>
                             <dt>Opportunity</dt>
-                            <dd>Backyard neighbor, always in the neighborhood</dd>
+                            <dd>Location, backyard neighbor</dd>
                         </dl>
                         <p>It is not clear why the police didn't investigate the owners of Carleton as suspects. Perhaps
                             it was because they are elderly and don't seem to fit any profile? The owners also seem to
@@ -259,22 +266,10 @@
                         </p>
                     </article>
                 </section>
-
-                @include('content.thewatcher_footnotes')
-
-                <section>
-                    @include('modules.figure', ['imgSource' => 'census3-2.jpg', 'caption' => 'Here, in the 1910 federal census for Westfield, NJ notes the family at 657 Boulevard:'])
-                    <aside>
-                        <ul>
-                            <li>Harry L. Russell, Head, 42. Occupation, Agent, Real Estate</li>
-                            <li>Anna Russell, Wife, 39</li>
-                            <li>Gladys M Russell, daughter, 18</li>
-                            <li>Aubrey J Russell, son, 14</li>
-                            <li>Alice M. Sadler, Mother-in-law, 64</li>
-                            <li>Annie Gurney, Servant, 20</li>
-                        </ul>
-                    </aside>
+                <section class="mt-4">
+                    @include('content.thewatcher_footnotes')
                 </section>
+
 
             </div>
         </div>

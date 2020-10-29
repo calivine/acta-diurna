@@ -1,1 +1,1 @@
-<span><a href="{{ '#' . $number }}">{{ $number }}</a></span>
+<span class="footnote"><a href="{{ '#footnote-' . $number }}">{{ $number }}</a></span>

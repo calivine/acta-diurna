@@ -6,18 +6,13 @@ const isAdvancedUpload = function() {
 document.addEventListener('DOMContentLoaded', function () {
     // Upload form element
     let $form = $('.box');
-// Video input element
+    // Video input element
     let $input = $form.find('input[type="file"]');
-// Video input (vanilla)
+    // Video input (vanilla)
     let $file_input = document.getElementById('file');
 
     let uploadingDisplay = $('#upload-display');
     let uploadsResultsContainer = $('.upload-results-container');
-    console.log($input);
-    console.log($form);
-    console.log($form.get(0));
-    console.log($file_input);
-
     if (isAdvancedUpload) {
         $form.addClass('has-advanced-upload');
         console.log('Drag n\' drop enabled.');

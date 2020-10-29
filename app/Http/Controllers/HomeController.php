@@ -31,8 +31,8 @@ class HomeController extends Controller
         // Get the most recent post by user
         $posts = Posts::getMostRecent();
 
-        $files = Videos::allFromUser(25);
-
+        // $files = Videos::allFromUser(25);
+        $files = Videos::dashboardVideos();
         $post_date = $posts->created_at ?? "";
         $post_body = $posts->body ?? "Your post will go here.";
 

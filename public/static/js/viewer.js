@@ -3,6 +3,8 @@ let realView = false;
 
 media.addEventListener('timeupdate', checkTime);
 
+console.log('View Counter widget enabled');
+
 function checkTime() {
 
     if (media.currentTime >= 10 && !realView) {
@@ -21,7 +23,9 @@ if (nextContainer) {
     nextContainer.setAttribute('id', 'up-next');
 }
 
-media.addEventListener('ended', function(event) {
+console.log('AutoPlay widget enabled.');
+
+media.addEventListener('ended', function() {
 
     if (gallery.length > 0) {
         const next = gallery[0].getAttribute('href');
@@ -39,9 +43,9 @@ window.addEventListener('resize', function (e) {
     console.log(window.innerWidth);
 });
 document.addEventListener('DOMContentLoaded', function () {
-
     const allVideos = Array.from(document.getElementsByClassName('media'));
     if (allVideos) {
+        console.log('Gallery Display widget enabled');
         const totalVideos = allVideos.length;
 
         let numberVisible = 5;

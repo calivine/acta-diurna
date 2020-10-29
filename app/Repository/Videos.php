@@ -39,6 +39,20 @@ class Videos
         });
     }
 
+    public function dashboardVideos()
+    {
+        $user = Request::user()->id;
+        $key = "{$user}.dash";
+        $cacheKey = $this->getCacheKey($key);
+        return cache()->remember($cacheKey, Carbon::now()->addMinutes(5), function () use ($user) {
+            return Video::with(['thumbnail', 'gif', 'tags'])
+                ->where('user_id', $user)
+                ->orderBy('created_at', 'desc')
+                ->take(6)
+                ->get();
+        });
+    }
+
     public function findVideo($hash)
     {
         $key = "findVideo.{$hash}";

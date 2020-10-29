@@ -11209,6 +11209,12 @@ a.text-dark:focus {
   border-color: #9f0b41;
 }
 
+.border-fancy {
+  display: block;
+  width: 52vw;
+  margin: 0 auto;
+}
+
 .email__label,
 .password__label,
 .user__label {
@@ -11668,10 +11674,39 @@ nav.navbar-dark {
   position: absolute;
 }
 
+figure {
+  display: block;
+  margin: 3rem auto;
+}
+
+figure img {
+  display: block;
+  margin: 0 auto !important;
+  max-width: 425px !important;
+}
+
+figure figcaption {
+  text-align: center !important;
+}
+
 .post__date {
   font-size: 13px;
   line-height: 0.75rem;
   font-style: italic;
+}
+
+.post__section-subtitle,
+.post__section-title {
+  font-family: Copasetic;
+  text-align: center !important;
+}
+
+.post__section-title {
+  font-size: 3rem;
+}
+
+.post__section-subtitle {
+  font-size: 2rem;
 }
 
 .post__title {
@@ -11685,18 +11720,6 @@ nav.navbar-dark {
   text-align: center !important;
   font-family: Copasetic;
   line-height: 5rem;
-}
-
-.post__section-title {
-  font-family: Copasetic;
-  text-align: center !important;
-  font-size: 3rem;
-}
-
-.post__section-subtitle {
-  font-family: Copasetic;
-  text-align: center !important;
-  font-size: 2rem;
 }
 
 #chainOfTitle {
@@ -11720,23 +11743,7 @@ aside ul {
 }
 
 blockquote {
-  font-family: Ironick;
   font-size: 1.3rem;
-}
-
-figure {
-  display: block;
-  margin: 3rem auto;
-}
-
-figure img {
-  display: block;
-  margin: 0 auto !important;
-  max-width: 425px !important;
-}
-
-figure figcaption {
-  text-align: center !important;
 }
 
 .quote__letter {
@@ -11783,11 +11790,6 @@ figure figcaption {
 
 article {
   margin-top: 2rem;
-}
-
-article#introduction {
-  border-top: 1px solid black;
-  padding-top: 2rem;
 }
 
 .toolbar-button {

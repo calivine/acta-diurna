@@ -3,6 +3,8 @@ let realView = false;
 
 media.addEventListener('timeupdate', checkTime);
 
+console.log('View Counter widget enabled');
+
 function checkTime() {
 
     if (media.currentTime >= 10 && !realView) {

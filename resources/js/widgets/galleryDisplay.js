@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-
     const allVideos = Array.from(document.getElementsByClassName('media'));
     if (allVideos) {
+        console.log('Gallery Display widget enabled');
         const totalVideos = allVideos.length;
 
         let numberVisible = 5;

@@ -1,7 +1,38 @@
+figure {
+    display: block;
+    margin: 3rem auto;
+
+    img {
+        display: block;
+        margin: 0 auto !important;
+        max-width: 425px !important;
+    }
+
+    figcaption {
+        text-align: center !important;
+    }
+}
+
 .post__date {
     font-size: 13px;
     line-height: .75rem;
     font-style: italic;
+}
+
+
+%post__section {
+    font-family: Copasetic;
+    text-align: center !important;
+}
+
+.post__section-title {
+    @extend %post__section;
+    font-size: 3rem;
+}
+
+.post__section-subtitle {
+    @extend %post__section;
+    font-size: 2rem;
 }
 
 .post__title {
@@ -17,17 +48,7 @@
     line-height: 5rem;
 }
 
-.post__section-title {
-    font-family: Copasetic;
-    text-align: center !important;
-    font-size: 3rem;
-}
 
-.post__section-subtitle {
-    font-family: Copasetic;
-    text-align: center !important;
-    font-size: 2rem;
-}
 
 #chainOfTitle {
     text-align: center !important;
@@ -48,24 +69,9 @@ aside {
 }
 
 blockquote {
-    font-family: Ironick;
     font-size: 1.3rem;
 }
 
-figure {
-    display: block;
-    margin: 3rem auto;
-
-    img {
-        display: block;
-        margin: 0 auto !important;
-        max-width: 425px !important;
-    }
-
-    figcaption {
-        text-align: center !important;
-    }
-}
 
 .quote__letter {
     border: 1px solid black;
@@ -109,13 +115,6 @@ figure {
     height: 24vh;
 }
 
-
 article {
     margin-top: 2rem;
 }
-
-article#introduction {
-    border-top: 1px solid black;
-    padding-top: 2rem;
-}
-

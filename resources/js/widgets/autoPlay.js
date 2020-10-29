@@ -5,7 +5,9 @@ if (nextContainer) {
     nextContainer.setAttribute('id', 'up-next');
 }
 
-media.addEventListener('ended', function(event) {
+console.log('AutoPlay widget enabled.');
+
+media.addEventListener('ended', function() {
 
     if (gallery.length > 0) {
         const next = gallery[0].getAttribute('href');

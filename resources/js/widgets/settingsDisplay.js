@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     let navs = document.querySelectorAll('.nav__item');
-    let displays = document.querySelectorAll('.form__wrapper')
-
+    let displays = document.querySelectorAll('.form__wrapper');
+    if (navs && displays) {
+        console.log('Options Display widget enabled.');
+    }
     navs.forEach(function (nav) {
         // nav.classList.remove('nav__active');
         nav.addEventListener('click', function (e) {

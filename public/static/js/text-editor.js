@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let textInput = document.querySelector('.text-input');
-    let uploadsResultsContainer = $('.upload-results-container');
+    const textInput = document.querySelector('.text-input');
+    const form = document.querySelector('.write-post__form');
+
+
     let textView = document.querySelector('.text-input__display');
-    let form = document.querySelector('.write-post__form');
-    let uploadingDisplay = $('#upload-display');
+
+
     let textUpload = $('.text-input__display');
     let editableContentBox = document.querySelector('.text-input__display');
-    const hiddenForm = $('.box.hidden');
-    const uploadLabel = $('.upload-label');
+
     const inputContainer = $('.text-input__container.show-placeholder');
-    let drFiles = false;
+
 
     if (isAdvancedUpload) {
         textUpload.addClass('has-advanced-upload');
@@ -26,55 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Submit user input through text element
     form.addEventListener('submit', (event) => {
         textInput.value = textUpload[0].outerText;
     });
-
-    textUpload.on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-    })
-        .on('dragover dragenter', function() {
-            textUpload.addClass('is-dragover');
-            uploadLabel.addClass('show')
-
-        })
-        .on('dragleave dragend drop', function() {
-            textUpload.removeClass('is-dragover');
-            uploadLabel.removeClass('show');
-        })
-        .on('drop', function(e) { // When drag n drop is supported.
-            drFiles = e.originalEvent.dataTransfer.files;
-            // Trigger submit form.
-            hiddenForm.trigger('submit');
-        });
-
-    hiddenForm.on('submit', function(e) {
-        uploadingDisplay.addClass('working');
-        uploadsResultsContainer.addClass('working');
-        if (drFiles) {
-            $.each(drFiles, function(i, file) {
-                let uploader = new ChunkedUploader(file=file, form=hiddenForm);
-                uploader.start();
-                e.preventDefault();
-            });
-        }
-        e.preventDefault();
-    });
 });
-
-/*
-function handleFiles(event) {
-    drFiles = event;
-    console.log(drFiles);
-}
-
-function dragStart(event) {
-    console.log(event);
-}
-
-function stopDefaults(event) {
-    event.preventDefault();
-    event.stopPropagation();
-}
-*/

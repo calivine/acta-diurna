@@ -10,7 +10,7 @@
                 <div class="nav__item" id="nav__user">
                     User
                 </div>
-                <div class="nav__item" id="nav__theme">
+                <div class="nav__item nav__active" id="nav__theme">
                     Theme
                 </div>
                 <div class="nav__item" id="nav__tags">

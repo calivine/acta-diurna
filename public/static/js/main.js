@@ -6,18 +6,13 @@ const isAdvancedUpload = function() {
 document.addEventListener('DOMContentLoaded', function () {
     // Upload form element
     let $form = $('.box');
-// Video input element
+    // Video input element
     let $input = $form.find('input[type="file"]');
-// Video input (vanilla)
+    // Video input (vanilla)
     let $file_input = document.getElementById('file');
 
     let uploadingDisplay = $('#upload-display');
     let uploadsResultsContainer = $('.upload-results-container');
-    console.log($input);
-    console.log($form);
-    console.log($form.get(0));
-    console.log($file_input);
-
     if (isAdvancedUpload) {
         $form.addClass('has-advanced-upload');
         console.log('Drag n\' drop enabled.');
@@ -270,8 +265,10 @@ class PostHandler {
 
 document.addEventListener('DOMContentLoaded', function () {
     let navs = document.querySelectorAll('.nav__item');
-    let displays = document.querySelectorAll('.form__wrapper')
-
+    let displays = document.querySelectorAll('.form__wrapper');
+    if (navs && displays) {
+        console.log('Options Display widget enabled.');
+    }
     navs.forEach(function (nav) {
         // nav.classList.remove('nav__active');
         nav.addEventListener('click', function (e) {

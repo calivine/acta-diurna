@@ -28,6 +28,7 @@
                         <p id="disclaimer">*Disclaimer: this is a theory based on conjecture, publicly available
                             records, the location and the nature of the letters. </p>
                     </article>
+                    <img class="border-fancy" src="{{ asset('storage/assets/fancyBorder1-noBG.png') }}" alt="">
                     <article id="introduction">
                         <p>If there is one thing in life that one must learn, it is that actions have consequences.
                             Perhaps not right away, nor are those consequences always apparent, but they exist. Once
@@ -38,7 +39,7 @@
                             Someone sent mysterious letters to a young family with deeply unsettling messages about
                             their new residence and children, referenced as "young blood." The family purchased the
                             property in June 2014 and started receiving these letters shortly after that. The letters
-                            appear to have ceased in 2017, and the family sold the house, having never lived in it. </p>
+                            appear to have ceased in 2017, and the family sold the house, having never lived in it.</p>
                         <p>The Watcher letters are disturbing. It appeared the house came with an apparent stalker or
                             someone obsessed with the property. There was a civil lawsuit, but the courts ultimately
                             dismissed it in 2019. The family sold the home at an approximately 30% loss the same year.
@@ -61,7 +62,8 @@
                             I will document and analyze 657 Boulevard's history and present a new theory, not reiterate
                             the original case's details.
                         </p>
-                        <article class="border-top border-dark mt-3 pt-4">
+                        <img class="border-fancy" src="{{ asset('storage/assets/fancyBorder1-noBG.png') }}" alt="">
+                        <article class="mt-3 pt-4">
                             <p>It seemed too strange to be real, like something out of a horror movie. The letters were
                                 unsettling, and the Watcher seemed so close, there was an almost supernatural aura to
                                 them. For the curious, this case was too intriguing not to dig deeper into and try to
@@ -70,19 +72,7 @@
                         </article>
                     </article>
                     <article id="theFirstLetter">
-                        <hgroup>
-                            <h2 class="post__section-title">The First Letter</h2>
-                            <h2 class="post__section-subtitle">June 18, 2014</h2>
-                        </hgroup>
-                        <blockquote class="quote__letter">
-                            <p>Dearest new neighbor at 657 Boulevard,</p>
-                            <p>Allow me to welcome you to the neighborhood.</p>
-                            <p>657 Boulevard has been the subject of my family for decades now and as it approaches its
-                                110th birthday, I have been put in charge of watching and waiting for its second coming.
-                                My grandfather watched the house in the 1920s and my father watched in the 1960s. It is
-                                now my time. Do you know the history of the house? Do you know what lies within the
-                                walls of 657 Boulevard? Why are you here? I will find out.</p>
-                        </blockquote>
+                        @include('content.thewatcher.letter1')
                         <p>The history of 657 Boulevard appears to be very important to the Watcher, so what made this
                             house so alluring?</p>
                         <h2 class="post__section-title">History of 657 Boulevard</h2>
@@ -103,8 +93,10 @@
                         @include('modules.figure', ['imgSource' => 'sanbornMap_Square.jpg', 'caption' => '1909 Sanborn Insurance Map of Boulevard and Carleton Rd., Westfield, NJ657 Boulevard is highlighted in red.'])
                         <p>The original owner of 657 Boulevard was Harry Lincoln Russell, a real estate agent, and his
                             family. The family lived there between 1905-1914. Russell appears to have been an early
-                            property developer in Westfield. The next owners of 657 Boulevard were the Davies family, who purchased the property in 1914.
-                            This family would be the most prominent and most prolonged owner of the property. William H. Davies became mayor of Westfield in 1933 while living on Boulevard. He also died
+                            property developer in Westfield. The next owners of 657 Boulevard were the Davies family,
+                            who purchased the property in 1914.
+                            This family would be the most prominent and most prolonged owner of the property. William H.
+                            Davies became mayor of Westfield in 1933 while living on Boulevard. He also died
                             there in 1947 (as did his mother-in-law in 1915 and his wife in 1943).</p>
                         @include('modules.figure', ['imgSource' => 'news_article.jpg', 'caption' => 'The Courier-News(Bridgewater, New Jersey) Nov 1947, Mon Page 20'])
                         <p>Davies then passed 657 Boulevard to his son, Ernest Davies, and his family. Ernest sold it to
@@ -114,28 +106,7 @@
                             Broaddus’ in 2014.</p>
                     </article>
                     <article id="theSecondLetter">
-                        <hgroup>
-                            <h2 class="post__section-title">The Second Letter</h2>
-                            <h2 class="post__section-subtitle">July 18, 2014</h2>
-                        </hgroup>
-                        <blockquote class="quote__letter">
-                            <p>657 Boulevard is anxious for you to move in. It has been years and years since the young
-                                blood ruled the hallways of the house. Have you found all of the secrets it holds yet?
-                                Will the young blood play in the basement? Or are they too afraid to go down there
-                                alone? I would [be] very afraid if I were them. It is far away from the rest of the
-                                house. If you were upstairs you would never hear them scream.</p>
-                            <p>Will they sleep in the attic? Or will you all sleep on the second floor? Who has the
-                                bedrooms facing the street? I’ll know as soon as you move in. It will help me to know
-                                who is in which bedroom. Then I can plan better.</p>
-                            <p>All of the windows and doors in 657 Boulevard allow me to watch you and track you as you
-                                move through the house. Who am I? I am the Watcher and have been in control of 657
-                                Boulevard for the better part of two decades now. The Woods family turned it over to
-                                you. It was their time to move on and kindly sold it when I asked them to.</p>
-                            <p>I pass by many times a day. 657 Boulevard is my job, my life, my obsession. And now you
-                                are too Broaddus family. Welcome to the product of your greed! Greed is what brought the
-                                past three families to 657 Boulevard and now it has brought you to me.</p>
-                            <p>Have a happy moving in day. You know I will be watching.</p>
-                        </blockquote>
+                        @include('content.thewatcher.letter2')
                         <p>The second letter the family received, a month after the first, was much longer and much more
                             unsettling than the first. What was the Watcher planning? Why call children "young blood?"
                             Why would you track someone in their own home unless there was a nefarious motive? </p>
@@ -164,19 +135,7 @@
 
                     </article>
                     <article id="theThirdLetter">
-                        <hgroup>
-                            <h2 class="post__section-title">The Third Letter</h2>
-                            <h2 class="post__section-subtitle">August 2014</h2>
-                        </hgroup>
-                        <blockquote class="quote__letter">
-                            <p>657 Boulevard is turning on me. It is coming after me. I don’t understand why. What spell
-                                did you cast on it? It used to be my friend and now it is my enemy. I am in charge of
-                                657 Boulevard. It is not in charge of me. I will fend off its bad things and wait for it
-                                to become good again. It will not punish me. I will rise again. I will be patient and
-                                wait for this to pass and for you to bring the young blood back to me. 657 Boulevard
-                                needs young blood. It needs you. Come back. Let the young blood play again like I once
-                                did. Let the young blood sleep in 657 Boulevard. Stop changing it and let it alone.</p>
-                        </blockquote>
+                        @include('content.thewatcher.letter3')
                         <p>Now stuck with a house with someone claiming to be the "Watcher," literally watching them,
                             the family tried to look for options to recuperate some of their expenses. They tried to
                             take the house, situated on two lots, down and subdivide the property. The city of Westfield
@@ -184,25 +143,7 @@
 
                     </article>
                     <article id="theFourthLetter">
-                        <hgroup>
-                            <h2 class="post__section-title">The Fourth Letter</h2>
-                            <h2 class="post__section-subtitle">March 2017</h2>
-                        </hgroup>
-                        <blockquote class="quote__letter">
-                            <p>You wonder who The Watcher is? Turn around idiots. Maybe you even spoke to me, one of the
-                                so called neighbors who has no idea who The Watcher could be. Or maybe you do know and
-                                are too scared to tell anyone. Good move. I walked by the news trucks when they took
-                                over my neighborhood and mocked me. I watched as you watched from the dark house in an
-                                attempt to find me … Telescopes and binoculars are wonderful inventions. 657 Boulevard
-                                survived your attempted assault and stood strong with its army of supporters barricading
-                                its gates. My soldiers of the Boulevard followed my orders to a T. They carried out
-                                their mission and saved the soul of 657 Boulevard with my orders. All hail The
-                                Watcher!!!</p>
-                            <p>Maybe a car accident. Maybe a fire. Maybe something as simple as a mild illness that
-                                never seems to go away but makes you fell sick day after day after day after day after
-                                day. Maybe the mysterious death of a pet. Loved ones suddenly die. Planes and cars and
-                                bicycles crash. Bones break.</p>
-                        </blockquote>
+                        @include('content.thewatcher.letter4')
                         <p>These letters became more unsettling and unhinged and possibly threatening. Who is this
                             person? Why are they doing this? Why are they explicitly referencing and calling out the
                             children (personal details omitted from Watcher letters) specifically? Who would be obsessed
@@ -273,7 +214,9 @@
                             <dt>Means</dt>
                             <dd>Knowledge/History, proximity to 657 Boulevard</dd>
                             <dt>Motive</dt>
-                            <dd>Lifelong Westfield community member, jealousy, curiosity, mental illness, cognitive decline?</dd>
+                            <dd>Lifelong Westfield community member, jealousy, curiosity, mental illness, cognitive
+                                decline?
+                            </dd>
                             <dt>Opportunity</dt>
                             <dd>Backyard neighbor, always in the neighborhood</dd>
                         </dl>
@@ -316,6 +259,8 @@
                         </p>
                     </article>
                 </section>
+
+                @include('content.thewatcher_footnotes')
 
                 <section>
                     @include('modules.figure', ['imgSource' => 'census3-2.jpg', 'caption' => 'Here, in the 1910 federal census for Westfield, NJ notes the family at 657 Boulevard:'])

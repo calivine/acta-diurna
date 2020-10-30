@@ -1,5 +1,5 @@
 .light {
-  background-image: url('./storage/assets/sanbornMap.png');
+  background-image: url('./storage/assets/sanbornMap.jpg');
   background-position: 50% 20%;
   color: $black;
   animation-name: slide;
@@ -18,6 +18,66 @@
 
   .modal {
     color: $black;
+  }
+
+  .highlighted {
+    color: $black;
+  }
+
+  .highlighted::marker {
+    color: $white;
+  }
+
+  .quote__letter {
+    border: 1px solid $white;
+  }
+
+}
+
+.seasonal {
+  background-color: $black;
+  color: $white;
+
+  a {
+    color: $halloween !important;
+  }
+
+  .modal {
+    color: $black;
+  }
+
+  .highlighted {
+    color: $black;
+  }
+
+  .highlighted::marker {
+    color: $white;
+  }
+
+  .quote__letter {
+    border: 1px solid $halloween;
+  }
+
+  nav a {
+    color: $halloween;
+  }
+
+  .post__title,
+  .post__subtitle,
+  .post__section-subtitle,
+  .post__section-title {
+    color: $halloween;
+  }
+
+  .bg-white {
+    background-color: $black !important;
+  }
+
+  button {
+    color: $halloween;
+    .btn-link {
+      color: inherit;
+    }
   }
 }
 

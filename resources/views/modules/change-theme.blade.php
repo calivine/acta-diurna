@@ -15,8 +15,12 @@
                         <label for="radio1">Light</label>
                     </div>
                     <div class="input__wrapper">
-                        <input type="radio" id="radio2" value="dark" name="theme" {{ Cookie::get('theme') == 'dark' ? 'checked' : '' }}>
+                        <input type="radio" id="radio2" name="theme" value="dark" {{ Cookie::get('theme') == 'dark' ? 'checked' : '' }}>
                         <label for="radio2">Dark</label>
+                    </div>
+                    <div class="input__wrapper">
+                        <input type="radio" id="radio2" name="theme" value="seasonal" {{ Cookie::get('theme') == 'seasonal' ? 'checked' : '' }}>
+                        <label for="radio2">Spooky</label>
                     </div>
                     <button type="submit">Save</button>
                 </form>

@@ -19,7 +19,7 @@
             <img src="{{ asset('storage/assets/CubberlyObit.jpg') }}" alt="">
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('storage/assets/census3-2.jpg') }}" alt="">
+            <img src="{{ asset('storage/assets/census.jpg') }}" alt="">
         </div>
         <div class="carousel-item">
             <img src="{{ asset('storage/assets/657 Boulevard_street view4-3.jpg') }}" alt="">
@@ -28,10 +28,13 @@
             <img src="{{ asset('storage/assets/657BoulevardZillow4-3.jpg') }}" alt="">
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('storage/assets/carltonRd4-3.jpg') }}" alt="">
+            <img src="{{ asset('storage/assets/carletonRd4-3.jpg') }}" alt="">
         </div>
         <div class="carousel-item">
             <img src="{{ asset('storage/assets/carltonRd2_4-3.jpg') }}" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ asset('storage/assets/carletonRdRealtorViewSquare.jpg') }}" alt="">
         </div>
         <div class="carousel-item">
             <img src="{{ asset('storage/assets/sanbornMap_Square.jpg') }}" alt="">

@@ -10973,7 +10973,7 @@ a.text-dark:focus {
 }
 
 .light {
-  background-image: url(/images/sanbornMap.png?08282a7fb58dab794e3c72961e777504);
+  background-image: url(/images/sanbornMap.jpg?122d8d52c99a36e3f874af922bd1f739);
   background-position: 50% 20%;
   color: #1c1f2b;
   -webkit-animation-name: slide;
@@ -10997,6 +10997,66 @@ a.text-dark:focus {
 
 .dark .modal {
   color: #1c1f2b;
+}
+
+.dark .highlighted {
+  color: #1c1f2b;
+}
+
+.dark .highlighted::marker {
+  color: #FCFCFC;
+}
+
+.dark .quote__letter {
+  border: 1px solid #FCFCFC;
+}
+
+.seasonal {
+  background-color: #1c1f2b;
+  color: #FCFCFC;
+}
+
+.seasonal a {
+  color: #FF7619 !important;
+}
+
+.seasonal .modal {
+  color: #1c1f2b;
+}
+
+.seasonal .highlighted {
+  color: #1c1f2b;
+}
+
+.seasonal .highlighted::marker {
+  color: #FCFCFC;
+}
+
+.seasonal .quote__letter {
+  border: 1px solid #FF7619;
+}
+
+.seasonal nav a {
+  color: #FF7619;
+}
+
+.seasonal .post__title,
+.seasonal .post__subtitle,
+.seasonal .post__section-subtitle,
+.seasonal .post__section-title {
+  color: #FF7619;
+}
+
+.seasonal .bg-white {
+  background-color: #1c1f2b !important;
+}
+
+.seasonal button {
+  color: #FF7619;
+}
+
+.seasonal button .btn-link {
+  color: inherit;
 }
 
 @-webkit-keyframes slide {
@@ -11219,6 +11279,10 @@ a.text-dark:focus {
   font-size: 0.7rem;
   position: relative;
   bottom: 0.4rem;
+}
+
+.highlighted {
+  background-color: #ecf4ff;
 }
 
 ul.bibliography {
@@ -11789,10 +11853,6 @@ article {
   text-align: center !important;
   font-style: italic;
   padding: 15px 15px;
-}
-
-.highlighted {
-  background-color: #ecf4ff;
 }
 
 #chainOfTitle {

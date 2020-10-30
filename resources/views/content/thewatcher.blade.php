@@ -123,7 +123,7 @@
                             As it turned out, the family they purchased 657 Boulevard from, the Woods, also received a
                             strange letter but didn't think much of it and threw it away.</p>
                         <p>Unfortunately, the story of the Watcher took an unfortunate turn that had real-life
-                            consequences. In 2014(?) The Broaddus family sued the Woods family. They would have never
+                            consequences. In 2015, the Broaddus family sued the Woods family. They would have never
                             purchased 657 Boulevard had they known about the "Watcher."</p>
                         <p>The Broaddus family went to the police. Then Detective Lieutenant Leonard Lugo, later demoted
                             to Sergeant in 2018 and now retired, informed the Broaddus family to stay silent on the
@@ -184,7 +184,7 @@
                             before selling it to an LLC in 2017.@include('modules.footnote', ['number' => '8']) It sold to a couple in 2019.@include('modules.footnote', ['number' => '9']) You can see 657 Boulevard
                             from Carleton Rd.</p>
 
-                        @include('modules.figure', ['imgSource' => 'carltonRd4-3.jpg', 'caption' => 'Street view from Carleton Rd. 657 Boulevard is in the background. Image via Google Maps'])
+                        @include('modules.figure', ['imgSource' => 'carletonRd4-3.jpg', 'caption' => 'Street view from Carleton Rd. 657 Boulevard is in the background. Image via Google Maps'])
                         @include('modules.figure', ['imgSource' => 'carltonRd2_4-3.jpg', 'caption' => 'Zoomed view from Carleton Rd. 657 Boulevard is in the background. Image via Google maps.'])
                         <p>The house is stucco-clad, in a Colonial Revival style built around 1920. While lovely, the
                             homes on Carleton are not as grand as the homes on Boulevard. Between the house on Carleton

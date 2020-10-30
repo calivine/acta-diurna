@@ -11707,10 +11707,11 @@ figure {
 figure img {
   display: block;
   margin: 0 auto !important;
-  max-width: 425px !important;
+  max-width: 100% !important;
 }
 
 figure figcaption {
+  font-size: 0.85rem;
   text-align: center !important;
 }
 

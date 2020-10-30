@@ -12,33 +12,6 @@
 }
 
 @font-face {
-  font-family: Bauhaus;
-  src: url(/fonts/Bauhaus-Normal.ttf?6bef31dad64afa6b1bb8e38d2c156cba);
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Bauhaus;
-  src: url(/fonts/BauhausStd-Bold.otf?8f724779802837d7df52a0605b5f6e1f);
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: BauhausHeavy;
-  src: url(/fonts/BauhausStd-Heavy.otf?cd6ecfbcdbe3eaf41fe3f318efbdcdd8);
-}
-
-@font-face {
-  font-family: BauhausLight;
-  src: url(/fonts/BauhausStd-Light.otf?7b4071bb14a623689a665a5058b6edd6);
-}
-
-@font-face {
-  font-family: BauhausThin;
-  src: url(/fonts/Bauhaus-Thin.ttf?b039bf70999198477b48a5a163cff3fe);
-}
-
-@font-face {
   font-family: OpenSans;
   src: url(/fonts/OpenSans-Regular.ttf?d7d5d4588a9f50c99264bc12e4892a7c);
 }

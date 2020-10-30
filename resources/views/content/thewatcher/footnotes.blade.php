@@ -37,5 +37,7 @@
     </li>
 </ol>
 
+<script src="{{ asset('/static/js/footnotes.js') }}"></script>
+
 
 

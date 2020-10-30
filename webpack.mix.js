@@ -32,3 +32,7 @@ mix.scripts([
     'resources/js/widgets/galleryDisplay.js'
 ], 'public/static/js/viewer.js');
 
+mix.scripts([
+    'resources/js/widgets/footnotes.js'
+], 'public/static/js/footnotes.js');
+

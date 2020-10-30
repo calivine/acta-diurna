@@ -11219,11 +11219,6 @@ a.text-dark:focus {
   font-size: 0.7rem;
   position: relative;
   bottom: 0.4rem;
-  color: black;
-}
-
-.footnote a {
-  color: inherit;
 }
 
 ul.bibliography {
@@ -11821,6 +11816,10 @@ blockquote {
 
 article {
   margin-top: 2rem;
+}
+
+.highlighted {
+  background-color: #ecf4ff;
 }
 
 .toolbar-button {

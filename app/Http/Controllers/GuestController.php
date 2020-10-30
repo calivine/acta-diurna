@@ -54,8 +54,6 @@ class GuestController extends Controller
         {
             Cookie::queue('theme', $theme, 300);
         }
-
-        return back();
-
+        return redirect()->route('watcher');
     }
 }

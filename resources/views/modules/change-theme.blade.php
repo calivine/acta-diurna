@@ -11,11 +11,11 @@
                 <form action="{{ route('theme') }}" method="POST">
                     @csrf
                     <div class="input__wrapper">
-                        <input type="radio" id="radio1" name="theme" value="light" checked>
+                        <input type="radio" id="radio1" name="theme" value="light" {{ Cookie::get('theme') == 'light' ? 'checked' : '' }}>
                         <label for="radio1">Light</label>
                     </div>
                     <div class="input__wrapper">
-                        <input type="radio" id="radio2" value="dark" name="theme">
+                        <input type="radio" id="radio2" value="dark" name="theme" {{ Cookie::get('theme') == 'dark' ? 'checked' : '' }}>
                         <label for="radio2">Dark</label>
                     </div>
                     <button type="submit">Save</button>

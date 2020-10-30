@@ -262,8 +262,8 @@
                             by the Watcher. Hopefully, this insight highlights a potential suspect and brings some peace
                             to the Broaddus family. Maybe the police can finally solve the Watcher mystery.
                         </p>
-                        <p>Let me know your thoughts? I encourage you to draw your conclusions. <br><br>Happy Halloween!
-                        </p>
+                        <p>Let me know your thoughts? I encourage you to draw your own conclusions.</p>
+                        <p class="post__section-title">Happy Halloween!</p>
                     </article>
                 </section>
                 <section class="mt-4">

@@ -66,7 +66,7 @@ Route::view('/articles/thewatcher/resources', 'content.thewatcher.references');
 
 
 # REDIRECT /thewatcher -> /articles/thewatcher
-Route::redirect('/thewatcher', '/articles/thewatcher', 301);
+Route::redirect('/thewatcher', '/articles/thewatcher', 301)->name('watcher');
 
 # REDIRECT landing page to The Watchers
-Route::redirect('/', '/thewatcher', 301);
+Route::redirect('/', '/thewatcher', 301)->name('home');

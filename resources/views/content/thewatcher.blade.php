@@ -22,7 +22,7 @@
                             <li>07/05/1951 - 08/26/1955: Dillard E. Bird</li>
                             <li>08/26/1955 - 08/02/1963: Lawrence & Mary Shaffer</li>
                             <li>07/23/1963 - 12/08/1990: Seth & Floy Lewis Bakes</li>
-                            <li>11/28/1990 - 06/07/2014: John and Andrea Woods</li>
+                            <li>11/28/1990 - 06/07/2014: John & Andrea Woods</li>
                             <li>05/29/2014 - 07/02/2019: Derek & Maria Broaddus</li>
                         </ol>
                         <p id="disclaimer">*Disclaimer: this is a theory based on conjecture, publicly available
@@ -77,6 +77,8 @@
                         @include('content.thewatcher.letter1')
                         <p>The history of 657 Boulevard appears to be very important to the Watcher, so what made this
                             house so alluring?</p>
+                    </article>
+                    <article id="historyOf675Boulevard">
                         <h2 class="post__section-title">History of 657 Boulevard</h2>
                         <p>657 Boulevard is a part of Park Slope, a residential development established by the Westfield
                             Realty Improvement Company in 1904.@include('modules.footnote', ['number' => '3']) It was
@@ -137,8 +139,6 @@
                             from one of the Watcher letters did not match anyone in the family. The DNA found was to be
                             female.@include('modules.footnote', ['number' => '6']) Peggy Langford passed away in February 2020.@include('modules.footnote', ['number' => '7'])
                         </p>
-
-
                     </article>
                     <article id="theThirdLetter">
                         @include('content.thewatcher.letter3')
@@ -212,7 +212,7 @@
                             at 657 Boulevard claimed the backyard neighbors had lawn chairs facing 657 Boulevard as if
                             watching it.@include('modules.footnote', ['number' => '12']) </p>
                         @include('modules.figure', ['imgSource' => 'sanbornMap_Square.jpg', 'caption' => 'Sanborn Insurance Map, 1921, Westfield, NJ. 657 Boulevard and the house on Carleton Rd. highlighted in red.'])
-                        @include('modules.figure', ['imgSource' => 'carletonRdRealtorViewSquare.jpg', 'caption' => 'Interior view of the Carleton Rd. house, with 657 Boulevard in the background. Image courtesy Realtor.com ', 'link' => 'https://www.realtor.com/realestateandhomes-detail/644-Carleton-Rd_Westfield_NJ_07090_M67589-13330#photo8', 'linkText' => 'Original'])
+                        @include('modules.figure', ['imgSource' => 'carletonRdRealtorViewSquare.jpg', 'caption' => 'Interior view of the Carleton Rd. house, with 657 Boulevard in the background. Image courtesy Realtor.com ', 'link' => 'https://www.realtor.com/realestateandhomes-detail/644-Carleton-Rd_Westfield_NJ_07090_M67589-13330#photo8', 'linkText' => 'Original Source'])
                         <p>The fourth Watcher letter also clearly states, "Turn around, idiots," as if living behind the
                             Broaddus's the entire time.</p>
                         @include('modules.figure', ['imgSource' => '657BoulevardZillow4-3.jpg', 'caption' => 'Back entrance to 657 Boulevard. Image courtesy Zillow.', 'link' => 'https://www.zillow.com/homedetails/657-Boulevard-Westfield-NJ-07090/40090611_zpid/?mmlb=g,5', 'linkText' => 'Original Source'])
@@ -265,6 +265,9 @@
                         <p>Let me know your thoughts? I encourage you to draw your own conclusions.</p>
                         <p class="post__section-title">Happy Halloween!</p>
                     </article>
+                </section>
+                <section class="mt-4">
+                    @include('content.thewatcher.images')
                 </section>
                 <section class="mt-4">
                     @include('content.thewatcher.footnotes')

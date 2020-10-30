@@ -58,16 +58,7 @@ figure {
 
 
 
-#chainOfTitle {
-    text-align: center !important;
-    ol {
-        list-style: none;
-    }
-}
 
-#disclaimer {
-    font-size: .75rem;
-}
 
 aside {
     text-align: center !important;
@@ -81,6 +72,11 @@ blockquote {
 }
 
 
+
+article {
+    margin-top: 2rem;
+}
+
 .quote__letter {
     border: 1px solid black;
     text-align: center !important;
@@ -88,45 +84,17 @@ blockquote {
     padding: 15px 15px;
 }
 
-.figure__image {
-    width: 54vw;
-    height: 40vh;
-}
-
-.aspect-ratio__square {
-    width: 30vw;
-    height: 30vh;
-}
-
-.aspect-ratio__sixteen-nine {
-    width: 89vw;
-    height: 50vh;
-}
-
-.aspect-ratio__four-three {
-    width: 67vw;
-    height: 50vh;
-}
-
-.aspect-ratio__point-eight {
-    width: 24vw;
-    height: 30vh;
-}
-
-.aspect-ratio__three-two {
-     width: 30vw;
-     height: 23vh;
-}
-
-.aspect-ratio__ten-eight {
-    width: 30vw;
-    height: 24vh;
-}
-
-article {
-    margin-top: 2rem;
-}
-
 .highlighted {
     background-color: #ecf4ff; // rgb(236,244,255)
+}
+
+#chainOfTitle {
+    text-align: center !important;
+    ol {
+        list-style: none;
+    }
+}
+
+#disclaimer {
+    font-size: .75rem;
 }

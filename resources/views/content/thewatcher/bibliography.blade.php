@@ -12,7 +12,7 @@
                         1910 United States Federal Census, New Jersey, Union, Westfield, Ward 3, District 0118
                     </li>
                     <li>
-                        “6** CARLETON RD, WESTFIELD, NJ.” 6** CARLETON RD, WESTFIELD, NJ | NJTaxrecords.net. Accessed October 28, 2020. https://www.njtaxrecords.net/r/644-carleton-rd-westfield-union-county-nj-property-tax-record-3086300.
+                        “6** Carleton Rd, Westfield, NJ.” 6** Carleton Rd, Westfield, NJ | NJTaxrecords.net. Accessed October 28, 2020. https://www.njtaxrecords.net/r/644-carleton-rd-westfield-union-county-nj-property-tax-record-3086300.
                     </li>
                     <li>
                         Burgdorf, Betsey. “Westfield Planning Board Denies ‘Watcher House’ Subdivision.” The Westfield Leader. January 12, 2017, Issue No. 2-2017.

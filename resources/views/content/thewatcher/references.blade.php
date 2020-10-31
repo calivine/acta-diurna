@@ -35,25 +35,26 @@
                     <li><a href="https://07090.blogspot.com/2019/01/westfield-police-officer-demoted-to.html">https://07090.blogspot.com/2019/01/westfield-police-officer-demoted-to.html</a></li>
                 </ul>
                 <h5>Free Public Resources:</h5>
-                <ul class="bibliography">
+                <ul class="bibliography reference">
                     <li>Google Maps</li>
                     <li>Google Earth</li>
                     <li>Realtor.com</li>
                     <li>Zillow.com</li>
                 </ul>
                 <h5>Subscription Resources:</h5>
-                <ul class="bibliography">
+                <ul class="bibliography reference">
                     <li>Newspapers.com</li>
                     <li>Ancestry.com</li>
                 </ul>
                 <h5>Newspapers:</h5>
-                <ul class="bibliography">
+                <ul class="bibliography reference">
                     <li>The Courier-News, Bridgewater, New Jersey, Saturday, December 18, 1915 pg. 6</li>
                     <li>The Courier-News, Bridgewater, New Jersey, Tuesday, January 5, 1943 pg. 19</li>
                     <li>The Courier-News, Bridgewater, New Jersey, Monday, November 10, 1947 pg. 20</li>
                     <li>The Courier-News, Bridgewater, New Jersey, Saturday, August 23, 1952</li>
                     <li>The Courier-News, Bridgewater, New Jersey, Saturday, October 24, 1959 pg. 12</li>
                 </ul>
+                @include('content.thewatcher.images')
             </div>
         </div>
     </div>

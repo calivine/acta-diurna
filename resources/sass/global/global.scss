@@ -77,6 +77,12 @@ ul.bibliography {
   }
 }
 
+.reference {
+  li {
+    margin-bottom: 1vh !important;
+  }
+}
+
 .bibliography__header {
   margin-bottom: 10vh;
 }
@@ -89,6 +95,16 @@ img {
 
 .carousel {
   min-height: 37rem;
+
+  ol,
+  ul {
+    list-style: none;
+  }
+}
+
+.carousel-caption {
+  margin-top: 20vh;
+  color: $black;
 }
 
 /* Override carousel icon color */

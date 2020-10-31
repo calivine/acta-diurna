@@ -63,10 +63,12 @@ Route::get('/articles/{title}', 'GuestController@getArticle');
 # GET TheWatcher bibliography
 Route::view('/articles/thewatcher/bibliography', 'content.thewatcher.bibliography');
 Route::view('/articles/thewatcher/resources', 'content.thewatcher.references');
-
+Route::view('/articles/thewatcher/about', 'content.thewatcher.about');
 
 # REDIRECT /thewatcher -> /articles/thewatcher
 Route::redirect('/thewatcher', '/articles/thewatcher', 301)->name('watcher');
 
 # REDIRECT landing page to The Watchers
 Route::redirect('/', '/thewatcher', 301)->name('home');
+
+Route::redirect('/register', '/thewatcher', 301);

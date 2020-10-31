@@ -11268,6 +11268,10 @@ ul.bibliography li {
   word-break: break-all;
 }
 
+.reference li {
+  margin-bottom: 1vh !important;
+}
+
 .bibliography__header {
   margin-bottom: 10vh;
 }
@@ -11280,6 +11284,16 @@ img {
 
 .carousel {
   min-height: 37rem;
+}
+
+.carousel ol,
+.carousel ul {
+  list-style: none;
+}
+
+.carousel-caption {
+  margin-top: 20vh;
+  color: #1c1f2b;
 }
 
 /* Override carousel icon color */
@@ -11837,7 +11851,7 @@ article {
 }
 
 #disclaimer {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
 }
 
 .toolbar-button {

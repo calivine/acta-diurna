@@ -6,7 +6,7 @@
     @include('layouts.partials.head')
 </head>
 <!-- If it is a guest user, use cookies to set theme. -->
-<body class="{{ Cookie::get('theme') }}">
+<body class="{{ is_null(Cookie::get('theme')) ? 'seasonal' : Cookie::get('theme') }}">
     <!-- Alerts -->
     @if(session('alert'))
         <div class="alert-success">

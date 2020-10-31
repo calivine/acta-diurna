@@ -14,7 +14,7 @@
 Route::group(['middleware' => 'auth'], function () {
 
     # GET upload file(s) page
-    Route::get('/upload', 'FileController@create');
+    Route::get('/upload', 'FileController@create')->name('upload.show');
 
     # POST: upload new file
     Route::post('/process', 'FileController@store')->name('upload');
@@ -32,27 +32,29 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     # Admin Panel
-    Route::get('/panel', function () {
-        return view('content.panel.index');
+    Route::view('/panel', 'content.panel.index')->name('panel');
+
+    # Watch Media Routes
+    Route::prefix('watch')->group(function () {
+        # GET watch video file
+        Route::get('{hash}', 'MediaController@watch')->name('watch');
+
+        # POST update view count
+        Route::post('view', 'MediaController@addView');
     });
+
+    # GET all videos associated with a tag
+    Route::get('/tag/{tag}', 'TagController@videosByTag')->name('videosByTag');
 
     # GET homepage
     Route::get('/home', 'HomeController@index')->name('home');
 });
 
-Route::prefix('watch')->group(function () {
-    # GET watch video file
-    Route::get('{hash}', 'MediaController@watch')->name('watch');
-
-    # POST update view count
-    Route::post('view', 'MediaController@addView');
-});
-
-# GET all videos associated with a tag
-Route::get('/tag/{tag}', 'TagController@videosByTag')->name('videosByTag');
-
 # Authentication Routes
 Auth::routes();
+
+# Comment Routes
+Route::resource('comments', 'CommentController');
 
 # POST update Page theme setting
 Route::post('/theme', 'GuestController@changeTheme')->name('theme');
@@ -71,4 +73,5 @@ Route::redirect('/thewatcher', '/articles/thewatcher', 301)->name('watcher');
 # REDIRECT landing page to The Watchers
 Route::redirect('/', '/thewatcher', 301)->name('home');
 
+# REDIRECT away from register page
 Route::redirect('/register', '/thewatcher', 301);

@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
+                <p class="post__date">October 31, 2020</p>
                 <section>
                     <hgroup>
                         <h1 class="post__title">657 Boulevard Westfield, NJ</h1>

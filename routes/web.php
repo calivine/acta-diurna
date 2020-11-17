@@ -68,16 +68,21 @@ Route::post('/theme', 'GuestController@changeTheme')->name('theme');
 # GET article
 Route::get('/articles/{title}', 'GuestController@getArticle');
 
+# GET About
+Route::view('/about', 'content.about');
+
 # GET TheWatcher bibliography
 Route::view('/articles/thewatcher/bibliography', 'content.thewatcher.bibliography');
 Route::view('/articles/thewatcher/resources', 'content.thewatcher.references');
-Route::view('/articles/thewatcher/about', 'content.thewatcher.about');
 
-# REDIRECT /thewatcher -> /articles/thewatcher
+
+# REDIRECT
 Route::redirect('/thewatcher', '/articles/thewatcher', 301)->name('watcher');
+Route::redirect('/highfields', '/articles/highfields', 301)->name('highfields');
+
 
 # REDIRECT landing page to The Watchers
-Route::redirect('/', '/thewatcher', 301)->name('home');
+Route::redirect('/', '/highfields', 301)->name('home');
 
 # REDIRECT away from register page
 Route::redirect('/register', '/thewatcher', 301);

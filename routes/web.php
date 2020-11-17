@@ -43,6 +43,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('view', 'MediaController@addView');
     });
 
+    # GET all videos by User
+    Route::get('/videos/user', 'MediaController@getVideosByUser');
+
+    # GET all videos associated with a tag
+    Route::get('/videos/tag/{tag}', 'MediaController@getVideosByTag');
+
     # GET all videos associated with a tag
     Route::get('/tag/{tag}', 'TagController@videosByTag')->name('videosByTag');
 

@@ -7,6 +7,7 @@
                     <hgroup>
                         <h1 class="post__title">Highfields</h1>
                     </hgroup>
+                    <p>Coming Soon</p>
             </div>
         </div>
     </div>

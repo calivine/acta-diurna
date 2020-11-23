@@ -10946,7 +10946,7 @@ a.text-dark:focus {
 }
 
 .light {
-  background-image: url(/images/sanbornMap.jpg?122d8d52c99a36e3f874af922bd1f739);
+  background-image: url(/images/gview.png?ae50d1a64b11b4a772cdbd219fec9822);
   background-position: 50% 20%;
   color: #1c1f2b;
   -webkit-animation-name: slide;
@@ -11076,12 +11076,7 @@ a.text-dark:focus {
   }
 }
 
-.container,
-.container-fluid,
-.container-sm,
-.container-md,
-.container-lg,
-.container-xl {
+.container {
   margin: 2.5vh auto;
   max-width: 960px;
   padding: 2.5vh 0 5vh 0;

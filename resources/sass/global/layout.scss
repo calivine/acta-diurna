@@ -1,5 +1,5 @@
 .light {
-  background-image: url('./storage/assets/sanbornMap.jpg');
+  background-image: url('./storage/assets/gview.png');
   background-position: 50% 20%;
   color: $black;
   animation-name: slide;
@@ -99,8 +99,7 @@
   }
 }
 
-.container,
-.container-fluid {
+.container {
   margin: 2.5vh auto;
   max-width: 960px;
   padding: 2.5vh 0 5vh 0;

@@ -82,7 +82,13 @@
                     </article>
             </div>
             <section class="mt-4">
-                @include('content.thewatcher.footnotes')
+                @include('content.highfields.footnotes')
+            </section>
+            <section class="mt-4">
+                @include('content.highfields.references')
+            </section>
+            <section class="mt-4">
+                @include('content.highfields.bibliography')
             </section>
         </div>
     </div>

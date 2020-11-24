@@ -75,6 +75,9 @@ Route::view('/about', 'content.about');
 Route::view('/articles/thewatcher/bibliography', 'content.thewatcher.bibliography');
 Route::view('/articles/thewatcher/resources', 'content.thewatcher.references');
 
+Route::view('/articles/highfields/bibliography', 'content.highfields.bibliography');
+Route::view('/articles/highfields/resources', 'content.highfields.resources');
+
 
 # REDIRECT
 Route::redirect('/thewatcher', '/articles/thewatcher', 301)->name('watcher');

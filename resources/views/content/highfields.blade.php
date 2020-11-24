@@ -85,11 +85,11 @@
                 @include('content.highfields.footnotes')
             </section>
             <section class="mt-4">
-                @include('content.highfields.references')
+                <p><a href="{{ url('/articles/highfields/references') }}">References and Links</a></p>
+                <p><a href="{{ url('/articles/highfields/bibliography') }}">Bibliography</a></p>
+
             </section>
-            <section class="mt-4">
-                @include('content.highfields.bibliography')
-            </section>
+
         </div>
     </div>
 @endsection

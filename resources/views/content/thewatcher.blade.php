@@ -277,6 +277,9 @@
                 <section class="mt-4">
                     @include('content.thewatcher.footnotes')
                 </section>
+                <section>
+                    @include('content.comment')
+                </section>
             </div>
         </div>
     </div>

@@ -7,14 +7,14 @@
 </head>
 <!-- If it is a guest user, use cookies to set theme. -->
 <body class="{{ is_null(Cookie::get('theme')) ? 'light' : Cookie::get('theme') }}">
-    <!-- Alerts -->
     @if(session('alert'))
+        <!-- Alerts -->
         <div class="alert-success">
             <span class="alert-text">{{ session('alert') }}</span>
         </div>
     @endif
-    <!-- Errors -->
     @if ($errors->any())
+        <!-- Errors -->
         <div class="alert alert-danger">
             <ul>
                 @foreach($errors->all() as $error)
@@ -28,6 +28,8 @@
 
     <!-- Global Modals -->
     @include('modules.change-theme')
+
+    <a class="arrow-up__widget hidden" id="up" href="#"><i class="material-icons">arrow_upwards</i></a>
 
     <!-- Content -->
     @yield('content')

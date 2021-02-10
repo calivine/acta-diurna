@@ -6,6 +6,7 @@ const isAdvancedUpload = function() {
 document.addEventListener('DOMContentLoaded', function () {
     // Upload form element
     let $form = $('.box');
+    console.log($form);
     // Video input element
     let $input = $form.find('input[type="file"]');
     // Video input (vanilla)

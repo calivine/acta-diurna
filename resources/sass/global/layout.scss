@@ -12,12 +12,23 @@
   }
 }
 
-.dark {
+%dark-theme {
   background-color: $black;
   color: $white;
 
+  .bg-white {
+    background-color: $black !important;
+  }
+
   .modal {
-    color: $black;
+    color: inherit;
+    .modal-content {
+      background-color: $post-bg;
+      button {
+        color: $black !important;
+      }
+    }
+
   }
 
   .highlighted {
@@ -34,24 +45,16 @@
 
 }
 
+
+.dark {
+  @extend %dark-theme;
+}
+
 .seasonal {
-  background-color: $black;
-  color: $white;
+  @extend %dark-theme;
 
   a {
     color: $halloween !important;
-  }
-
-  .modal {
-    color: $black;
-  }
-
-  .highlighted {
-    color: $black;
-  }
-
-  .highlighted::marker {
-    color: $white;
   }
 
   .quote__letter {
@@ -69,17 +72,53 @@
     color: $halloween;
   }
 
-  .bg-white {
-    background-color: $black !important;
-  }
-
   button {
     color: $halloween;
     .btn-link {
       color: inherit;
     }
   }
+
+  .arrow-up__widget {
+    border-color: $halloween;
+  }
 }
+
+.dark-red {
+  @extend %dark-theme;
+
+  a {
+    color: $china-red !important;
+  }
+
+  .quote__letter {
+    border: 1px solid $china-red;
+  }
+
+  nav a {
+    color: $china-red;
+  }
+
+  .post__title,
+  .post__subtitle,
+  .post__section-subtitle,
+  .post__section-title {
+    color: $china-red;
+  }
+
+  button {
+    color: $china-red;
+    .btn-link {
+      color: inherit;
+    }
+  }
+
+  .arrow-up__widget {
+    border-color: $china-red;
+  }
+}
+
+
 
 @keyframes slide {
   0% {
@@ -190,6 +229,10 @@
     margin-right: 5px;
     margin-left: 5px;
     margin-bottom: 10px;
+  }
+
+  article {
+    font-size: 18px;
   }
 }
 

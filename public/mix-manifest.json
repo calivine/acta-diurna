@@ -5,6 +5,5 @@
     "/static/js/vendor.js": "/static/js/vendor.js",
     "/static/js/main.js": "/static/js/main.js",
     "/static/js/text-editor.js": "/static/js/text-editor.js",
-    "/static/js/viewer.js": "/static/js/viewer.js",
     "/static/js/footnotes.js": "/static/js/footnotes.js"
 }

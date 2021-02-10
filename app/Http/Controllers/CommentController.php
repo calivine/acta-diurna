@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comment;
 
 class CommentController extends Controller
 {
@@ -36,9 +37,18 @@ class CommentController extends Controller
     {
         $request->validate([
             'body' => 'required|max:1500|regex:/[a-zA-Z0-9\s]+/',
+            'author' => 'max:125|regex:/[a-zA-Z0-9\s]+/|nullable',
+            'subject' => 'max:191|regex:/[a-zA-Z0-9\s]+/|nullable'
         ]);
         $author_ip = $request->ip();
-    }
+        $author = $request->input('author') ?? '';
+        $subject = $request->input('subject') ?? '';
+        $body = $request->input('body');
+
+        // Save to Comment model
+
+        return redirect()->route('watcher');
+     }
 
     /**
      * Display the specified resource.

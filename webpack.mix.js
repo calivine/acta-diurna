@@ -19,18 +19,13 @@ mix.scripts([
     'resources/js/dragndrop.js',
     'resources/js/filesEMCA6v2.js',
     'resources/js/postHandler.js',
+    'resources/js/widgets/pageUp.js',
     'resources/js/widgets/settingsDisplay.js'
 ], 'public/static/js/main.js');
 
 mix.scripts([
     'resources/js/textEditorDisplay.js'
 ], 'public/static/js/text-editor.js');
-
-mix.scripts([
-    'resources/js/widgets/viewCounter.js',
-    'resources/js/widgets/autoPlay.js',
-    'resources/js/widgets/galleryDisplay.js'
-], 'public/static/js/viewer.js');
 
 mix.scripts([
     'resources/js/widgets/footnotes.js'

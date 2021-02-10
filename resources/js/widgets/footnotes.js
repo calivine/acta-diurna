@@ -15,3 +15,5 @@ notes.each(function () {
         $($(this)[0].firstChild.hash).addClass('highlighted');
     })
 });
+
+console.log("Footnotes widget enabled");

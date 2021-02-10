@@ -31,6 +31,7 @@
 
     <a class="arrow-up__widget hidden" id="up" href="#"><i class="material-icons">arrow_upwards</i></a>
 
+
     <!-- Content -->
     @yield('content')
 

@@ -40,7 +40,7 @@ Route::view('/articles/thewatcher/bibliography', 'content.thewatcher.bibliograph
 Route::view('/articles/thewatcher/resources', 'content.thewatcher.references');
 
 Route::view('/articles/highfields/bibliography', 'content.highfields.bibliography');
-Route::view('/articles/highfields/resources', 'content.highfields.resources');
+Route::view('/articles/highfields/references', 'content.highfields.references');
 
 
 # REDIRECT

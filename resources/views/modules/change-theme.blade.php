@@ -10,22 +10,34 @@
             <div class="modal-body">
                 <form action="{{ route('theme') }}" method="POST">
                     @csrf
-                    <div class="input__wrapper">
-                        <input type="radio" id="radio1" name="theme" value="light" {{ Cookie::get('theme') == 'light' ? 'checked' : '' }}>
-                        <label for="radio1">Light</label>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="input__wrapper">
+                                <input type="radio" id="radio1" name="theme" value="light" {{ Cookie::get('theme') == 'light' ? 'checked' : '' }}>
+                                <label for="radio1">Light</label>
+                            </div>
+                            <div class="input__wrapper">
+                                <input type="radio" id="radio2" name="theme" value="dark" {{ Cookie::get('theme') == 'dark' ? 'checked' : '' }}>
+                                <label for="radio2">Dark</label>
+                            </div>
+                            <div class="input__wrapper">
+                                <input type="radio" id="radio3" name="theme" value="seasonal" {{ Cookie::get('theme') == 'seasonal' ? 'checked' : '' }}>
+                                <label for="radio3">Dark (Spooky)</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="input__wrapper">
+                                <input type="radio" id="radio4" name="theme" value="dark-red" {{ Cookie::get('theme') == 'dark-red' ? 'checked' : '' }}>
+                                <label for="radio4">Dark (Red)</label>
+                            </div>
+                            <div class="input__wrapper">
+                                <input type="radio" id="radio5" name="theme" value="dark-green" {{ Cookie::get('theme') == 'dark-red' ? 'checked' : '' }}>
+                                <label for="radio5">Dark (Green)</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input__wrapper">
-                        <input type="radio" id="radio2" name="theme" value="dark" {{ Cookie::get('theme') == 'dark' ? 'checked' : '' }}>
-                        <label for="radio2">Dark</label>
-                    </div>
-                    <div class="input__wrapper">
-                        <input type="radio" id="radio3" name="theme" value="seasonal" {{ Cookie::get('theme') == 'seasonal' ? 'checked' : '' }}>
-                        <label for="radio3">Dark (Spooky)</label>
-                    </div>
-                    <div class="input__wrapper">
-                        <input type="radio" id="radio4" name="theme" value="dark-red" {{ Cookie::get('theme') == 'dark-red' ? 'checked' : '' }}>
-                        <label for="radio4">Dark (Red)</label>
-                    </div>
+
+
                     <button type="submit">Save</button>
                 </form>
 

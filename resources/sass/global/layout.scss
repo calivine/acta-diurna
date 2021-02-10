@@ -1,239 +1,229 @@
+/* Page styles */
+
+/* Light theme - default */
 .light {
-  background-image: url('./storage/assets/gview.png');
-  background-position: 50% 20%;
-  color: $black;
-  animation-name: slide;
-  animation-duration: 400s;
-  animation-iteration-count: infinite;
-  animation-delay: 1s;
-
-  .container {
-    background-color: $body-bg;
-  }
-}
-
-%dark-theme {
-  background-color: $black;
-  color: $white;
-
-  .bg-white {
-    background-color: $black !important;
-  }
-
-  .modal {
-    color: inherit;
-    .modal-content {
-      background-color: $post-bg;
-      button {
-        color: $black !important;
-      }
-    }
-
-  }
-
-  .highlighted {
+    background-image: url('./storage/assets/gview.png');
+    background-position: 50% 20%;
     color: $black;
-  }
+    animation-name: slide;
+    animation-duration: 400s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
 
-  .highlighted::marker {
+    .container {
+        background-color: $body-bg;
+    }
+}
+
+/* Dark styles */
+%dark-theme {
+    background-color: $black;
     color: $white;
-  }
 
-  .quote__letter {
-    border: 1px solid $white;
-  }
+    .bg-white {
+        background-color: $black !important;
+    }
+
+    .modal {
+        color: inherit;
+
+        .modal-content {
+            background-color: $post-bg;
+
+            button {
+                color: $black !important;
+            }
+        }
+
+    }
+
+    .highlighted {
+        color: $black;
+    }
+
+    .highlighted::marker {
+        color: $white;
+    }
+
+    .quote__letter {
+        border: 1px solid $white;
+    }
 
 }
 
+@mixin dark($bgColor) {
+    a {
+        color: $bgColor !important;
+    }
 
+    .quote__letter {
+        border: 1px solid $bgColor;
+    }
+
+    nav a {
+        color: $bgColor;
+    }
+
+    .post__title,
+    .post__subtitle,
+    .post__section-subtitle,
+    .post__section-title {
+        color: $bgColor;
+    }
+
+    button {
+        color: $bgColor;
+
+        .btn-link {
+            color: inherit;
+        }
+    }
+
+    .arrow-up__widget {
+        border-color: $bgColor;
+    }
+}
+
+/* Default Dark theme */
 .dark {
-  @extend %dark-theme;
+    @extend %dark-theme;
 }
 
+/* Dark (Spooky) */
 .seasonal {
-  @extend %dark-theme;
+    @extend %dark-theme;
 
-  a {
-    color: $halloween !important;
-  }
-
-  .quote__letter {
-    border: 1px solid $halloween;
-  }
-
-  nav a {
-    color: $halloween;
-  }
-
-  .post__title,
-  .post__subtitle,
-  .post__section-subtitle,
-  .post__section-title {
-    color: $halloween;
-  }
-
-  button {
-    color: $halloween;
-    .btn-link {
-      color: inherit;
-    }
-  }
-
-  .arrow-up__widget {
-    border-color: $halloween;
-  }
+    @include dark($halloween);
 }
 
+/* Dark (Red) */
 .dark-red {
-  @extend %dark-theme;
+    @extend %dark-theme;
 
-  a {
-    color: $china-red !important;
-  }
-
-  .quote__letter {
-    border: 1px solid $china-red;
-  }
-
-  nav a {
-    color: $china-red;
-  }
-
-  .post__title,
-  .post__subtitle,
-  .post__section-subtitle,
-  .post__section-title {
-    color: $china-red;
-  }
-
-  button {
-    color: $china-red;
-    .btn-link {
-      color: inherit;
-    }
-  }
-
-  .arrow-up__widget {
-    border-color: $china-red;
-  }
+    @include dark($china-red);
 }
 
+/* Dark (Green) */
+.dark-green {
+    @extend %dark-theme;
+
+    @include dark($green);
+}
 
 
 @keyframes slide {
-  0% {
-    background-position: 50% 20%;
-  }
-  25% {
-    background-position: 60% 25%;
-  }
-  50% {
-    background-position: 70% 30%;
-  }
-  75% {
-    background-position: 60% 25%;
-  }
-  100% {
-    background-position: 50% 20%;
-  }
+    0% {
+        background-position: 50% 20%;
+    }
+    25% {
+        background-position: 60% 25%;
+    }
+    50% {
+        background-position: 70% 30%;
+    }
+    75% {
+        background-position: 60% 25%;
+    }
+    100% {
+        background-position: 50% 20%;
+    }
 }
 
 .container {
-  margin: 2.5vh auto;
-  max-width: 960px;
-  padding: 2.5vh 0 5vh 0;
+    margin: 2.5vh auto;
+    max-width: 960px;
+    padding: 2.5vh 0 5vh 0;
 }
 
 
 .scroll__container {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .scroll {
-  position: inherit;
-  left: 150%;
+    position: inherit;
+    left: 150%;
 }
 
 .scroll.animate {
-  animation-duration: 2s;
-  animation-name: slidein;
-  left: 0;
+    animation-duration: 2s;
+    animation-name: slidein;
+    left: 0;
 }
 
 @keyframes slidein {
-  from {
-    left: 150%
-  }
+    from {
+        left: 150%
+    }
 
-  to {
-    left: 0;
-  }
+    to {
+        left: 0;
+    }
 }
 
 .scroll.animate__reverse {
-  animation-duration: 2s;
-  animation-name: slideout;
-  left: 150%;
+    animation-duration: 2s;
+    animation-name: slideout;
+    left: 150%;
 }
 
 @keyframes slideout {
-  from {
-    left: 0;
-  }
+    from {
+        left: 0;
+    }
 
-  to {
-    left: 150%;
-  }
+    to {
+        left: 150%;
+    }
 }
 
 /* Tabbed Display */
 .settings__container {
-  display: flex;
+    display: flex;
 }
 
 .display__container {
-  width: 35vw;
-  height: 35vh;
+    width: 35vw;
+    height: 35vh;
 }
 
 .form__wrapper {
-  display: none;
-  border: .5px solid black;
-  min-width: 30vw;
-  padding: 10px 20px;
+    display: none;
+    border: .5px solid black;
+    min-width: 30vw;
+    padding: 10px 20px;
 }
 
 .nav__item {
-  border: 1px solid black;
-  padding: 5px 15px 5px 2px;
-  margin-right: 1px;
-  min-width: 85px;
+    border: 1px solid black;
+    padding: 5px 15px 5px 2px;
+    margin-right: 1px;
+    min-width: 85px;
 }
 
 .active {
-  display: block;
+    display: block;
 }
 
 .nav__active {
-  color: blue;
-  text-decoration: underline;
+    color: blue;
+    text-decoration: underline;
 }
-
 
 
 /* Responsive */
 
-@media(max-width: $width-mobile-wide) {
-  .row {
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-bottom: 10px;
-  }
+@media(max-width: $width-tablet) {
+    .row {
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+    }
 
-  article {
-    font-size: 18px;
-  }
+    article {
+        font-size: 18px;
+    }
 }
 
 

@@ -93,6 +93,16 @@
                         many books.
                     </p>
                     @include('modules.figure', ['imgSource' => 'entryway', 'caption' => 'The art gallery/ballroom at Breeze Knoll in the 1920s. Note the mahogany entryway with the three pronged, globe capped sconces, picture and base molding. Oak paneling with a herringbone pattern covered the floors.'])
+                    <h3 class="post__subtitle">Second Generation (1914-1961)</h3>
+                    <p>
+                        Henrietta, the oldest child to John and Phoebe, attended Smith College in Northampton, MA, in
+                        the 1890s. She was married to Lee S. Roberts in 1903. However, they were divorced by 1914. At
+                        that time, Henrietta, who kept her married name, moved back into Breeze Knoll. Henrietta
+                        continued to live and host community events there until her death. She died in neighboring
+                        Mountainside on June 27, 1962, just two days before her 88th birthday. She never remarried or
+                        had any children but was actively involved with the community in Westfield most of her life.
+                    </p>
+
                     <h3 class="post__subtitle">Third Generation (1938-1965)</h3>
                     <p>
                         In 1938, John Mills Wittke (1911-2004), a grandson of JSA Wittke and son of Wellington Wittke,

@@ -11446,6 +11446,19 @@ img {
   -moz-transition: opacity 2s ease-out;
 }
 
+.letter__date {
+  text-align: right;
+}
+
+.letter__body {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.letter__signature {
+  text-align: right;
+}
+
 .email__label,
 .password__label,
 .user__label {

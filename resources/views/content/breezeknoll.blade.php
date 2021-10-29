@@ -148,8 +148,7 @@
                         @include('modules.figure', ['imgSource' => 'westfieldSocialNotes', 'caption' => 'The Courier News, Saturday, October 29, 1932. Bridgewater, New Jersey'])
                         The couple ultimately divorced in 1936. Jean was married and divorced a second time, and had a
                         third engagement that ended in a robbery scandal in 1955. Her new fiance tried to swindle her of
-                        a large sum of money, prompting the immediate termination of their engagement.<br>
-                        @include('modules.figure', ['imgSource' => 'robbed', 'caption' => ''])
+                        a large sum of money, prompting the immediate termination of their engagement.<br><br>
                         <strong>August 26, 1950</strong> - There was a wedding reception at Breeze Knoll for Janet Page
                         Alpers and Vance
                         Richardson following their marriage. The relationship to Henrietta or the Wittke family is
@@ -301,6 +300,104 @@
                         appeared John List had organized his affairs enough to give him time to evade police.<br><br>
 
                         # Letter
+                    </p>
+                    <div class="letter">
+                        <div class="letter__date">
+                            11-9-71
+                        </div>
+                        <div class="letter__header">
+                            Dear Pastor Rehnwinkel:
+                        </div>
+                        <div class="letter__body">
+                            I'm very sorry to add this additional burden to your work. I know that what has been done is
+                            wrong from all that I have been taught and that any reasons that I might give will not make
+                            it right, but you are the one person that I know that, while not condoning this, will at
+                            least possibly understand why I felt that I had to do this.<br><br>
+
+                            1. I wasn't earning anywhere near enough to support us. Everything I tried seemed to fall to
+                            pieces. True, we could have gone bankrupt and maybe gone on welfare.<br><br>
+
+                            2. But that brings me to my next point. Knowing the type of location that one would have to
+                            live in, plus the environment for the children, plus the effect on them knowing that they
+                            were on welfare was just more than I thought they could and should endure. I know they were
+                            willing to cut back but this involved a lot more than that.<br><br>
+
+                            3. With Pat being so determined to get into acting I was fearful as to what that might do to
+                            her continuing to be Christian. I'm sure it wouldn't have helped.<br><br>
+
+                            4. Also with Helen not going to church I knew that this would harm the children eventually
+                            in their attendance. I had continued to hope that she would begin to come to church soon,
+                            but when I mentioned to her that Mr. Jutze said he wanted to pay her an elder's call she
+                            just blew up and said she wanted her name taken off the church rolls. Again, this could only
+                            have an adverse result for the children's continued attendance.<br><br>
+
+                            So that is the sum of it. If any one of these had been the condition we might have pulled
+                            through, but this was just too much. At least I’m certain that all have gone to heaven now.
+                            If things had gone on who knows if this would be the case.<br><br>
+
+                            Of course mother got involved because doing what I did to my family would have been a
+                            tremendous shock to her at this age. Therefore, knowing that she is also a Christian, I felt
+                            it best that she be relieved of the troubles of this world that would have hit her.<br><br>
+
+                            After it was all over I said some prayers for them all from the hymn book. That was the
+                            least that I could do.<br><br>
+
+                            Now for the final arrangements: Helen and the children have all agreed that they would
+                            prefer to be cremated. Please see to it that the costs are kept low.<br><br>
+
+                            For mother she has a plot at the Frankenmuth Church Cemetery. Please contact<br>
+                            Mr. Herman Schellkas,<br>
+                            Route 4<br>
+                            Vassar, Mich 41768<br>
+                            He's married to a niece of mother's and knows what arrangements are to be made. She always
+                            wanted Reverend Herman Zender of Bay City to preach the sermon, but he's not well.<br><br>
+
+                            Also, I'm leaving some letters in your care.<br>
+                            Please send them on and add whatever comments you think appropriate.<br>
+                            The relationships are as follows:<br>
+                            Mrs. Lydia Meyer, mother's sister<br>
+                            Mrs. Eva Meyer, Helen's mother<br>
+                            Jean Syfert, Helen's sister<br>
+
+                            Also, I don't know what will happen to the books and personal things but to the extent
+                            possible I'd like for them to be distributed as you see fit. Some books might go to the
+                            school or church library.<br><br>
+
+                            Originally I had planned this for November 1st, All Saints Day, but travel arrangements were
+                            delayed. I thought it would be an appropriate day for them to get to heaven.<br><br>
+
+                            As for me please let me be dropped from the congregation rolls. I leave myself in the hands
+                            of God's justice and mercy. I don't doubt that he is able to help us but apparently he saw
+                            fit not to answer my prayers the way that I hoped they would be answered. This made me think
+                            that perhaps it was for the best as far as the children's souls are concerned. I know that
+                            many will only look at the additional years they could have lived…but if finally there were
+                            no longer Christians what would be gained.<br><br>
+
+                            Also I'm sure many will say "How could anyone do such a horrible thing?" My only answer is
+                            it isn’t easy and was only done after much thought.<br><br>
+
+                            Pastor, Mrs. Norris may possibly be reached at<br>
+                            802 Pleasant Hill Dr<br>
+                            Elkin - home of her sister<br>
+
+                            One other thing: it may seem cowardly to have always shot from behind, but I didn't want any
+                            of them to know, even at the last second, that I had to do this to them.<br><br>
+
+                            John got hurt more because he seemed to struggle longer. The rest were immediately out of
+                            pain. John didn't consciously feel anything either.<br><br>
+
+                            Please remember me in your prayers. I will need them whether or not the government does its
+                            duty as it sees it. I'm only concerned with making my peace with God, and of this I am
+                            assured because of Christ dying even for me.<br><br>
+
+                            P.S. Mother is in the hallway in the attic - 3rd floor. She was too heavy to move.<br>
+
+                        </div>
+                        <div class="letter__signature">
+                            John
+                        </div>
+                    </div>
+                    <p>
 
                         John List slept in at Breeze Knoll that night, the corpses of his family in the house with him.
                         The following day, he woke up, turned all the lights on, the temperature down, and turned on the
@@ -344,6 +441,8 @@
 
                         @include('modules.figure', ['imgSource' => 'breezeKnollAerial3', 'caption' => 'Aerial view of Breeze Knoll, December 1971. The rectangular ballroom with the stained glass ceiling can be seen on the right-hand side.'])
                     </p>
+
+
                 </article>
                 <article>
                     <h3 class="post__subtitle">August 30, 1972</h3>

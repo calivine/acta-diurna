@@ -23,7 +23,8 @@ mix.scripts([
 ], 'public/static/js/main.js');
 
 mix.scripts([
-    'resources/js/textEditorDisplay.js'
+    'resources/js/textEditorDisplay.js',
+    'resources/js/textEditor.js'
 ], 'public/static/js/text-editor.js');
 
 mix.scripts([

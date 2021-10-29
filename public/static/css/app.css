@@ -10950,7 +10950,7 @@ a.text-dark:focus {
 /* Light theme - default */
 
 .light {
-  background-image: url(/images/gview.png?ae50d1a64b11b4a772cdbd219fec9822);
+  background-image: url(/images/westfieldmapview.jpg?163092151078e0a834751127c35d0a4f);
   background-position: 50% 20%;
   color: #1c1f2b;
   -webkit-animation-name: slide;
@@ -10963,7 +10963,12 @@ a.text-dark:focus {
           animation-delay: 1s;
 }
 
-.light .container {
+.light .container,
+.light .container-fluid,
+.light .container-sm,
+.light .container-md,
+.light .container-lg,
+.light .container-xl {
   background-color: #f9f9f9;
 }
 
@@ -11294,6 +11299,10 @@ a.text-dark:focus {
 footer p {
   justify-content: center;
   text-align: center;
+}
+
+a figcaption {
+  color: #1c1f2b;
 }
 
 .card {
@@ -11688,6 +11697,7 @@ figure {
 }
 
 figure img {
+  cursor: pointer;
   display: block;
   margin: 0 auto !important;
   max-width: 100% !important;

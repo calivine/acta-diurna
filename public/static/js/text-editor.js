@@ -1,34 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
     const textInput = document.querySelector('.text-input');
     const form = document.querySelector('.write-post__form');
+    const textView = document.querySelector('.text-input__display');
+    const editableContentBox = document.querySelector('.text-input__display');
 
-
-    let textView = document.querySelector('.text-input__display');
-
-
-    let textUpload = $('.text-input__display');
-    let editableContentBox = document.querySelector('.text-input__display');
-
-    const inputContainer = $('.text-input__container.show-placeholder');
-
-
-    if (isAdvancedUpload) {
-        textUpload.addClass('has-advanced-upload');
-        console.log('Drag n\' drop enabled.');
-    }
+    const $textUpload = $('.text-input__display');
+    const $inputContainer = $('.text-input__container.show-placeholder');
 
     textView.addEventListener('input', (event) => {
         if (event.data == null) {
-            console.log(textUpload[0].outerText);
+            console.log($textUpload[0].outerText);
             console.log(editableContentBox);
         }
         else {
-            inputContainer.removeClass('show-placeholder');
+            $inputContainer.removeClass('show-placeholder');
         }
     });
 
     // Submit user input through text element
     form.addEventListener('submit', (event) => {
-        textInput.value = textUpload[0].outerText;
+        textInput.value = $textUpload[0].outerText;
+    });
+});
+
+$(function () {
+    const $textDisplay = $('.text-input__display');
+
+    $textDisplay.on('paste input cut', function (e) {
+        console.log(e.data);
+        console.log(e.target);
+        console.log(e.type);
     });
 });

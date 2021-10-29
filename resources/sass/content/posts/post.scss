@@ -3,6 +3,7 @@ figure {
     margin: 3rem auto;
 
     img {
+        cursor: pointer;
         display: block;
         margin: 0 auto !important;
         max-width: 100% !important; //calc(100vw - 25px) !important;

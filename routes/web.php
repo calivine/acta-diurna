@@ -33,7 +33,7 @@ Route::post('/theme', 'GuestController@changeTheme')->name('theme');
 Route::get('/articles/{title}', 'GuestController@getArticle');
 
 # GET About
-Route::view('/about', 'content.about');
+# Route::view('/about', 'content.about');
 
 # GET TheWatcher bibliography
 Route::view('/articles/thewatcher/bibliography', 'content.thewatcher.bibliography');
@@ -46,10 +46,14 @@ Route::view('/articles/highfields/references', 'content.highfields.references');
 # REDIRECT
 Route::redirect('/thewatcher', '/articles/thewatcher', 301)->name('watcher');
 Route::redirect('/highfields', '/articles/highfields', 301)->name('highfields');
+Route::redirect('/breezeknoll', '/articles/breezeknoll', 301)->name('breezeknoll');
+
 
 
 # REDIRECT landing page to The Watchers
-Route::redirect('/', '/highfields', 301)->name('home');
+# Route::redirect('/', '/highfields', 301)->name('home');
 
 # REDIRECT away from register page
-Route::redirect('/register', '/thewatcher', 301);
+// Route::redirect('/register', '/thewatcher', 301);
+
+Route::view('/', 'content.welcome');

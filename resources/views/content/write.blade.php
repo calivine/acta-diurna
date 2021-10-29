@@ -1,3 +1,4 @@
+@include('modules.toolbar')
 <section class="container write-post__container">
     <div class="write-post__inner-container">
         <div class="editor">
@@ -5,8 +6,7 @@
                 {{ csrf_field() }}
                 <div class="text-input__container show-placeholder">
                     <span class="fr-placeholder">Write here to post...</span>
-                    <div class="text-input__display" contenteditable="true">
-                    </div>
+                    <div class="text-input__display" contenteditable="true"></div>
                     <textarea class="text-input" name="post" placeholder="Write post here..."></textarea>
                 </div>
                 <div class="text-input__container">

@@ -9,11 +9,10 @@ use Illuminate\Support\Facades\Request;
  function log_client()
  {
      $user_agent = Request::userAgent();
-     $id = Request::user()->id ?? '';
      $method = Request::method();
      $ip = Request::ip();
 
-     return $method . ' ' . now() . ': User: ' . $id . ' (' . $ip . ') ' . $user_agent;
+     return $method . ' ' . now() . ': (' . $ip . ') ' . $user_agent;
  }
 
  /**

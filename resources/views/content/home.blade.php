@@ -12,11 +12,6 @@
             @include('content.write')
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            @include('modules.results')
-        </div>
-    </div>
     <div class="row justify-content-center mt-4">
 
     </div>

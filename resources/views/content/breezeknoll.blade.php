@@ -21,8 +21,8 @@
                         Jersey: a grand estate with a dark past.<br><br>
                         The late 1960s and early 1970s were exciting, tumultuous, and transformational, with
                         revolutionary music, politics, fashion, and television defining the era. A generational clash
-                        was unfolding, so deep it caused wars at schools, in the general culture, and even at home. The
-                        relationship between teens and parents has always been complex, but the medley of strongly
+                        was unfolding so deep it caused wars at schools, general culture, and even at home. The
+                        relationship between teens and parents has always been complex. Still, the medley of strong
                         religious beliefs held by the previous generation, technological advancements, and radical
                         politics seemed to serve as a violent catalyst in a changing America.<br><br>
                         What happens in the past cannot be changed or altered, but our perception of it can. Even after
@@ -117,7 +117,8 @@
                     </p>
                     <h3 class="post__subtitle">Timeline of Notable Gatherings at Breeze Knoll</h3>
                     <p>
-                        <strong>October 10, 1906</strong> - The wedding of John and Phoebe Wittke's youngest daughter, Gertrude Mae
+                        <strong>October 10, 1906</strong> - The wedding of John and Phoebe Wittke's youngest daughter,
+                        Gertrude Mae
                         Wittke, to G. Harold Whitney took place in the ballroom at 6:30 p.m., decorated with potted
                         plants, white lilies, chrysanthemums, pink roses, and smilax.<br><br>
                         The father of the groom, Rev. George H. Whitney performed the ceremony. John Samuel Agustus
@@ -128,7 +129,8 @@
                         to live at that house, which was built in 1890 and is still standing today. Tragically, her
                         husband George died on March 9, 1929, in their home at 319 Hillside Ave. He was 46 at the
                         time.<br>
-                        <strong>November 24, 1932</strong> - The wedding of Jean Whitney to Carl Wood occurred there on Thanksgiving
+                        <strong>November 24, 1932</strong> - The wedding of Jean Whitney to Carl Wood occurred there on
+                        Thanksgiving
                         1932. Jean was the daughter of George Harold and Gertrude Whitney and grew up next door to
                         Breeze Knoll. Her grandfather, John Wittke, gave her away. Jean wore the same wedding gown her
                         mother wore to her wedding in 1906.<br><br>
@@ -138,13 +140,15 @@
                         third engagement that ended in a robbery scandal in 1955. Her new fiance tried to swindle her of
                         a large sum of money, prompting the immediate termination of their engagement.<br>
                         @include('modules.figure', ['imgSource' => 'robbed', 'caption' => ''])
-                        <strong>August 26, 1950</strong> - There was a wedding reception at Breeze Knoll for Janet Page Alpers and Vance
+                        <strong>August 26, 1950</strong> - There was a wedding reception at Breeze Knoll for Janet Page
+                        Alpers and Vance
                         Richardson following their marriage. The relationship to Henrietta or the Wittke family is
                         unclear, though they were likely cousins or family friends.<br>
                     </p>
                     <h3 class="post__subtitle">Tragic and Unfortunate Events at Breeze Knoll</h3>
                     <p>
-                        <strong>July 25, 1908</strong> - A severe domestic disturbance was reported at Breeze Knoll. In the morning,
+                        <strong>July 25, 1908</strong> - A severe domestic disturbance was reported at Breeze Knoll. In
+                        the morning,
                         domestic employee Molly Brown allegedly attacked her employer, Mrs. Wittke, with a heavy piece
                         of kindling wood. It appears that Ms. Brown, in a violent rage, struck Mrs. Wittke over the head
                         repeatedly, giving her four gashes to the head and breaking one of her fingers in the
@@ -161,10 +165,12 @@
                         before the attack occurred. She was born in Virginia in 1872 and was of African-American
                         descent. Her fate after the incident is unknown, and it is unclear why she attacked Mrs. Wittke.<br><br>
                         @include('modules.figure', ['imgSource' => 'courierJuly28', 'caption' => 'Plainfield Courier-News, Tuesday, July 28, 1908. Plainfield, New Jersey'])
-                        <strong>January 14, 1929</strong> - The first known death at Breeze Knoll was of matriarch Phoebe Wittke. She was
+                        <strong>January 14, 1929</strong> - The first known death at Breeze Knoll was of matriarch
+                        Phoebe Wittke. She was
                         87 years old at the time and died after a brief illness, likely in her bed. Her funeral was held
                         at Breeze Knoll shortly after.<br><br>
-                        <strong>May 27, 1936</strong> - The subsequent death within Breeze Knoll was patriarch John S A Wittke. In an
+                        <strong>May 27, 1936</strong> - The subsequent death within Breeze Knoll was patriarch John S A
+                        Wittke. In an
                         ironic twist of fate, he died after a fall down the grand staircase and fractured his skull. Mr.
                         Wittke was 88 years old at the time. The accident occurred around 11:45 a.m. Unfortunately, he
                         never regained consciousness and died approximately two hours later, likely downstairs. Mr.
@@ -330,7 +336,7 @@
                     </p>
                 </article>
                 <article>
-                    <h3>August 30, 1972</h3>
+                    <h3 class="post__subtitle">August 30, 1972</h3>
 
                     @include('modules.figure', ['imgSource' => 'bkfire2', 'caption' => ''])
                     @include('modules.figure', ['imgSource' => 'breezeknollfire', 'caption' => 'Breeze Knoll after the fire.  August 1972', 'link' => 'https://unioncc.instructure.com/courses/11394/files/617586?module_item_id=186599', 'linkText' => 'Source'])

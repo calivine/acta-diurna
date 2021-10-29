@@ -4,6 +4,7 @@
 
 @section('content')
     <div class="container-fluid">
+        <h1 class="post__title">Welcome to Nightmare Houses.<br><br>America’s most notorious real estate.</h1>
         <div class="row">
             <div class="col-lg-4">
                 <a href="{{ url('/highfields') }}">

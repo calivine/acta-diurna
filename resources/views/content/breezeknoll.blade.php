@@ -444,11 +444,11 @@
 
                         </div>
                         <div class="letter__signature">
-                            John<br><br><br><br><br><br>
+                            John<br><br>
                         </div>
                     </div>
                     <p class="caption">Original confession letter written by John List on the evening of November 9, 1971 (transcribed)</p>
-                    <p>
+                    <p><br><br>
 
                         John List slept in at Breeze Knoll that night, the corpses of his family in the house with him.
                         The following day, he woke up, turned all the lights on, the temperature down, and turned on the

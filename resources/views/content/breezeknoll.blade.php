@@ -242,7 +242,7 @@
                         Helen buried her husband on October 12, 1951, and just one day later, she met John List at a
                         bowling alley in Newport News, VA, while she was out with her younger sister, Jean.<br><br>
 
-                        @include('modules.figure', ['imgSource' => 'list1951', 'caption' => 'Helen Taylor (left), her sister Gene (middle), and John List (right) the night they met. October 13, 1951'])
+                        @include('modules.figure', ['imgSource' => 'list1951a', 'caption' => 'Helen Taylor (left), her sister Gene (middle), and John List (right) the night they met. October 13, 1951'])
 
                         John had joined the military in the 1940s and was recalled in 1950 during the escalation of the
                         Korean War. John was well educated and had an MBA. He thought Helen was gorgeous with her tall

@@ -11465,6 +11465,11 @@ img {
   text-align: right;
 }
 
+.caption {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
 .email__label,
 .password__label,
 .user__label {

@@ -211,7 +211,8 @@
                         never regained consciousness and died approximately two hours later, likely downstairs. Mr.
                         Wittke loved his home and was reportedly in good health at the time. It is unclear how Mr.
                         Wittke fell or what may have caused the tragic event.<br><br>
-'])
+
+                        @include('modules.figure', ['imgSource' => 'wittke2', 'caption' => 'Plainfield Courier-News, Thursday, May 28, 1936'])
                     </p>
                     <h3 class="post__title">Breeze Knoll</h3>
                     <h3 class="post__subtitle">1965-1971<br>The List Family</h3>
@@ -242,7 +243,7 @@
                         Helen buried her husband on October 12, 1951, and just one day later, she met John List at a
                         bowling alley in Newport News, VA, while she was out with her younger sister, Jean.<br><br>
 
-                        @include('modules.figure', ['imgSource' => 'list1951a', 'caption' => 'Helen Taylor (left), her sister Gene (middle), and John List (right) the night they met. October 13, 1951'])
+                        @include('modules.figure', ['imgSource' => 'list1951b', 'caption' => 'Helen Taylor (left), her sister Gene (middle), and John List (right) the night they met. October 13, 1951'])
 
                         John had joined the military in the 1940s and was recalled in 1950 during the escalation of the
                         Korean War. John was well educated and had an MBA. He thought Helen was gorgeous with her tall
@@ -446,6 +447,7 @@
                             John<br><br><br><br><br><br>
                         </div>
                     </div>
+                    <p class="caption">Original confession letter written by John List on the evening of November 9, 1971 (transcribed)</p>
                     <p>
 
                         John List slept in at Breeze Knoll that night, the corpses of his family in the house with him.

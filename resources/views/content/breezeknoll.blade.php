@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date"></p>
+                <p class="post__date">October 30, 2021</p>
                 <hgroup>
                     <h1 class="post__title">431 Hillside Avenue<br>Westfield, NJ</h1>
                     <h2 class="post__subtitle">AKA “Breeze Knoll”<br>ca. 1896-1972</h2>

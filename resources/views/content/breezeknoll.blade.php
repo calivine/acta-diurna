@@ -211,7 +211,6 @@
                         never regained consciousness and died approximately two hours later, likely downstairs. Mr.
                         Wittke loved his home and was reportedly in good health at the time. It is unclear how Mr.
                         Wittke fell or what may have caused the tragic event.<br><br>
-                        @include('modules.figure', ['imgSource' => 'wittke', 'caption' => 'Plainfield Courier-News, Thursday, May 28, 1936
 '])
                     </p>
                     <h3 class="post__title">Breeze Knoll</h3>
@@ -303,7 +302,7 @@
                         appears to have gone through her and into the lower kitchen cabinets. After she was dead, John
                         dragged her body into the nearby ballroom across the hall. Helen was 46 years old.<br><br>
 
-                        @include('modules.figure', ['imgSource' => 'helenList', 'caption' => 'Helen List, the first victim of John List.<br>Image: https://www.findagrave.com/memorial/23081/helen-list'])
+                        @include('modules.figure', ['imgSource' => 'helenList', 'caption' => 'Helen List, the first victim of John List.'])
                         Next, John went to the third-floor attic apartment, where his 84-year-old mother, Alma, lived.
                         She heard the gunshot and grew concerned. Unfortunately, he came up and shot his mother in her
                         kitchen while she was making breakfast. She was looking right at him. List had attempted to move
@@ -492,7 +491,7 @@
                         America’s Most Wanted in 1989 and was quickly recognized. His assumed name was now Robert “Bob”
                         Clarke - after a man, he knew from school and had remarried. He was eventually tried and
                         convicted of his crimes and died in prison in 2008.<br><br>
-                        
+
                         @include('modules.figure', ['imgSource' => 'breezeKnollAerial3', 'caption' => 'Aerial view of Breeze Knoll, December 1971. The rectangular ballroom with the stained glass ceiling can be seen on the right-hand side.'])
                     </p>
 
@@ -551,6 +550,9 @@
                         no longer exists, in a town they never fully integrated with.<br><br>
                     </p>
                 </article>
+                <section class="mt-4">
+                    <p><a href="{{ url('/articles/breezeknoll/bibliography') }}">Bibliography</a></p>
+                </section>
             </div>
         </div>
     </div>

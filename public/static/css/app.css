@@ -11446,6 +11446,11 @@ img {
   -moz-transition: opacity 2s ease-out;
 }
 
+.letter {
+  margin: 5%;
+  font-style: italic;
+}
+
 .letter__date {
   text-align: right;
 }
@@ -11453,6 +11458,7 @@ img {
 .letter__body {
   margin: 0 auto;
   text-align: center;
+  font-style: inherit;
 }
 
 .letter__signature {

@@ -163,6 +163,7 @@ img {
 
 .letter {
     margin: 5%;
+    font-style: italic;
 }
 
 .letter__date {
@@ -173,6 +174,7 @@ img {
 .letter__body {
     margin: 0 auto;
     text-align: center;
+    font-style: inherit;
 
 }
 

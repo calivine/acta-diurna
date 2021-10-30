@@ -150,8 +150,8 @@
                         "Lohengrin," and nearly 200 guests were present for the special occasion. Finally, the bridal
                         party came down the winding staircase and entered the large hall.<br><br>
 
-                        @include('modules.figure', ['imgSource' => '', 'caption' => ''])
-                        @include('modules.figure', ['imgSource' => '', 'caption' => 'Original newspaper article detailing Gertrude Wittke’s wedding at Breeze Knoll in 1906. The Plainfield Courier-News, October 11, 1906'])
+                        @include('modules.figure', ['imgSource' => 'breezeKnollWedding1', 'caption' => ''])
+                        @include('modules.figure', ['imgSource' => 'breezeKnollWedding2', 'caption' => 'Original newspaper article detailing Gertrude Wittke’s wedding at Breeze Knoll in 1906. The Plainfield Courier-News, October 11, 1906'])
 
                         The Whitney family also lived on Hillside Avenue in a neighboring property. Gertrude would live
                         at that house, which was built in 1890 and is still standing today. Tragically, her husband
@@ -172,7 +172,7 @@
                         Richardson following their marriage. The relationship to Henrietta or the Wittke family is
                         unclear, though they were likely cousins or family friends.<br><br>
 
-                        @include('modules.figure', ['imgSource' => '', 'caption' => 'Wedding reception for this couple was held at Breeze Knoll in 1950. Plainfield Courier-News, August 26, 1950.'])
+                        @include('modules.figure', ['imgSource' => 'janeAlpers', 'caption' => 'Wedding reception for this couple was held at Breeze Knoll in 1950. Plainfield Courier-News, August 26, 1950.'])
                     </p>
                     <h3 class="post__subtitle">Tragic and Unfortunate Events at Breeze Knoll</h3>
                     <p>
@@ -202,7 +202,7 @@
                         87 years old at the time and died after a brief illness, likely in her bed. Her funeral was held
                         at Breeze Knoll shortly after.<br><br>
 
-                        @include('modules.figure', ['imgSource' => '', 'caption' => 'Announcement of Phoebe Wittke’s death in January 1929. She died in Breeze Knoll. Plainfield Courier-News, January 15, 1929'])
+                        @include('modules.figure', ['imgSource' => 'westfieldResidentDies', 'caption' => 'Announcement of Phoebe Wittke’s death in January 1929. She died in Breeze Knoll. Plainfield Courier-News, January 15, 1929'])
 
                         <strong>May 27, 1936</strong> - The subsequent death within Breeze Knoll was patriarch John S A
                         Wittke. In an
@@ -244,6 +244,7 @@
                         bowling alley in Newport News, VA, while she was out with her younger sister, Jean.<br><br>
 
                         @include('modules.figure', ['imgSource' => 'list1951', 'caption' => 'Helen Taylor (left), her sister Gene (middle), and John List (right) the night they met. October 13, 1951'])
+
                         John had joined the military in the 1940s and was recalled in 1950 during the escalation of the
                         Korean War. John was well educated and had an MBA. He thought Helen was gorgeous with her tall
                         and slender figure. However, Helen appeared to have a lazy eye, caused by an accident where
@@ -273,12 +274,12 @@
                         rekindle their marriage.<br><br>
 
                         @include('modules.figure', ['imgSource' => 'breezeknoll', 'caption' => 'Breeze Knoll 431 Hillside Ave. in the 1970s'])
+
                         The reality was that the new position John List had accepted didn't last long. He found himself
                         unable to hold down a job afterward, especially a well-paying job like the one at Jersey City
                         Bank, which initially drew the family to Westfield. He was never able to hold down another
                         suitable position.<br><br>
-                        @include('modules.figure', ['imgSource' => '', 'caption' => ''])
-
+                        @include('modules.figure', ['imgSource' => 'listAndFamily', 'caption' => 'John List with his children for a church photo in 1967.', 'link' => 'https://www.reddit.com/r/myfavoritemurder/comments/d4zk7c/my_dad_went_to_church_with_the_list_family/', 'linkText' => 'Source'])
 
                         By the early 1970s, John List found himself working in insurance out of the house, largely
                         unsuccessfully, and struggling to make any payments. By the summer of 1971, List had sold most
@@ -310,6 +311,10 @@
                         was too heavy to carry.
 
                         @include('modules.figure', ['imgSource' => 'almaList', 'caption' => 'Alma List was the next victim in Breeze Knoll. She was shot and killed in the attic apartment where she lived.'])
+
+                        @include('modules.figure', ['imgSource' => 'kitchenScene', 'caption' => 'The third-floor apartment kitchen at Breeze Knoll. Alma List lived here with her son and his family. She was shot in the head, above the eye, while she was making breakfast.'])
+
+
                         List then spent the rest of the morning running errands: sending letters to the children's
                         school to let them know they would be out of town visiting family in North Carolina and
                         canceling mail and other deliveries. Finally, he proceeded to empty his and his mother's bank
@@ -455,6 +460,7 @@
                         Halloween party forever captured in photos.<br><br>
 
                         @include('modules.figure', ['imgSource' => 'breezeKnollBW1', 'caption' => 'Breeze Knoll, after the bodies were found.'])
+
                         The lights left on at Breeze Knoll started to burn out, and neighbors became concerned. The
                         family hadn't been heard from in nearly a month (29 days, to be exact) before the community
                         learned what happened. Ultimately, Patricia List's theatre instructor, Edwin Illiano, discovered
@@ -462,11 +468,11 @@
                         instructor and had joined the local acting group earlier that year. It is her interest in acting
                         that alarmed her father. Her instructor hadn’t heard from her and was concerned.<br><br>
 
-
                         @include('modules.figure', ['imgSource' => 'breezeKnollBW2', 'caption' => 'Breeze Knoll on Hillside Ave. following the gruesome discovery of the List family in Westfield, NJ.'])
                         @include('modules.figure', ['imgSource' => 'breezeKnollColor1', 'caption' => 'Rare color photo of Breeze Knoll following the murders. The dark green shutters can be seen and some of the lights left on inside the residence after John List skipped town. '])
                         @include('modules.figure', ['imgSource' => 'Ballroom_List', 'caption' => 'A Westfield Police officer looks at the empty ballroom following the discovery and removal of the List family bodies. The sleeping bags the bodies were placed on remain, as does a guitar and game table leftover from a recent Halloween party Patricia List hosted before her murder. The kitchen from where John List dragged the bodies can be seen in the background. December 1971'])
                         @include('modules.figure', ['imgSource' => 'gettyimages-97335033-2048x2048', 'caption' => 'Another angle of the ballroom after the bodies of the List family were removed. Notice the game table and the elaborate original fireplace.'])
+
                         John List had ample time to plan the murders, getaway, and disappear. But, in his mind, he did
                         the right thing. He put his family out of the misery that was both real and imagined.<br><br>
 
@@ -486,8 +492,7 @@
                         America’s Most Wanted in 1989 and was quickly recognized. His assumed name was now Robert “Bob”
                         Clarke - after a man, he knew from school and had remarried. He was eventually tried and
                         convicted of his crimes and died in prison in 2008.<br><br>
-
-
+                        
                         @include('modules.figure', ['imgSource' => 'breezeKnollAerial3', 'caption' => 'Aerial view of Breeze Knoll, December 1971. The rectangular ballroom with the stained glass ceiling can be seen on the right-hand side.'])
                     </p>
 
@@ -520,7 +525,6 @@
                         1972. In 1974, a new house was built in place, set about 50 feet further back from the original
                         but strangely reminiscent of Breeze Knoll. This house is a brick Georgian-style mansion and can
                         barely be seen from the street. The address is still 431 Hillside Ave.<br><br>
-
 
                         @include('modules.figure', ['imgSource' => '431HillsideAve1974', 'caption' => 'The new house at 431 Hillside Ave. It was built in 1974.'])
                         @include('modules.figure', ['imgSource' => '431HillsideAveGoogleMaps1', 'caption' => ''])

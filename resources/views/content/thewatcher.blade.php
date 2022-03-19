@@ -11,7 +11,7 @@
                         <h1 class="post__subtitle"><em>AKA “The Watcher” House: <br> The Truth Revealed?</em></h1>
                     </hgroup>
                     <article id="chainOfTitle">
-                        @include('modules.figure', ['imgSource' => 'watcher1_4-3.jpg', 'caption' => '6/25/15 Photo by John \'O Boyle for NJ Advance Media', 'link' => 'https://www.nj.com/union/2017/10/judge_rules_on_njs_infamous_watcher_house_lawsuit.html', 'linkText' => 'Original Source'])
+                        @include('modules.figure', ['imgSource' => 'watcher1_4-3', 'caption' => '6/25/15 Photo by John \'O Boyle for NJ Advance Media', 'link' => 'https://www.nj.com/union/2017/10/judge_rules_on_njs_infamous_watcher_house_lawsuit.html', 'linkText' => 'Original Source'])
                         <hgroup>
                             <h2 class="post__section-title">Chain of Title</h2>
                             <h5 class="post__section-title">657 Boulevard</h5>
@@ -276,9 +276,6 @@
                 </section>
                 <section class="mt-4">
                     @include('content.thewatcher.footnotes')
-                </section>
-                <section>
-                    @include('content.comment')
                 </section>
             </div>
         </div>

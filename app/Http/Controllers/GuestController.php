@@ -54,6 +54,6 @@ class GuestController extends Controller
         {
             Cookie::queue('theme', $theme, 300);
         }
-        return redirect()->route('highfields');
+        return redirect()->back();
     }
 }

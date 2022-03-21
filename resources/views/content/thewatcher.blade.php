@@ -87,20 +87,20 @@
                             ionic columns. The front-facing, center gambrel roof-line was a popular feature in American
                             architecture roughly between 1895-1915, befitting for the
                             era.@include('modules.footnote', ['number' => '4'])</p>
-                        @include('modules.figure', ['imgSource' => '657 Boulevard_street view4-3.jpg', 'caption' => 'Image via Google Maps/Street View accessed 10/20/2020'])
+                        @include('modules.figure', ['imgSource' => '657 Boulevard_street view4-3', 'caption' => 'Image via Google Maps/Street View accessed 10/20/2020'])
                         <p>From the outside, it is a beautiful example of early 20th century domestic architecture and a
                             reminder of Gilded Age wealth in America. Boulevard is a quiet, unassuming tree-lined
                             street, with large and well-kept houses and yards. It is seemingly a perfect street, in an
                             ideal home, in a peaceful neighborhood, approximately 16 miles from New York City. It
                             appears that in Westfield, NJ, Boulevard was the street to live on.</p>
-                        @include('modules.figure', ['imgSource' => 'sanbornMap_Square.jpg', 'caption' => '1909 Sanborn Insurance Map of Boulevard and Carleton Rd., Westfield, NJ-657 Boulevard is highlighted in red.'])
+                        @include('modules.figure', ['imgSource' => 'sanbornMap_Square', 'caption' => '1909 Sanborn Insurance Map of Boulevard and Carleton Rd., Westfield, NJ-657 Boulevard is highlighted in red.'])
                         <p>The original owner of 657 Boulevard was Harry Lincoln Russell, a real estate agent, and his
                             family between 1905-1914. Russell was an early property developer in Westfield. The next
                             owners of 657 Boulevard were the Davies family, purchasing the property in 1914. They would
                             be the most prominent and most prolonged owners, with William H. Davies becoming mayor of
                             Westfield in 1933 while living on Boulevard. He also died there in 1947 (as did his
                             mother-in-law in 1915 and his wife in 1943). </p>
-                        @include('modules.figure', ['imgSource' => 'news_article.jpg', 'caption' => 'November 10, 1947 clipping from The Courier-News, Bridgewater New Jersey.'])
+                        @include('modules.figure', ['imgSource' => 'news_article', 'caption' => 'November 10, 1947 clipping from The Courier-News, Bridgewater New Jersey.'])
                         <p>Davies then passed 657 Boulevard to his son, Ernest Davies, and his family. Ernest sold it to
                             Dillard E. Bird in 1951. A Westfield trend of property transferred for $1 and 657 Boulevard
                             was no exception to this tradition until 1990 when the Bakes family sold the property to the
@@ -170,7 +170,7 @@
                                 from underlying mental illness.
                             </li>
                         </ul>
-                        @include('modules.figure', ['imgSource' => 'googleMapsView_4-3.jpg', 'caption' => '657 Boulevard and the house on Carleton behind it. Image courtesy Google Maps, accessed October 2020.'])
+                        @include('modules.figure', ['imgSource' => 'googleMapsView_4-3', 'caption' => '657 Boulevard and the house on Carleton behind it. Image courtesy Google Maps, accessed October 2020.'])
 
                     </article>
                     <article id="motiveMeansOpportunity">
@@ -190,8 +190,8 @@
                             Boulevard
                             from Carleton Rd.</p>
 
-                        @include('modules.figure', ['imgSource' => 'carletonRd4-3.jpg', 'caption' => 'Street view from Carleton Rd. 657 Boulevard is in the background. Image via Google Maps'])
-                        @include('modules.figure', ['imgSource' => 'carltonRd2_4-3.jpg', 'caption' => 'Zoomed view from Carleton Rd. 657 Boulevard is in the background. Image via Google maps.'])
+                        @include('modules.figure', ['imgSource' => 'carletonRd4-3', 'caption' => 'Street view from Carleton Rd. 657 Boulevard is in the background. Image via Google Maps'])
+                        @include('modules.figure', ['imgSource' => 'carltonRd2_4-3', 'caption' => 'Zoomed view from Carleton Rd. 657 Boulevard is in the background. Image via Google maps.'])
                         <p>The house is stucco-clad, in a Colonial Revival style built around 1920. While lovely, the
                             homes on Carleton are not as grand as the homes on Boulevard. Between the house on Carleton
                             and 657 Boulevard, there are approximately 114 feet between them. Records indicate
@@ -219,11 +219,11 @@
                             probably hear and see quite a lot. In some reports regarding the Watcher, contract workers
                             at 657 Boulevard claimed the backyard neighbors had lawn chairs facing 657 Boulevard as if
                             watching it.@include('modules.footnote', ['number' => '12']) </p>
-                        @include('modules.figure', ['imgSource' => 'sanbornMap_Square.jpg', 'caption' => 'Sanborn Insurance Map, 1921, Westfield, NJ. 657 Boulevard and the house on Carleton Rd. highlighted in red.'])
-                        @include('modules.figure', ['imgSource' => 'carletonRdRealtorViewSquare.jpg', 'caption' => 'Interior view of the Carleton Rd. house, with 657 Boulevard in the background. Image courtesy Realtor.com ', 'link' => 'https://www.realtor.com/realestateandhomes-detail/644-Carleton-Rd_Westfield_NJ_07090_M67589-13330#photo8', 'linkText' => 'Original Source'])
+                        @include('modules.figure', ['imgSource' => 'sanbornMap_Square', 'caption' => 'Sanborn Insurance Map, 1921, Westfield, NJ. 657 Boulevard and the house on Carleton Rd. highlighted in red.'])
+                        @include('modules.figure', ['imgSource' => 'carletonRdRealtorViewSquare', 'caption' => 'Interior view of the Carleton Rd. house, with 657 Boulevard in the background. Image courtesy Realtor.com ', 'link' => 'https://www.realtor.com/realestateandhomes-detail/644-Carleton-Rd_Westfield_NJ_07090_M67589-13330#photo8', 'linkText' => 'Original Source'])
                         <p>The fourth Watcher letter also clearly states, "Turn around, idiots," as if living behind 657
                             Boulevard the entire time.</p>
-                        @include('modules.figure', ['imgSource' => '657BoulevardZillow4-3.jpg', 'caption' => 'Back entrance to 657 Boulevard. Image courtesy Zillow.', 'link' => 'https://www.zillow.com/homedetails/657-Boulevard-Westfield-NJ-07090/40090611_zpid/?mmlb=g,5', 'linkText' => 'Original Source'])
+                        @include('modules.figure', ['imgSource' => '657BoulevardZillow4-3', 'caption' => 'Back entrance to 657 Boulevard. Image courtesy Zillow.', 'link' => 'https://www.zillow.com/homedetails/657-Boulevard-Westfield-NJ-07090/40090611_zpid/?mmlb=g,5', 'linkText' => 'Original Source'])
                         <p>The Watcher's MMO:</p>
                         <dl>
                             <dt>Means</dt>

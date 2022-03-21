@@ -29,7 +29,7 @@
                         <p id="disclaimer">*Disclaimer: this is a theory based on conjecture, publicly available
                             records, the location and the nature of the letters. </p>
                     </article>
-                    <img class="border-fancy" src="{{ asset('storage/assets/fancyBorder1-noBG.png') }}" alt="">
+                    @include('modules.border')
                     <article id="introduction">
                         <p>If there is one thing in life that one must learn, it is that actions have consequences.
                             Perhaps not right away, nor are those consequences always apparent, but they exist. Once
@@ -63,7 +63,7 @@
                             I will document and analyze 657 Boulevard's history and present a new theory, not reiterate
                             the original case's details.
                         </p>
-                        <img class="border-fancy" src="{{ asset('storage/assets/fancyBorder1-noBG.png') }}" alt="">
+                        @include('modules.border')
                         <article class="mt-3 pt-4">
                             <p>It seemed too strange to be real, like something out of a horror movie. The letters were
                                 unsettling, and the Watcher seemed so close, there was an almost supernatural aura to

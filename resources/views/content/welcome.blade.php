@@ -18,7 +18,7 @@
             </div>
             <div class="col-lg-4">
                 <a href="{{ url('/thewatcher') }}">
-                    @include('modules.figure', ['imgSource' => 'watcher1_4-3', 'caption' => 'The Watcher'])
+                    @include('modules.figure', ['imgSource' => 'watcher1_4-3b', 'caption' => 'The Watcher'])
                 </a>
 
             </div>

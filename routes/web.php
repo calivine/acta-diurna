@@ -49,6 +49,7 @@ Route::view('/articles/breezeknoll/bibliography', 'content.breezeknoll.bibliogra
 Route::redirect('/thewatcher', '/articles/thewatcher', 301)->name('watcher');
 Route::redirect('/highfields', '/articles/highfields', 301)->name('highfields');
 Route::redirect('/breezeknoll', '/articles/breezeknoll', 301)->name('breezeknoll');
+Route::redirect('/10050cielo', '/articles/10050cielo', 301)->name('10050cielo');
 
 
 

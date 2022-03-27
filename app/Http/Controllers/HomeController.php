@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Facades\App\Repository\Posts;
-use Facades\App\Repository\Videos;
 use Illuminate\Support\Facades\Log;
 
 
@@ -31,15 +30,13 @@ class HomeController extends Controller
         // Get the most recent post by user
         $posts = Posts::getMostRecent();
 
-        // $files = Videos::allFromUser(25);
-        $files = Videos::dashboardVideos();
+
         $post_date = $posts->created_at ?? "";
         $post_body = $posts->body ?? "Your post will go here.";
 
         return view('content.home')->with([
             'post_date' => $post_date,
-            'post_body' => $post_body,
-            'files' => $files
+            'post_body' => $post_body
         ]);
     }
 }

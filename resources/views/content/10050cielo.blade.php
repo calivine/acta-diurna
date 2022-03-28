@@ -11,7 +11,13 @@
                 <h1 class="post__title">10050 Cielo Drive<br>Los Angeles, CA</h1>
             </hgroup>
             @include('modules.figure', ['imgSource' => '10050cielo', 'caption' => '10050 Cielo Drive'])
-            
+            @include('modules.figure', ['imgSource' => '10050cielo'])
+            <article>
+                <p>
+
+                </p>
+            </article>
+
         </div>
 
     </div>

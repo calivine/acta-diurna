@@ -8,8 +8,10 @@
                 <p class="post__date">March 29, 2022</p>
             </div>
             <hgroup>
-                <h1 class="post__title">10050 Cielo Drive</h1>
+                <h1 class="post__title">10050 Cielo Drive<br>Los Angeles, CA</h1>
             </hgroup>
+            @include('modules.figure', ['imgSource' => '10050cielo', 'caption' => '10050 Cielo Drive'])
+            
         </div>
 
     </div>

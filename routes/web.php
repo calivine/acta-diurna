@@ -45,6 +45,11 @@ Route::view('/articles/highfields/references', 'content.highfields.references');
 Route::view('/articles/breezeknoll/bibliography', 'content.breezeknoll.bibliography');
 
 
+Route::view('/articles/10050cielo/bibliography', 'content.podcast.10050cielo.bibliography');
+
+Route::view('/podcasts', 'content.podcast.directory');
+
+
 # REDIRECT
 Route::redirect('/thewatcher', '/articles/thewatcher', 301)->name('watcher');
 Route::redirect('/highfields', '/articles/highfields', 301)->name('highfields');

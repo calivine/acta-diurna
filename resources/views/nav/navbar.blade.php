@@ -18,6 +18,7 @@
         <a class="nav-link" href="{{ url('/thewatcher') }}">{{ __('The Watcher') }}</a>
         <a class="nav-link" href="{{ url('/highfields') }}">{{ __('Highfields') }}</a>
         <a class="nav-link" href="{{ url('/breezeknoll') }}">{{ __('Breeze Knoll') }}</a>
+        <a class="nav-link" href="{{ url('/podcasts') }}">{{ __('Podcast') }}</a>
 
     @endauth
 </nav>

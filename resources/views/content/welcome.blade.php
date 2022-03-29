@@ -26,13 +26,8 @@
         </div>
         <div class='row'>
             <div class='col-lg-4'>
-                Podcasts
-            </div>
-        </div>
-        <div class='row'>
-            <div class='col-lg-4'>
-                <a href="{{ url('/10050cielo') }}">
-                    @include('modules.figure', ['imgSource' => '10050cielo512', 'caption' => '10050 Cielo Drive'])
+                <a href="{{ url('/podcasts') }}">
+                    @include('modules.figure', ['imgSource' => 'NightmareHousesLogo', 'caption' => 'Nightmare Houses Podcast'])
                 </a>
             </div>
         </div>

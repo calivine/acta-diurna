@@ -5,6 +5,20 @@
 @section('content')
     <div class="container-fluid">
         <h1 class="post__title">Welcome to Nightmare Houses.<br><br>America’s most notorious real estate.</h1>
+
+        <div class='row'>
+            <div class='col-lg-4'>
+                
+            </div>
+            <div class='col-lg-4'>
+                <a href="{{ url('/podcasts') }}">
+                    @include('modules.figure', ['imgSource' => 'NightmareHousesLogo', 'caption' => 'Nightmare Houses Podcast'])
+                </a>
+            </div>
+            <div class='col-lg-4'>
+
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-4">
                 <a href="{{ url('/highfields') }}">
@@ -23,13 +37,6 @@
 
             </div>
 
-        </div>
-        <div class='row'>
-            <div class='col-lg-4'>
-                <a href="{{ url('/podcasts') }}">
-                    @include('modules.figure', ['imgSource' => 'NightmareHousesLogo', 'caption' => 'Nightmare Houses Podcast'])
-                </a>
-            </div>
         </div>
 
     </div>

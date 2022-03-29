@@ -11,16 +11,18 @@
                 </hgroup>
                 @include('modules.figure', ['imgSource' => '10050cielo', 'caption' => '10050 Cielo Drive'])
 
+                <figure>
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/435429/"><h3>Nightmare Houses S1 E1</h3></a></figcaption>
+                    <audio
+                            controls
+                            src={{ asset('storage/media/10050_cielo_drive_1_master.mp3/') }}>
+                        Your browser does not support the
+                        <code>audio</code> element.
+                    </audio>
+                </figure>
+
                 <article>
-                    <figure>
-                        <figcaption><a href="https://rss.com/podcasts/nightmarehouses/435429/"><h3>Nightmare Houses S1 E1</h3></a></figcaption>
-                        <audio
-                                controls
-                                src={{ asset('storage/media/10050_cielo_drive_1_master.mp3/') }}>
-                            Your browser does not support the
-                            <code>audio</code> element.
-                        </audio>
-                    </figure>
+
 
                     <p>
                         In the early hours of August 9, 1969 one of the most gruesome murders occurred in a 1940's European Style Farmhouse at 10050 Cielo Drive, Los Angeles, CA.

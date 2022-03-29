@@ -11305,6 +11305,11 @@ a figcaption {
   color: #1c1f2b;
 }
 
+figure audio {
+  display: block;
+  margin: 0 auto;
+}
+
 .card {
   background-color: transparent;
   color: #FFFF;

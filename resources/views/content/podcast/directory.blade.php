@@ -5,12 +5,16 @@
 @section('content')
     <div class="container-fluid">
         <h1 class="post__title">Welcome to Nightmare Houses Podcast.</h1>
-        <audio
-                controls
-                src={{ asset('storage/media/NightmareHouses_Intro_Master.mp3/') }}>
-            Your browser does not support the
-            <code>audio</code> element.
-        </audio>
+        @include('modules.figure', ['imgSource' => 'NightmareHousesLogo'])
+        <figure>
+            <figcaption><h3>Introduction</h3></figcaption>
+            <audio
+                    controls
+                    src={{ asset('storage/media/NightmareHouses_Intro_Master.mp3/') }}>
+                Your browser does not support the
+                <code>audio</code> element.
+            </audio>
+        </figure>
         <div class='row'>
             <div class='col-lg-4'>
                 <a href="{{ url('/10050cielo') }}">

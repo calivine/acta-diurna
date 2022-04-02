@@ -32,12 +32,10 @@
                 <article>
                     <h1>Special Thanks</h1>
                     <p>
-                        Stacy Martire<br>Darb<br>NJ<br>Jeff<br>Sam Whitfield <br>Gnome<br>Kelly<br>Paul<br>Joe Oliva<br>Martin Willis<br>
+                        Stacy Martire<br>Darb<br>NJ<br>Jeff<br>Sam Whitfield, <a href="https://twitter.com/SamW_NGC">Twitter</a>, <a href="https://www.patreon.com/whitfieldreport">Patreon</a> <br>Gnome<br>Kelly<br>Paul<br>Joe Oliva<br>Martin Willis<br>
 
                     </p>
-                    <p>Impromptu in Quarter by <a href="http://incompetech.com">Kevin MacLeod</a> Creative Commons — Attribution 4.0 International — CC BY 4.0
-                        <a href="https://bit.ly/impromptu-in-quarter">Free Download / Stream</a></p>
-                    <p><a href="https://youtu.be/VW7dU23RQuA">Music promoted by Audio Library</a></p>
+
 
                 </article>
 
@@ -71,6 +69,9 @@
 
                 <section class="mt-4">
                     <p><a href="{{ url('/articles/10050cielo/bibliography') }}">Bibliography</a></p>
+                    <p>Impromptu in Quarter by <a href="http://incompetech.com">Kevin MacLeod</a> Creative Commons — Attribution 4.0 International — CC BY 4.0
+                        <a href="https://bit.ly/impromptu-in-quarter">Free Download / Stream</a></p>
+                    <p><a href="https://youtu.be/VW7dU23RQuA">Music promoted by Audio Library</a></p>
                 </section>
             </div>
 

@@ -17,9 +17,15 @@
         </figure>
         <div class='row'>
             <div class='col-lg-4'>
+
+            </div>
+            <div class='col-lg-4'>
                 <a href="{{ url('/10050cielo') }}">
                     @include('modules.figure', ['imgSource' => '10050cielo512', 'caption' => 'S1 E1: 10050 Cielo Drive'])
                 </a>
+            </div>
+            <div class='col-lg-4'>
+
             </div>
         </div>
 

@@ -29,7 +29,7 @@
                 </p>
             </article>
 
-            
+
 
             @include('modules.figure', ['imgSource' => 'ca-times.brightspotcdnCopInFront','caption' => ''])
             @include('modules.figure', ['imgSource' => 'helterskelter','caption' => ''])

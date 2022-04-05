@@ -29,15 +29,7 @@
                 </p>
             </article>
 
-            <article>
-                <h1>Special Thanks</h1>
-                <p>
-                    Stacy Martire<br>Darb<br>NJ<br>Jeff<br>Sam Whitfield, <a href="https://twitter.com/SamW_NGC">Twitter</a>, <a href="https://www.patreon.com/whitfieldreport">Patreon</a> <br>Gnome<br>Kelly<br>Paul<br>Joe Oliva<br>Martin Willis<br>
-
-                </p>
-
-
-            </article>
+            
 
             @include('modules.figure', ['imgSource' => 'ca-times.brightspotcdnCopInFront','caption' => ''])
             @include('modules.figure', ['imgSource' => 'helterskelter','caption' => ''])

@@ -35,7 +35,7 @@
             </div>
             <div class='col-lg-4'>
                 <a href="{{ url('/3301waverly') }}">
-                    @include('modules.figure', ['imgSource' => 'NightmareHousesWaverlyEpisode', 'caption' => 'S1 E2: 3301 Waverly Drive'])
+                    @include('modules.figure', ['imgSource' => 'LaBianca_residence_in_Los_Feliz', 'caption' => 'S1 E2: 3301 Waverly Drive'])
                 </a>
             </div>
             <div class='col-lg-4'>

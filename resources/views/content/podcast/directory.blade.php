@@ -29,6 +29,20 @@
             </div>
         </div>
 
+        <div class='row'>
+            <div class='col-lg-4'>
+
+            </div>
+            <div class='col-lg-4'>
+                <a href="{{ url('/3301waverly') }}">
+                    @include('modules.figure', ['imgSource' => 'NightmareHousesWaverlyEpisode', 'caption' => 'S1 E2: 3301 Waverly Drive'])
+                </a>
+            </div>
+            <div class='col-lg-4'>
+
+            </div>
+        </div>
+
     </div>
 @endsection
 

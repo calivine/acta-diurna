@@ -47,6 +47,7 @@ Route::view('/articles/highfields/references', 'content.highfields.references');
 
 Route::view('/articles/10050cielo/bibliography', 'content.podcast.10050cielo.bibliography');
 Route::view('/articles/3301waverly/bibliography', 'content.podcast.3301waverly.bibliography');
+Route::view('/articles/watts/bibliography', 'content.podcast.watts.bibliography');
 
 Route::view('/podcasts', 'content.podcast.directory');
 
@@ -57,7 +58,7 @@ Route::redirect('/highfields', '/articles/highfields', 301)->name('highfields');
 # Route::redirect('/breezeknoll', '/articles/breezeknoll', 301)->name('breezeknoll');
 Route::redirect('/10050cielo', '/articles/10050cielo', 301)->name('10050cielo');
 Route::redirect('/3301waverly', '/articles/3301waverly', 301)->name('3301waverly');
-
+Route::redirect('/watts', '/articles/watts', 301)->name('watts');
 
 # REDIRECT landing page to The Watchers
 # Route::redirect('/', '/highfields', 301)->name('home');

@@ -11,7 +11,6 @@
                 </hgroup>
 
                 <figure>
-                    <figcaption><a href=""><h3>Nightmare Houses S1 E4</h3></a></figcaption>
                     <audio
                             controls
                             src={{ asset('storage/media/Breezeknoll.mp3/') }}>

@@ -43,6 +43,27 @@ class GuestController extends Controller
         return view("content.{$title}");
     }
 
+    public function getPodcast(String $title)
+    {
+        Log::info(log_client());
+
+        Log::info(Cookie::get('theme'));
+        if (is_null(Cookie::get('theme')))
+        {
+            Cookie::queue(Cookie::make('theme', 'light', 300));
+        }
+        else
+        {
+            Cookie::queue('theme', Cookie::get('theme'), 300);
+        }
+
+        return view("content.podcast.{$title}.{$title}");
+    }
+
+
+
+
+
     public function changeTheme(Request $request)
     {
         $theme = $request->input('theme');

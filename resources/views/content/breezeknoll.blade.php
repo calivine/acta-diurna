@@ -13,7 +13,7 @@
                 <figure>
                     <audio
                             controls
-                            src={{ asset('storage/media/Breezeknoll.mp3/') }}>
+                            src={{ asset('storage/media/Breezeknoll.mp3') }}>
                         Your browser does not support the
                         <code>audio</code> element.
                     </audio>

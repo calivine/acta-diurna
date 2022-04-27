@@ -12,8 +12,8 @@
                 @include('modules.figure', ['imgSource' => '10050cielo', 'caption' => '10050 Cielo Drive'])
 
                 <figure>
-                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/435429/"><h3>Nightmare Houses S1
-                                E1</h3></a></figcaption>
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/435429/"><h3>Nightmare Houses S01
+                                E01</h3></a></figcaption>
                     <iframe src="https://player.rss.com/nightmarehouses/435429?theme=light" style="width: 100%"
                             title="Nightmare Houses" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

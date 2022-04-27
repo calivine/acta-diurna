@@ -28,9 +28,6 @@ class GuestController extends Controller
 
     public function getArticle(String $title)
     {
-        Log::info(log_client());
-
-        Log::info(Cookie::get('theme'));
         if (is_null(Cookie::get('theme')))
         {
             Cookie::queue(Cookie::make('theme', 'light', 300));
@@ -40,14 +37,11 @@ class GuestController extends Controller
             Cookie::queue('theme', Cookie::get('theme'), 300);
         }
 
-        return view("content.{$title}");
+        return view("content.{$title}.{$title}");
     }
 
     public function getPodcast(String $title)
     {
-        Log::info(log_client());
-
-        Log::info(Cookie::get('theme'));
         if (is_null(Cookie::get('theme')))
         {
             Cookie::queue(Cookie::make('theme', 'light', 300));

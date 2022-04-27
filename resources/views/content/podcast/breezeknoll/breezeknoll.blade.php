@@ -10,8 +10,8 @@
                     <h2 class="post__subtitle">AKA “Breeze Knoll”<br>ca. 1896-1972</h2>
                 </hgroup>
                 <figure>
-                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/467026/"><h3>Nightmare Houses S1
-                                E4</h3></a></figcaption>
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/467026/"><h3>Nightmare Houses S01
+                                E04</h3></a></figcaption>
                     <iframe src="https://player.rss.com/nightmarehouses/467026?theme=light" style="width: 100%"
                             title="Nightmare Houses" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

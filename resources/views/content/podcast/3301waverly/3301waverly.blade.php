@@ -12,8 +12,8 @@
                 @include('modules.figure', ['imgSource' => 'LaBianca_residence_in_Los_Feliz', 'caption' => '3301 Waverly Drive'])
 
                 <figure>
-                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/435429/"><h3>Nightmare Houses S1
-                                E2</h3></a></figcaption>
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/435429/"><h3>Nightmare Houses S01
+                                E02</h3></a></figcaption>
                     <iframe src="https://player.rss.com/nightmarehouses/444842?theme=light" style="width: 100%"
                             title="Nightmare Houses" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

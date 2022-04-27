@@ -21,7 +21,7 @@
 
             <div class="col-lg-4 mx-auto my-5">
                 <a href="{{ url('/podcasts/10050cielo') }}" class="text-decoration-none">
-                    @include('modules.thumbnail', ['imgSource' => '10050cielo512', 'caption' => 'S1 E1: 10050 Cielo Drive'])
+                    @include('modules.thumbnail', ['imgSource' => '10050cielo512', 'caption' => 'S01 E01: 10050 Cielo Drive'])
                 </a>
             </div>
 
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-lg-4 mx-auto my-5">
                 <a href="{{ url('/podcasts/3301waverly') }}" class="text-decoration-none">
-                    @include('modules.thumbnail', ['imgSource' => 'LaBianca_residence_in_Los_Feliz_Thumb', 'caption' => 'S1 E2: 3301 Waverly Drive'])
+                    @include('modules.thumbnail', ['imgSource' => 'LaBianca_residence_in_Los_Feliz_Thumb', 'caption' => 'S01 E02: 3301 Waverly Drive'])
                 </a>
             </div>
         </div>
@@ -39,7 +39,7 @@
 
             <div class="col-lg-4 mx-auto my-5">
                 <a href="{{ url('/podcasts/watts') }}" class="text-decoration-none">
-                    @include('modules.thumbnail', ['imgSource' => 'watts', 'caption' => 'S1 E3: The Watts Family Home'])
+                    @include('modules.thumbnail', ['imgSource' => 'watts', 'caption' => 'S01 E03: The Watts Family Home'])
                 </a>
             </div>
 
@@ -48,7 +48,7 @@
 
             <div class="col-lg-4 mx-auto my-5">
                 <a href="{{ url('/podcasts/breezeknoll') }}" class="text-decoration-none">
-                    @include('modules.thumbnail', ['imgSource' => '431HillsideAve', 'caption' => 'S1 E4: Breezeknoll'])
+                    @include('modules.thumbnail', ['imgSource' => '431HillsideAve', 'caption' => 'S01 E04: Breezeknoll'])
                 </a>
             </div>
 

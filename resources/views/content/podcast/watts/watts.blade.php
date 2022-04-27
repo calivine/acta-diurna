@@ -12,8 +12,8 @@
                 @include('modules.figure', ['imgSource' => 'wattsthumb', 'caption' => 'The Watts Family Home'])
 
                 <figure>
-                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/452808/"><h3>Nightmare Houses S1
-                                E3</h3></a></figcaption>
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/452808/"><h3>Nightmare Houses S01
+                                E03</h3></a></figcaption>
                     <iframe src="https://player.rss.com/nightmarehouses/452808?theme=light" style="width: 100%"
                             title="Nightmare Houses" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

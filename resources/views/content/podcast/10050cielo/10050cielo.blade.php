@@ -12,27 +12,30 @@
                 @include('modules.figure', ['imgSource' => '10050cielo', 'caption' => '10050 Cielo Drive'])
 
                 <figure>
-                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/435429/"><h3>Nightmare Houses S1 E1</h3></a></figcaption>
-                    <audio
-                            controls
-                            src={{ asset('storage/media/10050_cielo_drive_1_master.mp3/') }}>
-                        Your browser does not support the
-                        <code>audio</code> element.
-                    </audio>
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/435429/"><h3>Nightmare Houses S1
+                                E1</h3></a></figcaption>
+                    <iframe src="https://player.rss.com/nightmarehouses/435429?theme=light" style="width: 100%"
+                            title="Nightmare Houses" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen><a href="https://rss.com/podcasts/nightmarehouses/435429/">10050 Cielo Drive
+                            | RSS.com</a></iframe>
                 </figure>
 
                 <article>
 
 
                     <p>
-                        In the early hours of August 9, 1969 one of the most gruesome murders occurred in a 1940's European Style Farmhouse at 10050 Cielo Drive, Los Angeles, CA.
+                        In the early hours of August 9, 1969 one of the most gruesome murders occurred in a 1940's
+                        European Style Farmhouse at 10050 Cielo Drive, Los Angeles, CA.
                     </p>
                 </article>
 
                 <article>
                     <h1>Special Thanks</h1>
                     <p>
-                        Stacy Martire<br>Darb<br>NJ<br>Jeff<br>Sam Whitfield, <a href="https://twitter.com/SamW_NGC">Twitter</a>, <a href="https://www.patreon.com/whitfieldreport">Patreon</a> <br>Gnome<br>Kelly<br>Paul<br>Joe Oliva<br>Martin Willis<br>
+                        Stacy Martire<br>Darb<br>NJ<br>Jeff<br>Sam Whitfield, <a href="https://twitter.com/SamW_NGC">Twitter</a>,
+                        <a href="https://www.patreon.com/whitfieldreport">Patreon</a> <br>Gnome<br>Kelly<br>Paul<br>Joe
+                        Oliva<br>Martin Willis<br>
 
                     </p>
 
@@ -69,7 +72,8 @@
 
                 <section class="mt-4">
                     <p><a href="{{ url('/articles/10050cielo/bibliography') }}">Bibliography</a></p>
-                    <p>Impromptu in Quarter by <a href="http://incompetech.com">Kevin MacLeod</a> Creative Commons — Attribution 4.0 International — CC BY 4.0
+                    <p>Impromptu in Quarter by <a href="http://incompetech.com">Kevin MacLeod</a> Creative Commons —
+                        Attribution 4.0 International — CC BY 4.0
                         <a href="https://bit.ly/impromptu-in-quarter">Free Download / Stream</a></p>
                     <p><a href="https://youtu.be/VW7dU23RQuA">Music promoted by Audio Library</a></p>
                 </section>

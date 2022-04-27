@@ -1,5 +1,4 @@
 <figure>
-
     <img src="{{ asset('storage/assets/' . $imgSource . '.jpg') }}" alt="{{ $caption ?? '' }}">
     @if(isset($caption))
         <figcaption>

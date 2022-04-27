@@ -10,13 +10,16 @@
                     <h2 class="post__subtitle">AKA “Breeze Knoll”<br>ca. 1896-1972</h2>
                 </hgroup>
                 <figure>
-                    <audio
-                            controls
-                            src={{ asset('storage/media/Breezeknoll.mp3') }}>
-                        Your browser does not support the
-                        <code>audio</code> element.
-                    </audio>
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/467026/"><h3>Nightmare Houses S1
+                                E4</h3></a></figcaption>
+                    <iframe src="https://player.rss.com/nightmarehouses/467026?theme=light" style="width: 100%"
+                            title="Nightmare Houses" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen><a href="https://rss.com/podcasts/nightmarehouses/467026/">Breezeknoll |
+                            RSS.com</a></iframe>
                 </figure>
+
+
 
                 <article>
 
@@ -58,7 +61,8 @@
 
                 <section class="mt-4">
                     <p><a href="{{ url('/articles/breezeknoll/bibliography') }}">Bibliography</a></p>
-                    <p>Impromptu in Quarter by <a href="http://incompetech.com">Kevin MacLeod</a> Creative Commons — Attribution 4.0 International — CC BY 4.0
+                    <p>Impromptu in Quarter by <a href="http://incompetech.com">Kevin MacLeod</a> Creative Commons —
+                        Attribution 4.0 International — CC BY 4.0
                         <a href="https://bit.ly/impromptu-in-quarter">Free Download / Stream</a></p>
                     <p><a href="https://youtu.be/VW7dU23RQuA">Music promoted by Audio Library</a></p>
                 </section>

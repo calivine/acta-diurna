@@ -12,23 +12,24 @@
                 @include('modules.figure', ['imgSource' => 'wattsthumb', 'caption' => 'The Watts Family Home'])
 
                 <figure>
-                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/452808/"><h3>Nightmare Houses S1 E3</h3></a></figcaption>
-                    <audio
-                            controls
-                            src={{ asset('storage/media/WattsFamilyPodcastCompressed.mp3/') }}>
-                        Your browser does not support the
-                        <code>audio</code> element.
-                    </audio>
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/452808/"><h3>Nightmare Houses S1
+                                E3</h3></a></figcaption>
+                    <iframe src="https://player.rss.com/nightmarehouses/452808?theme=light" style="width: 100%"
+                            title="Nightmare Houses" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen><a href="https://rss.com/podcasts/nightmarehouses/452808/">The Watts Family
+                            House | RSS.com</a></iframe>
                 </figure>
 
                 <article>
 
 
                     <p>
-                        In August, 2018, a pregnant Colorado mother her two young daughters were reported missing; Her husband was arrested for their murder shortly after. They were the only family to ever live there and is still owned by the murderer.
+                        In August, 2018, a pregnant Colorado mother her two young daughters were reported missing; Her
+                        husband was arrested for their murder shortly after. They were the only family to ever live
+                        there and is still owned by the murderer.
                     </p>
                 </article>
-
 
 
                 @include('modules.figure', ['imgSource' => '19656912_10154669273621935_7759425943718107710_n','caption' => ''])
@@ -44,11 +45,10 @@
                 @include('modules.figure', ['imgSource' => '30697973_10215990348301877_1215875576158486528_n','caption' => ''])
 
 
-
-
                 <section class="mt-4">
                     <p><a href="{{ url('/articles/watts/bibliography') }}">Bibliography</a></p>
-                    <p>Impromptu in Quarter by <a href="http://incompetech.com">Kevin MacLeod</a> Creative Commons — Attribution 4.0 International — CC BY 4.0
+                    <p>Impromptu in Quarter by <a href="http://incompetech.com">Kevin MacLeod</a> Creative Commons —
+                        Attribution 4.0 International — CC BY 4.0
                         <a href="https://bit.ly/impromptu-in-quarter">Free Download / Stream</a></p>
                     <p><a href="https://youtu.be/VW7dU23RQuA">Music promoted by Audio Library</a></p>
                 </section>

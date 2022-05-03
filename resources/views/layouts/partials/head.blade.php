@@ -28,6 +28,8 @@
 </script>
 
 <!-- Icons -->
+<script src="https://kit.fontawesome.com/3a7de25058.js" crossorigin="anonymous"></script>
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!-- Styles -->

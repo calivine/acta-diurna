@@ -28,15 +28,17 @@
                     </p>
                 </article>
 
+                @include('modules.figure', ['imgSource' => 'menendez-home-in-beverly-hills-1505921806'])
+                @include('modules.figure', ['imgSource' => 'LyleandErikMenendezincourt'])
                 @include('modules.figure', ['imgSource' => 'KittyMenendez'])
                 @include('modules.figure', ['imgSource' => 'JoseMenendez'])
                 @include('modules.figure', ['imgSource' => '1612888363702'])
-                @include('modules.figure', ['imgSource' => 'LyleandErikMenendezincourt'])
+
                 @include('modules.figure', ['imgSource' => 'b1b0a236df5575e36931e7c5066a9b53-2'])
                 @include('modules.figure', ['imgSource' => 'JoseandKitty'])
                 @include('modules.figure', ['imgSource' => '1634328892298'])
                 @include('modules.figure', ['imgSource' => '1634328817251'])
-                @include('modules.figure', ['imgSource' => 'menendez-home-in-beverly-hills-1505921806'])
+
 
 
                 <section class="mt-4">

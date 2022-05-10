@@ -25,7 +25,7 @@
 
 
                     <p>
-
+                        On a cold night on March 1, 1932, the 1-year-old son of American aviator and hero, Charles Lindbergh, was reported kidnapped from the family home. <br><br>Welcome to Nightmare Houses.
                     </p>
                 </article>
 

@@ -22,6 +22,13 @@
         </figure>
         <div class="row">
             <div class="col-lg-4 mx-auto my-5">
+                <a href="{{ url('/podcasts/lindbergh') }}" class="text-decoration-none">
+                    @include('modules.thumbnail', ['imgSource' => 'highfields', 'caption' => 'S01 E06: Lindbergh\'s Baby Kidnapping'])
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mx-auto my-5">
                 <a href="{{ url('/podcasts/menendez') }}" class="text-decoration-none">
                     @include('modules.thumbnail', ['imgSource' => 'menendez-home-in-beverly-hills-1505921806', 'caption' => 'S01 E05: Menendez Brothers Murder House'])
                 </a>

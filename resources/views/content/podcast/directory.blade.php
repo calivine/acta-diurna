@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-4 mx-auto my-5">
                 <a href="{{ url('/podcasts/losfeliz') }}" class="text-decoration-none">
-                    @include('modules.thumbnail', ['imgSource' => 'Nightmare Houses copy', 'caption' => 'S01 E08: The Los Feliz Mystery House'])
+                    @include('modules.thumbnail', ['imgSource' => 'The_Los_Angeles_Times_Sun__Dec_4__1932_ (1)', 'caption' => 'S01 E08: The Los Feliz Mystery House'])
                 </a>
             </div>
         </div>

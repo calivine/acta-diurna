@@ -22,6 +22,13 @@
         </figure>
         <div class="row">
             <div class="col-lg-4 mx-auto my-5">
+                <a href="{{ url('/podcasts/losfeliz') }}" class="text-decoration-none">
+                    @include('modules.thumbnail', ['imgSource' => 'Nightmare Houses copy', 'caption' => 'S01 E08: The Los Feliz Mystery House'])
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mx-auto my-5">
                 <a href="{{ url('/podcasts/turpin') }}" class="text-decoration-none">
                     @include('modules.thumbnail', ['imgSource' => '5b816b9fc1d676e988478e2493bf6d36-uncropped_scaled_within_1536_1152', 'caption' => 'S01 E07: The Turpin Family Home'])
                 </a>

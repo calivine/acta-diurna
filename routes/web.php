@@ -71,4 +71,5 @@ Route::redirect('/watts', '/articles/watts', 301)->name('watts');
 # REDIRECT away from register page
 // Route::redirect('/register', '/thewatcher', 301);
 
-Route::view('/', 'content.welcome');
+// Route::view('/', 'content.welcome');
+Route::view('/', 'content.podcast.directory');

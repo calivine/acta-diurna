@@ -25,8 +25,12 @@
 
 
                     <p>
-                        <!-- Episode Description -->
+                        In December 1959 a murder/suicide occurred in a 1920s Spanish and Italian style home in the Los Feliz Hills neighborhood of Los Angeles, California. But was the property doomed from the start?<br><br>Welcome to Nightmare Houses.
                     </p>
+
+                    @for ($i = 2; $i <= 56; $i++)
+                        @include('modules.figure', ['imgSource' => $i])
+                    @endfor
 
                 </article>
 

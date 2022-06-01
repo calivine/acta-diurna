@@ -11,13 +11,19 @@
 
                 </hgroup>
                 <figure>
-                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/497882/"><h3>Nightmare Houses S01
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/497882?theme=light"><h3>Nightmare Houses S01
                                 E08</h3></a></figcaption>
                     <iframe src="https://player.rss.com/nightmarehouses/497882" style="width: 100%"
                             title="Nightmare Houses" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen><a href="https://rss.com/podcasts/nightmarehouses/497882/">The Los Feliz
                             Mystery House | RSS.com</a></iframe>
+
+                    <iframe src="https://player.rss.com/nightmarehouses/505689?theme=light" style="width: 100%"
+                            title="Nightmare Houses" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen><a href="https://rss.com/podcasts/nightmarehouses/505689/">Los Feliz Mystery
+                            House Part 2 | RSS.com</a></iframe>
                 </figure>
 
 
@@ -25,7 +31,9 @@
 
 
                     <p>
-                        In December 1959 a murder/suicide occurred in a 1920s Spanish and Italian style home in the Los Feliz Hills neighborhood of Los Angeles, California. But was the property doomed from the start?<br><br>Welcome to Nightmare Houses.
+                        In December 1959 a murder/suicide occurred in a 1920s Spanish and Italian style home in the Los
+                        Feliz Hills neighborhood of Los Angeles, California. But was the property doomed from the start?<br><br>Welcome
+                        to Nightmare Houses.
                     </p>
 
                     @for ($i = 2; $i <= 56; $i++)

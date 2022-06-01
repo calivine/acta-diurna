@@ -11,9 +11,10 @@
 
                 </hgroup>
                 <figure>
-                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/497882?theme=light"><h3>Nightmare Houses S01
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/497882?theme=light"><h3>Nightmare
+                                Houses S01
                                 E08</h3></a></figcaption>
-                    <iframe src="https://player.rss.com/nightmarehouses/497882" style="width: 100%"
+                    <iframe src="https://player.rss.com/nightmarehouses/497882?theme=light" style="width: 100%"
                             title="Nightmare Houses" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen><a href="https://rss.com/podcasts/nightmarehouses/497882/">The Los Feliz

@@ -16,12 +16,14 @@ Route::group(['middleware' => 'auth'], function () {
     # POST save new post
     Route::post('/post', 'PostController@store')->name('post.store');
 
+    Route::view('/panel', 'panel.index')->middleware('admin')->name('panel');
+
     # GET homepage
     Route::get('/home', 'HomeController@index')->name('home');
 });
 
 # Authentication Routes
-Auth::routes();
+Auth::routes(['register' => false]);
 
 # Comment Routes
 Route::resource('comments', 'CommentController');
@@ -70,6 +72,8 @@ Route::redirect('/watts', '/articles/watts', 301)->name('watts');
 
 # REDIRECT away from register page
 // Route::redirect('/register', '/thewatcher', 301);
+
+// Route::redirect('/register', '/', 301);
 
 // Route::view('/', 'content.welcome');
 Route::view('/', 'content.podcast.directory');

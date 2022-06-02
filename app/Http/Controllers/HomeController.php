@@ -26,13 +26,16 @@ class HomeController extends Controller
     public function index()
     {
         Log::info(log_client());
-
+        /**
         // Get the most recent post by user
         $posts = Posts::getMostRecent();
 
 
         $post_date = $posts->created_at ?? "";
         $post_body = $posts->body ?? "Your post will go here.";
+        */
+        $post_body = "";
+        $post_date = "";
 
         return view('content.home')->with([
             'post_date' => $post_date,

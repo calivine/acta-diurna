@@ -114,4 +114,18 @@ return [
 
     'password_timeout' => 10800,
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Admin User Authentication
+    |--------------------------------------------------------------------------
+    |
+    | Defines how the admin user will be authenticated.
+    |
+    |
+    |
+    */
+
+    'admin' => env('ADMIN'),
+
 ];

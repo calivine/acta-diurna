@@ -133,6 +133,9 @@
     margin: 2.5vh auto;
     max-width: 960px;
     padding: 2.5vh 0 5vh 0;
+    min-height: 500px;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -178,22 +181,15 @@
     }
 }
 
-/* Tabbed Display */
-.settings__container {
-    display: flex;
-}
 
 .display__container {
     width: 35vw;
     height: 35vh;
 }
 
-.form__wrapper {
-    display: none;
-    border: .5px solid black;
-    min-width: 30vw;
-    padding: 10px 20px;
-}
+
+
+
 
 .nav__item {
     border: 1px solid black;
@@ -202,15 +198,19 @@
     min-width: 85px;
 }
 
-.active {
-    display: block;
-}
-
+/**
 .nav__active {
-    color: blue;
-    text-decoration: underline;
-}
+    color: whitesmoke;
+    width: 210px;
+    left: 15px;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.1);
 
+    &:before {
+        width: 100%;
+        border-radius: 3px;
+    }
+}
+**/
 
 /* Responsive */
 

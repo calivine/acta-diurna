@@ -283,7 +283,7 @@ $(function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    let navs = document.querySelectorAll('.nav__item');
+    let navs = document.querySelectorAll('.nav_link');
     let displays = document.querySelectorAll('.form__wrapper');
     if (navs && displays) {
         console.log('Options Display widget enabled.');

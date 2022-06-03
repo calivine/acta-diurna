@@ -6,11 +6,11 @@
     <div class="container-fluid">
         <h1 class="post__title">Welcome to Nightmare Houses Podcast.</h1>
         @include('modules.figure', ['imgSource' => 'NightmareHousesLogo'])
-        {{--
+
         <div class="row">
             @include('nav.external-links')
         </div>
-        --}}
+
         <figure>
             <figcaption><h3>Introduction</h3></figcaption>
             <audio

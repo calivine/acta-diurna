@@ -23,6 +23,13 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/home';
 
+    protected $routeGroup = [
+        'public' => [
+            'middleware' => 'web',
+            'namespace' => 'App\Http\Controllers\Content',
+        ]
+    ];
+
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -44,10 +51,39 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
+        $this->mapPanelRoutes();
+
+        Route::group($this->routeGroup['public'], function($router) {
+            require base_path('routes/public.php');
+        });
+
         $this->mapWebRoutes();
 
         //
     }
+
+    /**
+     * Admin Panel routes
+     *
+     */
+    protected function mapPanelRoutes()
+    {
+        Route::middleware(['web', 'auth'])
+            ->namespace($this->namespace . '\Panel')
+            ->group(base_path('routes/panel.php'));
+    }
+
+    /**
+     * Public routes
+
+    protected function mapPublicRoutes()
+    {
+        Route::middleware(['web'])
+            ->namespace($this->namespace)
+            ->group(base_path('routes/public.php'));
+    }
+     * */
+
 
     /**
      * Define the "web" routes for the application.

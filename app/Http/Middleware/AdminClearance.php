@@ -16,9 +16,6 @@ class AdminClearance
      */
     public function handle($request, Closure $next)
     {
-        Log::info($request->user()->email);
-        Log::info(config('auth.admin'));
-
         if ($request->user()->email != config('auth.admin'))
         {
             return redirect()->route('home');

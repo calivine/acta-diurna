@@ -46,7 +46,7 @@ nav.navbar-dark {
     .tooltip {
         position: absolute;
         top: 0;
-        font-size: 12px;
+        font-size: 16px;
         background: #ffffff;
         color: #ffffff;
         padding: 5px 8px;
@@ -59,24 +59,13 @@ nav.navbar-dark {
         &::before {
             position: absolute;
             content: "";
-            height: 4px;
-            width: 4px;
+            height: 8px;
+            width: 8px;
             background: #ffffff;
             bottom: -3px;
             left: 50%;
             transform: translate(-50%) rotate(45deg);
             transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-    }
-
-    .rss:hover {
-        .tooltip {
-            background: #1877F2;
-            color: #ffffff;
-
-            &::before {
-
-            }
         }
     }
 
@@ -87,10 +76,31 @@ nav.navbar-dark {
         color: #ffffff;
     }
 
+    .rss:hover,
+    .rss:hover .tooltip,
+    .rss:hover .tooltip::before {
+        background: #1877F2;
+        color: #ffffff;
+    }
+
     .youtube:hover,
     .youtube:hover .tooltip,
     .youtube:hover .tooltip::before {
         background: #FF0000;
+        color: #ffffff;
+    }
+
+    .twitter:hover,
+    .twitter:hover .tooltip,
+    .twitter:hover .tooltip::before {
+        background: #1DA1F2;
+        color: #ffffff;
+    }
+
+    .facebook:hover,
+    .facebook:hover .tooltip,
+    .facebook:hover .tooltip::before {
+        background: #1877F2;
         color: #ffffff;
     }
 }
@@ -124,7 +134,12 @@ nav.navbar-dark {
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
- */
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+}
 
 .wrapper .facebook:hover,
 .wrapper .facebook:hover .tooltip,
@@ -133,11 +148,10 @@ nav.navbar-dark {
     color: #ffffff;
 }
 
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
-    background: #1DA1F2;
-    color: #ffffff;
-}
+
+ */
+
+
+
 
 

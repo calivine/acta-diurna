@@ -11178,9 +11178,8 @@ a.text-dark:focus {
 
 .container {
   margin: 2.5vh auto;
-  max-width: 960px;
+  max-width: 68vw;
   padding: 2.5vh 0 5vh 0;
-  min-height: 500px;
   justify-content: center;
   align-items: center;
 }
@@ -11280,6 +11279,10 @@ a.text-dark:focus {
 /* Responsive */
 
 @media (max-width: 768px) {
+  .container {
+    max-width: 960px;
+  }
+
   .row {
     margin-right: 5px;
     margin-left: 5px;
@@ -11600,7 +11603,7 @@ nav.navbar-dark {
 .wrapper .tooltip {
   position: absolute;
   top: 0;
-  font-size: 12px;
+  font-size: 16px;
   background: #ffffff;
   color: #ffffff;
   padding: 5px 8px;
@@ -11614,18 +11617,13 @@ nav.navbar-dark {
 .wrapper .tooltip::before {
   position: absolute;
   content: "";
-  height: 4px;
-  width: 4px;
+  height: 8px;
+  width: 8px;
   background: #ffffff;
   bottom: -3px;
   left: 50%;
   transform: translate(-50%) rotate(45deg);
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .rss:hover .tooltip {
-  background: #1877F2;
-  color: #ffffff;
 }
 
 .wrapper .apple:hover,
@@ -11635,10 +11633,31 @@ nav.navbar-dark {
   color: #ffffff;
 }
 
+.wrapper .rss:hover,
+.wrapper .rss:hover .tooltip,
+.wrapper .rss:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
 .wrapper .youtube:hover,
 .wrapper .youtube:hover .tooltip,
 .wrapper .youtube:hover .tooltip::before {
   background: #FF0000;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #ffffff;
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
   color: #ffffff;
 }
 
@@ -11672,21 +11691,22 @@ nav.navbar-dark {
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
- */
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+}
 
 .wrapper .facebook:hover,
 .wrapper .facebook:hover .tooltip,
 .wrapper .facebook:hover .tooltip::before {
-  background: #1877F2;
-  color: #ffffff;
+    background: #1877F2;
+    color: #ffffff;
 }
 
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
-  background: #1DA1F2;
-  color: #ffffff;
-}
+
+ */
 
 .widget__uploading {
   min-width: 50px;
@@ -11820,7 +11840,7 @@ h4 .img_text {
 }
 
 .settings__container .left .links_container .nav_link.nav__active {
-  color: whitesmoke;
+  color: inherit;
   width: 210px;
   left: 15px;
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.1);

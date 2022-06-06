@@ -20,6 +20,8 @@ Route::prefix('articles')->group(function () {
     Route::view('/breezeknoll/bibliography', 'content.podcast.breezeknoll.bibliography');
 });
 
+# POST update Page theme setting
+Route::post('/theme', 'GuestController@changeTheme')->name('theme');
 
 # GET Podcast Directory
 Route::view('/podcasts', 'content.podcast.directory');

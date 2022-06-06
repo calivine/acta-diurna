@@ -19,10 +19,6 @@ Auth::routes(['register' => false]);
 # Comment Routes
 Route::resource('comments', 'CommentController');
 
-# POST update Page theme setting
-Route::post('/theme', 'GuestController@changeTheme')->name('theme');
-
-
 # GET podcast
 
 

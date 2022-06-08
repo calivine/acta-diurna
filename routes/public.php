@@ -26,11 +26,11 @@ Route::prefix('articles')->group(function () {
 # GET Podcast Directory
 // Route::view('/podcasts', 'content.podcast.directory');
 
-Route::get('/podcast/{title}', 'GuestController@getPodcast');
+// Route::get('/podcast/{title}', 'GuestController@getPodcast');
 
 Route::get('/ep/{title}', 'GuestController@get')->name('getPodcast');
 
-Route::get('/{title}', 'GuestController@getPodcast')->name('podcast');
+Route::get('/podcast/{title}', 'GuestController@getPodcast')->name('podcast');
 
 # REDIRECT
 Route::redirect('/thewatcher', '/articles/thewatcher', 301)->name('watcher');

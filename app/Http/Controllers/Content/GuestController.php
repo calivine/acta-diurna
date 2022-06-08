@@ -43,9 +43,16 @@ class GuestController extends Controller
         return view("content.{$title}.{$title}");
     }
 
-    public function getPodcast(String $title)
+    public function getPodcast(Request $request, String $title)
     {
+        /*
 
+
+        if ($request->is('login'))
+        {
+            return view("content.auth.login");
+        }
+*/
         if (is_null(Cookie::get('theme')))
         {
             Cookie::queue(Cookie::make('theme', 'light', 300));

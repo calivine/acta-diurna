@@ -17,33 +17,10 @@
 
             </div>
             <div class="right">
-                @include('panel.partials.podcasts')
-                <div class="form__wrapper active" id="display__theme">
-                    <div class="input__wrapper">
-                        <input type="radio" id="radio1" name="theme" checked>
-                        <label for="radio1">Light</label>
-                    </div>
-                    <div class="input__wrapper">
-                        <input type="radio" id="radio2" name="theme">
-                        <label for="radio2">Dark</label>
-                    </div>
-                    <div class="input__wrapper">
-                        <input type="radio" id="radio3" name="theme">
-                        <label for="radio3">Custom</label>
-                    </div>
+                <div class="form__wrapper active" id="display__podcasts">
+                    @include('panel.partials.podcasts')
                 </div>
-                <div class="form__wrapper" id="display__user">
-                    <h2 class="title">User settings</h2>
-                    <div class="row justify-content-center">
-                        <div class="col-md-2">
-                            @if (Route::has('password.request'))
-                                <a class="btn btn-link btn-block" href="{{ route('password.request') }}">
-                                    {{ __('Change Password') }}
-                                </a>
-                            @endif
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="form__wrapper" id="display__tags">
                     <div class="row justify-content-center">

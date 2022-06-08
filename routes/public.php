@@ -1,5 +1,8 @@
 <?php
 
+# POST update Page theme setting
+Route::post('/theme', 'GuestController@changeTheme')->name('theme');
+
 # GET Articles
 Route::prefix('articles')->group(function () {
 
@@ -20,14 +23,14 @@ Route::prefix('articles')->group(function () {
     Route::view('/breezeknoll/bibliography', 'content.podcast.breezeknoll.bibliography');
 });
 
-# POST update Page theme setting
-Route::post('/theme', 'GuestController@changeTheme')->name('theme');
-
 # GET Podcast Directory
-Route::view('/podcasts', 'content.podcast.directory');
+// Route::view('/podcasts', 'content.podcast.directory');
 
-Route::get('/podcasts/{title}', 'GuestController@getPodcast');
+Route::get('/podcast/{title}', 'GuestController@getPodcast');
 
+Route::get('/ep/{title}', 'GuestController@get')->name('getPodcast');
+
+Route::get('/{title}', 'GuestController@getPodcast')->name('podcast');
 
 # REDIRECT
 Route::redirect('/thewatcher', '/articles/thewatcher', 301)->name('watcher');
@@ -36,3 +39,10 @@ Route::redirect('/breezeknoll', '/articles/breezeknoll', 301)->name('breezeknoll
 Route::redirect('/10050cielo', '/articles/10050cielo', 301)->name('10050cielo');
 Route::redirect('/3301waverly', '/articles/3301waverly', 301)->name('3301waverly');
 Route::redirect('/watts', '/articles/watts', 301)->name('watts');
+
+
+// Route::view('/', 'content.podcast.directory');
+
+Route::redirect('/podcasts', '/');
+
+Route::get('/', 'GuestController@getPodcasts')->name('welcome');

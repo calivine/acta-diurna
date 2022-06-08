@@ -27,6 +27,10 @@ class RouteServiceProvider extends ServiceProvider
         'public' => [
             'middleware' => 'web',
             'namespace' => 'App\Http\Controllers\Content',
+        ],
+        'auth' => [
+            'middleware' => 'web',
+            'namespace' => 'App\Http\Controllers',
         ]
     ];
 
@@ -51,15 +55,18 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapPanelRoutes();
-
         Route::group($this->routeGroup['public'], function($router) {
             require base_path('routes/public.php');
         });
 
+        Route::group($this->routeGroup['auth'], function($router) {
+            require base_path('routes/auth.php');
+        });
+
+        $this->mapPanelRoutes();
+
         $this->mapWebRoutes();
 
-        //
     }
 
     /**

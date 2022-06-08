@@ -12,8 +12,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        /*
         User::updateOrCreate(
             ['email' => 'caloggero.a@gmail.com', 'name' => 'acali'],
+            ['password' => Hash::make('alexc781')]
+        );
+        */
+
+        User::updateOrCreate(
+            ['email' => 'a.calog@protonmail.com', 'name' => 'alex'],
             ['password' => Hash::make('alexc781')]
         );
     }

@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Panel;
 
+use App\Http\Controllers\Controller;
+use App\Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use App\Post;
-use App\User;
 
-
-class PostController extends Controller
+class ImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,32 +36,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'post' => 'required|regex:/[A-Za-z\s0-9]/'
-        ]);
-        $new_post = $request->input('post');
-        $user = $request->user();
-
-        Log::channel('system')->info($new_post);
-
-        $post = new Post();
-        $post->body = $new_post;
-        // Link To User Signed-In
-        $post->user()->associate($user);
-        $post->save();
-
-        // Save post to Posts table and associate with user.
-
-        return redirect()->route('home');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Image $image)
     {
         //
     }
@@ -71,10 +53,10 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Image $image)
     {
         //
     }
@@ -83,21 +65,22 @@ class PostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Image $image)
     {
-        //
+        dump($image->id);
+        dump($request);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Image $image)
     {
         //
     }

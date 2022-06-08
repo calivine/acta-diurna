@@ -18,5 +18,9 @@ Route::post('/post', 'PostController@store')->name('post.store');
 
 Route::view('/panel', 'panel.index')->middleware('admin')->name('panel');
 
+Route::resource('podcasts', 'PodcastController');
+
+Route::resource('images', 'ImageController');
+
 # GET homepage
 Route::get('/home', 'HomeController@index')->name('home');

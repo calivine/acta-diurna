@@ -2,8 +2,6 @@
     <!-- Left Side Of Navbar -->
     <a class="navbar-brand" href="{{ url('/') }}">{{ __('Nightmare Houses') }}</a>
 
-    <a class="nav-link" href="{{ url('/podcasts') }}">{{ __('Podcast') }}</a>
-
     <!-- Right Side Of Navbar -->
     <!-- Nav links if User is authenticated -->
     <ul class="nav justify-content-end">

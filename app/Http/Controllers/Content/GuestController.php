@@ -71,7 +71,7 @@ class GuestController extends Controller
     public function get(String $title)
     {
 
-        $podcast = Podcast::where('id', $title)->first();
+        $podcast = Podcast::where('episode', $title)->first();
 
         // Return podcast page with data
         return view('content.podcast.index')->with(['podcast' => $podcast]);

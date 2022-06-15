@@ -70,8 +70,11 @@ class ImageController extends Controller
      */
     public function update(Request $request, Image $image)
     {
-        dump($image->id);
-        dump($request);
+
+        if ($request->has('caption'))
+        {
+            dump($request->input('caption'));
+        }
     }
 
     /**

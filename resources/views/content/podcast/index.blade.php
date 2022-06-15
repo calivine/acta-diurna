@@ -11,12 +11,11 @@
                 </hgroup>
                 @include('modules.figure', ['imgSource' => $podcast->thumbnail])
                 <figure>
-                    <figcaption><a href="{{ $podcast->rss }}"><h3>Nightmare Houses {{ 'S0' . $podcast->season . ' E0' . $podcast->episode }}</h3></a></figcaption>
-                    <iframe src="https://player.rss.com/nightmarehouses/482598?theme=light" style="width: 100%"
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/{{ $podcast->rss }}"><h3>Nightmare Houses {{ 'S0' . $podcast->season . ' E' . $podcast->episode }}</h3></a></figcaption>
+                    <iframe src="https://player.rss.com/nightmarehouses/{{ $podcast->rss }}?theme=light" style="width: 100%"
                             title="Nightmare Houses" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen><a href="https://rss.com/podcasts/nightmarehouses/482598/">Lindbergh's Baby
-                            Kidnapping | RSS.com</a></iframe>
+                            allowfullscreen><a href="https://rss.com/podcasts/nightmarehouses/{{ $podcast->rss }}">{{ $podcast->title }} | RSS.com</a></iframe>
                 </figure>
 
 

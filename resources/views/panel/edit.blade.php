@@ -45,7 +45,7 @@
                             <input type="hidden" name="_method" value="PUT">
                             <div class="row">
                                 <label for="{{ 'photo-' . $loop->iteration . '-caption' }}" class="mb-0">Caption</label>
-                                <input type="text" id="{{ 'photo-' . $loop->iteration . '-caption' }}" class="form-control mb-0" name="{{ 'photo-' . $loop->iteration . '-caption' }}">
+                                <input type="text" id="{{ 'photo-' . $loop->iteration . '-caption' }}" class="form-control mb-0" name="caption">
                             </div>
                             <button class="" type="submit">Save</button>
                         </form>

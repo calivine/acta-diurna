@@ -70,12 +70,8 @@ class GuestController extends Controller
 
     public function get(String $title)
     {
-        $target = preg_replace('/_/', ' ', $title);
-        dump(Str::title($target));
 
-
-        $podcast = Podcast::where('title', Str::title($target))->first();
-        dump($podcast);
+        $podcast = Podcast::where('id', $title)->first();
 
         // Return podcast page with data
         return view('content.podcast.index')->with(['podcast' => $podcast]);

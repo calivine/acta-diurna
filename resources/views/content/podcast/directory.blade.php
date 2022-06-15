@@ -23,7 +23,7 @@
         @foreach($podcasts as $podcast)
             <div class="row">
                 <div class="col-lg-4 mx-auto my-5">
-                    @isAdmin <p><a href="{{ route('podcasts.edit', $podcast->episode) }}">Edit Podcast</a></p> @endisAdmin
+                    @isAdmin <p><a href="{{ route('podcasts.edit', $podcast->id) }}">Edit Podcast</a></p> @endisAdmin
                     <a href="{{ route('getPodcast', $podcast->episode) }}" class="text-decoration-none">
                         @include('modules.thumbnail', ['imgSource' => $podcast->thumbnail, 'caption' => 'S0' . $podcast->season . ' E0' . $podcast->episode . ': ' . $podcast->title])
                     </a>

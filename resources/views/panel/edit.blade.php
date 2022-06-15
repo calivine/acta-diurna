@@ -14,11 +14,13 @@
 
 
                 <section>
-                    <textarea cols="50" rows="10">{!! $podcast->description !!}</textarea>
+
 
                     <form class="p-3 md-14" action="{{ route('podcasts.update', $podcast->id) }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="PUT">
+
+                        <textarea name="description" cols="50" rows="10">{!! $podcast->description !!}</textarea>
 
                         <div class="row">
                             <div class="box">

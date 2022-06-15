@@ -113,24 +113,35 @@ class PodcastController extends Controller
 
 
         // $path = $request->file('uploadFile')[1]->store('public/assets');
-        foreach($request->file('uploadFile') as $file)
+        if ($request->hasFile('uploadFile'))
         {
+            foreach($request->file('uploadFile') as $file)
+            {
 
-            $path = $file->storeAs('public/assets', $file->getClientOriginalName());
+                $path = $file->storeAs('public/assets', $file->getClientOriginalName());
 
-            // Save as Image
-            $image = Image::create([
-                'filename' => $file->getClientOriginalName()
-            ]);
+                // Save as Image
+                $image = Image::create([
+                    'filename' => $file->getClientOriginalName()
+                ]);
 
 
-            // Associate with podcast
-            $image->podcast()->associate($podcast);
-            $image->save();
+                // Associate with podcast
+                $image->podcast()->associate($podcast);
+                $image->save();
+            }
         }
+
+        if ($request->has('description'))
+        {
+            $podcast->description = $request->input('description');
+            $podcast->save();
+        }
+
         // dump($request->files('uploadFile')->store('public/assets'));
 
         // associate with podcast
+        return redirect(route('podcasts.edit', $podcast->id));
 
 
     }

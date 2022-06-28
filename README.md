@@ -1,4 +1,4 @@
-**Acta-Diurna** is a video clip hosting service using the [Laravel Framework](https://github.com/laravel/laravel).
+**Acta-Diurna** is a blogging service using the [Laravel Framework](https://github.com/laravel/laravel).
 
 #### Installation
 1. Built vendor directory with `composer install` in development and `composer install --no-dev` in production. 

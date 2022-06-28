@@ -100,7 +100,7 @@
 .dark-red {
     @extend %dark-theme;
 
-    @include dark($china-red);
+    @include dark($strong-red);
 }
 
 /* Dark (Green) */

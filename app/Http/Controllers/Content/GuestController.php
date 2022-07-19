@@ -79,7 +79,7 @@ class GuestController extends Controller
 
     public function getPodcasts()
     {
-        $podcasts = Podcast::sortByDesc()->all();
+        $podcasts = Podcast::sortByDesc('id')->all();
 
         return view('content.podcast.directory')->with(['podcasts' => $podcasts]);
     }

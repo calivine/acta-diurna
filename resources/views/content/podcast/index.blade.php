@@ -29,6 +29,12 @@
 
                 </article>
 
+                <section>
+                    @foreach($podcast->images as $image)
+                        @include('modules.figure', ['imgSource' => $image->filename, 'caption' => $image->caption])
+                    @endforeach
+                </section>
+
 
                 <section class="mt-4">
 

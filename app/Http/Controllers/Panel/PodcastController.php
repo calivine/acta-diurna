@@ -167,4 +167,38 @@ class PodcastController extends Controller
     {
 
     }
+
+    /**
+     * Store a newly created image resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Podcast  $podcast
+     * @return \Illuminate\Http\Response
+     */
+    public function storeImage(Request $request, Podcast $podcast)
+    {
+        dump($podcast);
+        dump($request->file('uploadFile'));
+        dump($request->input('caption'));
+
+        $file = $request->file('uploadFile')[0];
+        // Save as Image
+        $path = $request->file('uploadFile')[0]->storeAs('public/assets', $request->input('filename') . '.jpg');
+        $image = Image::create([
+            'filename' => $request->input('filename'),
+            'caption' => $request->input('caption')
+        ]);
+        /*
+        $filename = Str::snake($request->input('title') . '_title');
+        $path = $request->file('uploadFile')->storeAs('public/assets', Str::snake($request->input('title') . '_title' . '.jpg'));
+        $image = Image::create([
+            'filename' => $filename
+        ]);
+        */
+        $image->podcast()->associate($podcast);
+        $image->save();
+
+    }
+
+
 }

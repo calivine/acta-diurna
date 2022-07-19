@@ -24,3 +24,5 @@ Route::resource('images', 'ImageController');
 
 # GET homepage
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/podcasts/{podcast}/images/create', 'PodcastController@storeImage')->name('podcasts.image.store');

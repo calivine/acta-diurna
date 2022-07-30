@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <h1 class="bibliography__header">The Watcher Bibliography</h1>
+                <h1 class="bibliography-header">The Watcher Bibliography</h1>
                 <ul class="bibliography">
                     <li>
                         1910 United States Federal Census, New Jersey, Union, Westfield, Ward 3, District 0118

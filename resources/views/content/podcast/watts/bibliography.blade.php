@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <h1 class="bibliography__header">Watts Family Home Bibliography</h1>
+                <h1 class="bibliography-header">Watts Family Home Bibliography</h1>
                 <ul class="bibliography">
 
                     <li>7NewsDenver. (2018, August 15). Raw: Chris Watts, husband of missing Frederick Woman, interviewed by Denver7's Tomas Hoppough. YouTube. Retrieved April 12, 2022, from https://www.youtube.com/watch?v=ugoYkx04E2Q </li>

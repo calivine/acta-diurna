@@ -42,20 +42,28 @@ class PodcastController extends Controller
     public function store(Request $request)
     {
         dump($request->file('uploadFile'));
-        dump($request->input('title'));
+
         $title = $request->input('title');
-        dump($request->input('description'));
+        dump($title);
+
         $description = $request->input('description');
-        dump($request->input('published'));
+        dump($description);
+
         $published = $request->input('published');
-        dump($request->input('season'));
+        dump($published);
+
         $season = $request->input('season');
-        dump($request->input('episode'));
+        dump($season);
+
         $episode = $request->input('episode');
-        dump($request->input('rss'));
+        dump($episode);
+
         $rss = $request->input('rss');
-        dump(Str::snake($request->input('title') . '_title'));
+        dump($rss);
+
         $filename = Str::snake($request->input('title') . '_title');
+        dump($filename);
+
         $path = $request->file('uploadFile')->storeAs('public/assets', Str::snake($request->input('title') . '_title' . '.jpg'));
         dump($path);
 
@@ -195,6 +203,7 @@ class PodcastController extends Controller
             'filename' => $filename
         ]);
         */
+        # Associate the new image with the podcast.
         $image->podcast()->associate($podcast);
         $image->save();
 

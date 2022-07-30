@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <h1 class="bibliography__header">
+                <h1 class="bibliography-header">
                     Links & Sources
                 </h1>
                 <ul class="bibliography">

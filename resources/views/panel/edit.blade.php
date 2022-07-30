@@ -66,11 +66,7 @@
                                     <input class="box__file" type="file" name="uploadFile[]" id="file"
                                            data-multiple-caption="{count} files selected" multiple/>
                                     <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-
                                 </div>
-                                <div class="box__uploading">Uploading...</div>
-                                <div class="box__success">Done!</div>
-                                <div class="box__error">Error! <span></span>.</div>
                             </div>
                         </div>
                         <div class="row">
@@ -83,7 +79,6 @@
                         </div>
                         <button class="" type="submit">Save</button>
                     </form>
-
                 </section>
 
 

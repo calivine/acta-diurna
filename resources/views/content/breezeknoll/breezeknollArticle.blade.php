@@ -352,7 +352,7 @@
                     </p>
 
                     <div class="letter">
-                        <div class="letter__date">
+                        <div class="letter-date">
                             11-9-71
                         </div>
                         <div class="letter__header">

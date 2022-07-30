@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <h1 class="bibliography__header">Breeze Knoll Bibliography</h1>
+                <h1 class="bibliography-header">Breeze Knoll Bibliography</h1>
                 <ul class="bibliography">
                     <li>
                         “2LT Marvin Everett Taylor (1918-1951) - Find a Grave” Find a Grave. Accessed October 27, 2021. https://www.findagrave.com/memorial/3094899/marvin-everett-taylor.

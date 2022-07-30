@@ -1,6 +1,6 @@
-.email__label,
-.password__label,
-.user__label {
+.email-label,
+.password-label,
+.user-label {
   color: $black;
   display: block;
   margin-bottom: 0;
@@ -15,12 +15,12 @@
   }
 }
 
-.position__wrapper {
+.position-wrapper {
   position: relative;
   width: 100%;
 }
 
-.position__button {
+.position-button {
   position: absolute;
   right: 1px;
   top: 26.5px;
@@ -39,15 +39,15 @@
   position: relative;
 }
 
-.form-group__bottom {
+.form-group-bottom {
   margin-bottom: 0;
 }
 
-.form__container {
+.form-container {
   margin: calc(25vh - 185px) auto;
 }
 
-.form__header {
+.form-header {
   text-align: center !important;
 }
 

@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <h1 class="bibliography__header">3301 Waverly Drive Bibliography</h1>
+                <h1 class="bibliography-header">3301 Waverly Drive Bibliography</h1>
                 <ul class="bibliography">
                     <li>“10050 Cielo Drive.” Wikipedia, Wikimedia Foundation, 20 Mar. 2022, https://en.wikipedia.org/wiki/10050_Cielo_Drive. </li>
                     <li>

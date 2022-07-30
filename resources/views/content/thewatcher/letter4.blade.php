@@ -2,7 +2,7 @@
     <h2 class="post__section-title">The Fourth Letter</h2>
     <h2 class="post__section-subtitle">March 2017</h2>
 </hgroup>
-<blockquote class="quote__letter">
+<blockquote class="quote-letter">
     <p>You wonder who The Watcher is? Turn around idiots. Maybe you even spoke to me, one of the
         so called neighbors who has no idea who The Watcher could be. Or maybe you do know and
         are too scared to tell anyone. Good move. I walked by the news trucks when they took

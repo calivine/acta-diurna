@@ -4,31 +4,3 @@
   transition: all 2s ease 0s;
 }
 
-.btn-purple {
-  background-color: $redgif-purple;
-  border-color: $redgif-purple;
-  color: #FFFF;
-
-  &:hover {
-    background-color: #7318F1;
-    border-color: #7318F1;
-    color: #FFFF;
-  }
-}
-
-.btn-purple-gradient {
-  background: rgb(146,5,179);
-  background: linear-gradient(90deg, rgba(146,5,179,1) 0%, rgba(255,0,213,1) 100%);
-  color: $white;
-
-  &:hover {
-    background: #13DB33;
-    color: $white;
-  }
-}
-
-.btn-red-gradient {
-  background: rgb(159,11,65);
-  background: linear-gradient(90deg, rgba(159,11,65,1) 30%, rgba(179,5,42,1) 60%, rgba(255,0,213,1) 100%);
-  color: #FFFF;
-}

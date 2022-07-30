@@ -29,7 +29,7 @@
     <!-- Global Modals -->
     @include('modules.change-theme')
 
-    <a class="arrow-up__widget hidden" id="up" href="#"><i class="material-icons">arrow_upwards</i></a>
+    <a class="arrow-up-widget hidden" id="up" href="#"><i class="material-icons">arrow_upwards</i></a>
 
 
     <!-- Content -->

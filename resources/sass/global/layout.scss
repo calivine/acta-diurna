@@ -45,7 +45,7 @@
         color: $white;
     }
 
-    .quote__letter {
+    .quote-letter {
         border: 1px solid $white;
     }
 
@@ -79,7 +79,7 @@
         }
     }
 
-    .arrow-up__widget {
+    .arrow-up-widget {
         border-color: $bgColor;
     }
 }
@@ -138,50 +138,10 @@
 }
 
 
-.scroll__container {
-    position: relative;
-    overflow: hidden;
-}
-
-.scroll {
-    position: inherit;
-    left: 150%;
-}
-
-.scroll.animate {
-    animation-duration: 2s;
-    animation-name: slidein;
-    left: 0;
-}
-
-@keyframes slidein {
-    from {
-        left: 150%
-    }
-
-    to {
-        left: 0;
-    }
-}
-
-.scroll.animate__reverse {
-    animation-duration: 2s;
-    animation-name: slideout;
-    left: 150%;
-}
-
-@keyframes slideout {
-    from {
-        left: 0;
-    }
-
-    to {
-        left: 150%;
-    }
-}
 
 
-.display__container {
+
+.display-container {
     width: 35vw;
     height: 35vh;
 }
@@ -190,7 +150,7 @@
 
 
 
-.nav__item {
+.nav-item {
     border: 1px solid black;
     padding: 5px 15px 5px 2px;
     margin-right: 1px;

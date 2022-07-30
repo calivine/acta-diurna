@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <h1 class="bibliography__header">Highfields Bibliography</h1>
+                <h1 class="bibliography-header">Highfields Bibliography</h1>
                 <ul class="bibliography">
                     <li>“Charles Lindbergh's Baby Found Dead beside the Princeton-Hopewell Road in 1932.” nydailynews.com, May 11, 2016. http://www.nydailynews.com/news/crime/body-charles-lindbergh-baby-found-hopewell-1932-article-1.2632021. </li>
                     <li>Chua-Eoan, Howard. “Crimes of the Century.” Time. Time Inc., March 1, 2007. http://content.time.com/time/specials/packages/article/0,28804,1937349_1937350_1937351,00.html.

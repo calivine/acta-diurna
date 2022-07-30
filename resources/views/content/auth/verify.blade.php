@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h4 class="form__header">{{ __('Verify Your Email Address') }}</h4>
+                <h4 class="form-header">{{ __('Verify Your Email Address') }}</h4>
 
                 @if (session('resent'))
                     <div class="alert alert-success" role="alert">

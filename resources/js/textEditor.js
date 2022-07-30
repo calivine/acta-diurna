@@ -1,5 +1,5 @@
 $(function () {
-    const $textDisplay = $('.text-input__display');
+    const $textDisplay = $('.text-input-display');
 
     $textDisplay.on('paste input cut', function (e) {
         console.log(e.data);

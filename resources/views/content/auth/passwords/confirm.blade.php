@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h4 class="form__header">{{ __('Confirm Password') }}</h4>
+                <h4 class="form-header">{{ __('Confirm Password') }}</h4>
                 {{ __('Please confirm your password before continuing.') }}
 
                 <form method="POST" action="{{ route('password.confirm') }}">

@@ -2,7 +2,7 @@
     <h2 class="post__section-title">The Second Letter</h2>
     <h2 class="post__section-subtitle">July 18, 2014</h2>
 </hgroup>
-<blockquote class="quote__letter">
+<blockquote class="quote-letter">
     <p>Mr. and Mrs. Braddus,</p>
     <p>I am pleased to know your names now and the name of the young blood you have brought to me. You certainly say their names often. Is [she] the artist in the family?</p>
     <p>657 Boulevard is anxious for you to move in. It has been years and years since the young

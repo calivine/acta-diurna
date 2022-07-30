@@ -2,7 +2,7 @@
     <h2 class="post__section-title">The First Letter</h2>
     <h2 class="post__section-subtitle">June 18, 2014</h2>
 </hgroup>
-<blockquote class="quote__letter">
+<blockquote class="quote-letter">
     <p>Dearest new neighbor at 657 Boulevard,</p>
     <p>Allow me to welcome you to the neighborhood.</p>
     <p>657 Boulevard has been the subject of my family for decades now and as it approaches its

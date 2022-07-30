@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const textView = document.querySelector('.text-input__display');
     const editableContentBox = document.querySelector('.text-input__display');
 
-    const $textUpload = $('.text-input__display');
-    const $inputContainer = $('.text-input__container.show-placeholder');
+    const $textUpload = $('.text-input-display');
+    const $inputContainer = $('.text-input-container.show-placeholder');
 
     textView.addEventListener('input', (event) => {
         if (event.data == null) {

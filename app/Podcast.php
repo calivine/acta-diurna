@@ -10,6 +10,8 @@ class Podcast extends Model
 
     protected $with = ['images'];
 
+    protected $dates = ['published'];
+
     public function images()
     {
         # Podcast Has Many Images

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">{{ $podcast->published }} </p>
+                <p class="post__date">{{ $podcast->published->format('F jS, Y') }} </p>
                 <hgroup>
                     <h1 class="post__title">  {{ $podcast->title }}</h1>
 
@@ -31,17 +31,10 @@
 
                 <section>
                     @foreach($podcast->images as $image)
-                        @include('modules.figure', ['imgSource' => $image->filename, 'caption' => $image->caption])
+                        @if($image->filename != $podcast->thumbnail)
+                            @include('modules.figure', ['imgSource' => $image->filename, 'caption' => $image->caption])
+                        @endif
                     @endforeach
-                </section>
-
-
-                <section class="mt-4">
-
-                    <p>Impromptu in Quarter by <a href="http://incompetech.com">Kevin MacLeod</a> Creative Commons —
-                        Attribution 4.0 International — CC BY 4.0
-                        <a href="https://bit.ly/impromptu-in-quarter">Free Download / Stream</a></p>
-                    <p><a href="https://youtu.be/VW7dU23RQuA">Music promoted by Audio Library</a></p>
                 </section>
             </div>
         </div>

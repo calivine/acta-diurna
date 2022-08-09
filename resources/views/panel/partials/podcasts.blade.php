@@ -1,4 +1,5 @@
 <div class="container-fluid">
+    <!-- Form to create a new podcast episode. -->
     <form class="p-3 md-14" action="{{ route('podcasts.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label class="mb-0" for="podcast-title">Title</label>
@@ -31,8 +32,6 @@
             </div>
 
         </div>
-
-
         <button class="" type="submit">Upload</button>
     </form>
 </div>

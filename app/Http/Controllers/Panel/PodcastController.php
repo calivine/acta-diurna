@@ -20,7 +20,10 @@ class PodcastController extends Controller
      */
     public function index()
     {
-        // Podcast::all()->sortByDesc();
+        $podcasts = Podcast::all()->sortByDesc('id');
+
+        return view('content.podcast.directory')->with(['podcasts' => $podcasts]);
+
     }
 
     /**
@@ -212,6 +215,23 @@ class PodcastController extends Controller
         $image->save();
 
     }
+
+    /**
+     * Set podcast resource to published (public)
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Podcast  $podcast
+     * @return \Illuminate\Http\Response
+     */
+    public function publish(Request $request, Podcast $podcast)
+    {
+        $rss = $request->input('rss');
+        $podcast->rss = $rss;
+        $podcast->save();
+        return redirect(route('panel'));
+    }
+
+
 
 
 }

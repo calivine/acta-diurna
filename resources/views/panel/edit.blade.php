@@ -5,7 +5,12 @@
         <div class="row justify-content-center">
             @if ($podcast->rss == 'Pending')
                 Publish episode?
-
+                <form action="{{ route('podcasts.publish', $podcast->id) }}" method="POST">
+                    {{ csrf_field() }}
+                    <label for="podcast-rss" class="mb-0">RSS Link</label>
+                    <input type="text" id="podcast-rss" class="px-0 form-control mb-3 mt-0" name="rss">
+                    <button class="" type="submit">Publish</button>
+                </form>
             @endif
         </div>
         <div class="row justify-content-center">
@@ -63,7 +68,7 @@
                 </section>
 
                 <section>
-                    <form action="{{ route('podcasts.image.store', $podcast->id) }}" class="p-3 md-14" method="POST"
+                    <form action="{{ route('podcasts.images.store', $podcast->id) }}" class="p-3 md-14" method="POST"
                           enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="POST">

@@ -3,6 +3,12 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            @if ($podcast->rss == 'Pending')
+                Publish episode?
+
+            @endif
+        </div>
+        <div class="row justify-content-center">
             <div class="col-md-9">
                 <p class="post__date">{{ $podcast->published }} </p>
                 <hgroup>
@@ -11,12 +17,11 @@
                 </hgroup>
 
 
-
-
                 <section>
 
 
-                    <form class="p-3 md-14" action="{{ route('podcasts.update', $podcast->id) }}" method="POST" enctype="multipart/form-data">
+                    <form class="p-3 md-14" action="{{ route('podcasts.update', $podcast->id) }}" method="POST"
+                          enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="PUT">
 
@@ -34,7 +39,6 @@
                                 <div class="box__success">Done!</div>
                                 <div class="box__error">Error! <span></span>.</div>
                             </div>
-
                         </div>
                     </form>
                 </section>
@@ -42,12 +46,14 @@
                 <section>
                     @foreach($podcast->images as $image)
                         @include('modules.figure', ['imgSource' => $image->filename])
-                        <form action="{{ route('images.update', $image->id) }}" class="p-3 md-14" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('images.update', $image->id) }}" class="p-3 md-14" method="POST"
+                              enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value="PUT">
                             <div class="row">
                                 <label for="{{ 'photo-' . $loop->iteration . '-caption' }}" class="mb-0">Caption</label>
-                                <input type="text" id="{{ 'photo-' . $loop->iteration . '-caption' }}" class="form-control mb-0" name="caption">
+                                <input type="text" id="{{ 'photo-' . $loop->iteration . '-caption' }}"
+                                       class="form-control mb-0" name="caption">
                             </div>
                             <button class="" type="submit">Save</button>
                         </form>
@@ -57,7 +63,8 @@
                 </section>
 
                 <section>
-                    <form action="{{ route('podcasts.image.store', $podcast->id) }}" class="p-3 md-14" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('podcasts.image.store', $podcast->id) }}" class="p-3 md-14" method="POST"
+                          enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="POST">
                         <div class="row">

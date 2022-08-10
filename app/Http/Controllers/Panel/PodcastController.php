@@ -20,7 +20,7 @@ class PodcastController extends Controller
      */
     public function index()
     {
-        //
+        // Podcast::all()->sortByDesc();
     }
 
     /**
@@ -41,34 +41,33 @@ class PodcastController extends Controller
      */
     public function store(Request $request)
     {
-        dump($request->file('uploadFile'));
 
         $title = $request->input('title');
-        dump($title);
+
 
         $description = $request->input('description');
-        dump($description);
+
 
         $published = $request->input('published');
-        dump($published);
+
 
         $season = $request->input('season');
-        dump($season);
+
 
         $episode = $request->input('episode');
-        dump($episode);
+
 
         $rss = $request->input('rss', 'Pending');
-        dump($rss);
+
 
         $filename = Str::snake($request->input('title') . '_title');
-        dump($filename);
+
 
         $path = $request->file('uploadFile')->storeAs('public/assets', Str::snake($request->input('title') . '_title' . '.jpg'));
-        dump($path);
+
 
         $pending = $request->boolean('draft');
-        dump($pending);
+
 
         $podcast = Podcast::create([
             'title' => $title,
@@ -86,6 +85,8 @@ class PodcastController extends Controller
 
         $image->podcast()->associate($podcast);
         $image->save();
+
+        return redirect(route('panel'));
 
     }
 

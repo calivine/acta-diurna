@@ -58,7 +58,7 @@ class PodcastController extends Controller
         $episode = $request->input('episode');
         dump($episode);
 
-        $rss = $request->input('rss');
+        $rss = $request->input('rss', 'Pending');
         dump($rss);
 
         $filename = Str::snake($request->input('title') . '_title');
@@ -67,13 +67,16 @@ class PodcastController extends Controller
         $path = $request->file('uploadFile')->storeAs('public/assets', Str::snake($request->input('title') . '_title' . '.jpg'));
         dump($path);
 
+        $pending = $request->boolean('draft');
+        dump($pending);
+
         $podcast = Podcast::create([
             'title' => $title,
             'description' => $description,
             'published' => $published,
             'season' => $season,
             'episode' => $episode,
-            'rss' => $rss,
+            'rss' => $rss ?? 'Pending',
             'thumbnail' => $filename
         ]);
 

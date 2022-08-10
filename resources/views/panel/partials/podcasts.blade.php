@@ -9,7 +9,7 @@
         <textarea name="description" id="podcast-description" cols="25" rows="10"
                   class="px-0 form-control mt-0"></textarea>
         <label for="podcast-rss" class="mb-0">RSS Link</label>
-        <input type="text" id="podcast-rss" class="px-0 form-control mb-3 mt-0" name="rss" required>
+        <input type="text" id="podcast-rss" class="px-0 form-control mb-3 mt-0" name="rss">
         <div class="row">
             <div class="col-md-6">
                 <label for="podcast-season" class="mb-0">Season</label>
@@ -31,6 +31,12 @@
                 </div>
             </div>
 
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="podcast-draft" class="mb-0">Save as Draft</label>
+                <input type="checkbox" class="px-0 form-control mb-3 mt-0" id="podcast-draft" name="draft">
+            </div>
         </div>
         <button class="" type="submit">Upload</button>
     </form>

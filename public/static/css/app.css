@@ -11498,6 +11498,8 @@ nav.navbar-dark {
 a.navbar-brand,
 .nav-item a {
   color: inherit;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 a.navbar-brand:hover,

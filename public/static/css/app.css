@@ -11039,7 +11039,11 @@ a.text-dark:focus {
 .dark-green .bg-white,
 .dark-red .bg-white,
 .seasonal .bg-white,
-.dark .bg-white {
+.dark .bg-white,
+.dark-green .bg-light,
+.dark-red .bg-light,
+.seasonal .bg-light,
+.dark .bg-light {
   background-color: #1c1f2b !important;
 }
 
@@ -11243,13 +11247,6 @@ a.text-dark:focus {
   height: 35vh;
 }
 
-.nav-item {
-  border: 1px solid black;
-  padding: 5px 15px 5px 2px;
-  margin-right: 1px;
-  min-width: 85px;
-}
-
 /**
 .nav__active {
     color: whitesmoke;
@@ -11285,6 +11282,10 @@ a.text-dark:focus {
 footer p {
   justify-content: center;
   text-align: center;
+}
+
+a {
+  color: inherit;
 }
 
 a figcaption {
@@ -11431,7 +11432,8 @@ ul.bibliography li {
 
 .email-label,
 .password-label,
-.user-label {
+.user-label,
+.upload-label {
   color: #1c1f2b;
   display: block;
   margin-bottom: 0;
@@ -11493,8 +11495,29 @@ nav.navbar-dark {
   color: #FCFCFC;
 }
 
+a.navbar-brand,
+.nav-item a {
+  color: inherit;
+}
+
+a.navbar-brand:hover,
+.nav-item a:hover {
+  color: #3490dc;
+  text-decoration: underline;
+}
+
+.nav-item {
+  padding: 5px 15px 5px 2px;
+  margin-right: 1px;
+  min-width: 85px;
+}
+
+.navbar-brand {
+  margin-left: calc(12.5vw - 128px);
+}
+
 .bg-lite {
-  background-color: #FCFCFC;
+  background-color: inherit;
 }
 
 .wrapper {

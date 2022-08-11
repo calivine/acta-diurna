@@ -3,8 +3,29 @@ nav.navbar-dark {
     color: $white;
 }
 
+a.navbar-brand,
+.nav-item a {
+
+    color: inherit;
+
+    &:hover {
+        color: $blue;
+        text-decoration: underline;
+    }
+}
+
+.nav-item {
+    padding: 5px 15px 5px 2px;
+    margin-right: 1px;
+    min-width: 85px;
+}
+
+.navbar-brand {
+    margin-left: calc((100vw/8) - 128px);
+}
+
 .bg-lite {
-    background-color: $white;
+    background-color: inherit;
 }
 
 .wrapper {

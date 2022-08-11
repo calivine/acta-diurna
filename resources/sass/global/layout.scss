@@ -20,7 +20,8 @@
     background-color: $black;
     color: $white;
 
-    .bg-white {
+    .bg-white,
+    .bg-light {
         background-color: $black !important;
     }
 
@@ -150,12 +151,7 @@
 
 
 
-.nav-item {
-    border: 1px solid black;
-    padding: 5px 15px 5px 2px;
-    margin-right: 1px;
-    min-width: 85px;
-}
+
 
 /**
 .nav__active {

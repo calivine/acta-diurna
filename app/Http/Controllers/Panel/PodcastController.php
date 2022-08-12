@@ -169,7 +169,13 @@ class PodcastController extends Controller
      */
     public function destroy(Podcast $podcast)
     {
-        //
+
+        $image_ids = $podcast->images->pluck('id');
+
+        Image::destroy($image_ids);
+        Podcast::destroy($podcast->id);
+
+        return redirect(route('podcasts.index'));
     }
 
     /**

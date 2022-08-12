@@ -45,6 +45,11 @@ class ImageController extends Controller
         $file = $request->file('uploadFile')[0];
         // Save as Image
         $path = $request->file('uploadFile')[0]->storeAs('public/assets', $request->input('filename') . '.jpg');
+        dump($path);
+        $path = $request->file('uploadFile')[0]->store('public/assets');
+        dump($path);
+        dump($request->file('uploadFile')[0]->path());
+        dump($request->file('uploadFile')[0]->extension());
         $image = Image::create([
             'filename' => $request->input('filename'),
             'caption' => $request->input('caption')
@@ -107,6 +112,7 @@ class ImageController extends Controller
      */
     public function destroy(Image $image)
     {
-        //
+        Image::destroy($image->id);
+        return(redirect()->back());
     }
 }

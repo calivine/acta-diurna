@@ -11515,7 +11515,7 @@ a.navbar-brand:hover,
 }
 
 .navbar-brand {
-  margin-left: calc(12.5vw - 128px);
+  margin-left: 7.5vw;
 }
 
 .bg-lite {

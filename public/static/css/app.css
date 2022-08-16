@@ -11518,6 +11518,10 @@ a.navbar-brand:hover,
   margin-left: 7.5vw;
 }
 
+ul.nav {
+  margin-right: 7.5vw;
+}
+
 .bg-lite {
   background-color: inherit;
 }
@@ -12008,5 +12012,11 @@ article {
 .toolbar-container {
   height: 35px;
   margin: 5px 0;
+}
+
+.admin-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 

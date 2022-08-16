@@ -8,16 +8,14 @@
             <div class="left">
                 <div class="links_container">
                     <!-- IDs nav__<target> == display__<target> -->
-                    <div class="nav_link" id="nav__user">
-                        User
-                    </div>
-                    @include('panel.partials.nav-button', ['label' => 'podcasts'])
+                    @include('panel.partials.nav-button', ['label' => 'tags'])
+                    @include('panel.partials.nav-button', ['label' => 'publisher', 'active' => 'nav__active'])
 
                 </div>
 
             </div>
             <div class="right">
-                <div class="form__wrapper active" id="display__podcasts">
+                <div class="form__wrapper active" id="display__publisher">
                     @include('panel.partials.podcasts')
                 </div>
 

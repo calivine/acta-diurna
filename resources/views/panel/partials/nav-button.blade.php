@@ -1,3 +1,3 @@
-<div class="nav_link" id="nav__{{ $label }}">
+<div class="nav_link @if(isset($active)){{ $active }}@endif" id="nav__{{ $label }}">
     {{ ucfirst($label) }}
 </div>

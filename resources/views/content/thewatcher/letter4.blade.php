@@ -1,6 +1,6 @@
 <hgroup>
-    <h2 class="post__section-title">The Fourth Letter</h2>
-    <h2 class="post__section-subtitle">March 2017</h2>
+    <h2 class="post-section-title">The Fourth Letter</h2>
+    <h2 class="post-section-subtitle">March 2017</h2>
 </hgroup>
 <blockquote class="quote-letter">
     <p>You wonder who The Watcher is? Turn around idiots. Maybe you even spoke to me, one of the

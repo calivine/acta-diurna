@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">October 30, 2021</p>
+                <p class="post-date">October 30, 2021</p>
                 <hgroup>
-                    <h1 class="post__title">431 Hillside Avenue<br>Westfield, NJ</h1>
-                    <h2 class="post__subtitle">AKA “Breeze Knoll”<br>ca. 1896-1972</h2>
+                    <h1 class="post-title">431 Hillside Avenue<br>Westfield, NJ</h1>
+                    <h2 class="post-subtitle">AKA “Breeze Knoll”<br>ca. 1896-1972</h2>
                 </hgroup>
                 @include('modules.figure', ['imgSource' => '431HillsideAve', 'caption' => 'Breeze Knoll'])
                 <article>
@@ -78,8 +78,8 @@
                     </p>
                 </article>
                 <article>
-                    <h3 class="post__title">Breeze Knoll</h3>
-                    <h3 class="post__subtitle">The First Generation (1895-1936)</h3>
+                    <h3 class="post-title">Breeze Knoll</h3>
+                    <h3 class="post-subtitle">The First Generation (1895-1936)</h3>
                     <p>
                         John Samuel Agustus Wittke (1847-1936) and his family were the original occupants of the
                         Hillside Avenue Georgian-style mansion. He was a German immigrant who arrived in the United
@@ -104,7 +104,7 @@
 
                     </p>
                     @include('modules.figure', ['imgSource' => 'entryway', 'caption' => 'The art gallery/ballroom at Breeze Knoll in the 1920s. Note the mahogany entryway with the three pronged, globe capped sconces, picture and base molding. Oak paneling with a herringbone pattern covered the floors.'])
-                    <h3 class="post__subtitle">Second Generation (1914-1961)</h3>
+                    <h3 class="post-subtitle">Second Generation (1914-1961)</h3>
                     <p>
                         Henrietta, the oldest child to John and Phoebe, attended Smith College in Northampton, MA, in
                         the 1890s. She was married to Lee S. Roberts in 1903. However, they were divorced by 1914. At
@@ -114,7 +114,7 @@
                         had any children but was actively involved with the community in Westfield most of her life.<br><br>
                     </p>
 
-                    <h3 class="post__subtitle">Third Generation (1938-1965)</h3>
+                    <h3 class="post-subtitle">Third Generation (1938-1965)</h3>
                     <p>
                         In 1938, John Mills Wittke (1911-2004), a grandson of JSA Wittke and the son of Wellington
                         Wittke, moved into Breeze Knoll with his wife, Dorothy. They lived there with his Aunt,
@@ -139,7 +139,7 @@
 
 
                     </p>
-                    <h3 class="post__subtitle">Timeline of Notable Gatherings at Breeze Knoll</h3>
+                    <h3 class="post-subtitle">Timeline of Notable Gatherings at Breeze Knoll</h3>
                     <p>
                         <strong>October 10, 1906</strong> - The wedding of John and Phoebe Wittke's youngest daughter,
                         Gertrude Mae Wittke, to G. Harold Whitney took place in the ballroom at 6:30 p.m., decorated
@@ -174,7 +174,7 @@
 
                         @include('modules.figure', ['imgSource' => 'janeAlpers', 'caption' => 'Wedding reception for this couple was held at Breeze Knoll in 1950. Plainfield Courier-News, August 26, 1950.'])
                     </p>
-                    <h3 class="post__subtitle">Tragic and Unfortunate Events at Breeze Knoll</h3>
+                    <h3 class="post-subtitle">Tragic and Unfortunate Events at Breeze Knoll</h3>
                     <p>
                         <strong>July 25, 1908</strong> - A severe domestic disturbance was reported at Breeze Knoll. In
                         the morning, domestic employee Molly Brown allegedly attacked her employer, Mrs. Wittke, with a
@@ -214,8 +214,8 @@
 
                         @include('modules.figure', ['imgSource' => 'wittke2', 'caption' => 'Plainfield Courier-News, Thursday, May 28, 1936'])
                     </p>
-                    <h3 class="post__title">Breeze Knoll</h3>
-                    <h3 class="post__subtitle">1965-1971<br>The List Family</h3>
+                    <h3 class="post-title">Breeze Knoll</h3>
+                    <h3 class="post-subtitle">1965-1971<br>The List Family</h3>
                     @include('modules.figure', ['imgSource' => 'listPortrait', 'caption' => 'John List with his wife Helen, Patricia, John Jr., and Frederick. 1971'])
                     <p>
                         In 1965, John Emil List and his wife Helen purchased the 19-room sprawling mansion on Hillside
@@ -294,7 +294,7 @@
                         Patricia, who was 16 and interested in acting.<br><br>
 
                     </p>
-                    <h3 class="post__title">The Murders</h3>
+                    <h3 class="post-title">The Murders</h3>
                     <p>
                         On the morning of Tuesday, November 9, 1971, John List waited for his children to leave for
                         school. He then remained in his study and waited for his wife Helen to stir. She woke up, went
@@ -500,7 +500,7 @@
 
                 </article>
                 <article>
-                    <h3 class="post__subtitle">August 30, 1972</h3>
+                    <h3 class="post-subtitle">August 30, 1972</h3>
 
                     @include('modules.figure', ['imgSource' => 'bkfire2', 'caption' => ''])
                     @include('modules.figure', ['imgSource' => 'breezeknollfire', 'caption' => 'Breeze Knoll after the fire.  August 1972', 'link' => 'https://unioncc.instructure.com/courses/11394/files/617586?module_item_id=186599', 'linkText' => 'Source'])

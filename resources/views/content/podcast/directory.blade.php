@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <h1 class="post__title">Welcome to Nightmare Houses Podcast.</h1>
+        <h1 class="post-title">Welcome to Nightmare Houses Podcast.</h1>
         @include('modules.figure', ['imgSource' => 'NightmareHousesLogo'])
 
         <div class="row">

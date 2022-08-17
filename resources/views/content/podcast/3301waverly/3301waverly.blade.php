@@ -5,9 +5,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">April 5, 2022</p>
+                <p class="post-date">April 5, 2022</p>
                 <hgroup>
-                    <h1 class="post__title">3301 Waverly Drive<br>Los Angeles, CA</h1>
+                    <h1 class="post-title">3301 Waverly Drive<br>Los Angeles, CA</h1>
                 </hgroup>
                 @include('modules.figure', ['imgSource' => 'LaBianca_residence_in_Los_Feliz', 'caption' => '3301 Waverly Drive'])
 

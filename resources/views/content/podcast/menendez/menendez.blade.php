@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">May 3, 2022</p>
+                <p class="post-date">May 3, 2022</p>
                 <hgroup>
-                    <h1 class="post__title">Menendez Brothers Murder House</h1>
+                    <h1 class="post-title">Menendez Brothers Murder House</h1>
 
                 </hgroup>
                 <figure>

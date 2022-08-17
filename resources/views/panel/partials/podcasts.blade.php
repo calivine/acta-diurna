@@ -24,21 +24,16 @@
         <input type="date" id="podcast-published" class="px-0 form-control mb-3 mt-0" name="published" required>
         <div class="row">
             <div class="box">
-                <div class="box__input">
-                    <input class="box__file" type="file" name="uploadFile" id="file"
+                <div class="box-input">
+                    <input class="box-file" type="file" name="uploadFile" id="file"
                            data-multiple-caption="{count} files selected"/>
-                    <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+                    <label for="file"><strong>Choose a file</strong><span class="box-dragndrop"> or drag it here</span>.</label>
                 </div>
             </div>
 
+
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <label for="podcast-draft" class="mb-0">Save as Draft</label>
-                <input type="checkbox" class="px-0 form-control mb-3 mt-0" id="podcast-draft" name="draft">
-            </div>
-        </div>
-        <button class="" type="submit">Upload</button>
+        <button class="btn btn-info btn-block" type="submit">Save</button>
     </form>
 </div>
 

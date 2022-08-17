@@ -1,6 +1,6 @@
 <hgroup>
-    <h2 class="post__section-title">The First Letter</h2>
-    <h2 class="post__section-subtitle">June 18, 2014</h2>
+    <h2 class="post-section-title">The First Letter</h2>
+    <h2 class="post-section-subtitle">June 18, 2014</h2>
 </hgroup>
 <blockquote class="quote-letter">
     <p>Dearest new neighbor at 657 Boulevard,</p>

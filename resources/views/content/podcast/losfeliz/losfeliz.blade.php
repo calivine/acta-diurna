@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">May 24th, 2022 </p>
+                <p class="post-date">May 24th, 2022 </p>
                 <hgroup>
-                    <h1 class="post__title">Los Feliz Mystery House</h1>
+                    <h1 class="post-title">Los Feliz Mystery House</h1>
                     @include('modules.figure', ['imgSource' => 'The_Los_Angeles_Times_Sun__Dec_4__1932_ (1)'])
 
                 </hgroup>

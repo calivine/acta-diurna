@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">April 26, 2022</p>
+                <p class="post-date">April 26, 2022</p>
                 <hgroup>
-                    <h1 class="post__title">431 Hillside Avenue<br>Westfield, NJ</h1>
-                    <h2 class="post__subtitle">AKA “Breeze Knoll”<br>ca. 1896-1972</h2>
+                    <h1 class="post-title">431 Hillside Avenue<br>Westfield, NJ</h1>
+                    <h2 class="post-subtitle">AKA “Breeze Knoll”<br>ca. 1896-1972</h2>
                 </hgroup>
                 <figure>
                     <figcaption><a href="https://rss.com/podcasts/nightmarehouses/467026/"><h3>Nightmare Houses S01

@@ -1,5 +1,5 @@
 
-let footnotes = $('.post__footnotes > li');
+let footnotes = $('.post-footnotes > li');
 let notes = $('.footnote');
 
 notes.each(function () {

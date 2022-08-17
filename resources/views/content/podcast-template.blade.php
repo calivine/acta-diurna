@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date"><!-- Date --> </p>
+                <p class="post-date"><!-- Date --> </p>
                 <hgroup>
-                    <h1 class="post__title">  <!-- Title -->  </h1>
+                    <h1 class="post-title">  <!-- Title -->  </h1>
 
                 </hgroup>
                 <figure>

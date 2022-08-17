@@ -1,4 +1,4 @@
-<ol class="post__footnotes">
+<ol class="post-footnotes">
     <li id="footnote-1">
         Wiedeman, Reeves. “The Haunting of a Dream House,” The Cut, November 19, 2018, https://www.thecut.com/2018/11/the-haunting-of-657-boulevard-in-westfield-new-jersey.html
     </li>

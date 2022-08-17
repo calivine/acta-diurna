@@ -1,6 +1,6 @@
 <hgroup>
-    <h2 class="post__section-title">The Second Letter</h2>
-    <h2 class="post__section-subtitle">July 18, 2014</h2>
+    <h2 class="post-section-title">The Second Letter</h2>
+    <h2 class="post-section-subtitle">July 18, 2014</h2>
 </hgroup>
 <blockquote class="quote-letter">
     <p>Mr. and Mrs. Braddus,</p>

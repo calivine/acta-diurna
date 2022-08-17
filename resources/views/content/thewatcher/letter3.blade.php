@@ -1,6 +1,6 @@
 <hgroup>
-    <h2 class="post__section-title">The Third Letter</h2>
-    <h2 class="post__section-subtitle">August 2014</h2>
+    <h2 class="post-section-title">The Third Letter</h2>
+    <h2 class="post-section-subtitle">August 2014</h2>
 </hgroup>
 <blockquote class="quote-letter">
     <p>657 Boulevard is turning on me. It is coming after me. I don’t understand why. What spell

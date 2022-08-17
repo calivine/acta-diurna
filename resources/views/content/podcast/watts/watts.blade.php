@@ -5,9 +5,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">April 12, 2022</p>
+                <p class="post-date">April 12, 2022</p>
                 <hgroup>
-                    <h1 class="post__title">The Watts Family Home</h1>
+                    <h1 class="post-title">The Watts Family Home</h1>
                 </hgroup>
                 @include('modules.figure', ['imgSource' => 'wattsthumb', 'caption' => 'The Watts Family Home'])
 

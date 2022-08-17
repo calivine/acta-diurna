@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">{{ $podcast->published->format('F jS, Y') }} </p>
+                <p class="post-date">{{ $podcast->published->format('F jS, Y') }} </p>
                 <hgroup>
-                    <h1 class="post__title">  {{ $podcast->title }}</h1>
+                    <h1 class="post-title">  {{ $podcast->title }}</h1>
 
                 </hgroup>
                 @include('modules.figure', ['imgSource' => $podcast->thumbnail])

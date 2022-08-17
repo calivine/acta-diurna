@@ -23,9 +23,9 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">{{ $podcast->published }} </p>
+                <p class="post-date">{{ $podcast->published->format('F jS, Y') }} </p>
                 <hgroup>
-                    <h1 class="post__title">  {{ $podcast->title }}</h1>
+                    <h1 class="post-title">  {{ $podcast->title }}</h1>
                 </hgroup>
                 <section>
                     <form class="p-3 md-14" action="{{ route('podcasts.update', $podcast->id) }}" method="POST"
@@ -37,15 +37,15 @@
 
                         <div class="row">
                             <div class="box">
-                                <div class="box__input">
-                                    <input class="box__file" type="file" name="uploadFile[]" id="file"
+                                <div class="box-input">
+                                    <input class="box-file" type="file" name="uploadFile[]" id="file"
                                            data-multiple-caption="{count} files selected" multiple/>
-                                    <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+                                    <label for="file"><strong>Choose a file</strong><span class="box-dragndrop"> or drag it here</span>.</label>
                                     <button class="" type="submit">Upload</button>
                                 </div>
-                                <div class="box__uploading">Uploading...</div>
-                                <div class="box__success">Done!</div>
-                                <div class="box__error">Error! <span></span>.</div>
+                                <div class="box-uploading">Uploading...</div>
+                                <div class="box-success">Done!</div>
+                                <div class="box-error">Error! <span></span>.</div>
                             </div>
                         </div>
                     </form>
@@ -83,7 +83,7 @@
                                 <div class="box__input">
                                     <input class="box__file" type="file" name="uploadFile[]" id="file"
                                            data-multiple-caption="{count} files selected" multiple/>
-                                    <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+                                    <label for="file"><strong>Choose a file</strong><span class="box-dragndrop"> or drag it here</span>.</label>
                                 </div>
                             </div>
                         </div>

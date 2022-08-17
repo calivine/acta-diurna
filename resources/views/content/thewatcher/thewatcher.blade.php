@@ -4,18 +4,18 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">October 31, 2020</p>
+                <p class="post-date">October 31, 2020</p>
                 <section>
                     <hgroup>
-                        <h1 class="post__title">657 Boulevard Westfield, NJ</h1>
-                        <h1 class="post__subtitle"><em>AKA “The Watcher” House: <br> The Truth Revealed?</em></h1>
+                        <h1 class="post-title">657 Boulevard Westfield, NJ</h1>
+                        <h1 class="post-subtitle"><em>AKA “The Watcher” House: <br> The Truth Revealed?</em></h1>
                     </hgroup>
                     <article id="chainOfTitle">
                         @include('modules.figure', ['imgSource' => 'watcher1_4-3', 'caption' => '6/25/15 Photo by John \'O Boyle for NJ Advance Media', 'link' => 'https://www.nj.com/union/2017/10/judge_rules_on_njs_infamous_watcher_house_lawsuit.html', 'linkText' => 'Original Source'])
                         <hgroup>
-                            <h2 class="post__section-title">Chain of Title</h2>
-                            <h5 class="post__section-title">657 Boulevard</h5>
-                            <h5 class="post__section-title">1905-2019:</h5>
+                            <h2 class="post-section-title">Chain of Title</h2>
+                            <h5 class="post-section-title">657 Boulevard</h5>
+                            <h5 class="post-section-title">1905-2019:</h5>
                         </hgroup>
                         <ol>
                             <li>1905 - 1914: Harry L. Russell</li>
@@ -78,7 +78,7 @@
                             house so alluring?</p>
                     </article>
                     <article id="historyOf675Boulevard">
-                        <h2 class="post__section-title">History of 657 Boulevard</h2>
+                        <h2 class="post-section-title">History of 657 Boulevard</h2>
                         <p>657 Boulevard is a part of Park Slope, a residential development established by the Westfield
                             Realty Improvement Company in 1904.@include('modules.footnote', ['number' => '3']) It was
                             built in 1905 and is a classic Dutch Colonial
@@ -175,7 +175,7 @@
                     </article>
                     <article id="motiveMeansOpportunity">
                         <hgroup>
-                            <h1 class="post__section-title">Motive, Means, and Opportunity - Was It The Neighbor On
+                            <h1 class="post-section-title">Motive, Means, and Opportunity - Was It The Neighbor On
                                 Carleton Road?</h1>
                             <p id="disclaimer">*Street number for Carleton Rd.  will not be provided for this article. </p>
                             <p id="disclaimer">**Please note, the new residents of Carleton Rd. are not involved in this case.
@@ -271,7 +271,7 @@
                             to the Broaddus family. Maybe the police can finally solve the Watcher mystery.
                         </p>
                         <p>I encourage you to draw your own conclusions.</p>
-                        <p class="post__section-title">Happy Halloween!</p>
+                        <p class="post-section-title">Happy Halloween!</p>
                     </article>
                 </section>
                 <section class="mt-4">

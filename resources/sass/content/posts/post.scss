@@ -15,43 +15,43 @@ figure {
     }
 }
 
-.post__date {
+.post-date {
     font-size: 13px;
     line-height: .75rem;
     font-style: italic;
 }
 
 
-%post__section {
+%post-section {
     font-family: Copasetic;
     text-align: center !important;
 }
 
-.post__section-title {
-    @extend %post__section;
+.post-section-title {
+    @extend %post-section;
     font-size: 3rem;
 }
 
-.post__section-subtitle {
-    @extend %post__section;
+.post-section-subtitle {
+    @extend %post-section;
     font-size: 2rem;
 }
 
-.post__footnotes {
+.post-footnotes {
     li {
         font-size: .75rem;
         word-break: break-all;
     }
 }
 
-.post__title {
+.post-title {
     font-family: ParkLane;
     font-size: 4rem;
     text-align: center !important;
     margin-bottom: 1rem !important;
 }
 
-.post__subtitle {
+.post-subtitle {
     text-align: center !important;
     font-family: Copasetic;
     line-height: 5rem;
@@ -73,7 +73,7 @@ article {
     margin-top: 2rem;
 }
 
-.quote__letter {
+.quote-letter {
     border: 1px solid black;
     text-align: center !important;
     font-style: italic;

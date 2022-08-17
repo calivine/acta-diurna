@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post__date">November 24, 2020</p>
+                <p class="post-date">November 24, 2020</p>
                 <hgroup>
-                    <h1 class="post__title">Highfields<br>Hopewell, NJ</h1>
-                    <h2 class="post__subtitle"><em>"Isn't it strange that we talk least about the things we think about
+                    <h1 class="post-title">Highfields<br>Hopewell, NJ</h1>
+                    <h2 class="post-subtitle"><em>"Isn't it strange that we talk least about the things we think about
                             most?"<br>— Charles Lindbergh</em></h2>
                 </hgroup>
                 @include('modules.figure', ['imgSource' => '1', 'caption' => 'Highfields, ca. 2007.', 'link' => 'https://en.wikipedia.org/wiki/Highfields_(Amwell_and_Hopewell,_New_Jersey)#/media/File:HIGHFIELDS,_EAST_AMWELL_TOWNSHIP,_HUNTERDON_COUNTY', 'linkText' => 'Image Source'])

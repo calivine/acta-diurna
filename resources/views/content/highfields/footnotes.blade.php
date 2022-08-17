@@ -1,4 +1,4 @@
-<ol class="post__footnotes">
+<ol class="post-footnotes">
     <li id="footnote-1">
         Howard Chua-Eoan, “Crimes of the Century,” Time (Time Inc., March 1, 2007), http://content.time.com/time/specials/packages/article/0,28804,1937349_1937350_1937351,00.html.
     </li>

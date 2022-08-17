@@ -11097,7 +11097,7 @@ a.text-dark:focus {
   color: #FF7619 !important;
 }
 
-.seasonal .quote__letter {
+.seasonal .quote-letter {
   border: 1px solid #FF7619;
 }
 
@@ -11105,10 +11105,10 @@ a.text-dark:focus {
   color: #FF7619;
 }
 
-.seasonal .post__title,
-.seasonal .post__subtitle,
-.seasonal .post__section-subtitle,
-.seasonal .post__section-title {
+.seasonal .post-title,
+.seasonal .post-subtitle,
+.seasonal .post-section-subtitle,
+.seasonal .post-section-title {
   color: #FF7619;
 }
 
@@ -11130,7 +11130,7 @@ a.text-dark:focus {
   color: #D73E2D !important;
 }
 
-.dark-red .quote__letter {
+.dark-red .quote-letter {
   border: 1px solid #D73E2D;
 }
 
@@ -11138,10 +11138,10 @@ a.text-dark:focus {
   color: #D73E2D;
 }
 
-.dark-red .post__title,
-.dark-red .post__subtitle,
-.dark-red .post__section-subtitle,
-.dark-red .post__section-title {
+.dark-red .post-title,
+.dark-red .post-subtitle,
+.dark-red .post-section-subtitle,
+.dark-red .post-section-title {
   color: #D73E2D;
 }
 
@@ -11163,7 +11163,7 @@ a.text-dark:focus {
   color: #38c172 !important;
 }
 
-.dark-green .quote__letter {
+.dark-green .quote-letter {
   border: 1px solid #38c172;
 }
 
@@ -11171,10 +11171,10 @@ a.text-dark:focus {
   color: #38c172;
 }
 
-.dark-green .post__title,
-.dark-green .post__subtitle,
-.dark-green .post__section-subtitle,
-.dark-green .post__section-title {
+.dark-green .post-title,
+.dark-green .post-subtitle,
+.dark-green .post-section-subtitle,
+.dark-green .post-section-title {
   color: #38c172;
 }
 
@@ -11526,6 +11526,10 @@ ul.nav {
   background-color: inherit;
 }
 
+nav#nav {
+  border-bottom: 1px solid #dee2e6;
+}
+
 .wrapper {
   display: inline-flex;
   list-style: none;
@@ -11678,6 +11682,220 @@ img {
 
 h4 .img_text {
   color: inherit;
+}
+
+.box {
+  font-size: 1.25rem;
+  /* 20 */
+  background-color: #c8dadf;
+  color: black;
+  position: relative;
+  padding: 100px 20px;
+}
+
+.box.has-advanced-upload {
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+}
+
+.text-input__display.has-advanced-upload {
+  transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+}
+
+.box.is-dragover {
+  /*outline-offset: -20px;
+  outline-color: #c8dadf;
+  background-color: #fff;*/
+  outline-color: #838383;
+  background-color: #6cb2eb;
+}
+
+.editor.is-dragover {
+  /*outline-offset: -20px;*/
+  outline-color: #c8dadf;
+  background-color: #fff;
+}
+
+.text-input__display.is-dragover {
+  /*outline-offset: -20px;*/
+  outline-color: #838383;
+  background-color: #8c18f1;
+}
+
+.box-dragndrop,
+.box-icon {
+  display: none;
+}
+
+.box.has-advanced-upload .box-dragndrop {
+  display: inline;
+}
+
+.box.has-advanced-upload .box-icon {
+  width: 100%;
+  height: 80px;
+  fill: #92b0b3;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.box.is-uploading .box-input,
+.box.is-success .box-input,
+.box.is-error .box-input {
+  visibility: hidden;
+}
+
+.upload-label {
+  display: none;
+}
+
+.upload-label.show {
+  display: block;
+  color: black;
+}
+
+.box.hidden {
+  display: none;
+}
+
+.upload-results-container,
+.box-uploading,
+.box-success,
+.box-error {
+  display: none;
+}
+
+.box.is-uploading .box-uploading,
+.box.is-success .box-success,
+.box.is-error .box-error {
+  display: block;
+  /*position: absolute;
+  top: 50%;
+  right: 10;
+  left: 0;*/
+  transform: translateY(-50%);
+}
+
+.box-uploading {
+  font-style: italic;
+}
+
+.box-success {
+  -webkit-animation: appear-from-inside 0.25s ease-in-out;
+  animation: appear-from-inside 0.25s ease-in-out;
+}
+
+@-webkit-keyframes appear-from-inside {
+  from {
+    -webkit-transform: translateY(-50%) scale(0);
+  }
+
+  75% {
+    -webkit-transform: translateY(-50%) scale(1.1);
+  }
+
+  to {
+    -webkit-transform: translateY(-50%) scale(1);
+  }
+}
+
+@keyframes appear-from-inside {
+  from {
+    transform: translateY(-50%) scale(0);
+  }
+
+  75% {
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  to {
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.box-restart {
+  font-weight: 700;
+}
+
+.box-restart:focus,
+.box-restart:hover {
+  color: #39bfd3;
+}
+
+.box.hidden.has-advanced-upload {
+  display: none;
+}
+
+.box-uploading.working {
+  display: block;
+  margin-top: 5px;
+  /*position: absolute;
+  top: 50%;
+  right: 10;
+  left: 0;*/
+  transform: translateY(-50%);
+}
+
+.upload-results-container.working {
+  display: block;
+}
+
+.js .box-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.js .box-file + label {
+  max-width: 80%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.js .box-file + label:hover strong,
+.box-file:focus + label strong,
+.box-file.has-focus + label strong {
+  color: #39bfd3;
+}
+
+.js .box-file:focus + label,
+.js .box-file.has-focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.js .box-file + label * {
+  /* pointer-events: none; */
+  /* in case of FastClick lib use */
+}
+
+.no-js .box-file + label {
+  display: none;
+}
+
+.no-js .box-button {
+  display: block;
+}
+
+.box-button {
+  font-weight: 700;
+  color: #e5edf1;
+  background-color: #39bfd3;
+  display: none;
+  padding: 8px 16px;
+  margin: 40px auto 0;
+}
+
+.box-button:hover,
+.box-button:focus {
+  background-color: #0f3c4b;
 }
 
 /* Tabbed Display */
@@ -11927,39 +12145,39 @@ figure figcaption {
   text-align: center !important;
 }
 
-.post__date {
+.post-date {
   font-size: 13px;
   line-height: 0.75rem;
   font-style: italic;
 }
 
-.post__section-subtitle,
-.post__section-title {
+.post-section-subtitle,
+.post-section-title {
   font-family: Copasetic;
   text-align: center !important;
 }
 
-.post__section-title {
+.post-section-title {
   font-size: 3rem;
 }
 
-.post__section-subtitle {
+.post-section-subtitle {
   font-size: 2rem;
 }
 
-.post__footnotes li {
+.post-footnotes li {
   font-size: 0.75rem;
   word-break: break-all;
 }
 
-.post__title {
+.post-title {
   font-family: ParkLane;
   font-size: 4rem;
   text-align: center !important;
   margin-bottom: 1rem !important;
 }
 
-.post__subtitle {
+.post-subtitle {
   text-align: center !important;
   font-family: Copasetic;
   line-height: 5rem;
@@ -11981,7 +12199,7 @@ article {
   margin-top: 2rem;
 }
 
-.quote__letter {
+.quote-letter {
   border: 1px solid black;
   text-align: center !important;
   font-style: italic;

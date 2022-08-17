@@ -34,7 +34,7 @@ class ImageController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Podcast  $podcast
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request, Podcast $podcast)
     {
@@ -64,6 +64,7 @@ class ImageController extends Controller
         # Associate the new image with the podcast.
         $image->podcast()->associate($podcast);
         $image->save();
+        return redirect()->route('podcasts.edit', $podcast->id);
     }
 
     /**

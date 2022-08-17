@@ -40,7 +40,7 @@ class PodcastController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -89,7 +89,9 @@ class PodcastController extends Controller
         $image->podcast()->associate($podcast);
         $image->save();
 
-        return redirect(route('panel'));
+        return redirect()->route('panel')->with(['alert' => 'New Episode Added']);
+
+        // return redirect(route('panel'))->with(['alert' => 'New Episode Added']);
 
     }
 
@@ -120,7 +122,7 @@ class PodcastController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Podcast  $podcast
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Podcast $podcast)
     {
@@ -156,7 +158,8 @@ class PodcastController extends Controller
         // dump($request->files('uploadFile')->store('public/assets'));
 
         // associate with podcast
-        return redirect(route('podcasts.edit', $podcast->id));
+        return redirect()->route('podcasts.edit', $podcast->id);
+        // return redirect(route('podcasts.edit', $podcast->id));
 
 
     }
@@ -165,7 +168,7 @@ class PodcastController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Podcast  $podcast
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Podcast $podcast)
     {
@@ -174,8 +177,8 @@ class PodcastController extends Controller
 
         Image::destroy($image_ids);
         Podcast::destroy($podcast->id);
-
-        return redirect(route('podcasts.index'));
+        return redirect()->route('podcasts.index');
+        // return redirect(route('podcasts.index'));
     }
 
     /**
@@ -194,7 +197,7 @@ class PodcastController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Podcast  $podcast
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function storeImage(Request $request, Podcast $podcast)
     {
@@ -219,7 +222,7 @@ class PodcastController extends Controller
         # Associate the new image with the podcast.
         $image->podcast()->associate($podcast);
         $image->save();
-
+        return redirect()->route('podcasts.edit', $image->podcast()->id);
     }
 
     /**
@@ -227,14 +230,15 @@ class PodcastController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Podcast  $podcast
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function publish(Request $request, Podcast $podcast)
+    public function publish(Request $request, Podcast $podcast): \Illuminate\Http\Response
     {
         $rss = $request->input('rss');
         $podcast->rss = $rss;
         $podcast->save();
-        return redirect(route('panel'));
+        return redirect()->route('panel');
+        // return redirect(route('panel'));
     }
 
 

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let navs = document.querySelectorAll('.nav_link');
-    let displays = document.querySelectorAll('.form__wrapper');
+    let navs = document.querySelectorAll('.nav-link');
+    let displays = document.querySelectorAll('.form-wrapper');
     if (navs && displays) {
         console.log('Options Display widget enabled.');
     }
@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // nav.classList.remove('nav__active');
         nav.addEventListener('click', function (e) {
             navs.forEach(function (nav) {
-                nav.classList.remove('nav__active');
+                nav.classList.remove('nav-active');
             });
-            nav.classList.add('nav__active');
-            let displayTarget = e.target.getAttribute('id').split('__')[1];
+            nav.classList.add('nav-active');
+            let displayTarget = e.target.getAttribute('id').split('-')[1];
 
             displays.forEach(function (display) {
-                display.setAttribute('class', 'form__wrapper');
-                if (display.getAttribute('id').split('__')[1] === displayTarget) {
+                display.setAttribute('class', 'form-wrapper');
+                if (display.getAttribute('id').split('-')[1] === displayTarget) {
                     display.classList.add('active');
                 }
             });

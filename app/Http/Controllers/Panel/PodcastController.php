@@ -26,6 +26,14 @@ class PodcastController extends Controller
 
     }
 
+
+    public function panelIndex()
+    {
+        $podcasts = Podcast::all()->sortByDesc('id');
+
+        return view('panel.index')->with(['podcasts' => $podcasts]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

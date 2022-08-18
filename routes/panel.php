@@ -16,7 +16,9 @@ Route::group(['middleware' => 'auth'], function () {
 # POST save new post
 Route::post('/post', 'PostController@store')->name('post.store');
 
-Route::view('/panel', 'panel.index')->middleware('admin')->name('panel');
+// Route::view('/panel', 'panel.index')->middleware('admin')->name('panel');
+
+Route::get('/panel', 'PodcastController@panelIndex')->middleware('admin')->name('panel');
 
 Route::resource('podcasts', 'PodcastController');
 

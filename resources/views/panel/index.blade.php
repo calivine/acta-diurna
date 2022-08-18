@@ -4,24 +4,26 @@
 
 @section('content')
     <div class="container">
-        <div class="settings__container">
+        <div class="settings-container">
             <div class="left">
-                <div class="links_container">
+                <div class="links-container">
                     <!-- IDs nav__<target> == display__<target> -->
-                    @include('panel.partials.nav-button', ['label' => 'tags'])
-                    @include('panel.partials.nav-button', ['label' => 'publisher', 'active' => 'nav__active'])
+                    @include('panel.partials.nav-button', ['label' => 'directory'])
+                    @include('panel.partials.nav-button', ['label' => 'publisher', 'active' => 'nav-active'])
 
                 </div>
 
             </div>
             <div class="right">
-                <div class="form__wrapper active" id="display__publisher">
+                <div class="form-wrapper active" id="display-publisher">
                     @include('panel.partials.podcasts')
                 </div>
 
 
-                <div class="form__wrapper" id="display__tags">
+                <div class="form-wrapper" id="display-directory">
                     <div class="row justify-content-center">
+                        @include('panel.partials.directory', ['podcasts' => $podcasts])
+
                         {{--
                             <div class="col-md-2">
                                 <a href="{{ route('prune') }}"><button class="btn btn-red-gradient btn-block">Prune Tags</button></a>
@@ -33,20 +35,7 @@
                             </div>
                         </div>
                         --}}
-
-                        <form class="box" action="{{-- route('upload') --}}" method="POST"
-                              enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                            <div class="box__input">
-                                <input class="box__file" type="file" name="uploadFile" id="file"
-                                       data-multiple-caption="{count} files selected" multiple/>
-                                <label for="file"><strong>Choose a file</strong><span class="box-dragndrop"> or drag it here</span>.</label>
-                                <button class="box-button" type="submit">Upload</button>
-                            </div>
-                        </form>
                     </div>
-
-
                 </div>
             </div>
         </div>

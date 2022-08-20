@@ -16,7 +16,7 @@ const mix = require('laravel-mix');
 
 mix.scripts([
     'resources/js/dragndrop.js',
-    'resources/js/filesEMCA6v2.js',
+    'resources/js/chunkedUploader.js',
     'resources/js/postHandler.js',
     'resources/js/widgets/pageUp.js',
     'resources/js/widgets/settingsDisplay.js'

@@ -4,14 +4,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9">
-                <p class="post-date">{{ $podcast->published->format('F jS, Y') }} </p>
                 <hgroup>
                     <h1 class="post-title">  {{ $podcast->title }}</h1>
 
                 </hgroup>
+                <p class="post-date">{{ $podcast->published->format('F jS, Y') }} </p>
                 @include('modules.figure', ['imgSource' => $podcast->thumbnail])
                 <figure>
-                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/{{ $podcast->rss }}"><h3>Nightmare Houses {{ 'S0' . $podcast->season . ' E' . $podcast->episode }}</h3></a></figcaption>
+                    <figcaption><a href="https://rss.com/podcasts/nightmarehouses/{{ $podcast->rss }}"><h3>Nightmare Houses {{ 'S' . $podcast->season . ' E' . $podcast->episode }}</h3></a></figcaption>
                     <iframe src="https://player.rss.com/nightmarehouses/{{ $podcast->rss }}?theme=light" style="width: 100%"
                             title="Nightmare Houses" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -134,27 +134,29 @@ class PodcastController extends Controller
      */
     public function update(Request $request, Podcast $podcast)
     {
-
-
-
         // $path = $request->file('uploadFile')[1]->store('public/assets');
+
+        // Update the Thumbnail Image
         if ($request->hasFile('uploadFile'))
         {
-            foreach($request->file('uploadFile') as $file)
-            {
+            $file = $request->file('uploadFile');
 
-                $path = $file->storeAs('public/assets', $file->getClientOriginalName());
+            // $path = $file->storeAs('public/assets', $file->getClientOriginalName());
 
-                // Save as Image
-                $image = Image::create([
-                    'filename' => $file->getClientOriginalName()
-                ]);
+            // Delete Old Thumbnail
+            $old_thumbnail = Image::where('filename', $podcast->thumbnail)->first();
 
+            Image::destroy($old_thumbnail->id);
 
-                // Associate with podcast
-                $image->podcast()->associate($podcast);
-                $image->save();
-            }
+            $path = $file->storeAs('public/assets', Str::snake($podcast->title . '_title' . '.jpg'));
+            // Save as Image
+            $image = Image::create([
+                'filename' => $podcast->thumbnail
+            ]);
+
+            // Associate with podcast
+            $image->podcast()->associate($podcast);
+            $image->save();
         }
 
         if ($request->has('description'))
@@ -185,7 +187,7 @@ class PodcastController extends Controller
 
         Image::destroy($image_ids);
         Podcast::destroy($podcast->id);
-        return redirect()->route('podcasts.index');
+        return redirect()->route('panel');
         // return redirect(route('podcasts.index'));
     }
 
@@ -200,38 +202,6 @@ class PodcastController extends Controller
 
     }
 
-    /**
-     * Store a newly created image resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Podcast  $podcast
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function storeImage(Request $request, Podcast $podcast)
-    {
-        dump($podcast);
-        dump($request->file('uploadFile'));
-        dump($request->input('caption'));
-
-        $file = $request->file('uploadFile')[0];
-        // Save as Image
-        $path = $request->file('uploadFile')[0]->storeAs('public/assets', $request->input('filename') . '.jpg');
-        $image = Image::create([
-            'filename' => $request->input('filename'),
-            'caption' => $request->input('caption')
-        ]);
-        /*
-        $filename = Str::snake($request->input('title') . '_title');
-        $path = $request->file('uploadFile')->storeAs('public/assets', Str::snake($request->input('title') . '_title' . '.jpg'));
-        $image = Image::create([
-            'filename' => $filename
-        ]);
-        */
-        # Associate the new image with the podcast.
-        $image->podcast()->associate($podcast);
-        $image->save();
-        return redirect()->route('podcasts.edit', $image->podcast()->id);
-    }
 
     /**
      * Set podcast resource to published (public)

@@ -4,6 +4,7 @@
             @isAdmin
             <span class="admin-container">
                             <a href="{{ route('podcasts.edit', $podcast->id) }}" class="admin-item">Edit Podcast</a>
+                <a class="admin-item" data-toggle="modal" data-target="#confirm-delete-modal">Delete Episode</a>
 
                         </span>
             @endisAdmin
@@ -12,4 +13,5 @@
             </a>
         </div>
     </div>
+    @include('modules.confirm-delete', ['modalId' => 'confirm-delete-modal', 'param' => $podcast, 'route' => 'podcasts.destroy'])
 @endforeach

@@ -73,3 +73,25 @@ use Illuminate\Support\Facades\Request;
       $timestamp = strtotime(date('f Y'));
       return date('t', $timestamp) - date('d', strtotime(today()));
   }
+
+function write_chunks_to_file($path_to_chunk, $path_to_file, $BUFFER_SIZE = 1024 * 1024) {
+    try {
+        $file = fopen($path_to_chunk, 'rb');
+    } catch (Exception $e)
+    {
+        return false;
+    }
+    $buff = fread($file, $BUFFER_SIZE);
+    fclose($file);
+
+    try {
+        $final = fopen($path_to_file, 'ab');
+    } catch (Exception $e)
+    {
+        return false;
+    }
+
+    fwrite($final, $buff);
+    fclose($final);
+    return unlink($path_to_chunk);
+}

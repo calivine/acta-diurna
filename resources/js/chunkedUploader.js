@@ -1,8 +1,8 @@
 
 class ChunkedUploader {
-    constructor (file, form) {
+    constructor (file, form, progressHandler) {
         if (!this instanceof ChunkedUploader) {
-            return new ChunkedUploader(file, form);
+            return new ChunkedUploader(file, form, progressHandler);
         }
 
         // const dt = Date.now().toString().substring(6);
@@ -20,6 +20,7 @@ class ChunkedUploader {
         this.chunksQueue = new Array(this.chunksQuantity).fill().map((_, index) => index).reverse();
 
         this._get_slice_method();
+        this._progress_handler = progressHandler;
 
     }
 
@@ -82,7 +83,8 @@ class ChunkedUploader {
             this.upload_request.onreadystatechange = () => {
                 if (this.upload_request.readyState === 4 && this.upload_request.status === 200) {
                     const response = JSON.parse(this.upload_request.responseText);
-                    ChunkedUploader._progress_handler(response);
+                    // ChunkedUploader._progress_handler(response);
+                    this._progress_handler(response);
                     resolve();
                 }
             };
@@ -91,49 +93,6 @@ class ChunkedUploader {
         });
 
 
-    }
-
-    static _progress_handler (response) {
-        let uploadsContainer = $('.upload-results-container');
-        if (document.getElementById(response.data)) {
-            let progBar = document.getElementById(response.data);
-            let $progressBar_body = progBar.children[1];
-            if ($progressBar_body) {
-                $progressBar_body.innerText = `${response.data}: ${response.progress}%`;
-            }
-            else {
-                $progressBar_body = progBar.children[0];
-                $progressBar_body.innerText = `${response.data}: ${response.progress}%`;
-            }
-            if (response.thumbnail !== 'none') {
-                progBar.children[0].remove();
-                // $('div.widget__uploading').remove();
-                let $thumbnail = $('<img height="80px" width="80px" alt="prev-thumbnail">');
-                $thumbnail.attr('src', response.thumbnail);
-                // console.log($thumbnail);
-                progBar.prepend($('<img src=' + response.thumbnail + ' height="80px" width="80px" alt="prev-thumbnail">')[0]);
-            }
-
-        }
-        else {
-            // Generate uploading progress bar
-            // let $progressBar = ChunkedUploader._create_progress_bar(response);
-            // Add to upload results container
-            uploadsContainer.append(ChunkedUploader._create_progress_bar(response));
-        }
-    }
-
-    static _create_progress_bar(response) {
-        let $progressBar = $('<div class="media"><div class="media-body"></div></div>');
-        $progressBar.attr('id', response.data);
-        let $progressBar_body = $progressBar.children()[0];
-        $progressBar_body.innerText = `${response.data}: ${response.progress}%`;
-        // $progressBar.innerText = `${response.data}: ${response.progress}%`;
-        let $thumbnail = response.progress !== 100 ? $('<div class="widget__uploading"></div>') : $('<img src=' + response.thumbnail + ' height="80px" width="80px" alt="prev-thumbnail">');
-
-        // $thumbnail.attr('src', response.thumbnail);
-        $progressBar.prepend($thumbnail[0]);
-        return $progressBar;
     }
 
     /* Public Functions */

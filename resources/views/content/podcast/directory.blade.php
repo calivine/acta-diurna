@@ -23,6 +23,13 @@
         @foreach($podcasts as $podcast)
             <div class="row">
                 <div class="col-lg-4 mx-auto my-5">
+
+                </div>
+            </div>
+            @include('modules.episode', ['podcast' => $podcast])
+
+            <div class="row">
+                <div class="col-lg-4 mx-auto my-5">
                     @isAdmin
                         <span class="admin-container">
                             <a href="{{ route('podcasts.edit', $podcast->id) }}" class="admin-item">Edit Podcast</a>

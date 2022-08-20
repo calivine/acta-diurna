@@ -12238,3 +12238,11 @@ article {
   justify-content: space-between;
 }
 
+.episode-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 75%;
+  border: 1px solid #0f3c4b;
+}
+

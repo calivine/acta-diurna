@@ -182,14 +182,15 @@ class ImageController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Image $image
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Image $image)
     {
-
         if ($request->has('caption')) {
-            dump($request->input('caption'));
+            $image->caption = $request->input('caption');
+            $image->save();
         }
+        return redirect()->route('podcasts.edit', $image->podcast->id);
     }
 
     /**

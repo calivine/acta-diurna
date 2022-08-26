@@ -9,6 +9,9 @@
         @auth
             @isAdmin
             <li class="nav-item">
+                <a class="nav-link" href="{{ url('/podcasts') }}">{{ __('Podcasts') }}</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ url('/panel') }}">{{ __('Admin Panel') }}</a>
             </li>
             @endisAdmin

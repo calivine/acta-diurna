@@ -210,7 +210,7 @@ class PodcastController extends Controller
      * @param  \App\Podcast  $podcast
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function publish(Request $request, Podcast $podcast): \Illuminate\Http\Response
+    public function publish(Request $request, Podcast $podcast)
     {
         $rss = $request->input('rss');
         $podcast->rss = $rss;

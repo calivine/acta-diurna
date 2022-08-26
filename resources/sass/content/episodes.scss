@@ -4,7 +4,43 @@
     justify-content: space-between;
     max-width: 75%;
     border: 1px solid #0f3c4b;
+    padding: 10px 45px;
+    margin-top: 50px;
 }
+
+.episode-item-container {
+    flex-grow: 4;
+}
+
+.episode-item {
+    flex-grow: 1;
+    h2 {
+        font-size: $font-size-large;
+    }
+
+    p {
+        margin: 10px 15px;
+    }
+}
+
+.episode-item-image {
+
+    flex-shrink: 4;
+    max-width: 40%;
+}
+
+.episode-inner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.episode-item-container#bottom-row {
+    border-top: 1px solid #0f3c4b;
+    border-bottom: 1px solid #0f3c4b;
+}
+
 
 
 

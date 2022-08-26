@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <section class="confirm-delete">
-                    <p>Are you sure you want to delete this episode?</p>
+                    <p>Are you sure you want to delete?</p>
 
                     <form action="{{ route($route, $param) }}" method="POST">
                         {{ method_field('delete') }}

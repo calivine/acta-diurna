@@ -12,20 +12,14 @@ const test_progress = function (response) {
 document.addEventListener('DOMContentLoaded', function () {
     // Upload form element
     let $form = $('form.box');
-    let $form2 = $('form#update-podcast');
+    let $updatePodcastForm = $('form#update-podcast');
     let $updateThumbnailBox = $('.box#update-thumbnail');
-
-    console.log($form);
-    console.log($form2);
 
     // File input element
     let $input = $form.find('input[type="file"]');
     // File input (vanilla)
-    let $file_input = document.getElementById('file');
+    let $file_input = document.getElementById('thumbnailFile');
     let $input2 = $("form#update-podcast input[type='file']");
-    console.log($input);
-    console.log($input2);
-
     let uploadingDisplay = $('#upload-display');
     let uploadsResultsContainer = $('.upload-results-container');
     if (isAdvancedUpload) {
@@ -50,18 +44,16 @@ document.addEventListener('DOMContentLoaded', function () {
             .on('drop', function (e) { // When drag n drop is supported.
                 droppedFiles = e.originalEvent.dataTransfer.files;
                 // Trigger submit form.
-                console.log('Triggering form submit');
                 $form.trigger('submit');
             });
 
         $form.on('submit', function (e) {
+            console.log('Submitting Create New Images Form.');
             console.log('Adding to Uploader');
             uploadingDisplay.addClass('working');
             uploadsResultsContainer.addClass('working');
             if (droppedFiles) {
-                console.log(droppedFiles.length);
                 if (droppedFiles.length === 1) {
-                    console.log(droppedFiles[0].size);
                     if (droppedFiles[0].size <= 1500000) {
                         console.log('Submitting');
                         $input.prop('files', droppedFiles);
@@ -79,9 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         e.preventDefault();
                     });
                 }
-            } else {
-                e.preventDefault();
-            }
+            } else {}
         });
         $updateThumbnailBox.on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
             e.preventDefault();
@@ -97,36 +87,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 droppedFiles = e.originalEvent.dataTransfer.files;
                 // Trigger submit form.
                 console.log('Triggering form submit');
-                $form2.trigger('submit');
+                $updatePodcastForm.trigger('submit');
             });
-        $form2.on('submit', function (e) {
+        $updatePodcastForm.on('submit', function (e) {
+            console.log('Submitting Update Podcast Form.');
             console.log('Adding to Uploader');
             uploadingDisplay.addClass('working');
             uploadsResultsContainer.addClass('working');
             if (droppedFiles) {
-                console.log(droppedFiles.length);
                 if (droppedFiles.length === 1) {
-                    console.log(droppedFiles[0].size);
                     if (droppedFiles[0].size <= 1500000) {
-                        console.log('Submitting');
                         $input2.prop("files", droppedFiles);
-
                     }
                     else {
-                        let uploader = new ChunkedUploader(droppedFiles[0], $form2, test_progress);
+                        let uploader = new ChunkedUploader(droppedFiles[0], $updatePodcastForm, test_progress);
                         uploader.start();
                         e.preventDefault();
                     }
                 } else {
                     $.each(droppedFiles, function (i, file) {
-                        let uploader = new ChunkedUploader(file, $form2, test_progress);
+                        let uploader = new ChunkedUploader(file, $updatePodcastForm, test_progress);
                         uploader.start();
                         e.preventDefault();
                     });
                 }
-            } else {
-                e.preventDefault();
-            }
+            } else {}
         });
 
 

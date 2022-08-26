@@ -137,9 +137,9 @@ class PodcastController extends Controller
         // $path = $request->file('uploadFile')[1]->store('public/assets');
 
         // Update the Thumbnail Image
-        if ($request->hasFile('uploadFile'))
+        if ($request->hasFile('uploadThumbnailFile'))
         {
-            $file = $request->file('uploadFile');
+            $file = $request->file('uploadThumbnailFile');
 
             // $path = $file->storeAs('public/assets', $file->getClientOriginalName());
 

@@ -136,8 +136,7 @@ class ImageController extends Controller
             }
 
             $image = Image::create([
-                'filename' => $filename,
-                'caption' => $request->input('caption')
+                'filename' => $filename
             ]);
             /*
             $filename = Str::snake($request->input('title') . '_title');
@@ -181,16 +180,17 @@ class ImageController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
+     * @param \App\Podcast $podcast
      * @param \App\Image $image
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Image $image)
+    public function update(Request $request, Podcast $podcast, Image $image)
     {
         if ($request->has('caption')) {
             $image->caption = $request->input('caption');
             $image->save();
         }
-        return redirect()->route('podcasts.edit', $image->podcast->id);
+        return redirect()->route('podcasts.edit', $podcast->id);
     }
 
     /**
@@ -201,7 +201,8 @@ class ImageController extends Controller
      */
     public function destroy(Image $image)
     {
+        $pid = $image->podcast->id;
         Image::destroy($image->id);
-        return (redirect()->back());
+        return redirect()->route('podcasts.edit', $pid)->with(['alert' => 'Image Deleted']);
     }
 }

@@ -5,12 +5,22 @@ const isAdvancedUpload = function () {
 
 const test_progress = function (response) {
     console.log(response);
+    if (!document.getElementById(response.file)){
+        const $resultsContainer = $('div.upload-results-container');
+        const $resultsItem = $('<div class="upload-results-item"></div>');
+        const $thumbnail = $('<img alt="prev-thumbnail">');
+        $resultsItem.attr('id', response.file);
+        $thumbnail.attr('src', response.url)
+        $resultsItem.append($thumbnail);
+        $resultsContainer.append($resultsItem);
+    }
 }
-
 
 // Run when the page loads.
 document.addEventListener('DOMContentLoaded', function () {
     // Upload form element
+
+    addListeners();
     let $form = $('form.box');
     let $updatePodcastForm = $('form#update-podcast');
     let $updateThumbnailBox = $('.box#update-thumbnail');

@@ -30,3 +30,5 @@ Route::resource('podcasts.images', 'ImageController');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/podcasts/{podcast}/publish', 'PodcastController@publish')->name('podcasts.publish');
+
+Route::get('/swap', 'ImageController@setOrder');

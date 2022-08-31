@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    protected $fillable = ['filename', 'caption'];
+    protected $fillable = ['filename', 'caption', 'position'];
 
     public function podcast()
     {

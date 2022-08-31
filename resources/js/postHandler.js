@@ -1,9 +1,9 @@
 
 class PostHandler {
-    constructor (url, data) {
+    constructor (url, data, method='POST') {
         this.url = url;
         this.data = data;
-        this.method = 'POST'
+        this.method = method
     }
 
     _send () {

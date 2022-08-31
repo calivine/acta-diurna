@@ -56,7 +56,7 @@
                 </section>
 
                 <section>
-                    @foreach($podcast->images as $image)
+                    @foreach($podcast->images->sortByDesc('position') as $image)
                         @if($image->filename != $podcast->thumbnail)
                             @include('panel.partials.edit-image',['loop' => $loop, 'image' => $image, 'podcast' => $podcast] )
                         @endif
@@ -81,10 +81,10 @@
                                 <div class="box-success">Done!</div>
                                 <div class="box-error">Error! <span></span>.</div>
                             </div>
-
-
                         <button class="" type="submit">Save</button>
+                        <div class="upload-results-container"></div>
                     </form>
+
                 </section>
 
 

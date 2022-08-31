@@ -86,8 +86,6 @@ class ImageController extends Controller
                     // $path_to_chunk = Storage::url("{$temp_loc}{$i}");
 
                     write_chunks_to_file($path_to_chunk, $path_to_file);
-
-
                 }
                 // Delete temp directory
                 try {
@@ -97,8 +95,20 @@ class ImageController extends Controller
                     Log::debug($e->getMessage());
                 }
 
+                $positions = $podcast->images->pluck('position');
+                $max = $positions->max();
+
+                if ($max == null) {
+                    // set position to 1.
+                    $position = 1;
+                }
+                else {
+                    $position = $max + 1;
+                }
+
                 $image = Image::create([
-                    'filename' => $file_id
+                    'filename' => $file_id,
+                    'position' => $position
                 ]);
 
                 # Associate the new image with the podcast.
@@ -120,11 +130,14 @@ class ImageController extends Controller
             return response()->json([
                 'status' => $status,
                 'progress' => $progress,
-                'data' => $file_name
+                'data' => $file_name,
+                'file' => $file_id ?? 'Pending',
+                'url' => asset("/storage/assets/" . $file_id . ".jpg")
             ]);
 
 
-        } else {
+        }
+        else {
             // Save as Image
             if ($request->input('filename') != null) {
                 $path = $request->file('uploadFile')[0]->storeAs('public/assets', $request->input('filename') . '.jpg');
@@ -135,8 +148,21 @@ class ImageController extends Controller
                 $path = $request->file('uploadFile')[0]->storeAs('public/assets', $filename . '.jpg');
             }
 
+            $positions = $podcast->images->pluck('position');
+            $max = $positions->max();
+
+            if ($max == null) {
+                // set position to 1.
+                $position = 1;
+            }
+            else {
+                $position = $max + 1;
+            }
+
+
             $image = Image::create([
-                'filename' => $filename
+                'filename' => $filename,
+                'position' => $position
             ]);
             /*
             $filename = Str::snake($request->input('title') . '_title');
@@ -204,5 +230,24 @@ class ImageController extends Controller
         $pid = $image->podcast->id;
         Image::destroy($image->id);
         return redirect()->route('podcasts.edit', $pid)->with(['alert' => 'Image Deleted']);
+    }
+
+    public function setOrder() {
+        // 155
+        // 159
+        $image1 = Image::find(156);
+        $image2 = Image::find(159);
+        $pid = $image1->podcast->id;
+        $temp2 = $image2->id;
+        $image2->id = 9999;
+        $image2->save();
+        $temp = $image1->id;
+        $image1->id = $temp2;
+        $image1->save();
+        $image2->id = $temp;
+        $image2->save();
+
+        return redirect()->route('podcasts.edit', $pid)->with(['alert' => 'Image Order Updated']);
+
     }
 }

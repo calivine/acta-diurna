@@ -71,7 +71,15 @@ class GuestController extends Controller
     public function get(String $title)
     {
 
-        $podcast = Podcast::where('episode', $title)->first();
+        preg_match('/s(\d)e(\d)/', $title, $target);
+        
+        $season = $target[1];
+        $episode = $target[2];
+
+        $podcast = Podcast::where([
+            ['episode', $episode],
+            ['season', $season],
+            ])->first();
 
         // Return podcast page with data
         return view('content.podcast.index')->with(['podcast' => $podcast]);
@@ -79,7 +87,7 @@ class GuestController extends Controller
 
     public function getPodcasts()
     {
-        $podcasts = Podcast::where('rss', '!=', 'Pending')->get()->sortByDesc('id');
+        $podcasts = Podcast::where('rss', '!=', 'Pending')->get()->sortByDesc('published');
 
         return view('content.podcast.directory')->with(['podcasts' => $podcasts]);
     }

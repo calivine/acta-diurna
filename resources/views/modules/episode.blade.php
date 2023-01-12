@@ -5,7 +5,7 @@
         </div>
     @endisAdmin
     <div class="episode-item">
-        <a href="{{ route('getPodcast', $podcast->episode) }}">
+        <a href="{{ route('getPodcast', "s" . $podcast->season . "e" . $podcast->episode) }}">
             <h2>S{{ $podcast->season }} E{{ $podcast->episode }} - {{ $podcast->title }} </h2>
         </a>
     </div>

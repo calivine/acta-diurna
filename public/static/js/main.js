@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 } else {
                     $.each(droppedFiles, function (i, file) {
+                        console.log('Chunked multiple', i);
                         let uploader = new ChunkedUploader(file, $updatePodcastForm, test_progress);
                         uploader.start();
                         e.preventDefault();
@@ -196,8 +197,17 @@ function dragDrop() {
     this.classList.remove("over");
     // console.log(this);
     swap(dragStartIndex, dragEndIndex);
+    saveSwap(dragStartIndex, dragEndIndex);
+}
+
+function saveSwap(item1, item2) {
+    const img1 = dragList[item1].querySelector('img').getAttribute('data-img-id');
+    const img2 = dragList[item2].querySelector('img').getAttribute('data-img-id');
     const post = new PostHandler('/swap', 'sort', 'GET');
+    post.setHeader('X-Img-One', img1);
+    post.setHeader('X-Img-Two', img2);
     post.start();
+
 }
 
 function addListeners() {
@@ -369,19 +379,25 @@ function processEvent(evt) {
 
 
 class PostHandler {
-    constructor (url, data, method='POST') {
+    constructor (url, data='', method='POST') {
         this.url = url;
         this.data = data;
-        this.method = method
+        this.method = method;
+        this.xhr = new XMLHttpRequest();
+        this.xhr.open(this.method, this.url, true);
     }
 
     _send () {
-        this.xhr = new XMLHttpRequest();
-        this.xhr.open(this.method, this.url, true);
+        
+        
         // this.xhr.setRequestHeader('Content-Type', 'text/html');
-        this.xhr.setRequestHeader('X-Content-Id', this.data);
+        
 
         this.xhr.send(0);
+    }
+
+    setHeader(header, value) {
+        this.xhr.setRequestHeader(header, value);
     }
 
     start () {

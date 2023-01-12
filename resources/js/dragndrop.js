@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 } else {
                     $.each(droppedFiles, function (i, file) {
+                        console.log('Chunked multiple', i);
                         let uploader = new ChunkedUploader(file, $updatePodcastForm, test_progress);
                         uploader.start();
                         e.preventDefault();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Panel;
 
+use App\Events\ImageUploaded;
 use App\Http\Controllers\Controller;
 use App\Image;
 use App\Podcast;
@@ -96,6 +97,7 @@ class ImageController extends Controller
                 }
 
                 $positions = $podcast->images->pluck('position');
+                
                 $max = $positions->max();
 
                 if ($max == null) {
@@ -148,22 +150,26 @@ class ImageController extends Controller
                 $path = $request->file('uploadFile')[0]->storeAs('public/assets', $filename . '.jpg');
             }
 
+
+
+
             $positions = $podcast->images->pluck('position');
+                
             $max = $positions->max();
 
             if ($max == null) {
-                // set position to 1.
+                    // set position to 1.
                 $position = 1;
             }
             else {
                 $position = $max + 1;
             }
 
-
             $image = Image::create([
                 'filename' => $filename,
                 'position' => $position
             ]);
+
             /*
             $filename = Str::snake($request->input('title') . '_title');
             $path = $request->file('uploadFile')->storeAs('public/assets', Str::snake($request->input('title') . '_title' . '.jpg'));
@@ -232,22 +238,22 @@ class ImageController extends Controller
         return redirect()->route('podcasts.edit', $pid)->with(['alert' => 'Image Deleted']);
     }
 
-    public function setOrder() {
-        // 155
-        // 159
-        $image1 = Image::find(156);
-        $image2 = Image::find(159);
-        $pid = $image1->podcast->id;
-        $temp2 = $image2->id;
-        $image2->id = 9999;
-        $image2->save();
-        $temp = $image1->id;
-        $image1->id = $temp2;
+    public function setOrder(Request $request) {
+        
+        $one = $request->header('X-Img-One');
+        $two = $request->header('X-Img-Two');
+        
+        $image1 = Image::find($one);
+        $image2 = Image::find($two);
+        
+        $temp = $image1->position;
+        $image1->position = $image2->position;
+        $image2->position = $temp;
+
         $image1->save();
-        $image2->id = $temp;
         $image2->save();
 
-        return redirect()->route('podcasts.edit', $pid)->with(['alert' => 'Image Order Updated']);
+        return response()->noContent();
 
     }
 }

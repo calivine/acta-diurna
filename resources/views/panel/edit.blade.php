@@ -56,7 +56,7 @@
                 </section>
 
                 <section>
-                    @foreach($podcast->images->sortByDesc('position') as $image)
+                    @foreach($podcast->images->sortBy('position') as $image)
                         @if($image->filename != $podcast->thumbnail)
                             @include('panel.partials.edit-image',['loop' => $loop, 'image' => $image, 'podcast' => $podcast] )
                         @endif

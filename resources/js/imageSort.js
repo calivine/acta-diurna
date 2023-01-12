@@ -26,8 +26,17 @@ function dragDrop() {
     this.classList.remove("over");
     // console.log(this);
     swap(dragStartIndex, dragEndIndex);
+    saveSwap(dragStartIndex, dragEndIndex);
+}
+
+function saveSwap(item1, item2) {
+    const img1 = dragList[item1].querySelector('img').getAttribute('data-img-id');
+    const img2 = dragList[item2].querySelector('img').getAttribute('data-img-id');
     const post = new PostHandler('/swap', 'sort', 'GET');
+    post.setHeader('X-Img-One', img1);
+    post.setHeader('X-Img-Two', img2);
     post.start();
+
 }
 
 function addListeners() {

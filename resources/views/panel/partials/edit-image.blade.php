@@ -13,7 +13,7 @@
         </div>
         <div class="edit-image-form-container">
             <div class="edit-image-img">
-                @include('modules.figure', ['imgSource' => $image->filename])
+                @include('modules.figure', ['imgSource' => $image->filename, 'id' => $image->id])
             </div>
             <div class="edit-image-form">
                 <form action="{{ route('podcasts.images.update', [$podcast->id, $image->id]) }}" method="POST"

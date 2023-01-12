@@ -45,17 +45,18 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             e.stopPropagation();
         })
-            .on('dragover dragenter', function () {
+        .on('dragover dragenter', function () {
                 $form.addClass('is-dragover');
-            })
-            .on('dragleave dragend drop', function () {
+        })
+        .on('dragleave dragend drop', function () {
                 $form.removeClass('is-dragover');
-            })
-            .on('drop', function (e) { // When drag n drop is supported.
-                droppedFiles = e.originalEvent.dataTransfer.files;
-                // Trigger submit form.
-                $form.trigger('submit');
-            });
+        })
+        .on('drop', function (e) { 
+            // When drag n drop is supported.
+            droppedFiles = e.originalEvent.dataTransfer.files;
+            // Trigger submit form.
+            $form.trigger('submit');
+        });
 
         $form.on('submit', function (e) {
             console.log('Submitting Create New Images Form.');
@@ -64,16 +65,9 @@ document.addEventListener('DOMContentLoaded', function () {
             uploadsResultsContainer.addClass('working');
             if (droppedFiles) {
                 if (droppedFiles.length === 1) {
-                    if (droppedFiles[0].size <= 1500000) {
-                        console.log('Submitting');
-                        $input.prop('files', droppedFiles);
-
-                    }
-                    else {
-                        let uploader = new ChunkedUploader(droppedFiles[0], $form, test_progress);
-                        uploader.start();
-                        e.preventDefault();
-                    }
+                    let uploader = new ChunkedUploader(droppedFiles[0], $form, test_progress);
+                    uploader.start();
+                    e.preventDefault();
                 } else {
                     $.each(droppedFiles, function (i, file) {
                         let uploader = new ChunkedUploader(file, $form, test_progress);

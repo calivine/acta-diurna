@@ -13,16 +13,29 @@
     .container, .container-fluid {
         background-color: $body-bg;
     }
+
+    .social-media-container a {
+        border: 1px solid $black !important;
+        border-bottom: 1px solid $black !important;
+        color: $black !important;
+
+    }
 }
 
 /* Dark styles */
 %dark-theme {
-    background-color: $black;
+    background-color: $body-bg-nh;
     color: $white;
 
     .bg-white,
     .bg-light {
-        background-color: $black !important;
+        background-color: $body-bg-nh !important;
+    }
+
+    .social-media-container a {
+        background-color: $body-bg-nh !important;
+        color: $white !important;
+
     }
 
     .modal {

@@ -100,6 +100,7 @@ nav#nav {
         }
     }
 
+    .apple,
     .apple:hover,
     .apple:hover .tooltip,
     .apple:hover .tooltip::before {
@@ -107,6 +108,7 @@ nav#nav {
         color: #ffffff;
     }
 
+    .rss,
     .rss:hover,
     .rss:hover .tooltip,
     .rss:hover .tooltip::before {
@@ -114,6 +116,7 @@ nav#nav {
         color: #ffffff;
     }
 
+    .youtube,
     .youtube:hover,
     .youtube:hover .tooltip,
     .youtube:hover .tooltip::before {
@@ -121,6 +124,7 @@ nav#nav {
         color: #ffffff;
     }
 
+    .twitter,
     .twitter:hover,
     .twitter:hover .tooltip,
     .twitter:hover .tooltip::before {
@@ -128,12 +132,15 @@ nav#nav {
         color: #ffffff;
     }
 
+    .facebook,
     .facebook:hover,
     .facebook:hover .tooltip,
     .facebook:hover .tooltip::before {
         background: #1877F2;
         color: #ffffff;
     }
+
+    
 }
 
 /**
@@ -183,6 +190,8 @@ nav#nav {
  */
 
 
-
+.social-link a::before {
+    content: "\E0A3";
+}
 
 

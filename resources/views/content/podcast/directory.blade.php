@@ -10,16 +10,13 @@
         <div class="row">
             @include('nav.external-links')
         </div>
-
-        <figure>
-            <figcaption><h3>Introduction</h3></figcaption>
-            <audio
-                    controls
-                    src={{ asset('storage/media/NightmareHouses_Intro_Master.mp3/') }}>
-                Your browser does not support the
-                <code>audio</code> element.
-            </audio>
-        </figure>
+        <div class="row">
+            @include('modules.audio-player')   
+        </div>
+        
+        {{-- @include('modules.external-links') --}}
+        
+        
         @foreach($podcasts as $podcast)
             @include('modules.episode', ['podcast' => $podcast])
         @endforeach

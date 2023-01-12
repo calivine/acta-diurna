@@ -100,13 +100,7 @@ class ImageController extends Controller
                 
                 $max = $positions->max();
 
-                if ($max == null) {
-                    // set position to 1.
-                    $position = 1;
-                }
-                else {
-                    $position = $max + 1;
-                }
+                $position = $max ? $max + 1 : 1;
 
                 $image = Image::create([
                     'filename' => $file_id,
@@ -157,13 +151,7 @@ class ImageController extends Controller
                 
             $max = $positions->max();
 
-            if ($max == null) {
-                    // set position to 1.
-                $position = 1;
-            }
-            else {
-                $position = $max + 1;
-            }
+            $position = $max ? $max + 1 : 1;
 
             $image = Image::create([
                 'filename' => $filename,

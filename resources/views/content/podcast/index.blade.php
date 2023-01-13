@@ -30,7 +30,7 @@
                 </article>
 
                 <section>
-                    @foreach($podcast->images as $image)
+                    @foreach($podcast->images->sortBy('position') as $image)
                         @if($image->filename != $podcast->thumbnail)
                             @include('modules.figure', ['imgSource' => $image->filename, 'caption' => $image->caption])
                         @endif

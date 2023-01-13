@@ -210,7 +210,8 @@ class ImageController extends Controller
             $image->caption = $request->input('caption');
             $image->save();
         }
-        return redirect()->route('podcasts.edit', $podcast->id);
+        //return redirect()->route('podcasts.edit', $podcast->id);
+        return response()->noContent();
     }
 
     /**

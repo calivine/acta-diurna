@@ -11548,6 +11548,7 @@ nav#nav {
   display: inline-flex;
   list-style: none;
   margin: 0 auto;
+  padding: 0;
 }
 
 .wrapper .icon {
@@ -11644,6 +11645,10 @@ nav#nav {
 .wrapper .facebook:hover .tooltip::before {
   background: #1877F2;
   color: #ffffff;
+}
+
+a.social-media > i::before {
+  content: "\F081";
 }
 
 /**

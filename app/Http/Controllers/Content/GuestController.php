@@ -71,7 +71,7 @@ class GuestController extends Controller
     public function get(String $title)
     {
 
-        preg_match('/s(\d)e(\d)/', $title, $target);
+        preg_match('/s(\d)e(\d{1,2})/', $title, $target);
         
         $season = $target[1];
         $episode = $target[2];

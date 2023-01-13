@@ -11993,6 +11993,27 @@ h4 .img_text {
   display: flex;
 }
 
+.update-podcast-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.5px solid black;
+  box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
+  padding: 30px;
+}
+
+.update-podcast-container label,
+.update-podcast-container textarea {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.update-podcast-container .img-thumbnail {
+  width: 33% !important;
+  height: 33% !important;
+}
+
 /* Tabbed Display */
 
 .settings-container {

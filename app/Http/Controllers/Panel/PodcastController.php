@@ -96,8 +96,8 @@ class PodcastController extends Controller
 
         $image->podcast()->associate($podcast);
         $image->save();
-
-        return redirect()->route('panel')->with(['alert' => 'New Episode Added']);
+        return redirect()->route('podcasts.edit', $podcast->id);
+        // return redirect()->route('panel')->with(['alert' => 'New Episode Added']);
 
         // return redirect(route('panel'))->with(['alert' => 'New Episode Added']);
 

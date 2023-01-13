@@ -124,45 +124,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-const processAjax = function ($form, ajaxData) {
-    $.ajax({
-        url: $form.attr('action'),
-        type: $form.attr('method'),
-        data: ajaxData,
-        cache: false,
-        contentType: false,
-        processData: false,
-        complete: function () {
-            $form.removeClass('is-uploading');
-        },
-        success: function (data) {
-            $form.addClass(data.success === true ? 'is-success' : 'is-error');
-            // if (!data.success) $errorMsg.text(data.error);
-            console.log(data);
-        },
-        error: function () {
-            // Log an error or show alert.
-            $form.addClass('is-error');
-        }
-    });
-};
-
-const sendRequest = function ($form, ajaxData) {
-    let xhr = new XMLHttpRequest();
-    xhr.open($form.attr('method'), $form.attr('action'), true);
-
-    xhr.onload = function () {
-        $form.removeClass('is-uploading');
-        if (xhr.status >= 200 && xhr.status < 400) {
-            //var data = JSON.parse(xhr.responseText);
-            //form.classList.add(data.success == true ? 'is-success' : 'is-error');
-            //if(!data.success) errorMsg.textContent = data.error;
-        } else alert('Error. Please, contact the webmaster!');
-    };
-
-    xhr.send(ajaxData);
-};
-
 const dragList = [];
 let dragStartIndex;
 

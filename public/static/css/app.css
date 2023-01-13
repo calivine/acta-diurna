@@ -11631,6 +11631,10 @@ nav#nav {
   color: #ffffff;
 }
 
+.wrapper .youtube:hover {
+  background: rgba(255, 0, 0, 0.6980392157);
+}
+
 .wrapper .twitter,
 .wrapper .twitter:hover,
 .wrapper .twitter:hover .tooltip,
@@ -11718,7 +11722,7 @@ h4 .img_text {
   background-color: #c8dadf;
   color: black;
   position: relative;
-  padding: 100px 20px;
+  padding: 20px 20px;
 }
 
 .box.has-advanced-upload {

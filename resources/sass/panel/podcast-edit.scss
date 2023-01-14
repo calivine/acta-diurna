@@ -22,7 +22,7 @@
         justify-content: center;
         margin: 25px auto;
         padding: 25px;
-        width: 33% !important;
+        width: 33%;
         box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
 
         label {
@@ -49,4 +49,10 @@
     
 
 
+}
+
+@media(max-width: $width-tablet) {
+    .update-thumbnail-container {
+        width: 77% !important;
+    }
 }

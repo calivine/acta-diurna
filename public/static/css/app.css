@@ -12015,7 +12015,7 @@ h4 .img_text {
   justify-content: center;
   margin: 25px auto;
   padding: 25px;
-  width: 33% !important;
+  width: 33%;
   box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
 }
 
@@ -12032,6 +12032,12 @@ h4 .img_text {
   width: 75% !important;
   height: 25%;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .update-thumbnail-container {
+    width: 77% !important;
+  }
 }
 
 /* Tabbed Display */

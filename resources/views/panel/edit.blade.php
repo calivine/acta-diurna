@@ -39,31 +39,38 @@
                           enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="PUT">
-                        
-                        <label for="pod-description">Episode Description</label>
-                        <textarea id="pod-description" name="description" cols="35" rows="5">{!! $podcast->description !!}</textarea>
-                        
-                        
-                        <div class="update-thumbnail-container">
 
-                            <label for="file">Update Thumbnail Image</label>
-
-                            @include('modules.thumbnail', ['imgSource' => $podcast->thumbnail])
-
+                        <div class="edit-podcast">
+                            <div class="edit-podcast-description">
+                                <label for="pod-description">Episode Description</label>
+                                <textarea id="pod-description" name="description" cols="35" rows="5">{!! $podcast->description !!}</textarea>
+                            </div>
                             
-                            <div class="box" id="update-thumbnail">
-                                <div class="box-input">
-                                    <input class="box-file" type="file" name="uploadThumbnailFile" id="thumbnailFile"
-                                        data-multiple-caption="{count} files selected"/>
-                                    <label for="thumbnailFile"><strong>Choose a file</strong><span class="box-dragndrop"> or drag it here</span>.</label>
+                            <div class="update-thumbnail-container">
+    
+                                <label for="file">Update Thumbnail Image</label>
+    
+                                @include('modules.thumbnail', ['imgSource' => $podcast->thumbnail])
+    
+                                
+                                <div class="box" id="update-thumbnail">
+                                    <div class="box-input">
+                                        <input class="box-file" type="file" name="uploadThumbnailFile" id="thumbnailFile"
+                                            data-multiple-caption="{count} files selected"/>
+                                        <label for="thumbnailFile"><strong>Choose a file</strong><span class="box-dragndrop"> or drag it here</span>.</label>
+                                    </div>
+                                    <div class="box-uploading">Uploading...</div>
+                                    <div class="box-success">Done!</div>
+                                    <div class="box-error">Error! <span></span>.</div>
                                 </div>
-                                <div class="box-uploading">Uploading...</div>
-                                <div class="box-success">Done!</div>
-                                <div class="box-error">Error! <span></span>.</div>
+    
                             </div>
 
                         </div>
-                        <button type="submit">Update</button>
+
+                        
+
+                        <button type="submit" class="update-podcast-button">Update</button>
 
                         
                         

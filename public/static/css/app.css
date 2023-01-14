@@ -11994,64 +11994,79 @@ h4 .img_text {
 }
 
 .update-podcast-container {
-  /*
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  */
+  justify-content: space-evenly;
   border: 0.5px solid black;
   box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
   padding: 30px;
+  /*
+  label,
+  textarea,
+  button {
+
+      display: block;
+      margin: 0 auto;
+      width: 50%;
+  }
+  */
 }
 
-.update-podcast-container label,
-.update-podcast-container textarea,
-.update-podcast-container button {
-  display: block;
-  margin: 0 auto;
-  width: 50%;
+.update-podcast-container form {
+  display: flex;
+  flex-direction: column;
 }
 
-.update-podcast-container button {
-  border-radius: 0.5rem;
-  width: 33%;
+.update-podcast-container form .edit-podcast {
+  display: flex;
 }
 
-.update-podcast-container button:hover {
-  background-color: aquamarine;
+.update-podcast-container form .edit-podcast .edit-podcast-description {
+  display: flex;
+  flex-direction: column;
 }
 
-.update-podcast-container .update-thumbnail-container {
+.update-podcast-container form .edit-podcast .update-thumbnail-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 25px auto;
-  padding: 25px;
+  margin: auto;
+  padding: 0 25px;
   width: 33%;
   box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
 }
 
-.update-podcast-container .update-thumbnail-container label {
+.update-podcast-container form .edit-podcast .update-thumbnail-container label {
   width: 75%;
 }
 
-.update-podcast-container .update-thumbnail-container .img-thumbnail {
+.update-podcast-container form .edit-podcast .update-thumbnail-container .img-thumbnail {
   width: 75% !important;
   height: 33% !important;
 }
 
-.update-podcast-container .update-thumbnail-container .box {
+.update-podcast-container form .edit-podcast .update-thumbnail-container .box {
   width: 75% !important;
   height: 25%;
   margin: 0 auto;
 }
 
-.update-thumbnail-container {
-  flex-grow: 1;
-  flex-basis: 33%;
+.update-podcast-container form button {
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  width: 33%;
+}
+
+.update-podcast-container form button:hover {
+  background-color: aquamarine;
 }
 
 @media (max-width: 768px) {
+  .update-podcast-container {
+    margin: 0 auto;
+    width: 100% !important;
+    padding: 15px 20px;
+  }
+
   .update-thumbnail-container {
     width: 77% !important;
   }
@@ -12059,6 +12074,10 @@ h4 .img_text {
   textarea,
   label {
     width: 90% !important;
+  }
+
+  .edit-podcast {
+    flex-direction: column;
   }
 }
 

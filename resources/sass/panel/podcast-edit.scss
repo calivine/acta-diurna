@@ -1,4 +1,5 @@
 .update-podcast-container {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,19 +9,44 @@
 
     label,
     textarea {
+
         display: block;
         margin: 0 auto;
         width: 50%;
     }
 
-    .img-thumbnail {
+    .update-thumbnail-container {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 25px auto;
+        padding: 25px;
         width: 33% !important;
-        height: 33% !important;
+        box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
+
+        label {
+
+            width: 75%;
+        }
+
+
+        .img-thumbnail {
+
+            width: 75% !important;
+            height: 33% !important;
+        }
+    
+        .box {
+
+            width: 75% !important;
+            height: 25%;
+            margin: 0 auto;
+        }
+
     }
 
-    .box {
-        width: 33% !important;
-    }
+    
 
 
 }

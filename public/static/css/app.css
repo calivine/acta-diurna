@@ -12009,13 +12009,29 @@ h4 .img_text {
   width: 50%;
 }
 
-.update-podcast-container .img-thumbnail {
+.update-podcast-container .update-thumbnail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 25px auto;
+  padding: 25px;
   width: 33% !important;
+  box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
+}
+
+.update-podcast-container .update-thumbnail-container label {
+  width: 75%;
+}
+
+.update-podcast-container .update-thumbnail-container .img-thumbnail {
+  width: 75% !important;
   height: 33% !important;
 }
 
-.update-podcast-container .box {
-  width: 33% !important;
+.update-podcast-container .update-thumbnail-container .box {
+  width: 75% !important;
+  height: 25%;
+  margin: 0 auto;
 }
 
 /* Tabbed Display */

@@ -18,15 +18,18 @@
         </div>
 
         <div class="row justify-content-center">
+            <div class="col-md-3"> 
+                <h2>Edit Podcast Episode</h2>
+            </div>
             <div class="col-md-9">
                 <button class="btn btn-link" data-toggle="modal" data-target="#confirm-delete-modal">Delete Episode
                 </button>
             </div>
             @include('modules.confirm-delete', ['modalId' => 'confirm-delete-modal', 'param' => $podcast, 'route' => 'podcasts.destroy'])
         </div>
-        @include('modules.banner')
+        
         <div class="row justify-content-center">
-            <div class="col-md-9">
+            <div class="col-md-10">
                 
                 <section class="update-podcast-container">
                     {{--
@@ -37,21 +40,30 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="PUT">
                         <label for="pod-description">Episode Description</label>
-                        <textarea id="pod-description" name="description" cols="50" rows="10">{!! $podcast->description !!}</textarea>
-                        @include('modules.thumbnail', ['imgSource' => $podcast->thumbnail])
+                        <textarea id="pod-description" name="description" cols="35" rows="5">{!! $podcast->description !!}</textarea>
+                        
+                        <div class="update-thumbnail-container">
 
-                        <label for="file">Update Thumbnail Image</label>
-                        <div class="box" id="update-thumbnail">
-                            <div class="box-input">
-                                <input class="box-file" type="file" name="uploadThumbnailFile" id="thumbnailFile"
-                                       data-multiple-caption="{count} files selected"/>
-                                <label for="thumbnailFile"><strong>Choose a file</strong><span class="box-dragndrop"> or drag it here</span>.</label>
+                            <label for="file">Update Thumbnail Image</label>
+
+                            @include('modules.thumbnail', ['imgSource' => $podcast->thumbnail])
+
+                            
+                            <div class="box" id="update-thumbnail">
+                                <div class="box-input">
+                                    <input class="box-file" type="file" name="uploadThumbnailFile" id="thumbnailFile"
+                                        data-multiple-caption="{count} files selected"/>
+                                    <label for="thumbnailFile"><strong>Choose a file</strong><span class="box-dragndrop"> or drag it here</span>.</label>
+                                </div>
+                                <div class="box-uploading">Uploading...</div>
+                                <div class="box-success">Done!</div>
+                                <div class="box-error">Error! <span></span>.</div>
                             </div>
-                            <div class="box-uploading">Uploading...</div>
-                            <div class="box-success">Done!</div>
-                            <div class="box-error">Error! <span></span>.</div>
+                            <button type="submit">Update</button>
+
                         </div>
-                        <button type="submit">Upload</button>
+                        
+                        
                     </form>
                 </section>
                 

@@ -11994,19 +11994,31 @@ h4 .img_text {
 }
 
 .update-podcast-container {
+  /*
   display: flex;
   flex-direction: column;
   justify-content: center;
+  */
   border: 0.5px solid black;
   box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
   padding: 30px;
 }
 
 .update-podcast-container label,
-.update-podcast-container textarea {
+.update-podcast-container textarea,
+.update-podcast-container button {
   display: block;
   margin: 0 auto;
   width: 50%;
+}
+
+.update-podcast-container button {
+  border-radius: 0.5rem;
+  width: 33%;
+}
+
+.update-podcast-container button:hover {
+  background-color: aquamarine;
 }
 
 .update-podcast-container .update-thumbnail-container {
@@ -12034,9 +12046,19 @@ h4 .img_text {
   margin: 0 auto;
 }
 
+.update-thumbnail-container {
+  flex-grow: 1;
+  flex-basis: 33%;
+}
+
 @media (max-width: 768px) {
   .update-thumbnail-container {
     width: 77% !important;
+  }
+
+  textarea,
+  label {
+    width: 90% !important;
   }
 }
 

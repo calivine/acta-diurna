@@ -1,18 +1,30 @@
 .update-podcast-container {
-
+    /*
     display: flex;
     flex-direction: column;
     justify-content: center;
+    */
     border: 0.5px solid black;
     box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
     padding: 30px;
 
     label,
-    textarea {
+    textarea,
+    button {
 
         display: block;
         margin: 0 auto;
         width: 50%;
+    }
+
+    button {
+
+        border-radius: 0.5rem;
+        width: 33%;
+
+        &:hover {
+            background-color: aquamarine;
+        }
     }
 
     .update-thumbnail-container {
@@ -51,8 +63,18 @@
 
 }
 
+.update-thumbnail-container {
+    flex-grow: 1;
+    flex-basis: 33%;
+}
+
 @media(max-width: $width-tablet) {
     .update-thumbnail-container {
         width: 77% !important;
+    }
+
+    textarea,
+    label {
+        width: 90% !important;
     }
 }

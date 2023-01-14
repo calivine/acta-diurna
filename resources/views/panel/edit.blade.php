@@ -18,17 +18,17 @@
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-md-3"> 
+            <div class="col-md-6"> 
                 <h2>Edit Podcast Episode</h2>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-6">
                 <button class="btn btn-link" data-toggle="modal" data-target="#confirm-delete-modal">Delete Episode
                 </button>
             </div>
             @include('modules.confirm-delete', ['modalId' => 'confirm-delete-modal', 'param' => $podcast, 'route' => 'podcasts.destroy'])
         </div>
         
-        <div class="row justify-content-center">
+        <div class="row">
             <div class="col-md-10">
                 
                 <section class="update-podcast-container">
@@ -39,8 +39,10 @@
                           enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="PUT">
+                        
                         <label for="pod-description">Episode Description</label>
                         <textarea id="pod-description" name="description" cols="35" rows="5">{!! $podcast->description !!}</textarea>
+                        
                         
                         <div class="update-thumbnail-container">
 
@@ -59,9 +61,10 @@
                                 <div class="box-success">Done!</div>
                                 <div class="box-error">Error! <span></span>.</div>
                             </div>
-                            <button type="submit">Update</button>
 
                         </div>
+                        <button type="submit">Update</button>
+
                         
                         
                     </form>

@@ -20,8 +20,12 @@
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
+                    <span>
+                        <label for="{{ 'photo-' . $loop->iteration . '-caption' }}" class="mb-0">Caption</label>
+   
+                        <!-- <i class="fa-solid fa-spinner fa-spin-pulse"></i> -->
+                    </span>
 
-                    <label for="{{ 'photo-' . $loop->iteration . '-caption' }}" class="mb-0">Caption</label>
                     <div class="edit-image-input-container">
                         <input type="text" id="{{ 'photo-' . $loop->iteration . '-caption' }}" name="caption"
                                value="{{ $image->caption ?? "" }}">

@@ -11717,12 +11717,11 @@ h4 .img_text {
 }
 
 .box {
-  font-size: 1.25rem;
-  /* 20 */
+  font-size: 1rem;
   background-color: #c8dadf;
   color: black;
   position: relative;
-  padding: 20px 20px;
+  padding: 20px 15px;
 }
 
 .box.has-advanced-upload {
@@ -11998,7 +11997,6 @@ h4 .img_text {
   justify-content: space-evenly;
   border: 0.5px solid black;
   box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
-  padding: 30px;
   /*
   label,
   textarea,
@@ -12018,25 +12016,26 @@ h4 .img_text {
 
 .update-podcast-container form .edit-podcast {
   display: flex;
+  justify-content: space-around;
 }
 
 .update-podcast-container form .edit-podcast .edit-podcast-description {
   display: flex;
   flex-direction: column;
+  max-width: 60%;
 }
 
 .update-podcast-container form .edit-podcast .update-thumbnail-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: auto;
   padding: 0 25px;
-  width: 33%;
+  max-width: 40%;
   box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
 }
 
 .update-podcast-container form .edit-podcast .update-thumbnail-container label {
-  width: 75%;
+  text-align: center;
 }
 
 .update-podcast-container form .edit-podcast .update-thumbnail-container .img-thumbnail {
@@ -12080,6 +12079,12 @@ h4 .img_text {
     flex-direction: column;
   }
 }
+
+/*
+.update-podcast-container * {
+    background-color: rgba(65, 33, 244, 0.11)
+}
+*/
 
 /* Tabbed Display */
 

@@ -12016,13 +12016,13 @@ h4 .img_text {
 
 .update-podcast-container form .edit-podcast {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .update-podcast-container form .edit-podcast .edit-podcast-description {
   display: flex;
   flex-direction: column;
-  max-width: 60%;
+  width: 50%;
 }
 
 .update-podcast-container form .edit-podcast .update-thumbnail-container {
@@ -12030,7 +12030,7 @@ h4 .img_text {
   flex-direction: column;
   justify-content: center;
   padding: 0 25px;
-  max-width: 40%;
+  width: 40%;
   box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
 }
 

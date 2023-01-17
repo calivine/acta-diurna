@@ -16,14 +16,13 @@
                 @include('modules.figure', ['imgSource' => $image->filename, 'id' => $image->id])
             </div>
             <div class="edit-image-form">
-                <form action="{{ route('podcasts.images.update', [$podcast->id, $image->id]) }}" method="POST"
+                <form id="{{ 'edit-img-form-' . $image->id }}" action="{{ route('podcasts.images.update', [$podcast->id, $image->id]) }}" method="POST"
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
                     <span>
                         <label for="{{ 'photo-' . $loop->iteration . '-caption' }}" class="mb-0">Caption</label>
-   
-                        <!-- <i class="fa-solid fa-spinner fa-spin-pulse"></i> -->
+                        <i></i>
                     </span>
 
                     <div class="edit-image-input-container">

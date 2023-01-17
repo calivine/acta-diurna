@@ -402,3 +402,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    let editImageFormsVanilla = document.querySelectorAll(".edit-image-form form");
+   
+    editImageFormsVanilla.forEach((form) => {
+        let f = document.getElementById(form.getAttribute('id'));
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            form.children[2].children[1].classList.add('fa-solid', 'fa-spinner', 'fa-spin-pulse'); // span
+
+
+            const xhr = new XMLHttpRequest();
+            let formData = new FormData(f);
+            
+            xhr.open('POST', f.action, true);
+            
+            xhr.onload = function () {
+                if (xhr.status == 204) {
+                    // remove spinner class
+                    form.children[2].children[1].classList.remove('fa-solid', 'fa-spinner', 'fa-spin-pulse'); // span
+
+                }
+            };
+            xhr.send(formData);            
+        })
+    });
+
+
+})

@@ -20,7 +20,8 @@ mix.scripts([
     'resources/js/chunkedUploader.js',
     'resources/js/postHandler.js',
     'resources/js/widgets/pageUp.js',
-    'resources/js/widgets/settingsDisplay.js'
+    'resources/js/widgets/settingsDisplay.js',
+    'resources/js/widgets/loadingSpinner.js'
 ], 'public/static/js/main.js');
 
 mix.scripts([

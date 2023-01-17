@@ -4,6 +4,7 @@
     justify-content: space-evenly;
     border: 0.5px solid black;
     box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
+    margin-bottom: 2em;
 
     
 
@@ -16,12 +17,17 @@
 
             display: flex;
             justify-content: space-evenly;
+
+            label {
+                margin-bottom: 0;
+            }
             
 
             .edit-podcast-description {
 
                 display: flex;
                 flex-direction: column;
+                padding: 1em;
                 width: 50%;
                 
     
@@ -32,18 +38,19 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                padding: 0 25px;
+                padding: 1em;
                 width: 40%;
                 box-shadow: 10px 0px 34px rgba(0, 0, 0, 0.21);
 
                 label {
                     text-align: center;
+                    
                 }
 
                 .img-thumbnail {
         
                     width: 75% !important;
-                    height: 33% !important;
+                    height: 75% !important;
                 }
             
                 .box {
@@ -60,7 +67,7 @@
         button {
 
             border-radius: 0.5rem;
-            margin: 0 auto;
+            margin: 1em auto;
             width: 33%;
     
             &:hover {
@@ -91,18 +98,29 @@
 
         margin: 0 auto;
         width: 100% !important;
-        padding: 15px 20px;
+        padding: 1em 1.25em;
 
     }
-    .update-thumbnail-container {
+    .update-thumbnail-container,
+    .edit-podcast-description {
+
+        margin: 0 auto;
 
         width: 77% !important;
+        
+    }
+
+    .edit-podcast-description {
+        /* margin: 0 0 1.5rem; */
+        margin-bottom: 1.5em;
+        padding: 0!important;
     }
 
     textarea,
     label {
 
-        width: 90% !important;
+        width: 100% !important;
+        margin-bottom: 0;
     }
 
     .edit-podcast {

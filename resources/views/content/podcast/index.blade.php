@@ -29,6 +29,12 @@
 
                 </article>
 
+                @if($podcast->title == "The Watcher")
+                    <iframe style="width: 100%; height: 50vh" src="https://www.youtube.com/embed/Mu8iMwOKyEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                @endif
+
+                
+
                 <section>
                     @foreach($podcast->images->sortBy('position') as $image)
                         @if($image->filename != $podcast->thumbnail)

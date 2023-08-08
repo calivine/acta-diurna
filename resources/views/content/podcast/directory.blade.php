@@ -16,7 +16,6 @@
         
         {{-- @include('modules.external-links') --}}
         
-        
         @foreach($podcasts as $podcast)
             @include('modules.episode', ['podcast' => $podcast])
         @endforeach

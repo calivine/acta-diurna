@@ -6,6 +6,9 @@
     <!-- Right Side Of Navbar -->
     <!-- Nav links if User is authenticated -->
     <ul class="nav">
+        <li class="nav-item">
+            <a href="{{ url('/about') }}" class="nav-link">{{ __('About') }}</a>
+        </li>
         @auth
             @isAdmin
             <li class="nav-item">
@@ -15,6 +18,7 @@
                 <a class="nav-link" href="{{ url('/panel') }}">{{ __('Admin Panel') }}</a>
             </li>
             @endisAdmin
+            
             <!-- Logout -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}"

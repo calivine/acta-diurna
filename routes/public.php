@@ -23,6 +23,10 @@ Route::prefix('articles')->group(function () {
     Route::view('/breezeknoll/bibliography', 'content.podcast.breezeknoll.bibliography');
 });
 
+Route::view('/about', 'content.about');
+
+Route::view('/research', 'content.research-services');
+
 # GET Podcast Directory
 // Route::view('/podcasts', 'content.podcast.directory');
 

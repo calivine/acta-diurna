@@ -33,6 +33,7 @@ Route::view('/research', 'content.research-services');
 // Route::get('/podcast/{title}', 'GuestController@getPodcast');
 
 Route::get('/ep/{title}', 'GuestController@get')->name('getPodcast');
+Route::view('/ep/lindley/references', 'content.lindley.references')->name('lindleyRefs');
 
 Route::get('/podcast/{title}', 'GuestController@getPodcast')->name('podcast');
 

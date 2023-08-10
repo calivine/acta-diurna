@@ -20,7 +20,26 @@
 
                         </li>
                         <li>
-                            
+                            Land Records. "Bridgeport, Connecticut.". <a href="https://i2h.uslandrecords.com/CT/Bridgeport/D/Default.aspx#">https://i2h.uslandrecords.com/CT/Bridgeport/D/Default.aspx#</a>
+                        </li>
+                        <li>
+                            News Journal. Whitmire, L. "Shelby Woman Had Poltergeist Past." 14 Apr 2015. Retrieved from ProQuest: https://www.proquest.com/newspapers/shelby-woman-had-poltergeist-past/docview/1673070117/se-2.
+                        </li>
+                        <li>
+                            Ancestry.com. "Family Tree of [Name]." https://www.ancestry.com/family-tree/person/tree/7116807/person/-935616164/facts.
+                        </li>
+                        <li>
+                            CT Insider. "Ed & Lorraine Warren: Ghost Hunters and Keepers of the Occult." https://www.ctinsider.com/projects/2021/visuals/ed-lorraine-warren/.
+                        </li>
+                        <li>
+                            ScreenGeek. "Haunted House in Connecticut Still Standing." https://www.screengeek.net/2020/03/19/haunted-house-connecticut-still-standing/.
+
+                        </li>
+                        <li>
+                            The Line-Up. "Bridgeport Poltergeist: The Terrifying Haunting of Lindley Street." https://the-line-up.com/bridgeport-poltergeist-excerpt/.
+                        </li>
+                        <li>
+                            Damned Connecticut. "Lindley Street, Bridgeport - Haunting or Hoax?" https://www.damnedct.com/lindley-street-bridgeport/
                         </li>
                 </ul>
 
@@ -36,21 +55,5 @@
 
 
 
-Land Records. "Bridgeport, Connecticut." https://i2h.uslandrecords.com/CT/Bridgeport/D/Default.aspx#.
-
-News Journal. Whitmire, L. "Shelby Woman Had Poltergeist Past." 14 Apr 2015. Retrieved from ProQuest: https://www.proquest.com/newspapers/shelby-woman-had-poltergeist-past/docview/1673070117/se-2.
 
 
-Ancestry.com. "Family Tree of [Name]." https://www.ancestry.com/family-tree/person/tree/7116807/person/-935616164/facts.
-
-CT Insider. "Ed & Lorraine Warren: Ghost Hunters and Keepers of the Occult." https://www.ctinsider.com/projects/2021/visuals/ed-lorraine-warren/.
-
-
-ScreenGeek. "Haunted House in Connecticut Still Standing." 
-
-https://www.screengeek.net/2020/03/19/haunted-house-connecticut-still-standing/.
-
-
-The Line-Up. "Bridgeport Poltergeist: The Terrifying Haunting of Lindley Street." https://the-line-up.com/bridgeport-poltergeist-excerpt/.
-
-Damned Connecticut. "Lindley Street, Bridgeport - Haunting or Hoax?" https://www.damnedct.com/lindley-street-bridgeport/

@@ -25,6 +25,9 @@
                     <p>
                         {!! nl2br(e($podcast->description)) !!}
                     </p>
+                    @if($podcast->title == "What Happened On Lindley Street")
+                        <a href="{{ route('lindleyRefs') }}">References</a>
+                    @endif
 
 
                 </article>

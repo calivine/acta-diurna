@@ -8,7 +8,7 @@ class Podcast extends Model
 {
     protected $fillable = ['title', 'description', 'published', 'season', 'episode', 'rss', 'thumbnail'];
 
-    protected $with = ['images'];
+    protected $with = ['images', 'references'];
 
     protected $dates = ['published'];
 
@@ -18,4 +18,13 @@ class Podcast extends Model
         # Defines A One-To-Many Relationship
         return $this->hasMany('App\Image');
     }
+
+    public function references()
+    {
+        # Podcast Has Many References
+        # Defines A One-To-Many Relationship
+        return $this->hasMany('App\Reference');
+    }
+
+
 }

@@ -15,7 +15,7 @@ Route::prefix('articles')->group(function () {
     Route::view('/highfields/bibliography', 'content.highfields.bibliography');
     Route::view('/highfields/references', 'content.highfields.references');
 
-# Route::view('/articles/breezeknoll/bibliography', 'content.breezeknoll.bibliography');
+    # Route::view('/articles/breezeknoll/bibliography', 'content.breezeknoll.bibliography');
 
     Route::view('/10050cielo/bibliography', 'content.podcast.10050cielo.bibliography');
     Route::view('/3301waverly/bibliography', 'content.podcast.3301waverly.bibliography');
@@ -33,6 +33,7 @@ Route::view('/research', 'content.research-services');
 // Route::get('/podcast/{title}', 'GuestController@getPodcast');
 
 Route::get('/ep/{title}', 'GuestController@get')->name('getPodcast');
+Route::get('/ep/{title}/references', 'GuestController@references')->name('getReferences');
 Route::view('/ep/lindley/references', 'content.lindley.references')->name('lindleyRefs');
 
 Route::get('/podcast/{title}', 'GuestController@getPodcast')->name('podcast');

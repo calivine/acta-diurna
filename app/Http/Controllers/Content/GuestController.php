@@ -74,7 +74,7 @@ class GuestController extends Controller
         preg_match('/s(\d)e(\d{1,2})/', $title, $target);
 
         // dd($target);
-        
+
         $season = $target[1];
         $episode = $target[2];
 
@@ -85,6 +85,24 @@ class GuestController extends Controller
 
         // Return podcast page with data
         return view('content.podcast.index')->with(['podcast' => $podcast]);
+    }
+
+    public function references(String $title)
+    {
+        preg_match('/s(\d)e(\d{1,2})/', $title, $target);
+
+        // dd($target);
+
+        $season = $target[1];
+        $episode = $target[2];
+
+        $podcast = Podcast::where([
+            ['episode', $episode],
+            ['season', $season],
+        ])->first();
+
+        return view('content.podcast.references')->with(['podcast' => $podcast]);
+
     }
 
     public function getPodcasts()

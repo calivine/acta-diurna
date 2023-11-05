@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Reference extends Model
 {
-    public function podcast()
+    protected $fillable = ['label', 'url'];
+
+    public function podcast(): BelongsTo
     {
         # Image belongs to Podcast
         # Defines An Inverse One-To-Many Relationship

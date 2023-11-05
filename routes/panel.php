@@ -31,4 +31,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/podcasts/{podcast}/publish', 'PodcastController@publish')->name('podcasts.publish');
 
+Route::post('/podcasts/{podcast}/reference', 'PodcastController@storeReference')->name('podcasts.reference.store');
+
 Route::get('/swap', 'ImageController@setOrder');

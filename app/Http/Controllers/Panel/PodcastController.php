@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Panel;
 use App\Http\Controllers\Controller;
 use App\Podcast;
 use App\Image;
+use App\Reference;
+use App\Services\Formatter;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -47,8 +50,8 @@ class PodcastController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
@@ -106,7 +109,7 @@ class PodcastController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Podcast  $podcast
+     * @param Podcast $podcast
      * @return \Illuminate\Http\Response
      */
     public function show(Podcast $podcast)
@@ -117,7 +120,7 @@ class PodcastController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Podcast  $podcast
+     * @param Podcast $podcast
      * @return \Illuminate\Http\Response
      */
     public function edit(Podcast $podcast)
@@ -128,9 +131,9 @@ class PodcastController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Podcast  $podcast
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @param Podcast $podcast
+     * @return RedirectResponse
      */
     public function update(Request $request, Podcast $podcast)
     {
@@ -177,8 +180,8 @@ class PodcastController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Podcast  $podcast
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Podcast $podcast
+     * @return RedirectResponse
      */
     public function destroy(Podcast $podcast)
     {
@@ -206,9 +209,9 @@ class PodcastController extends Controller
     /**
      * Set podcast resource to published (public)
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Podcast  $podcast
-     * @return \Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @param Podcast $podcast
+     * @return RedirectResponse
      */
     public function publish(Request $request, Podcast $podcast)
     {
@@ -217,6 +220,41 @@ class PodcastController extends Controller
         $podcast->save();
         return redirect()->route('panel');
         // return redirect(route('panel'));
+    }
+
+    /**
+     * Save a new Reference
+     *
+     * @param Request $request
+     * @param Podcast $podcast
+     * @return RedirectResponse
+     */
+    public function storeReference(Request $request, Podcast $podcast): RedirectResponse
+    {
+        $label = $request->input('reference');
+
+        $url = Formatter::url_shortcode($label);
+
+        $url = str_replace('""', '"', $url);
+
+        $pattern = '/(?<!https:\/\/)(www\.[^\r\n\t\f\v"][^"]+)/i';
+        $callback = function ($matches) {
+            // Prepend "http://" to the URL.
+            return 'https://' . $matches[1];
+        };
+        $url = preg_replace_callback($pattern, $callback, $url);
+
+        $reference = Reference::create([
+            'label' => $label,
+            'url' => $url
+        ]);
+
+        // Associate with podcast
+        $reference->podcast()->associate($podcast);
+        $reference->save();
+
+        return redirect()->route('podcasts.edit', $podcast->id);
+
     }
 
 

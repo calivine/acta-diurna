@@ -100,4 +100,21 @@ class Formatter
         return preg_replace('/_+/', ' ', $string);
     }
 
+    /**
+     * search and replace [url=]Text[/url]
+     * with anchor tags.
+     * @param $string
+     * @return string
+     */
+    public static function url_shortcode(String $text): String
+    {
+        return preg_replace_callback(
+            '/\[url=(.*?)\](.*?)\[\/url\]/',
+            function ($matches) {
+                return '<a href="'. $matches[1] .'">'. $matches[2] .'</a>';
+            },
+            $text
+        );
+    }
+
 }

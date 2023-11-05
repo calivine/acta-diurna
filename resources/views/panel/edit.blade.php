@@ -18,7 +18,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-md-6"> 
+            <div class="col-md-6">
                 <h2>Edit Podcast Episode</h2>
             </div>
             <div class="col-md-6">
@@ -27,10 +27,10 @@
             </div>
             @include('modules.confirm-delete', ['modalId' => 'confirm-delete-modal', 'param' => $podcast, 'route' => 'podcasts.destroy'])
         </div>
-        
+
         <div class="row">
             <div class="col-md-12">
-                
+
                 <section class="update-podcast-container">
                     {{--
                     Updates the Podcast Resource
@@ -45,14 +45,14 @@
                                 <label for="pod-description">Episode Description</label>
                                 <textarea id="pod-description" name="description" cols="35" rows="5">{!! $podcast->description !!}</textarea>
                             </div>
-                            
+
                             <div class="update-thumbnail-container">
-    
+
                                 <label for="file">Update Thumbnail Image</label>
-    
+
                                 @include('modules.thumbnail', ['imgSource' => $podcast->thumbnail])
-    
-                                
+
+
                                 <div class="box" id="update-thumbnail">
                                     <div class="box-input">
                                         <input class="box-file" type="file" name="uploadThumbnailFile" id="thumbnailFile"
@@ -63,34 +63,30 @@
                                     <div class="box-success">Done!</div>
                                     <div class="box-error">Error! <span></span>.</div>
                                 </div>
-    
+
                             </div>
 
                         </div>
 
-                        
-
                         <button type="submit" class="update-podcast-button">Update</button>
 
-                        
-                        
                     </form>
                 </section>
-                
+
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <section>
+                <section class="edit-images-container">
                     @foreach($podcast->images->sortBy('position') as $image)
                         @if($image->filename != $podcast->thumbnail)
                             @include('panel.partials.edit-image',['loop' => $loop, 'image' => $image, 'podcast' => $podcast] )
                         @endif
                     @endforeach
-    
+
                 </section>
             </div>
-            
+
         </div>
 
         <div class="row justify-content-center">
@@ -114,12 +110,28 @@
                     <button class="" type="submit">Save</button>
                     <div class="upload-results-container"></div>
                 </form>
-
             </section>
         </div>
+        <div class="row">
+            <section>
+                <form action="{{ route('podcasts.reference.store', $podcast->id) }}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <label for="reference-input">Add Reference</label>
+                    <input type="text" id="reference-input" name="reference">
+                    <button type="submit">Save</button>
+                </form>
+            </section>
+            <div class="col-lg-6">
+                <section class="reference-list">
+                    @foreach($podcast->references as $reference)
+                        <div class="row">
+                            {!! $reference->url ?? $reference->label !!}
+                        </div>
+                    @endforeach
+                </section>
+            </div>
+        </div>
     </div>
-
-
 
 @endsection
 

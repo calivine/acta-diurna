@@ -113,14 +113,16 @@
             </section>
         </div>
         <div class="row">
-            <section>
+            <section class="w-75">
                 <form action="{{ route('podcasts.reference.store', $podcast->id) }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <label for="reference-input">Add Reference</label>
-                    <input type="text" id="reference-input" name="reference">
+                    <input class="w-75" type="text" id="reference-input" name="reference">
                     <button type="submit">Save</button>
                 </form>
             </section>
+        </div>
+        <div class="row">
             <div class="col-lg-6">
                 <section class="reference-list">
                     @foreach($podcast->references as $reference)
